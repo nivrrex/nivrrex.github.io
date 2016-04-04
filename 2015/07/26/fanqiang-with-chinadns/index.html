@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>fanqiang-with-chinadns | nivrrex&#39;s spaces</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##来由用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fanqiang-with-chinadns">
+<meta property="og:url" content="http://nivrrex.github.io/2015/07/26/fanqiang-with-chinadns/index.html">
+<meta property="og:site_name" content="nivrrex's spaces">
+<meta property="og:description" content="##来由用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。">
+<meta property="og:updated_time" content="2015-07-26T10:07:38.302Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fanqiang-with-chinadns">
+<meta name="twitter:description" content="##来由用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。">
+  
+    <link rel="alternate" href="/atom.xml" title="nivrrex&#39;s spaces" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nivrrex&#39;s spaces</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nivrrex.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-fanqiang-with-chinadns" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/26/fanqiang-with-chinadns/" class="article-date">
+  <time datetime="2015-07-26T04:54:59.000Z" itemprop="datePublished">2015-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      fanqiang-with-chinadns
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##来由<br>用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。</p>
+<a id="more"></a> 
+<hr>
+<p>##Old解决方案 - FreeRouterV2<br>以前的解决方案是借用<a href="https://github.com/lifetyper/FreeRouter_V2" target="_blank" rel="external">FreeRouterV2</a>的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，<a href="https://github.com/lifetyper/FreeRouter_V2/blob/master/FreeRouterV2_HandBook.pdf" target="_blank" rel="external">如下</a></p>
+<p>####安装<br>首先需要在OpenWRT上安装如下包：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32</span><br></pre></td></tr></table></figure></p>
+<p>####配置<br>然后配置iptables的防火墙策略<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/firewall.user</span><br></pre></td></tr></table></figure></p>
+<p>添加如下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 <span class="string">"0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000"</span> -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|042442B2|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|0807C62D|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|1759053C|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|253D369E|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|2E52AE44|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|31027B38|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|364C8701|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|3B1803AD|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|402158A1|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4021632F|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4042A3FB|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4168CAFC|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|41A0DB71|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|422DFCED|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|480ECD63|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|480ECD68|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4A7D2766|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4A7D2771|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4A7D7F66|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4A7D9B66|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4D04075C|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|4E10310F|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|5D2E0859|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|76053106|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|80797E8B|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|9F6A794B|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|A9840D67|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|BC050460|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|BDA31105|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|C043C606|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|C504040C|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|CA6A0102|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|CAB50755|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|CB620741|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|CBA1E6AB|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|CF0C5862|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D0381F2B|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D1244921|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D155E58A|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D1913632|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D1DC1EAE|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D35E4293|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D5A9FB23|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D8DDBCB6|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|D8EAB30D|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|F3B9BB27|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|F9812E30|"</span> --from 60 --to 180  -j DROP</span><br><span class="line">iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string <span class="string">"|FD9D0EA5|"</span> --from 60 --to 180  -j DROP</span><br></pre></td></tr></table></figure></p>
+<p>重启防火墙即可<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/firewall restart</span><br></pre></td></tr></table></figure></p>
+<p>##ChinaDNS解决方案<br>以上的方案挺好，但是GFW的污染IP似乎有增多现象，所以想省心一点，正好shadowsocks作者<a href="https://github.com/clowwindy" target="_blank" rel="external">clowwindy</a>有一个针对DNS污染的作品<a href="https://github.com/clowwindy/ChinaDNS" target="_blank" rel="external">ChinaDNS</a>，就直接拿过来用了。<br>针对OpenWRT/Gargoyle，作者有直接编译完毕的ipk包，下载后安装到OpenWRT即可，地址<a href="https://github.com/clowwindy/ChinaDNS/releases" target="_blank" rel="external">如下</a></p>
+<p>####安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">opkg install ChinaDNS_1.x.x_ar71xx.ipk</span><br><span class="line">/etc/init.d/chinadns start</span><br><span class="line">/etc/init.d/chinadns <span class="built_in">enable</span></span><br></pre></td></tr></table></figure></p>
+<p>####配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/dnsmasq.conf</span><br></pre></td></tr></table></figure></p>
+<p>添加如下内容并保存退出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">no-resolv</span><br><span class="line">server=127.0.0.1<span class="comment">#5353</span></span><br></pre></td></tr></table></figure></p>
+<p>重新启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/chinadns restart</span><br><span class="line">/etc/init.d/dnsmasq restart</span><br></pre></td></tr></table></figure></p>
+<p>此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/init.d/chinadns</span><br></pre></td></tr></table></figure></p>
+<p>具体参数如下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">usage: chinadns [-h] [<span class="_">-l</span> IPLIST_FILE] [-b BIND_ADDR] [-p BIND_PORT]</span><br><span class="line">       [-c CHNROUTE_FILE] [<span class="_">-s</span> DNS] [-v]</span><br><span class="line">Forward DNS requests.</span><br><span class="line"></span><br><span class="line">-h, --help            show this <span class="built_in">help</span> message and <span class="built_in">exit</span></span><br><span class="line"><span class="_">-l</span> IPLIST_FILE        path to ip blacklist file</span><br><span class="line">-c CHNROUTE_FILE      path to china route file</span><br><span class="line">                      <span class="keyword">if</span> not specified, CHNRoute will be turned off</span><br><span class="line"><span class="_">-d</span>                    <span class="built_in">enable</span> bi-directional CHNRoute filter</span><br><span class="line">-y                    delay time <span class="keyword">for</span> suspects, default: 0.3</span><br><span class="line">-b BIND_ADDR          address that listens, default: 127.0.0.1</span><br><span class="line">-p BIND_PORT          port that listens, default: 53</span><br><span class="line"><span class="_">-s</span> DNS                DNS servers to use, default:</span><br><span class="line">                      114.114.114.114,208.67.222.222:443,8.8.8.8</span><br><span class="line">-m                    Using DNS compression pointer mutation</span><br><span class="line">                      (backlist and delaying would be disabled)</span><br><span class="line">-v                    verbose logging</span><br></pre></td></tr></table></figure></p>
+<p>##SFTP登录<br>在将ipx文件上传到OpenWRT路由器上时，刚开始没有使用WinSCP，而且OpenWRT上也没有SFTP服务，所以是用Everything的HTTP服务器功能，然后在OpenWRT上用wget下载的。后来知道可以直接通过SFTP上传、下载文件后，就开始在OpenWRT上折腾了。</p>
+<h4 id="OpenWRT安装SFTP"><a href="#OpenWRT安装SFTP" class="headerlink" title="OpenWRT安装SFTP"></a>OpenWRT安装SFTP</h4><p>安装及配置命令如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">opkg update</span><br><span class="line">opkg install vsftpd openssh-sftp-server</span><br><span class="line">/etc/init.d/vsftpd <span class="built_in">enable</span></span><br><span class="line">/etc/init.d/vsftpd start</span><br></pre></td></tr></table></figure></p>
+<h4 id="md5sum-mismatch-错误"><a href="#md5sum-mismatch-错误" class="headerlink" title="md5sum mismatch 错误"></a>md5sum mismatch 错误</h4><p>其中opkg在线安装openssh-sftp-server时出现了md5sum mismatch，无法安装，网上Google了一下，表示可能是linux内核不匹配导致的，解决方法是下载到本地，直接安装即可<br>好吧，打开Everything的HTTP服务器，先下载到OpenWRT路由器上，然后手动安装成功。</p>
+<hr>
+<p>##结<br>没有了DNS污染，所有被屏蔽的网站也可以通过Shadowsocks+GFWList PAC绕过去科学上网了，自由遨游Internet的感觉真好啊~ \^O^/</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nivrrex.github.io/2015/07/26/fanqiang-with-chinadns/" data-id="cimlrgy2k00047okjftx1n0pf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chinadns/">chinadns</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fanqiang/">fanqiang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/internet/">internet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openwrt/">openwrt</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/26/fanqiang-with-dnsmasq/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          fanqiang-with-dnsmasq
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/24/fanqiang-with-shadowsocks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">fanqiang-with-shadowsocks</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/chinadns/">chinadns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnsmasq/">dnsmasq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fanqiang/">fanqiang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goagent/">goagent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/">internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/soft/">soft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime-text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vps/">vps</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/chinadns/" style="font-size: 10px;">chinadns</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dnsmasq/" style="font-size: 10px;">dnsmasq</a> <a href="/tags/fanqiang/" style="font-size: 20px;">fanqiang</a> <a href="/tags/goagent/" style="font-size: 10px;">goagent</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/internet/" style="font-size: 20px;">internet</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/openwrt/" style="font-size: 15px;">openwrt</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/soft/" style="font-size: 12.5px;">soft</a> <a href="/tags/sublime-text/" style="font-size: 10px;">sublime-text</a> <a href="/tags/vpn/" style="font-size: 10px;">vpn</a> <a href="/tags/vps/" style="font-size: 17.5px;">vps</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/04/start-to-use-python/">start-to-use-python</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/01/change-editer-with-sublime-text/">change-editer-with-sublime-text</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/27/update-debian-linux-image-with-backports - 副本/">update-debian-linux-image-with-backports</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/26/fanqiang-with-dnsmasq/">fanqiang-with-dnsmasq</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/26/fanqiang-with-chinadns/">fanqiang-with-chinadns</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 nivrrex<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

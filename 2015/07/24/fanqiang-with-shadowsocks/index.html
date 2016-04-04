@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>fanqiang-with-shadowsocks | nivrrex&#39;s spaces</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##来由已经一年多没有更新这个blog了，现在来写点什么吧。这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
+最近突然想折腾了下，发现用Shadowsocks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fanqiang-with-shadowsocks">
+<meta property="og:url" content="http://nivrrex.github.io/2015/07/24/fanqiang-with-shadowsocks/index.html">
+<meta property="og:site_name" content="nivrrex's spaces">
+<meta property="og:description" content="##来由已经一年多没有更新这个blog了，现在来写点什么吧。这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
+最近突然想折腾了下，发现用Shadowsocks">
+<meta property="og:updated_time" content="2015-07-26T10:07:11.512Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fanqiang-with-shadowsocks">
+<meta name="twitter:description" content="##来由已经一年多没有更新这个blog了，现在来写点什么吧。这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
+最近突然想折腾了下，发现用Shadowsocks">
+  
+    <link rel="alternate" href="/atom.xml" title="nivrrex&#39;s spaces" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">nivrrex&#39;s spaces</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nivrrex.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-fanqiang-with-shadowsocks" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/24/fanqiang-with-shadowsocks/" class="article-date">
+  <time datetime="2015-07-24T04:57:00.000Z" itemprop="datePublished">2015-07-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      fanqiang-with-shadowsocks
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##来由<br>已经一年多没有更新这个blog了，现在来写点什么吧。<br>这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。</p>
+<p>最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：</p>
+<a id="more"></a> 
+<hr>
+<p>##VPS架设Shadowsocks</p>
+<p>####选择Shadowsocks版本<br>Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去<a href="http://shadowsocks.org/en/download/servers.html" target="_blank" rel="external">官网</a>看一下<br>因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了<a href="https://github.com/shadowsocks/shadowsocks-libev" target="_blank" rel="external">shadowsocks-libev</a></p>
+<p>####编译Shadowsocks<br>我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/shadowsocks/shadowsocks-libev.git</span><br><span class="line"><span class="built_in">cd</span> shadowsocks-libev</span><br><span class="line">sudo apt-get install build-essential autoconf libtool libssl-dev</span><br><span class="line">./configure &amp;&amp; make</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
+<p>####配置Shadowsocks服务器端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/shadowsocks-libev/config.json</span><br></pre></td></tr></table></figure></p>
+<p>具体格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"my_server_ip"</span>,</span><br><span class="line">    <span class="string">"server_port"</span>:8388,</span><br><span class="line">    <span class="string">"local_port"</span>:1080,</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"barfoo!"</span>,</span><br><span class="line">    <span class="string">"timeout"</span>:600,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"table"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6).<br>server_port: 你的Shadowsocks服务器端口.<br>local_port: 本地端口.<br>password: 你的Shadowsocks服务器的账号密码.<br>method: 你的Shadowsocks服务器采用的加密方式, “bf-cfb” , “aes-256-cfb” , “des-cfb” ,”rc4” , “table” 等等，建议使用”aes-256-cfb”</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/rc.local</span><br></pre></td></tr></table></figure>
+<p>添加以下自启动命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json</span><br></pre></td></tr></table></figure></p>
+<p>保存退出即可</p>
+<p>如果希望加入udp转发功能(enable udprelay mode)，用以搭建DNS转发线路，启动时需要加上-u参数，似乎目前只有shadowsocks-libev有该功能<br>即添加以下自启动命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u</span><br></pre></td></tr></table></figure></p>
+<p>保存退出即可</p>
+<p>由于shadowsocks-libev不支持多端口，多用户，如果多人使用的话，需开多个实例，每一个config.json使用不同端口、密码即可<br>官方示例如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ss-server -c config1.json <span class="_">-f</span> pid1</span><br><span class="line">ss-server -c config2.json <span class="_">-f</span> pid2</span><br><span class="line">ss-server -c config3.json <span class="_">-f</span> pid3</span><br></pre></td></tr></table></figure></p>
+<p>####配置Shadowsocks客户端<br>可以直接从官网上推荐的各平台<a href="http://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">clients</a>选择自己需要的客户端<br>我选择的是<a href="https://github.com/shadowsocks/shadowsocks-csharp" target="_blank" rel="external">shadowsocks-csharp</a><br>最新的release可以在<a href="https://github.com/shadowsocks/shadowsocks-csharp/releases" target="_blank" rel="external">这里</a>下载<br>最新的客户端可以通过PAC文件，对GFWList里面的域名进行自动代理，OYE~</p>
+<p>##路由器折腾Shadowsocks及自动fanqiang<br>好吧，本来希望在OpenWRT上折腾好，所有PC、手机可以直接自动科学上网的，但是一直没有试验成功。<br>一是：对iptables一直心怀敬意，但是折腾的太少，很多东西还不了解<br>二是：中国电信和GFW的合作(原谅我用这个词吧)太好了－<em>－||, 电信的宽带，一个IP地址连接我的VPS PPTP时间长了后，丢包就开始严重起来了，不得已需要重新PPPOE拨号连接，结果是换了一个地址，就没有丢包了呢－</em>－||。<br>三是：网上有说路由器的性能和内存受限，大流量后，SS有可能会崩溃，这样还要做个守护进程一直看着，随时重新启动，有点麻烦<br>四是：我确实没有折腾成功－_－||。。而且还把路由器折腾快瘫了<br>所以不想在路由器上折腾过多了，太麻烦了。。。</p>
+<p>####PS：<br>1、目前我的WNDR4300刷新的是Gargoyle(石像鬼)1.7.2固件，是恩山论坛的大拿编译的，<a href="http://www.right.com.cn/forum/thread-157953-1-2.html" target="_blank" rel="external">自译4300/3700/AR石像鬼+luci面板+over&gt;90+ss+多拨+迅雷+脱机+广告+13信道+vpn集成</a>，我没有用他的集成包，而是用了精简版（支持overylay大于90M，集成石像鬼全部官方插件）（PS：换了这个固件后，感觉到VPS的丢包少了一些呢，不知道是不是只是感觉原因－_－||。。）<br>2、原先的华为HG255D刷新的是PandoraBox，<a href="http://www.right.com.cn/forum/thread-169216-1-3.html" target="_blank" rel="external">PandoraBox HG255D更新支持HWNAT硬件转发 最后的疯狂</a>，主要是解决了长期以来flash读写出错的问题和增加了硬件转发HWNAT功能，最新版本可以在<a href="http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/firmware/stable/" target="_blank" rel="external">这里</a>下载<br>3、有想继续折腾OpenWRT+Shadowsocks的，可以自行下载SS的OpenWRT预编译包折腾，在<a href="http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/" target="_blank" rel="external">这里</a>下载</p>
+<p>##最终解决方案<br>就是简单的VPS+Shadowsocks桌面客户端，随时更新GFWList的PAC文件，出问题也就是一台机子的事情。手机想科学上网时，通过原先的PPTP VPN即可</p>
+<hr>
+<p>##总结<br>目前的方案是简单为主，不折腾，合适的设备做合适的事情，半自动也有半自动的好处。折腾的时间去做点其它事情好了~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://nivrrex.github.io/2015/07/24/fanqiang-with-shadowsocks/" data-id="cimlrgy2x000b7okjm26nrae0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fanqiang/">fanqiang</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/internet/">internet</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vps/">vps</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/07/26/fanqiang-with-chinadns/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          fanqiang-with-chinadns
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/07/17/build-openwrt-with-image-builder/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">build-openwrt-with-image-builder</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/chinadns/">chinadns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnsmasq/">dnsmasq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fanqiang/">fanqiang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goagent/">goagent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/">internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/soft/">soft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime-text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vps/">vps</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/chinadns/" style="font-size: 10px;">chinadns</a> <a href="/tags/debian/" style="font-size: 10px;">debian</a> <a href="/tags/dnsmasq/" style="font-size: 10px;">dnsmasq</a> <a href="/tags/fanqiang/" style="font-size: 20px;">fanqiang</a> <a href="/tags/goagent/" style="font-size: 10px;">goagent</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/internet/" style="font-size: 20px;">internet</a> <a href="/tags/live/" style="font-size: 10px;">live</a> <a href="/tags/openwrt/" style="font-size: 15px;">openwrt</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/soft/" style="font-size: 12.5px;">soft</a> <a href="/tags/sublime-text/" style="font-size: 10px;">sublime-text</a> <a href="/tags/vpn/" style="font-size: 10px;">vpn</a> <a href="/tags/vps/" style="font-size: 17.5px;">vps</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/04/04/start-to-use-python/">start-to-use-python</a>
+          </li>
+        
+          <li>
+            <a href="/2015/08/01/change-editer-with-sublime-text/">change-editer-with-sublime-text</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/27/update-debian-linux-image-with-backports - 副本/">update-debian-linux-image-with-backports</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/26/fanqiang-with-dnsmasq/">fanqiang-with-dnsmasq</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/26/fanqiang-with-chinadns/">fanqiang-with-chinadns</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 nivrrex<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
