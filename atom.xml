@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>nivrrex&#39;s spaces</title>
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://nivrrex.github.io/"/>
+  <updated>2016-04-04T09:05:37.806Z</updated>
+  <id>http://nivrrex.github.io/</id>
+  
+  <author>
+    <name>nivrrex</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开始使用Python</title>
+    <link href="http://nivrrex.github.io/2016/04/04/start-to-use-python/"/>
+    <id>http://nivrrex.github.io/2016/04/04/start-to-use-python/</id>
+    <published>2016-04-04T08:47:30.000Z</published>
+    <updated>2016-04-04T09:05:37.806Z</updated>
+    
+    <content type="html">&lt;p&gt;##缘来&lt;br&gt;最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;hr&gt;
+&lt;p&gt;##开始&lt;br&gt;整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。&lt;/p&gt;
+&lt;p&gt;整个切换过程还是比较顺利的，毕竟两个语言有很大的相近的地方。当然也遇到了不少坑，比如Python3和Python2的选择，print输出的坑。&lt;/p&gt;
+&lt;p&gt;##Python3 vs Python2&lt;br&gt;这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。&lt;/p&gt;
+&lt;p&gt;但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。&lt;/p&gt;
+&lt;p&gt;##print无法输出中文&lt;br&gt;这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; io, sys&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。&lt;/p&gt;
+&lt;p&gt;##Python VS Ruby&lt;br&gt;这个题目比较大，只能简单的就第一感觉来说：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Python的好处就是编码样式比较统一，第三方类库超多。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;可以关注自己需要解决的问题，不用费心思在语法细节上。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight ruby&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;但是第三方类库和Python相比差距还是比较大。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;##结&lt;br&gt;其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。&lt;/p&gt;
+&lt;p&gt;最终还是选择了Python，而且可能近期都会使用它。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##缘来&lt;br&gt;最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://nivrrex.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>换用sublime text编辑器</title>
+    <link href="http://nivrrex.github.io/2015/08/01/change-editer-with-sublime-text/"/>
+    <id>http://nivrrex.github.io/2015/08/01/change-editer-with-sublime-text/</id>
+    <published>2015-08-01T07:41:45.000Z</published>
+    <updated>2016-04-04T08:57:13.327Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;本来一直使用的编译器是&lt;a href=&quot;http://www.scintilla.org/SciTE.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SciTE&lt;/a&gt;，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。&lt;br&gt;最近看了&lt;a href=&quot;http://www.tudou.com/home/golang/item/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Golang中国的教学视频&lt;/a&gt;，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇&lt;a href=&quot;http://www.linuxeden.com/html/news/20150730/162107.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sublime Text 全程指南&lt;/a&gt;，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##Sublime Text安装&lt;br&gt;首先到Sublime Text的&lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;下载最新的版本，我下载的是3.3083的portable version版&lt;br&gt;然后是最重要的事情了，安装&lt;a href=&quot;https://packagecontrol.io/installation#st3&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Package Control&lt;/a&gt;,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。&lt;br&gt;打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; urllib.request,os,hashlib; h = &lt;span class=&quot;string&quot;&gt;&#39;eb2297e1a458f27d836c04bb0cbaf282&#39;&lt;/span&gt; + &lt;span class=&quot;string&quot;&gt;&#39;d0e7a3098092775ccb37ca9d6b2e4b7d&#39;&lt;/span&gt;; pf = &lt;span class=&quot;string&quot;&gt;&#39;Package Control.sublime-package&#39;&lt;/span&gt;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &lt;span class=&quot;string&quot;&gt;&#39;http://packagecontrol.io/&#39;&lt;/span&gt; + pf.replace(&lt;span class=&quot;string&quot;&gt;&#39; &#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;%20&#39;&lt;/span&gt;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&lt;span class=&quot;string&quot;&gt;&#39;Error validating download (got %s instead of %s), please try manual install&#39;&lt;/span&gt; % (dh, h)) &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; dh != h &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; open(os.path.join( ipp, pf), &lt;span class=&quot;string&quot;&gt;&#39;wb&#39;&lt;/span&gt; ).write(by)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;##Package Control及插件安装&lt;br&gt;根据提示，重启Sublime Text即可完成安装。&lt;br&gt;在Sublime Text中按ctrl+shift+p快捷键，即可调出Package Control控制台，它可以对Packages完成以下操作：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;remove&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;list&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;enable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;disable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;upgrade&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;根据我的需求，我安装了以下插件&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;GoSublime             &lt;span class=&quot;comment&quot;&gt;#go语言提示插件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;SideBarEnhancements   &lt;span class=&quot;comment&quot;&gt;#侧边栏增强插件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;All Autocomplete      &lt;span class=&quot;comment&quot;&gt;#自动完成增强插件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ConvertToUTF8         &lt;span class=&quot;comment&quot;&gt;#GBK等中文文件编码增强插件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Markdown-Preview      &lt;span class=&quot;comment&quot;&gt;#Markdown文件预览插件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Markdown Extended     &lt;span class=&quot;comment&quot;&gt;#Markdown语法扩展插件，可以对代码区域进行语法高亮&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Monokai Extended      &lt;span class=&quot;comment&quot;&gt;#主题插件，但是可以对Markdown进行语法高亮&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;JSONLint              &lt;span class=&quot;comment&quot;&gt;#JSON的智能提示插件，对出错的语法进行实时标注&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;JSFormat              &lt;span class=&quot;comment&quot;&gt;#可以对javascript进行格式化输出，同样对JSON也可以格式化&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;##Sublime Text配置&lt;br&gt;Sublime Text3的配置，主要采用JSON格式，后缀名是sublime-settings&lt;br&gt;不知道是不是Bug，其主要配置需要手动创建，菜单无法选择（后来证实是汉化包的Bug），于是根据网上提示，新建&lt;br&gt;C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入以下内容：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;font_face&quot;: &quot;Consolas&quot;,                            //字体名称&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;font_size&quot;: 12,                                    //字体大小&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;caret_style&quot;: &quot;phase&quot;,                             //光标闪烁&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;wide_caret&quot;: true,                                 //光标变粗&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;draw_white_space&quot;: &quot;all&quot;,                          //显示所有空白符号&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;highlight_line&quot;: true,                             //高亮当前行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;highlight_modified_tabs&quot;: true,                    //编辑过的标签高亮显示&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;auto_complete_commit_on_tab&quot;: true,                //tab键自动完成&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;tab_size&quot;: 4,                                      //tab键长度&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;translate_tabs_to_spaces&quot;: true,                   //自动将tab转换成空格&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;spell_check&quot;: false,                               //语法检查&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;trim_trailing_white_space_on_save&quot;: true,          //删除行尾的空格&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;ensure_newline_at_eof_on_save&quot;: true,              //文件结束后保存加入新行&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;color_scheme&quot;: &quot;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&quot;,     //主题包Monokai&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &quot;ignored_packages&quot;:                                 //忽略的包&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &quot;Vintage&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;##GoSublime配置&lt;br&gt;因为我用Golang和Ruby比较多，在安装了GoSublime后，还需要配置下GoSublime，以便进行编译&lt;br&gt;路径如下：”Preferences” - “Package Setting” - “GoSublime” - “Settings User”&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;env&quot;&lt;/span&gt;: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;&quot;PATH&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;C:\\go\\bin&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;&quot;GOPATH&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;C:\\go\\import&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;&quot;GOROOT&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;C:\\go&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;&quot;GOBIN&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;C:\\go\\bin&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;attr&quot;&gt;&quot;GOOS&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;windows&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;build_command&quot;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&quot;go&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;run&quot;&lt;/span&gt;,&lt;span class=&quot;string&quot;&gt;&quot;$_fn&quot;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;fmt_enabled&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;fmt_tab_indent&quot;&lt;/span&gt;: &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;&quot;fmt_tab_width&quot;&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;##TinyCC编译系统&lt;br&gt;因为我偶尔用TinyCC编译小的C语言程序，所以自定义了一个编译系统，具体代码如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight json&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;path&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;C:\\ Sublime Text\\tcc\\&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;file_regex&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;working_dir&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;$&amp;#123;file_path&amp;#125;&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;selector&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;source.c&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attr&quot;&gt;&quot;variants&quot;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attr&quot;&gt;&quot;name&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;Run&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attr&quot;&gt;&quot;cmd&quot;&lt;/span&gt;: [&lt;span class=&quot;string&quot;&gt;&quot;tcc&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;-run&quot;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&quot;$&amp;#123;file&amp;#125;&quot;&lt;/span&gt;],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;attr&quot;&gt;&quot;working_dir&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;$&amp;#123;file_path&amp;#125;&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  ]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;##结&lt;br&gt;试用了几天后，Sublime Text是比Scite要强大的多，虽然Scite也可以进行很多的配置，关键是Package Control上现成的插件太多了，有人维护的话，真是太省心了呢，已经将以前针对Scite写的部分脚本转移到Sublime Text上了，开心的编程啦~ \^o^/&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;本来一直使用的编译器是&lt;a href=&quot;http://www.scintilla.org/SciTE.html&quot;&gt;SciTE&lt;/a&gt;，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。&lt;br&gt;最近看了&lt;a href=&quot;http://www.tudou.com/home/golang/item/&quot;&gt;Golang中国的教学视频&lt;/a&gt;，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇&lt;a href=&quot;http://www.linuxeden.com/html/news/20150730/162107.html&quot;&gt;Sublime Text 全程指南&lt;/a&gt;，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="soft" scheme="http://nivrrex.github.io/tags/soft/"/>
+    
+      <category term="sublime-text" scheme="http://nivrrex.github.io/tags/sublime-text/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>update debian linux-image with backports</title>
+    <link href="http://nivrrex.github.io/2015/07/27/update-debian-linux-image-with-backports/"/>
+    <id>http://nivrrex.github.io/2015/07/27/update-debian-linux-image-with-backports/</id>
+    <published>2015-07-27T14:36:17.000Z</published>
+    <updated>2016-04-04T08:58:36.097Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;hr&gt;
+&lt;p&gt;##如何查看Linux版本&lt;br&gt;共有5种方式，具体如下&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/*-release&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;lsb_release &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cat /proc/version&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;uname &lt;span class=&quot;_&quot;&gt;-a&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;#uname -mrs&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cat /etc/issue&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;我的Debian更新过，显示是&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Debian GNU/Linux 8.1 (jessie)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但是，内核为什么还是&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Linux 2.6.32-042stab093.4 i686&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;好吧，更新，更新！&lt;/p&gt;
+&lt;p&gt;##使用Backports源&lt;br&gt;对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目&lt;/p&gt;
+&lt;p&gt;其&lt;a href=&quot;https://wiki.debian.org/zh_CN/Backports&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方Wiki&lt;/a&gt;上面说&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##开始更新&lt;/p&gt;
+&lt;p&gt;####更新软件源&lt;br&gt;首先在apt的sources.list文件中添加Backports源&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/apt/sources.list&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;添加如下内容&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deb http://ftp.debian.org/debian/ jessie-backports main &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;deb-src http://ftp.debian.org/debian/ jessie-backports main&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;更新数据&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#sudo apt-get -t jessie-backports upgrade&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####搜索并安装linux-image文件&lt;br&gt;安装aptitude，以便搜索最新的linux-image文件&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;apt-get install aptitude&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;aptitude search kernel-image&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;根据搜索出来的内核文件，进行安装，我的是&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get -t jessie-backports install linux-image-3.16.0-4-686-pae&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#sudo apt-get -t jessie-backports install linux-image-686-pae&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####显示已安装的linux-image内核版本&lt;br&gt;显示已经安装的linux-image内核版本&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dpkg --get-selections |grep linux-image&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####删除旧内核&lt;br&gt;如果要删除旧内核，运行以下命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get remove linux-image-3.16.0-4-686-pae&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####更新grub&lt;br&gt;在/boot/grub/grub.cfg中查看是否已经有新内核3.16，有的话，就已经OK。否则，自己手动更新grub。&lt;br&gt;sudo update-grub&lt;/p&gt;
+&lt;p&gt;##安装结果&lt;br&gt;我兴高采烈的在我的RamNode的VPS折腾了半天后，重新Reboot后发现，内核为什么还是2.6.32!!!&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Linux 2.6.32-042stab093.4 i686&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####Google原因&lt;br&gt;OpenVZ的内核和 Host的内核是一致的&lt;br&gt;也就是说，由于我的VPS是OpenVZ的，所以我自己更新linux-image的版本是没有用的。。。&lt;/p&gt;
+&lt;p&gt;##结&lt;br&gt;伤心了 -__- ，于是写下这篇小结，算是个记录。顺便把家里的Debian主机更新了下内核，3.16更新到3.16，小版本也要更新！。。。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="vps" scheme="http://nivrrex.github.io/tags/vps/"/>
+    
+      <category term="debian" scheme="http://nivrrex.github.io/tags/debian/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fanqiang with dnsmasq</title>
+    <link href="http://nivrrex.github.io/2015/07/26/fanqiang-with-dnsmasq/"/>
+    <id>http://nivrrex.github.io/2015/07/26/fanqiang-with-dnsmasq/</id>
+    <published>2015-07-26T09:51:59.000Z</published>
+    <updated>2016-04-04T08:57:42.340Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;##DNSmasq安装&lt;br&gt;我的系统是Debian，直接运行以下命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install dnsmasq&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##DNSmasq配置&lt;br&gt;编辑/etc/dnsmasq.conf文件&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/dnsmasq.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;修改以下参数&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;resolv-file=/etc/resolv.conf&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;strict-order&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;listen-address=xxx.xxx.xxx.xxx,127.0.0.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;port=443&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;cache-size=1024&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;log&lt;/span&gt;-queries&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;nameserver 8.8.8.8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;nameserver 208.67.222.222&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;将服务重启即可&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/dnsmasq restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;将DNSmasq加入启动项&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sudo vi /etc/rc.local&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;将以下命令添加进去即可&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/dnsmasq start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##DNS污染解决方案&lt;br&gt;&lt;a href=&quot;http://sourceforge.net/projects/openwrt-dist/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenWrt-dist&lt;/a&gt;上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。&lt;br&gt;其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，&lt;a href=&quot;http://sourceforge.net/p/openwrt-dist/wiki/DNS/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;地址&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##结&lt;br&gt;这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="internet" scheme="http://nivrrex.github.io/tags/internet/"/>
+    
+      <category term="fanqiang" scheme="http://nivrrex.github.io/tags/fanqiang/"/>
+    
+      <category term="vps" scheme="http://nivrrex.github.io/tags/vps/"/>
+    
+      <category term="dnsmasq" scheme="http://nivrrex.github.io/tags/dnsmasq/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fanqiang with chinadns</title>
+    <link href="http://nivrrex.github.io/2015/07/26/fanqiang-with-chinadns/"/>
+    <id>http://nivrrex.github.io/2015/07/26/fanqiang-with-chinadns/</id>
+    <published>2015-07-26T04:54:59.000Z</published>
+    <updated>2016-04-04T08:57:33.135Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;hr&gt;
+&lt;p&gt;##Old解决方案 - FreeRouterV2&lt;br&gt;以前的解决方案是借用&lt;a href=&quot;https://github.com/lifetyper/FreeRouter_V2&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FreeRouterV2&lt;/a&gt;的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，&lt;a href=&quot;https://github.com/lifetyper/FreeRouter_V2/blob/master/FreeRouterV2_HandBook.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如下&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;####安装&lt;br&gt;首先需要在OpenWRT上安装如下包：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;opkg update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####配置&lt;br&gt;然后配置iptables的防火墙策略&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/firewall.user&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;添加如下命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &lt;span class=&quot;string&quot;&gt;&quot;0&amp;amp;0x0F000000=0x05000000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@8&amp;amp;0x810F=0x8000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@12&amp;amp;0xFFFF=0x0000&quot;&lt;/span&gt; -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|042442B2|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|0807C62D|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|1759053C|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|253D369E|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|2E52AE44|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|31027B38|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|364C8701|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|3B1803AD|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|402158A1|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4021632F|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4042A3FB|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4168CAFC|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|41A0DB71|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|422DFCED|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|480ECD63|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|480ECD68|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4A7D2766|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4A7D2771|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4A7D7F66|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4A7D9B66|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4D04075C|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|4E10310F|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|5D2E0859|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|76053106|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|80797E8B|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|9F6A794B|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|A9840D67|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|BC050460|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|BDA31105|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|C043C606|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|C504040C|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|CA6A0102|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|CAB50755|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|CB620741|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|CBA1E6AB|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|CF0C5862|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D0381F2B|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D1244921|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D155E58A|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D1913632|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D1DC1EAE|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D35E4293|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D5A9FB23|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D8DDBCB6|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|D8EAB30D|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|F3B9BB27|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|F9812E30|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &lt;span class=&quot;string&quot;&gt;&quot;|FD9D0EA5|&quot;&lt;/span&gt; --from 60 --to 180  -j DROP&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;重启防火墙即可&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/firewall restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##ChinaDNS解决方案&lt;br&gt;以上的方案挺好，但是GFW的污染IP似乎有增多现象，所以想省心一点，正好shadowsocks作者&lt;a href=&quot;https://github.com/clowwindy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;clowwindy&lt;/a&gt;有一个针对DNS污染的作品&lt;a href=&quot;https://github.com/clowwindy/ChinaDNS&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ChinaDNS&lt;/a&gt;，就直接拿过来用了。&lt;br&gt;针对OpenWRT/Gargoyle，作者有直接编译完毕的ipk包，下载后安装到OpenWRT即可，地址&lt;a href=&quot;https://github.com/clowwindy/ChinaDNS/releases&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如下&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;####安装&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;opkg install ChinaDNS_1.x.x_ar71xx.ipk&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/chinadns start&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/chinadns &lt;span class=&quot;built_in&quot;&gt;enable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####配置&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/dnsmasq.conf&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;添加如下内容并保存退出&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;no-resolv&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;server=127.0.0.1&lt;span class=&quot;comment&quot;&gt;#5353&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;重新启动&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/chinadns restart&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/dnsmasq restart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/init.d/chinadns&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;具体参数如下&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;usage: chinadns [-h] [&lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt; IPLIST_FILE] [-b BIND_ADDR] [-p BIND_PORT]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;       [-c CHNROUTE_FILE] [&lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; DNS] [-v]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Forward DNS requests.&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-h, --help            show this &lt;span class=&quot;built_in&quot;&gt;help&lt;/span&gt; message and &lt;span class=&quot;built_in&quot;&gt;exit&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;_&quot;&gt;-l&lt;/span&gt; IPLIST_FILE        path to ip blacklist file&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-c CHNROUTE_FILE      path to china route file&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                      &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; not specified, CHNRoute will be turned off&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;_&quot;&gt;-d&lt;/span&gt;                    &lt;span class=&quot;built_in&quot;&gt;enable&lt;/span&gt; bi-directional CHNRoute filter&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-y                    delay time &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; suspects, default: 0.3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-b BIND_ADDR          address that listens, default: 127.0.0.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-p BIND_PORT          port that listens, default: 53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;_&quot;&gt;-s&lt;/span&gt; DNS                DNS servers to use, default:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                      114.114.114.114,208.67.222.222:443,8.8.8.8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-m                    Using DNS compression pointer mutation&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                      (backlist and delaying would be disabled)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;-v                    verbose logging&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;##SFTP登录&lt;br&gt;在将ipx文件上传到OpenWRT路由器上时，刚开始没有使用WinSCP，而且OpenWRT上也没有SFTP服务，所以是用Everything的HTTP服务器功能，然后在OpenWRT上用wget下载的。后来知道可以直接通过SFTP上传、下载文件后，就开始在OpenWRT上折腾了。&lt;/p&gt;
+&lt;h4 id=&quot;OpenWRT安装SFTP&quot;&gt;&lt;a href=&quot;#OpenWRT安装SFTP&quot; class=&quot;headerlink&quot; title=&quot;OpenWRT安装SFTP&quot;&gt;&lt;/a&gt;OpenWRT安装SFTP&lt;/h4&gt;&lt;p&gt;安装及配置命令如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;opkg update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;opkg install vsftpd openssh-sftp-server&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/vsftpd &lt;span class=&quot;built_in&quot;&gt;enable&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/etc/init.d/vsftpd start&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&quot;md5sum-mismatch-错误&quot;&gt;&lt;a href=&quot;#md5sum-mismatch-错误&quot; class=&quot;headerlink&quot; title=&quot;md5sum mismatch 错误&quot;&gt;&lt;/a&gt;md5sum mismatch 错误&lt;/h4&gt;&lt;p&gt;其中opkg在线安装openssh-sftp-server时出现了md5sum mismatch，无法安装，网上Google了一下，表示可能是linux内核不匹配导致的，解决方法是下载到本地，直接安装即可&lt;br&gt;好吧，打开Everything的HTTP服务器，先下载到OpenWRT路由器上，然后手动安装成功。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##结&lt;br&gt;没有了DNS污染，所有被屏蔽的网站也可以通过Shadowsocks+GFWList PAC绕过去科学上网了，自由遨游Internet的感觉真好啊~ \^O^/&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="openwrt" scheme="http://nivrrex.github.io/tags/openwrt/"/>
+    
+      <category term="internet" scheme="http://nivrrex.github.io/tags/internet/"/>
+    
+      <category term="fanqiang" scheme="http://nivrrex.github.io/tags/fanqiang/"/>
+    
+      <category term="chinadns" scheme="http://nivrrex.github.io/tags/chinadns/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fanqiang with shadowsocks</title>
+    <link href="http://nivrrex.github.io/2015/07/24/fanqiang-with-shadowsocks/"/>
+    <id>http://nivrrex.github.io/2015/07/24/fanqiang-with-shadowsocks/</id>
+    <published>2015-07-24T04:57:00.000Z</published>
+    <updated>2016-04-04T08:57:54.218Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;已经一年多没有更新这个blog了，现在来写点什么吧。&lt;br&gt;这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。&lt;/p&gt;
+&lt;p&gt;最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;hr&gt;
+&lt;p&gt;##VPS架设Shadowsocks&lt;/p&gt;
+&lt;p&gt;####选择Shadowsocks版本&lt;br&gt;Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去&lt;a href=&quot;http://shadowsocks.org/en/download/servers.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;看一下&lt;br&gt;因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-libev&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;shadowsocks-libev&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;####编译Shadowsocks&lt;br&gt;我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/shadowsocks/shadowsocks-libev.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; shadowsocks-libev&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo apt-get install build-essential autoconf libtool libssl-dev&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;./configure &amp;amp;&amp;amp; make&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;make install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;####配置Shadowsocks服务器端&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/shadowsocks-libev/config.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;具体格式如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;server&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;my_server_ip&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;server_port&quot;&lt;/span&gt;:8388,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;local_port&quot;&lt;/span&gt;:1080,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;password&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;barfoo!&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;timeout&quot;&lt;/span&gt;:600,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;method&quot;&lt;/span&gt;:&lt;span class=&quot;string&quot;&gt;&quot;table&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6).&lt;br&gt;server_port: 你的Shadowsocks服务器端口.&lt;br&gt;local_port: 本地端口.&lt;br&gt;password: 你的Shadowsocks服务器的账号密码.&lt;br&gt;method: 你的Shadowsocks服务器采用的加密方式, “bf-cfb” , “aes-256-cfb” , “des-cfb” ,”rc4” , “table” 等等，建议使用”aes-256-cfb”&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vi /etc/rc.local&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;添加以下自启动命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;保存退出即可&lt;/p&gt;
+&lt;p&gt;如果希望加入udp转发功能(enable udprelay mode)，用以搭建DNS转发线路，启动时需要加上-u参数，似乎目前只有shadowsocks-libev有该功能&lt;br&gt;即添加以下自启动命令&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;保存退出即可&lt;/p&gt;
+&lt;p&gt;由于shadowsocks-libev不支持多端口，多用户，如果多人使用的话，需开多个实例，每一个config.json使用不同端口、密码即可&lt;br&gt;官方示例如下：&lt;br&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ss-server -c config1.json &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; pid1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ss-server -c config2.json &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; pid2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ss-server -c config3.json &lt;span class=&quot;_&quot;&gt;-f&lt;/span&gt; pid3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;####配置Shadowsocks客户端&lt;br&gt;可以直接从官网上推荐的各平台&lt;a href=&quot;http://shadowsocks.org/en/download/clients.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;clients&lt;/a&gt;选择自己需要的客户端&lt;br&gt;我选择的是&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-csharp&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;shadowsocks-csharp&lt;/a&gt;&lt;br&gt;最新的release可以在&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks-csharp/releases&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;下载&lt;br&gt;最新的客户端可以通过PAC文件，对GFWList里面的域名进行自动代理，OYE~&lt;/p&gt;
+&lt;p&gt;##路由器折腾Shadowsocks及自动fanqiang&lt;br&gt;好吧，本来希望在OpenWRT上折腾好，所有PC、手机可以直接自动科学上网的，但是一直没有试验成功。&lt;br&gt;一是：对iptables一直心怀敬意，但是折腾的太少，很多东西还不了解&lt;br&gt;二是：中国电信和GFW的合作(原谅我用这个词吧)太好了－&lt;em&gt;－||, 电信的宽带，一个IP地址连接我的VPS PPTP时间长了后，丢包就开始严重起来了，不得已需要重新PPPOE拨号连接，结果是换了一个地址，就没有丢包了呢－&lt;/em&gt;－||。&lt;br&gt;三是：网上有说路由器的性能和内存受限，大流量后，SS有可能会崩溃，这样还要做个守护进程一直看着，随时重新启动，有点麻烦&lt;br&gt;四是：我确实没有折腾成功－_－||。。而且还把路由器折腾快瘫了&lt;br&gt;所以不想在路由器上折腾过多了，太麻烦了。。。&lt;/p&gt;
+&lt;p&gt;####PS：&lt;br&gt;1、目前我的WNDR4300刷新的是Gargoyle(石像鬼)1.7.2固件，是恩山论坛的大拿编译的，&lt;a href=&quot;http://www.right.com.cn/forum/thread-157953-1-2.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;自译4300/3700/AR石像鬼+luci面板+over&amp;gt;90+ss+多拨+迅雷+脱机+广告+13信道+vpn集成&lt;/a&gt;，我没有用他的集成包，而是用了精简版（支持overylay大于90M，集成石像鬼全部官方插件）（PS：换了这个固件后，感觉到VPS的丢包少了一些呢，不知道是不是只是感觉原因－_－||。。）&lt;br&gt;2、原先的华为HG255D刷新的是PandoraBox，&lt;a href=&quot;http://www.right.com.cn/forum/thread-169216-1-3.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PandoraBox HG255D更新支持HWNAT硬件转发 最后的疯狂&lt;/a&gt;，主要是解决了长期以来flash读写出错的问题和增加了硬件转发HWNAT功能，最新版本可以在&lt;a href=&quot;http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/firmware/stable/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;下载&lt;br&gt;3、有想继续折腾OpenWRT+Shadowsocks的，可以自行下载SS的OpenWRT预编译包折腾，在&lt;a href=&quot;http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;下载&lt;/p&gt;
+&lt;p&gt;##最终解决方案&lt;br&gt;就是简单的VPS+Shadowsocks桌面客户端，随时更新GFWList的PAC文件，出问题也就是一台机子的事情。手机想科学上网时，通过原先的PPTP VPN即可&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##总结&lt;br&gt;目前的方案是简单为主，不折腾，合适的设备做合适的事情，半自动也有半自动的好处。折腾的时间去做点其它事情好了~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;已经一年多没有更新这个blog了，现在来写点什么吧。&lt;br&gt;这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。&lt;/p&gt;
+&lt;p&gt;最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="internet" scheme="http://nivrrex.github.io/tags/internet/"/>
+    
+      <category term="fanqiang" scheme="http://nivrrex.github.io/tags/fanqiang/"/>
+    
+      <category term="vps" scheme="http://nivrrex.github.io/tags/vps/"/>
+    
+      <category term="shadowsocks" scheme="http://nivrrex.github.io/tags/shadowsocks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>build openwrt with image builder</title>
+    <link href="http://nivrrex.github.io/2014/07/17/build-openwrt-with-image-builder/"/>
+    <id>http://nivrrex.github.io/2014/07/17/build-openwrt-with-image-builder/</id>
+    <published>2014-07-17T14:17:11.000Z</published>
+    <updated>2016-04-04T08:56:40.610Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;这几天在折腾OpenWrt，前文&lt;a href=&quot;http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/&quot;&gt;fanqiang with openwrt+vps&lt;/a&gt;里说过，    我用的是PandoraBox最新编译的版本，但是其内置的&lt;a href=&quot;http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;packages&lt;/a&gt;里面很多软件没有编译，如Python等。而直接换用官方的&lt;a href=&quot;http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;packages&lt;/a&gt;，会提示兼容性问题，无法直接使用。&lt;br&gt;从网络Google了一下，可以两个同时使用。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dest root /&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dest ram /tmp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;lists_dir ext /var/opkg-lists&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;option overlay_root /overlay&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arch all 100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arch ralink 200&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arch ramips 300&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;arch ramips_24kec 400&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样就解决了软件兼容性的问题，但是前文&lt;a href=&quot;http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/&quot;&gt;fanqiang with openwrt+vps&lt;/a&gt;里面提到的”input/output error”问题仍然没有解决。遂升起了自己编译的念头。&lt;/p&gt;
+&lt;p&gt;##源代码编译&lt;br&gt;要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。&lt;br&gt;于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so…&lt;br&gt;于是到达&lt;a href=&quot;https://www.debian.org/CD/torrent-cd/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官网&lt;/a&gt;选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。&lt;br&gt;通过UltraISO写入到U盘，然后安装到硬盘上，OK。&lt;/p&gt;
+&lt;p&gt;###编译源代码&lt;br&gt;这个痛苦的过程不想说了&lt;br&gt;主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译&lt;br&gt;&lt;a href=&quot;http://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenWrt Buildroot - 安装&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://wiki.openwrt.org/zh-cn/doc/howto/build&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenWrt Buildroot - 使用说明&lt;/a&gt;&lt;br&gt;最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。&lt;/p&gt;
+&lt;p&gt;##Image Builder编译&lt;br&gt;从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：&lt;br&gt;&lt;a href=&quot;http://wiki.openwrt.org/zh-cn/doc/howto/obtain.firmware.generate&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Image Generator (Image Builder)&lt;/a&gt;&lt;br&gt;下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。&lt;br&gt;命令如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;make image PROFILE=HG255D PACKAGES=&lt;span class=&quot;string&quot;&gt;&quot;6in4 6rd 6to4 aria2 arptables badblocks base-files bind-dig bind-libs blkid block-mount busybox cfdisk chat comgt coreutils curl ddns-scripts dnsmasq dnsmasq-full dropbear e2fsprogs ebtables ebtables-utils etherwake fdisk firewall hd-idle ip iptables iptables-mod-account iptables-mod-chaos iptables-mod-condition iptables-mod-conntrack-extra iptables-mod-extra iptables-mod-filter iptables-mod-geoip iptables-mod-hashlimit iptables-mod-ipmark iptables-mod-ipopt iptables-mod-ipp2p iptables-mod-iprange iptables-mod-led iptables-mod-length2 iptables-mod-logmark iptables-mod-nat-extra iptables-mod-sysrq iptables-mod-tee iptables-mod-u32 iptables-mod-ulog iwinfo jshn kernel kmod-arptables kmod-button-hotplug kmod-crypto-arc4 kmod-crypto-ecb kmod-crypto-hash kmod-crypto-sha1 kmod-ebtables kmod-fs-exportfs kmod-fs-ext4 kmod-fs-nfs kmod-fs-nfs-common kmod-fs-ntfs kmod-fs-vfat kmod-fs-xfs kmod-fuse kmod-gpio-dev kmod-gre kmod-ifb kmod-input-core kmod-input-gpio-keys-polled kmod-input-polldev kmod-ipt-account kmod-ipt-chaos kmod-ipt-compat-xtables kmod-ipt-condition kmod-ipt-conntrack kmod-ipt-conntrack-extra kmod-ipt-core kmod-ipt-delude kmod-ipt-filter kmod-ipt-geoip kmod-ipt-hashlimit kmod-ipt-ipmark kmod-ipt-ipopt kmod-ipt-ipp2p kmod-ipt-iprange kmod-ipt-led kmod-ipt-length2 kmod-ipt-logmark kmod-ipt-nat kmod-ipt-nat-extra kmod-ipt-nathelper kmod-ipt-nathelper-extra kmod-ipt-sysrq kmod-ipt-tarpit kmod-ipt-tee kmod-ipt-u32 kmod-ipt-ulog kmod-iptunnel4 kmod-iptunnel6 kmod-ipv6 kmod-l2tp kmod-leds-gpio kmod-ledtrig-default-on kmod-ledtrig-gpio kmod-ledtrig-heartbeat kmod-ledtrig-morse kmod-ledtrig-netdev kmod-ledtrig-netfilter kmod-ledtrig-timer kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-lib-crc16 kmod-lib-textsearch kmod-macvlan kmod-mppe kmod-nls-base kmod-nls-cp437 kmod-nls-iso8859-1 kmod-nls-utf8 kmod-ppp kmod-pppoe kmod-pppol2tp kmod-pppox kmod-pptp kmod-sched kmod-sched-core kmod-scsi-core kmod-scsi-generic kmod-sit kmod-tun kmod-usb-acm kmod-usb-core kmod-usb-ohci kmod-usb-printer kmod-usb-rt305x-dwc_otg kmod-usb-serial kmod-usb-serial-ftdi kmod-usb-serial-option kmod-usb-serial-pl2303 kmod-usb-serial-qualcomm kmod-usb-serial-wwan kmod-usb-storage kmod-usb-storage-extras kmod-usb-uhci libblkid libblobmsg-json libc libcurl libdaemon libext2fs libffi libgcc libgd libip4tc libip6tc libiwinfo libiwinfo-lua libjpeg libjson-c liblua libncurses libnfnetlink libnl-tiny libopenssl libpcap libpng libpthread librt libstdcpp libubox libubus libubus-lua libuci libuci-lua libuuid libxml2 libxtables lua luci luci-app-commands luci-app-ddns luci-app-firewall luci-app-hd-idle luci-app-ntpc luci-app-p910nd luci-app-qos luci-app-radvd luci-app-samba luci-app-upnp luci-app-vnstat luci-app-wol luci-i18n-chinese luci-i18n-english luci-lib-nixio luci-proto-3g luci-proto-ppp mjpg-streamer ntpclient pdnsd ppp ppp-mod-pppoe ppp-mod-pptp python python-mini resolveip restorefactory ser2net transmission-daemon transmission-remote transmission-web uci uhttpd unbound vsftpd wget wireless-tools zlib&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;结果提示出错，原因是，官网的打包是64bit的，而我安装的是i386架构的Debian。&lt;br&gt;OK，重新下载后安装，结果老版本的UltraISO无法读入AMD64的ISO包，仅有一个目录，400多KB大小，更新UltraISO到较新的9.5版本，问题解决。&lt;br&gt;重新安装Debian，配置编译工具，下载Image Builder包，重新编译，结果没有bin文件，Google后晓得，原来需要更改以下Image文件中的内容:&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;../OpenWrt-ImageBuilder-ramips_rt305x-for-linux-x86_64/target/linux/ramips/imag/Makefile&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;查找HG255D字符串，把对应的注释#符号删除，重新编译&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#Image/Build/Profile/HG255D=$(call BuildFirmware/Default16M/$(1),$(1),hg255d,HG255D)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;#	$(call Image/Build/Profile/HG255D,$(1))&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;OK，固件“.bin”文件产生了&lt;br&gt;写入到路由器中，可以正常的拨号上网了~&lt;/p&gt;
+&lt;p&gt;##遗留问题&lt;br&gt;trunk版本和RC1版本的OpenWrt预编译包，PPTP VPN无法正常拨通，提示错误，暂时解决不了，于是又退回PandoraBox版本了，而PandoraBox版本无法安装比较大的软件包，还是出现”input/output error”错误，使用jsff2make也没有用。&lt;br&gt;也不知道到底是HG255D的原因，还是OpenWrt的原因，不准备折腾这个了，计划在LAN中加入一个树莓派，然后用树莓派搞定我的特殊需求，HG255D只做路由器使用。先这样吧~&lt;br&gt;PS:最终方案是，HG255D解决DNS污染问题，本地电脑进行静态路由和VPN拨号。&lt;br&gt;折腾来折腾去啊~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;这几天在折腾OpenWrt，前文&lt;a href=&quot;http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/&quot;&gt;fanqiang with openwrt+vps&lt;/a&gt;里说过，    我用的是PandoraBox最新编译的版本，但是其内置的&lt;a href=&quot;http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages/&quot;&gt;packages&lt;/a&gt;里面很多软件没有编译，如Python等。而直接换用官方的&lt;a href=&quot;http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages/&quot;&gt;packages&lt;/a&gt;，会提示兼容性问题，无法直接使用。&lt;br&gt;从网络Google了一下，可以两个同时使用。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="openwrt" scheme="http://nivrrex.github.io/tags/openwrt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fanqiang with openwrt+vps</title>
+    <link href="http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/"/>
+    <id>http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/</id>
+    <published>2014-07-08T13:27:40.000Z</published>
+    <updated>2014-07-17T14:04:33.808Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;在上一篇&lt;a href=&quot;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&quot;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##找合适的VPS&lt;br&gt;由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。&lt;br&gt;开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃&lt;br&gt;又找到了&lt;a href=&quot;http://www.ramnode.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RamNode&lt;/a&gt;，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。&lt;br&gt;它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。&lt;br&gt;由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~&lt;/p&gt;
+&lt;p&gt;##使用VPS架设VPN&lt;br&gt;这个就不赘述了，网上一搜一大堆，我选择的操作系统是Debian：&lt;br&gt;&lt;a href=&quot;http://qiaodahai.com/buyvm-openvz-vps-debian-pptp-vpn.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://hello.guo.biz/story/install-pptp-on-vps&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.howtogeek.com/51237/setting-up-a-vpn-pptp-server-on-debian/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://blog.bossma.cn/server/linux-vps-debian-vpn-server-pptp/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》&lt;/a&gt;&lt;br&gt;在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：&lt;br&gt;&lt;a href=&quot;http://fanqiang.chinaunix.net/app/other/2005-09-13/3655.shtml&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##路由器+VPN&lt;/p&gt;
+&lt;p&gt;####淘OpenWrt路由器&lt;br&gt;可以独享VPN上网后，还是不满足啊，因为家里2台电脑，手机还想无线上网，一台一台指定好费事啊&lt;br&gt;上一篇&lt;a href=&quot;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&quot;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;，最后提到，可以用开源的路由器固件，搞定路由器上VPN的问题。&lt;br&gt;Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好的&lt;a href=&quot;http://s8.taobao.com/search?spm=a230z.1.0.0.NCbfUi&amp;amp;promote=0&amp;amp;sort=sale-desc&amp;amp;initiative_id=staobaoz_20140708&amp;amp;q=hg255d&amp;amp;pid=mm_10062864_0_0&amp;amp;mode=63#J_relative&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Huawei HG255d&lt;/a&gt;，基本在￥40-￥60之间。CPU为Ralink RT3052，FLASH容量为16MB，内存容量为32MB DDR。我淘的是硬改内存64MB+散热片，刷了不死uboot的，毕竟没那么多精力折腾。&lt;/p&gt;
+&lt;p&gt;####刷新最新OpenWrt固件&lt;br&gt;买回来后，淘宝店主刷新的是比较老的OpenWrt-DreamBox 20120828版本，对应的OpenWrt-DreamBox的源软件包地址已经改变，没法下载新软件，就开始折腾，找了半天，由于DreamBox版本比较老，所以换成了比较新的PandoraBox版本，可以到&lt;a href=&quot;http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/&lt;/a&gt; 下载编译的最新固件，我选择的是最新的20140505版。&lt;br&gt;不得不说，有了uboot，可以一键刷机，还是比较放心的进行折腾的。在找到目前的固件前，刷新了不少版本，但都没啥问题。&lt;/p&gt;
+&lt;p&gt;###设置路由器+VPN+chnroutes静态路由&lt;br&gt;这个根据各人情况都不相同，总而言之，最终搞定。&lt;/p&gt;
+&lt;p&gt;####存在问题&lt;br&gt;一个是VPN拨号后，需要手动添加一下静态路由，不过是自己的VPS架设的VPN，想待多久就待多久，除了掉线，一般也不会下线滴。&lt;br&gt;另一个是，可能淘的Huawei HG255d有问题，路由器在对文件进行操作时，折腾一段时间后，会出现”input/output error”问题，怀疑是硬改导致的？&lt;br&gt;解决方案就是路由器关电重启解决，不过除了装软件，折腾东东，一般不影响使用，所以也不准备找淘宝店主问这个问题了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;在上一篇&lt;a href=&quot;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&quot;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="openwrt" scheme="http://nivrrex.github.io/tags/openwrt/"/>
+    
+      <category term="internet" scheme="http://nivrrex.github.io/tags/internet/"/>
+    
+      <category term="fanqiang" scheme="http://nivrrex.github.io/tags/fanqiang/"/>
+    
+      <category term="vps" scheme="http://nivrrex.github.io/tags/vps/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fanqiang with vpn+chnroutes</title>
+    <link href="http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes/"/>
+    <id>http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes/</id>
+    <published>2014-06-28T02:48:47.000Z</published>
+    <updated>2014-07-17T14:05:02.772Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。&lt;br&gt;翻来覆去的太麻烦。&lt;strong&gt;只好换招了&lt;/strong&gt;。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;##VPN&lt;br&gt;这两天主要做的就是先找到一些免费的VPN，然后通过VPN直接翻墙。不用再去设置goagent的代理了。缺点是所有流量通过VPN走，国内网站访问慢，但是可以通过路由表调整，下面会介绍。&lt;br&gt;随便搜索了下，免费的VPN还是很多的，但是免费的午餐，延时、流量等需要能忍受啊。幸好需要访问的国外网站不是很多~&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;VPN推荐网站&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.srkoo.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;免费VPN推荐网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ilvpn.com/free-vpn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;免费VPN资源网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;网友推荐&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/rsouls/p/3364506.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rsouls《国内最给力五大免费VPN商家》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://oovpn.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oovpn的《十大免费翻墙VPN代理软件推荐》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zq530885040/article/details/10247903&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;zq530885040的《八个提供免费VPN账号的网站》&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;##chnroutes&lt;br&gt;但是VPN的最大缺点是，所有流量全部从VPN走了，这样访问国内网站也从国外绕一圈，自找不自在啊。&lt;br&gt;幸好，网上的大拿们，开发了一个针对国内IP地址段的路由更新表，通过批处理配置路由表等方式，将国内IP指向本机网关，避免VPN绕行，具体项目在：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://code.google.com/p/chnroutes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;chnroutes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://chnroutes-dl.appspot.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;每日更新路由下载&lt;/a&gt;&lt;br&gt;####网上其他人的使用&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://macshuo.com/?tag=chnroutes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MacTalk的《VPN – 长城内外，惟余莽莽》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://markzhang.cn/blog/2013/12/04/chnroutes-on-mac/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markzhang的《Chnroutes的使用（Mac OS X Mavericks）》&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ratazzi.org/2012/06/17/optmize-openvpn-and-chanroutes/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ratazzi的《优化 VPN 和 chnroutes》&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;##路由器自动配置&lt;br&gt;为了避免家里每台电脑都要设置，又有人考虑，直接设置路由器，然后自动fq。&lt;br&gt;只能说，人的懒惰是天生的啊。&lt;br&gt;主要思想是将路由器固件更新为开源固件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.dd-wrt.com/site/index&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DD-WRT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://openwrt.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OpenWrt&lt;/a&gt; &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.polarcloud.com/tomato&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tomato&lt;/a&gt;&lt;br&gt;然后通过&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://code.google.com/p/autoddvpn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;autoddvpn&lt;/a&gt;&lt;br&gt;进行自动的VPN的FQ方案实施。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;具体参考的有：&lt;br&gt;&lt;a href=&quot;http://hong.im/2012/11/03/openvpn-on-wr841n-with-openwrt/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;北落师门的《在wr841n上刷openwrt并使用openvpn自动VPN》&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.wpaengd.com/archives/723&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;错乱の年轮的《DD-WRT+Autoddvpn+OpenVPN=智能翻墙路由》&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://hauy.net/2013/08/dd-wrt-autoddvpn-through-wall/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;hauy的《配置DD-WRT通过autoddvpn的graceMode自动翻墙(PPTP)》&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://ntcn.net/blog/?p=379&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ntcn的《DD-WRT搭配autoddvpn全自动FQ配置精简教程》&lt;/a&gt;&lt;br&gt;因为我的路由器不匹配，所以没有实验。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;通过VPN+chnroutes，目前已经可以轻松的上Goolge、Twitter、Facebook等网站了，挺好的~&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。&lt;br&gt;翻来覆去的太麻烦。&lt;strong&gt;只好换招了&lt;/strong&gt;。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="internet" scheme="http://nivrrex.github.io/tags/internet/"/>
+    
+      <category term="fanqiang" scheme="http://nivrrex.github.io/tags/fanqiang/"/>
+    
+      <category term="vpn" scheme="http://nivrrex.github.io/tags/vpn/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fanqiang with goagent</title>
+    <link href="http://nivrrex.github.io/2014/06/25/fanqiang-with-goagent/"/>
+    <id>http://nivrrex.github.io/2014/06/25/fanqiang-with-goagent/</id>
+    <published>2014-06-25T13:45:26.000Z</published>
+    <updated>2014-07-17T14:04:03.604Z</updated>
+    
+    <content type="html">&lt;p&gt;##来由&lt;br&gt;最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。&lt;br&gt;刚开始以为一段时间就OK了，就用了临时性的解决方案。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&quot;http://www.bing.com/?mkt=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bing&lt;/a&gt;代替。 &lt;em&gt;搜索效果相比Google还有差距&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;a href=&quot;https://www.startpage.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;StartPage&lt;/a&gt;代替。 &lt;em&gt;相比原版，存在部分结果搜索不到的问题&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;直接用&lt;a href=&quot;https://github.com/justjavac/Google-IPs/blob/master/README.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google IP&lt;/a&gt;进行搜索。 &lt;em&gt;可以使用的IP被飞快的封锁&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用网上的免翻墙镜像网站&lt;a href=&quot;https://github.com/greatfire/wiki&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;greatfire&lt;/a&gt;。 &lt;em&gt;是个不错的解决方案，但是怕被封锁后还要重新设置&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用网上的免费VPN&lt;a href=&quot;http://ilvpn.com/free-vpn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;免费VPN资源&lt;/a&gt;。 &lt;em&gt;免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用google的GAE平台的&lt;a href=&quot;https://code.google.com/p/goagent/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;goagent&lt;/a&gt;。 &lt;em&gt;强烈推荐&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;##goagent设置&lt;br&gt;这个网上教程很多，随便搜索都有好几个，如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://maolihui.com/goagent-detail.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;猫理会的goagent教程详细版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.x-berry.com/goagent/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;软矿的GoAgent图文设置教程&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.4a8a.com/post-133.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;海盗船博客的2014最新翻墙方法之goagent翻墙教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;##软件设置&lt;br&gt;在搭建好goagent后，就是如何使用它配合浏览器上网了&lt;br&gt;我常用的浏览器有IE、猎豹、Opera&lt;br&gt;为统一解决，我的方法是：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。&lt;/li&gt;
+&lt;li&gt;2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。&lt;/li&gt;
+&lt;li&gt;3、Opera浏览器：Tools -&amp;gt; Preferences -&amp;gt; Advanced -&amp;gt; Network -&amp;gt; Proxy Servers -&amp;gt; “Use automatic proxy configuration”，填写“file://C:\GoAgent\SwitchyPac.pac”。&lt;/li&gt;
+&lt;li&gt;4、IE和Opera都需要安装goagent的证书，否则访问时会出错。&lt;/li&gt;
+&lt;li&gt;5、可以在&lt;a href=&quot;https://code.google.com/p/autoproxy-gfwlist/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;订阅部分数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;##结&lt;br&gt;堵不如疏，闭关锁国只能让自己更落伍。&lt;br&gt;人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。&lt;br&gt;大多数人使用Google只是想查找自己想要的知识。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;##来由&lt;br&gt;最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。&lt;br&gt;刚开始以为一段时间就OK了，就用了临时性的解决方案。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="internet" scheme="http://nivrrex.github.io/tags/internet/"/>
+    
+      <category term="fanqiang" scheme="http://nivrrex.github.io/tags/fanqiang/"/>
+    
+      <category term="goagent" scheme="http://nivrrex.github.io/tags/goagent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>更新golang excel时遇到的部分问题</title>
+    <link href="http://nivrrex.github.io/2014/06/15/some-problems-for-golang-excel-update/"/>
+    <id>http://nivrrex.github.io/2014/06/15/some-problems-for-golang-excel-update/</id>
+    <published>2014-06-15T09:24:30.000Z</published>
+    <updated>2014-07-17T14:05:12.577Z</updated>
+    
+    <content type="html">&lt;p&gt;趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见&lt;a href=&quot;https://github.com/nivrrex/excel&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;&lt;br&gt;由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;####首字母大小写导致无法外部调用&lt;br&gt;Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;####GOPATH设置&lt;br&gt;golang有几个关键环境变量，需要进行设置&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GOROOT : Golang的安装目录，默认为C:\Go&lt;/li&gt;
+&lt;li&gt;GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录&lt;/li&gt;
+&lt;li&gt;GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin&lt;/li&gt;
+&lt;li&gt;GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows）&lt;/li&gt;
+&lt;li&gt;GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;Batch&quot;&gt;mkdir C:\Go\import
+mkdir C:\Go\import\src
+mkdir C:\Go\import\pkg
+set GOPATH=C:\go\import
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;####Go build无法生成文件&lt;br&gt;这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;####小结&lt;br&gt;归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。&lt;br&gt;Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。&lt;br&gt;日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见&lt;a href=&quot;https://github.com/nivrrex/excel&quot;&gt;这里&lt;/a&gt;&lt;br&gt;由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="golang" scheme="http://nivrrex.github.io/tags/golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常用软件</title>
+    <link href="http://nivrrex.github.io/2014/06/12/commonly-used-software/"/>
+    <id>http://nivrrex.github.io/2014/06/12/commonly-used-software/</id>
+    <published>2014-06-12T14:32:51.000Z</published>
+    <updated>2015-08-01T07:46:42.633Z</updated>
+    
+    <content type="html">&lt;p&gt;记录一下常用的开发工具的网址&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;#开发工具&lt;/p&gt;
+&lt;p&gt;##Ruby&lt;br&gt;&lt;a href=&quot;https://www.ruby-lang.org/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ruby Lang&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://rubyinstaller.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RubyInstaller for Windows&lt;/a&gt;&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;##Golang&lt;br&gt;&lt;a href=&quot;http://golang.org/dl/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Golang Downloads&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://go-lang.cat-v.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Go Language Resources&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##GCC&lt;br&gt;&lt;a href=&quot;http://nuwen.net/mingw.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MinGW Distro&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://tdm-gcc.tdragon.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TDM-GCC&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.equation.com/servlet/equation.cmd?fa=fortran&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Equation Solution&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://sourceforge.net/projects/mingwbuilds/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MinGW-builds&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://mingw-w64.org/doku.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;mingw-w64&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##GTK+&lt;br&gt;&lt;a href=&quot;http://www.gtk.org/download/index.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The GTK+ Project&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.tarnyko.net/en/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tarnyko GTK&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##Tcc&lt;br&gt;&lt;a href=&quot;http://bellard.org/tcc/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tiny C Compiler&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;#经典软件&lt;/p&gt;
+&lt;p&gt;##系统强化&lt;br&gt;&lt;a href=&quot;http://www.ghisler.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Total Commander&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.listary.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Listary&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.voidtools.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Everthing&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.ltr-data.se/opencode.html/#ImDisk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ImDisk&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.softperfect.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SoftPerfect RAM Disk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##系统美化&lt;br&gt;&lt;a href=&quot;https://code.google.com/p/mactype/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MacType&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.stardock.com/products/fences/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Fences&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##输入法&lt;br&gt;&lt;a href=&quot;https://code.google.com/p/rimeime/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;rimeime - 中州韻輸入法引擎&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##编辑器&lt;br&gt;&lt;a href=&quot;http://www.scintilla.org/SciTE.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SciTE&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://www.sublimetext.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sublime Text&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;##网络&lt;br&gt;&lt;a href=&quot;https://code.google.com/p/goagent/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;goagent&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录一下常用的开发工具的网址&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;#开发工具&lt;/p&gt;
+&lt;p&gt;##Ruby&lt;br&gt;&lt;a href=&quot;https://www.ruby-lang.org/en/&quot;&gt;Ruby Lang&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;http://rubyinstaller.org/&quot;&gt;RubyInstaller for Windows&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="soft" scheme="http://nivrrex.github.io/tags/soft/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello GitHub</title>
+    <link href="http://nivrrex.github.io/2014/06/12/hello-github/"/>
+    <id>http://nivrrex.github.io/2014/06/12/hello-github/</id>
+    <published>2014-06-12T11:37:32.000Z</published>
+    <updated>2015-07-24T05:58:21.627Z</updated>
+    
+    <content type="html">&lt;p&gt;欢迎来到我的&lt;a href=&quot;http://nivrrex.github.io/&quot;&gt;GitHub blog&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;这是我用&lt;a href=&quot;http://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Git的一些基本命令&quot;&gt;&lt;a href=&quot;#Git的一些基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git的一些基本命令&quot;&gt;&lt;/a&gt;Git的一些基本命令&lt;/h3&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt; 
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &amp;quot;nivrrex&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email nivrrex@gmail.com&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -C &amp;quot;nivrrex@gmail.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh -T git@github.com -i ./.ssh/id_rsa&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;更多命令可以到&lt;a href=&quot;http://rogerdudler.github.io/git-guide/index.zh.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;git - 简明指南&lt;/a&gt;去查看&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Hexo的一些基本命令&quot;&gt;&lt;a href=&quot;#Hexo的一些基本命令&quot; class=&quot;headerlink&quot; title=&quot;Hexo的一些基本命令&quot;&gt;&lt;/a&gt;Hexo的一些基本命令&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-index --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-archive --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-category --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-tag --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-sitemap --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-feed --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-renderer-ejs --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-renderer-stylus --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-renderer-marked --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-server --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-deployer-git --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo new [post] &amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo server&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo generate&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;更多文档可以到&lt;a href=&quot;http://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo docs&lt;/a&gt;上查看&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Markdown语法&quot;&gt;&lt;a href=&quot;#Markdown语法&quot; class=&quot;headerlink&quot; title=&quot;Markdown语法&quot;&gt;&lt;/a&gt;Markdown语法&lt;/h3&gt;&lt;p&gt;可以去&lt;a href=&quot;http://ibruce.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;不如&lt;/a&gt;的&lt;a href=&quot;http://ibruce.info/2013/11/26/markdown/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Markdown简明语法&lt;/a&gt;去学习下&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;欢迎来到我的&lt;a href=&quot;http://nivrrex.github.io/&quot;&gt;GitHub blog&lt;/a&gt;！&lt;/p&gt;
+&lt;p&gt;这是我用&lt;a href=&quot;http://hexo.io/&quot;&gt;Hexo&lt;/a&gt;编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;Git的一些基本命令&quot;&gt;&lt;a href=&quot;#Git的一些基本命令&quot; class=&quot;headerlink&quot; title=&quot;Git的一些基本命令&quot;&gt;&lt;/a&gt;Git的一些基本命令&lt;/h3&gt;
+    
+    </summary>
+    
+    
+      <category term="live" scheme="http://nivrrex.github.io/tags/live/"/>
+    
+  </entry>
+  
+</feed>
