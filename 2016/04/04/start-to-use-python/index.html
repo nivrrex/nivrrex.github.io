@@ -5,16 +5,16 @@
   
   <title>开始使用Python | nivrrex&#39;s spaces</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#缘来最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。">
+  <meta name="description" content="##缘来最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开始使用Python">
 <meta property="og:url" content="http://nivrrex.github.io/2016/04/04/start-to-use-python/index.html">
 <meta property="og:site_name" content="nivrrex's spaces">
-<meta property="og:description" content="#缘来最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。">
-<meta property="og:updated_time" content="2016-04-04T09:02:16.358Z">
+<meta property="og:description" content="##缘来最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。">
+<meta property="og:updated_time" content="2016-04-04T09:05:37.806Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开始使用Python">
-<meta name="twitter:description" content="#缘来最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。">
+<meta name="twitter:description" content="##缘来最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。">
   
     <link rel="alternate" href="/atom.xml" title="nivrrex&#39;s spaces" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://nivrrex.github.io"></form>
@@ -85,26 +85,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#缘来<br>最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。</p>
+        <p>##缘来<br>最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。</p>
 <a id="more"></a> 
 <hr>
-<p>#开始<br>整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。</p>
+<p>##开始<br>整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。</p>
 <p>整个切换过程还是比较顺利的，毕竟两个语言有很大的相近的地方。当然也遇到了不少坑，比如Python3和Python2的选择，print输出的坑。</p>
-<p>#Python3 vs Python2<br>这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。</p>
+<p>##Python3 vs Python2<br>这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。</p>
 <p>但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。</p>
-<p>#print无法输出中文<br>这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：</p>
+<p>##print无法输出中文<br>这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io, sys</span><br><span class="line">sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=<span class="string">'utf8'</span>)</span><br></pre></td></tr></table></figure>
 <p>相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。</p>
-<p>#Python VS Ruby<br>这个题目比较大，只能简单的就第一感觉来说：</p>
+<p>##Python VS Ruby<br>这个题目比较大，只能简单的就第一感觉来说：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Python的好处就是编码样式比较统一，第三方类库超多。</span><br><span class="line">可以关注自己需要解决的问题，不用费心思在语法细节上。</span><br></pre></td></tr></table></figure>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。</span><br><span class="line">但是第三方类库和Python相比差距还是比较大。</span><br></pre></td></tr></table></figure>
-<p>#结<br>其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。</p>
+<p>##结<br>其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。</p>
 <p>最终还是选择了Python，而且可能近期都会使用它。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://nivrrex.github.io/2016/04/04/start-to-use-python/" data-id="cimlrt6o1000l6skjlc89m8z2" class="article-share-link">Delen</a>
+      <a data-url="http://nivrrex.github.io/2016/04/04/start-to-use-python/" data-id="cimlruuhx000ke4kjtrbw9du6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
@@ -117,7 +117,7 @@
   
   
     <a href="/2015/08/01/change-editer-with-sublime-text/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ouder</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">换用sublime text编辑器</div>
     </a>
   
@@ -135,7 +135,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/chinadns/">chinadns</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debian/">debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dnsmasq/">dnsmasq</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/fanqiang/">fanqiang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/goagent/">goagent</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/internet/">internet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/live/">live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/soft/">soft</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime-text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vpn/">vpn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vps/">vps</a></li></ul>
     </div>
@@ -154,7 +154,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">July 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">June 2014</a></li></ul>
     </div>
@@ -164,7 +164,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
