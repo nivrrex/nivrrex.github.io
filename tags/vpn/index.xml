@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vpn on Nivrrex&#39;s blog</title>
+    <link>http://nivrrex.github.io/tags/vpn/</link>
+    <description>Recent content in Vpn on Nivrrex&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 28 Jun 2014 10:48:47 +0800</lastBuildDate>
+    
+	<atom:link href="http://nivrrex.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>fanqiang with vpn&#43;chnroutes</title>
+      <link>http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/</link>
+      <pubDate>Sat, 28 Jun 2014 10:48:47 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/</guid>
+      <description>来由 用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。 翻来覆去的太麻烦。只好换招了。 VPN 这两天主要做的就是先找到一些免费的VPN，然后通过VPN直接翻墙。不用再去设置goagent的代理了。缺点是所有流量通过VPN走，国内网站访问慢，但是可以通过路由表调整，下面会介绍。 随便搜索了下，免费的VPN还是很多的，但是免费的午餐，延时、流量等需要能忍受啊。幸好需要访问的国外网站不是很多~
+VPN推荐网站:
+ 免费VPN推荐网 免费VPN资源网  网友推荐:
+ rsouls《国内最给力五大免费VPN商家》 oovpn的《十大免费翻墙VPN代理软件推荐》 zq530885040的《八个提供免费VPN账号的网站》  chnroutes 但是VPN的最大缺点是，所有流量全部从VPN走了，这样访问国内网站也从国外绕一圈，自找不自在啊。 幸好，网上的大拿们，开发了一个针对国内IP地址段的路由更新表，通过批处理配置路由表等方式，将国内IP指向本机网关，避免VPN绕行，具体项目在：
+ chnroutes 每日更新路由下载  网上其他人的使用  MacTalk的《VPN – 长城内外，惟余莽莽》 markzhang的《Chnroutes的使用（Mac OS X Mavericks）》 ratazzi的《优化 VPN 和 chnroutes》  路由器自动配置 为了避免家里每台电脑都要设置，又有人考虑，直接设置路由器，然后自动fq。 只能说，人的懒惰是天生的啊。 主要思想是将路由器固件更新为开源固件
+ DD-WRT OpenWrt Tomato  然后通过
+ autoddvpn 进行自动的VPN的FQ方案实施。  具体参考的有：
+ 北落师门的《在wr841n上刷openwrt并使用openvpn自动VPN》 错乱の年轮的《DD-WRT+Autoddvpn+OpenVPN=智能翻墙路由》 hauy的《配置DD-WRT通过autoddvpn的graceMode自动翻墙(PPTP)》 ntcn的《DD-WRT搭配autoddvpn全自动FQ配置精简教程》 因为我的路由器不匹配，所以没有实验。  通过VPN+chnroutes，目前已经可以轻松的上Goolge、Twitter、Facebook等网站了，挺好的~</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+
+
+<link rel="canonical" href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>build openwrt with image builder - Nivrrex&#39;s blog</title>
+    
+<meta name="description" content="来由 这几天在折腾OpenWrt，前文fanqiang with openwrt&#43;vps里说过， 我用的是PandoraBox最新编译的版本，但是其内置的packages里面很多软件没有编译，如Python等。而直接换用官方的packages，会提示兼容性问题，无法直接使用。 从网络Google了一下，可以两个同时使用。 src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages dest root / dest ram /tmp lists_dir ext /var/opkg-lists option overlay_root /overlay arch all 100 arch ralink 200 arch ramips 300 arch ramips_24kec 400  这样就解决了软件兼容性的问题，但是前文fanqiang with openwrt&#43;vps里面提到的&amp;rdquo;input/output error&amp;rdquo;问题仍然没有解决。遂升起了自己编译的念头。源代码编译 要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。 于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&amp;hellip; 于是到达官网选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。 通过UltraISO写入到U盘，然后安装到硬盘上，OK。编译源代码 这个痛苦的过程不想说了 主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译 OpenWrt Buildroot - 安装 OpenWrt Buildroot - 使用说明 最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。  Image Builder编译 从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：*Image Generator (Image Builder) 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。 命令如下：">
+
+<meta property="og:title" content="build openwrt with image builder - Nivrrex&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://nivrrex.github.io/post/build-openwrt-with-image-builder/">
+<meta property="og:image" content="http://nivrrex.github.io/images/default.png">
+<meta property="og:site_name" content="Nivrrex&#39;s blog">
+<meta property="og:description" content="来由 这几天在折腾OpenWrt，前文fanqiang with openwrt&#43;vps里说过， 我用的是PandoraBox最新编译的版本，但是其内置的packages里面很多软件没有编译，如Python等。而直接换用官方的packages，会提示兼容性问题，无法直接使用。 从网络Google了一下，可以两个同时使用。 src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages dest root / dest ram /tmp lists_dir ext /var/opkg-lists option overlay_root /overlay arch all 100 arch ralink 200 arch ramips 300 arch ramips_24kec 400  这样就解决了软件兼容性的问题，但是前文fanqiang with openwrt&#43;vps里面提到的&amp;rdquo;input/output error&amp;rdquo;问题仍然没有解决。遂升起了自己编译的念头。源代码编译 要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。 于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&amp;hellip; 于是到达官网选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。 通过UltraISO写入到U盘，然后安装到硬盘上，OK。编译源代码 这个痛苦的过程不想说了 主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译 OpenWrt Buildroot - 安装 OpenWrt Buildroot - 使用说明 最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。  Image Builder编译 从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：*Image Generator (Image Builder) 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。 命令如下：">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Nivrrex&#39;s blog">
+<meta name="twitter:url" content="http://nivrrex.github.io/post/build-openwrt-with-image-builder/">
+<meta name="twitter:title" content="build openwrt with image builder - Nivrrex&#39;s blog">
+<meta name="twitter:description" content="来由 这几天在折腾OpenWrt，前文fanqiang with openwrt&#43;vps里说过， 我用的是PandoraBox最新编译的版本，但是其内置的packages里面很多软件没有编译，如Python等。而直接换用官方的packages，会提示兼容性问题，无法直接使用。 从网络Google了一下，可以两个同时使用。 src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages dest root / dest ram /tmp lists_dir ext /var/opkg-lists option overlay_root /overlay arch all 100 arch ralink 200 arch ramips 300 arch ramips_24kec 400  这样就解决了软件兼容性的问题，但是前文fanqiang with openwrt&#43;vps里面提到的&amp;rdquo;input/output error&amp;rdquo;问题仍然没有解决。遂升起了自己编译的念头。源代码编译 要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。 于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&amp;hellip; 于是到达官网选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。 通过UltraISO写入到U盘，然后安装到硬盘上，OK。编译源代码 这个痛苦的过程不想说了 主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译 OpenWrt Buildroot - 安装 OpenWrt Buildroot - 使用说明 最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。  Image Builder编译 从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：*Image Generator (Image Builder) 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。 命令如下：">
+<meta name="twitter:image" content="http://nivrrex.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://nivrrex.github.io/"
+    },
+    "headline": "build openwrt with image builder - Nivrrex&#39;s blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://nivrrex.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2014-07-17T22:17:11JST",
+    "dateModified": "2014-07-17T22:17:11JST",
+    "author": {
+      "@type": "Person",
+      "name": "Nivrrex&#39;s blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nivrrex&#39;s blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://nivrrex.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "来由 这几天在折腾OpenWrt，前文fanqiang with openwrt+vps里说过， 我用的是PandoraBox最新编译的版本，但是其内置的packages里面很多软件没有编译，如Python等。而直接换用官方的packages，会提示兼容性问题，无法直接使用。 从网络Google了一下，可以两个同时使用。 src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages dest root / dest ram /tmp lists_dir ext /var/opkg-lists option overlay_root /overlay arch all 100 arch ralink 200 arch ramips 300 arch ramips_24kec 400  这样就解决了软件兼容性的问题，但是前文fanqiang with openwrt+vps里面提到的&rdquo;input/output error&rdquo;问题仍然没有解决。遂升起了自己编译的念头。
+源代码编译 要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。 于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&hellip; 于是到达官网选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。 通过UltraISO写入到U盘，然后安装到硬盘上，OK。
+编译源代码 这个痛苦的过程不想说了 主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译
+ OpenWrt Buildroot - 安装 OpenWrt Buildroot - 使用说明 最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。  Image Builder编译 从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：
+*Image Generator (Image Builder) 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。 命令如下："
+  }
+</script>
+
+
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://nivrrex.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://nivrrex.github.io/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">build openwrt with image builder</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-07-17T22:17:11JST">Jul 17, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">build openwrt with image builder</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h4 id="来由">来由</h4>
+
+<p>这几天在折腾OpenWrt，前文<a href="http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/">fanqiang with openwrt+vps</a>里说过， 我用的是PandoraBox最新编译的版本，但是其内置的<a href="http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages/">packages</a>里面很多软件没有编译，如Python等。而直接换用官方的<a href="http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages/">packages</a>，会提示兼容性问题，无法直接使用。
+从网络Google了一下，可以两个同时使用。
+<!-- more --></p>
+
+<pre><code class="language-bash">src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages
+src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages
+
+dest root /
+dest ram /tmp
+lists_dir ext /var/opkg-lists
+option overlay_root /overlay
+
+arch all 100
+arch ralink 200
+arch ramips 300
+arch ramips_24kec 400
+</code></pre>
+
+<p>这样就解决了软件兼容性的问题，但是前文<a href="http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/">fanqiang with openwrt+vps</a>里面提到的&rdquo;input/output error&rdquo;问题仍然没有解决。遂升起了自己编译的念头。</p>
+
+<h4 id="源代码编译">源代码编译</h4>
+
+<p>要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。
+于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&hellip;
+于是到达<a href="https://www.debian.org/CD/torrent-cd/">官网</a>选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。
+通过UltraISO写入到U盘，然后安装到硬盘上，OK。</p>
+
+<h6 id="编译源代码">编译源代码</h6>
+
+<p>这个痛苦的过程不想说了
+主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译</p>
+
+<ul>
+<li><a href="http://wiki.openwrt.org/zh-cn/doc/howto/buildroot.exigence">OpenWrt Buildroot - 安装</a></li>
+<li><a href="http://wiki.openwrt.org/zh-cn/doc/howto/build">OpenWrt Buildroot - 使用说明</a>
+最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。</li>
+</ul>
+
+<h4 id="image-builder编译">Image Builder编译</h4>
+
+<p>从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：</p>
+
+<p>*<a href="http://wiki.openwrt.org/zh-cn/doc/howto/obtain.firmware.generate">Image Generator (Image Builder)</a>
+下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。
+命令如下：</p>
+
+<pre><code class="language-bash">make image PROFILE=HG255D PACKAGES=&quot;6in4 6rd 6to4 aria2 arptables badblocks base-files bind-dig bind-libs blkid block-mount busybox cfdisk chat comgt coreutils curl ddns-scripts dnsmasq dnsmasq-full dropbear e2fsprogs ebtables ebtables-utils etherwake fdisk firewall hd-idle ip iptables iptables-mod-account iptables-mod-chaos iptables-mod-condition iptables-mod-conntrack-extra iptables-mod-extra iptables-mod-filter iptables-mod-geoip iptables-mod-hashlimit iptables-mod-ipmark iptables-mod-ipopt iptables-mod-ipp2p iptables-mod-iprange iptables-mod-led iptables-mod-length2 iptables-mod-logmark iptables-mod-nat-extra iptables-mod-sysrq iptables-mod-tee iptables-mod-u32 iptables-mod-ulog iwinfo jshn kernel kmod-arptables kmod-button-hotplug kmod-crypto-arc4 kmod-crypto-ecb kmod-crypto-hash kmod-crypto-sha1 kmod-ebtables kmod-fs-exportfs kmod-fs-ext4 kmod-fs-nfs kmod-fs-nfs-common kmod-fs-ntfs kmod-fs-vfat kmod-fs-xfs kmod-fuse kmod-gpio-dev kmod-gre kmod-ifb kmod-input-core kmod-input-gpio-keys-polled kmod-input-polldev kmod-ipt-account kmod-ipt-chaos kmod-ipt-compat-xtables kmod-ipt-condition kmod-ipt-conntrack kmod-ipt-conntrack-extra kmod-ipt-core kmod-ipt-delude kmod-ipt-filter kmod-ipt-geoip kmod-ipt-hashlimit kmod-ipt-ipmark kmod-ipt-ipopt kmod-ipt-ipp2p kmod-ipt-iprange kmod-ipt-led kmod-ipt-length2 kmod-ipt-logmark kmod-ipt-nat kmod-ipt-nat-extra kmod-ipt-nathelper kmod-ipt-nathelper-extra kmod-ipt-sysrq kmod-ipt-tarpit kmod-ipt-tee kmod-ipt-u32 kmod-ipt-ulog kmod-iptunnel4 kmod-iptunnel6 kmod-ipv6 kmod-l2tp kmod-leds-gpio kmod-ledtrig-default-on kmod-ledtrig-gpio kmod-ledtrig-heartbeat kmod-ledtrig-morse kmod-ledtrig-netdev kmod-ledtrig-netfilter kmod-ledtrig-timer kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-lib-crc16 kmod-lib-textsearch kmod-macvlan kmod-mppe kmod-nls-base kmod-nls-cp437 kmod-nls-iso8859-1 kmod-nls-utf8 kmod-ppp kmod-pppoe kmod-pppol2tp kmod-pppox kmod-pptp kmod-sched kmod-sched-core kmod-scsi-core kmod-scsi-generic kmod-sit kmod-tun kmod-usb-acm kmod-usb-core kmod-usb-ohci kmod-usb-printer kmod-usb-rt305x-dwc_otg kmod-usb-serial kmod-usb-serial-ftdi kmod-usb-serial-option kmod-usb-serial-pl2303 kmod-usb-serial-qualcomm kmod-usb-serial-wwan kmod-usb-storage kmod-usb-storage-extras kmod-usb-uhci libblkid libblobmsg-json libc libcurl libdaemon libext2fs libffi libgcc libgd libip4tc libip6tc libiwinfo libiwinfo-lua libjpeg libjson-c liblua libncurses libnfnetlink libnl-tiny libopenssl libpcap libpng libpthread librt libstdcpp libubox libubus libubus-lua libuci libuci-lua libuuid libxml2 libxtables lua luci luci-app-commands luci-app-ddns luci-app-firewall luci-app-hd-idle luci-app-ntpc luci-app-p910nd luci-app-qos luci-app-radvd luci-app-samba luci-app-upnp luci-app-vnstat luci-app-wol luci-i18n-chinese luci-i18n-english luci-lib-nixio luci-proto-3g luci-proto-ppp mjpg-streamer ntpclient pdnsd ppp ppp-mod-pppoe ppp-mod-pptp python python-mini resolveip restorefactory ser2net transmission-daemon transmission-remote transmission-web uci uhttpd unbound vsftpd wget wireless-tools zlib&quot;
+</code></pre>
+
+<p>结果提示出错，原因是，官网的打包是64bit的，而我安装的是i386架构的Debian。
+OK，重新下载后安装，结果老版本的UltraISO无法读入AMD64的ISO包，仅有一个目录，400多KB大小，更新UltraISO到较新的9.5版本，问题解决。
+重新安装Debian，配置编译工具，下载Image Builder包，重新编译，结果没有bin文件，Google后晓得，原来需要更改以下Image文件中的内容:</p>
+
+<pre><code class="language-bash">../OpenWrt-ImageBuilder-ramips_rt305x-for-linux-x86_64/target/linux/ramips/imag/Makefile
+</code></pre>
+
+<p>查找HG255D字符串，把对应的注释#符号删除，重新编译</p>
+
+<pre><code class="language-bash">#Image/Build/Profile/HG255D=$(call BuildFirmware/Default16M/$(1),$(1),hg255d,HG255D)
+#	$(call Image/Build/Profile/HG255D,$(1))
+</code></pre>
+
+<p>OK，固件“.bin”文件产生了
+写入到路由器中，可以正常的拨号上网了~</p>
+
+<h6 id="遗留问题">遗留问题</h6>
+
+<p>trunk版本和RC1版本的OpenWrt预编译包，PPTP VPN无法正常拨通，提示错误，暂时解决不了，于是又退回PandoraBox版本了，而PandoraBox版本无法安装比较大的软件包，还是出现&rdquo;input/output error&rdquo;错误，使用jsff2make也没有用。
+也不知道到底是HG255D的原因，还是OpenWrt的原因，不准备折腾这个了，计划在LAN中加入一个树莓派，然后用树莓派搞定我的特殊需求，HG255D只做路由器使用。先这样吧~
+PS:最终方案是，HG255D解决DNS污染问题，本地电脑进行静态路由和VPN拨号。
+折腾来折腾去啊~</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://nivrrex.github.io/tags/openwrt/">openwrt</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

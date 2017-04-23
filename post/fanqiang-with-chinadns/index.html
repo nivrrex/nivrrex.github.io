@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+
+
+<link rel="canonical" href="http://nivrrex.github.io/post/fanqiang-with-chinadns/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>fanqiang with chinadns - Nivrrex&#39;s blog</title>
+    
+<meta name="description" content="来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下安装 首先需要在OpenWRT上安装如下包：opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32  配置 然后配置iptables的防火墙策略vi /etc/firewall.user  添加如下命令iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &amp;quot;0&amp;amp;0x0F000000=0x05000000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@8&amp;amp;0x810F=0x8000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@12&amp;amp;0xFFFF=0x0000&amp;quot; -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|042442B2|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|0807C62D|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|1759053C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|253D369E|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|2E52AE44|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|31027B38|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|364C8701|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|3B1803AD|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|402158A1|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4021632F|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4042A3FB|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4168CAFC|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|41A0DB71|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|422DFCED|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|480ECD63|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|480ECD68|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D2766|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D2771|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D7F66|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D9B66|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4D04075C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4E10310F|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|5D2E0859|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|76053106|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|80797E8B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|9F6A794B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|A9840D67|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|BC050460|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|BDA31105|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|C043C606|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|C504040C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CA6A0102|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CAB50755|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CB620741|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CBA1E6AB|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CF0C5862|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D0381F2B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1244921|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D155E58A|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1913632|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1DC1EAE|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D35E4293|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D5A9FB23|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D8DDBCB6|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D8EAB30D|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|F3B9BB27|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|F9812E30|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|FD9D0EA5|&amp;quot; --from 60 --to 180 -j DROP  重启防火墙即可">
+
+<meta property="og:title" content="fanqiang with chinadns - Nivrrex&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://nivrrex.github.io/post/fanqiang-with-chinadns/">
+<meta property="og:image" content="http://nivrrex.github.io/images/default.png">
+<meta property="og:site_name" content="Nivrrex&#39;s blog">
+<meta property="og:description" content="来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下安装 首先需要在OpenWRT上安装如下包：opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32  配置 然后配置iptables的防火墙策略vi /etc/firewall.user  添加如下命令iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &amp;quot;0&amp;amp;0x0F000000=0x05000000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@8&amp;amp;0x810F=0x8000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@12&amp;amp;0xFFFF=0x0000&amp;quot; -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|042442B2|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|0807C62D|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|1759053C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|253D369E|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|2E52AE44|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|31027B38|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|364C8701|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|3B1803AD|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|402158A1|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4021632F|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4042A3FB|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4168CAFC|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|41A0DB71|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|422DFCED|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|480ECD63|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|480ECD68|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D2766|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D2771|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D7F66|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D9B66|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4D04075C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4E10310F|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|5D2E0859|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|76053106|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|80797E8B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|9F6A794B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|A9840D67|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|BC050460|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|BDA31105|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|C043C606|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|C504040C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CA6A0102|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CAB50755|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CB620741|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CBA1E6AB|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CF0C5862|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D0381F2B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1244921|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D155E58A|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1913632|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1DC1EAE|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D35E4293|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D5A9FB23|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D8DDBCB6|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D8EAB30D|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|F3B9BB27|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|F9812E30|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|FD9D0EA5|&amp;quot; --from 60 --to 180 -j DROP  重启防火墙即可">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Nivrrex&#39;s blog">
+<meta name="twitter:url" content="http://nivrrex.github.io/post/fanqiang-with-chinadns/">
+<meta name="twitter:title" content="fanqiang with chinadns - Nivrrex&#39;s blog">
+<meta name="twitter:description" content="来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下安装 首先需要在OpenWRT上安装如下包：opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32  配置 然后配置iptables的防火墙策略vi /etc/firewall.user  添加如下命令iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &amp;quot;0&amp;amp;0x0F000000=0x05000000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@8&amp;amp;0x810F=0x8000 &amp;amp;&amp;amp; 0&amp;gt;&amp;gt;22&amp;amp;0x3C@12&amp;amp;0xFFFF=0x0000&amp;quot; -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|042442B2|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|0807C62D|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|1759053C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|253D369E|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|2E52AE44|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|31027B38|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|364C8701|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|3B1803AD|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|402158A1|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4021632F|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4042A3FB|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4168CAFC|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|41A0DB71|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|422DFCED|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|480ECD63|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|480ECD68|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D2766|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D2771|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D7F66|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4A7D9B66|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4D04075C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|4E10310F|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|5D2E0859|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|76053106|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|80797E8B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|9F6A794B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|A9840D67|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|BC050460|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|BDA31105|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|C043C606|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|C504040C|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CA6A0102|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CAB50755|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CB620741|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CBA1E6AB|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|CF0C5862|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D0381F2B|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1244921|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D155E58A|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1913632|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D1DC1EAE|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D35E4293|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D5A9FB23|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D8DDBCB6|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|D8EAB30D|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|F3B9BB27|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|F9812E30|&amp;quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &amp;quot;|FD9D0EA5|&amp;quot; --from 60 --to 180 -j DROP  重启防火墙即可">
+<meta name="twitter:image" content="http://nivrrex.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://nivrrex.github.io/"
+    },
+    "headline": "fanqiang with chinadns - Nivrrex&#39;s blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://nivrrex.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-07-26T12:54:59JST",
+    "dateModified": "2015-07-26T12:54:59JST",
+    "author": {
+      "@type": "Person",
+      "name": "Nivrrex&#39;s blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nivrrex&#39;s blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://nivrrex.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
+Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
+安装 首先需要在OpenWRT上安装如下包：
+opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32  配置 然后配置iptables的防火墙策略
+vi /etc/firewall.user  添加如下命令
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &quot;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&quot; -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|042442B2|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|0807C62D|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|1759053C|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|253D369E|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|2E52AE44|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|31027B38|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|364C8701|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|3B1803AD|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|402158A1|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4021632F|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4042A3FB|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4168CAFC|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|41A0DB71|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|422DFCED|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|480ECD63|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|480ECD68|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D2766|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D2771|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D7F66|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D9B66|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4D04075C|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4E10310F|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|5D2E0859|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|76053106|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|80797E8B|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|9F6A794B|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|A9840D67|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|BC050460|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|BDA31105|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|C043C606|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|C504040C|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CA6A0102|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CAB50755|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CB620741|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CBA1E6AB|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CF0C5862|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D0381F2B|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1244921|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D155E58A|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1913632|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1DC1EAE|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D35E4293|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D5A9FB23|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D8DDBCB6|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D8EAB30D|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|F3B9BB27|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|F9812E30|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|FD9D0EA5|&quot; --from 60 --to 180 -j DROP  重启防火墙即可"
+  }
+</script>
+
+
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://nivrrex.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://nivrrex.github.io/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">fanqiang with chinadns</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-26T12:54:59JST">Jul 26, 2015</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">fanqiang with chinadns</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h4 id="来由">来由</h4>
+
+<p>用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。</p>
+
+<!-- more -->
+
+<hr />
+
+<h4 id="old解决方案-freerouterv2">Old解决方案 - FreeRouterV2</h4>
+
+<p>以前的解决方案是借用<a href="https://github.com/lifetyper/FreeRouter_V2">FreeRouterV2</a>的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，<a href="https://github.com/lifetyper/FreeRouter_V2/blob/master/FreeRouterV2_HandBook.pdf">如下</a></p>
+
+<h6 id="安装">安装</h6>
+
+<p>首先需要在OpenWRT上安装如下包：</p>
+
+<pre><code class="language-bash">opkg update
+opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32
+</code></pre>
+
+<h6 id="配置">配置</h6>
+
+<p>然后配置iptables的防火墙策略</p>
+
+<pre><code class="language-bash">vi /etc/firewall.user
+</code></pre>
+
+<p>添加如下命令</p>
+
+<pre><code class="language-bash">iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &quot;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&quot; -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|042442B2|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|0807C62D|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|1759053C|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|253D369E|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|2E52AE44|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|31027B38|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|364C8701|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|3B1803AD|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|402158A1|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4021632F|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4042A3FB|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4168CAFC|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|41A0DB71|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|422DFCED|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|480ECD63|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|480ECD68|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D2766|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D2771|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D7F66|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D9B66|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4D04075C|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4E10310F|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|5D2E0859|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|76053106|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|80797E8B|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|9F6A794B|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|A9840D67|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|BC050460|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|BDA31105|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|C043C606|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|C504040C|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CA6A0102|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CAB50755|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CB620741|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CBA1E6AB|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CF0C5862|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D0381F2B|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1244921|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D155E58A|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1913632|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1DC1EAE|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D35E4293|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D5A9FB23|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D8DDBCB6|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D8EAB30D|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|F3B9BB27|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|F9812E30|&quot; --from 60 --to 180  -j DROP
+iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|FD9D0EA5|&quot; --from 60 --to 180  -j DROP
+</code></pre>
+
+<p>重启防火墙即可</p>
+
+<pre><code class="language-bash">/etc/init.d/firewall restart
+</code></pre>
+
+<h4 id="chinadns解决方案">ChinaDNS解决方案</h4>
+
+<p>以上的方案挺好，但是GFW的污染IP似乎有增多现象，所以想省心一点，正好shadowsocks作者<a href="https://github.com/clowwindy">clowwindy</a>有一个针对DNS污染的作品<a href="https://github.com/clowwindy/ChinaDNS">ChinaDNS</a>，就直接拿过来用了。
+针对OpenWRT/Gargoyle，作者有直接编译完毕的ipk包，下载后安装到OpenWRT即可，地址<a href="https://github.com/clowwindy/ChinaDNS/releases">如下</a></p>
+
+<h6 id="安装-1">安装</h6>
+
+<pre><code class="language-bash">opkg install ChinaDNS_1.x.x_ar71xx.ipk
+/etc/init.d/chinadns start
+/etc/init.d/chinadns enable
+</code></pre>
+
+<h6 id="配置-1">配置</h6>
+
+<pre><code class="language-bash">vi /etc/dnsmasq.conf
+</code></pre>
+
+<p>添加如下内容并保存退出</p>
+
+<pre><code class="language-bash">no-resolv
+server=127.0.0.1#5353
+</code></pre>
+
+<p>重新启动</p>
+
+<pre><code class="language-bash">/etc/init.d/chinadns restart
+/etc/init.d/dnsmasq restart
+</code></pre>
+
+<p>此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置</p>
+
+<pre><code class="language-bash">vi /etc/init.d/chinadns
+</code></pre>
+
+<p>具体参数如下</p>
+
+<pre><code class="language-bash">usage: chinadns [-h] [-l IPLIST_FILE] [-b BIND_ADDR] [-p BIND_PORT]
+       [-c CHNROUTE_FILE] [-s DNS] [-v]
+Forward DNS requests.
+
+-h, --help            show this help message and exit
+-l IPLIST_FILE        path to ip blacklist file
+-c CHNROUTE_FILE      path to china route file
+                      if not specified, CHNRoute will be turned off
+-d                    enable bi-directional CHNRoute filter
+-y                    delay time for suspects, default: 0.3
+-b BIND_ADDR          address that listens, default: 127.0.0.1
+-p BIND_PORT          port that listens, default: 53
+-s DNS                DNS servers to use, default:
+                      114.114.114.114,208.67.222.222:443,8.8.8.8
+-m                    Using DNS compression pointer mutation
+                      (backlist and delaying would be disabled)
+-v                    verbose logging
+</code></pre>
+
+<h4 id="sftp登录">SFTP登录</h4>
+
+<p>在将ipx文件上传到OpenWRT路由器上时，刚开始没有使用WinSCP，而且OpenWRT上也没有SFTP服务，所以是用Everything的HTTP服务器功能，然后在OpenWRT上用wget下载的。后来知道可以直接通过SFTP上传、下载文件后，就开始在OpenWRT上折腾了。</p>
+
+<h6 id="openwrt安装sftp">OpenWRT安装SFTP</h6>
+
+<p>安装及配置命令如下：</p>
+
+<pre><code class="language-bash">opkg update
+opkg install vsftpd openssh-sftp-server
+/etc/init.d/vsftpd enable
+/etc/init.d/vsftpd start
+</code></pre>
+
+<h6 id="md5sum-mismatch-错误">md5sum mismatch 错误</h6>
+
+<p>其中opkg在线安装openssh-sftp-server时出现了md5sum mismatch，无法安装，网上Google了一下，表示可能是linux内核不匹配导致的，解决方法是下载到本地，直接安装即可
+好吧，打开Everything的HTTP服务器，先下载到OpenWRT路由器上，然后手动安装成功。</p>
+
+<hr />
+
+<h4 id="结">结</h4>
+
+<p>没有了DNS污染，所有被屏蔽的网站也可以通过Shadowsocks+GFWList PAC绕过去科学上网了，自由遨游Internet的感觉真好啊~ \^O^/</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://nivrrex.github.io/tags/internet/">internet</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/fanqiang/">fanqiang</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/openwrt/">openwrt</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/chinadns/">chinadns</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

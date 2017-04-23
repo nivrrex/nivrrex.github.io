@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+
+
+<link rel="canonical" href="http://nivrrex.github.io/post/change-hexo-to-hugo/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>change hexo to hugo - Nivrrex&#39;s blog</title>
+    
+<meta name="description" content="缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：hugo 这个go语言写的大杀器。 A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移下载hugo hugo就是一个执行文件，可以直接从官网下载windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/生成站点 可以到Hugo - Introduction to Hugo自行学习Hugo - Hugo Quickstart Guide 快速上手指南生成站点比较简单：hugo new site sitename  主题 可以到以下站址找自己喜欢的主题，我最终选择的是 beg Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：cd themes git clone https://github.com/dim0627/hugo_theme_beg.git  生成页面 hugo new post/about.md  然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor">
+
+<meta property="og:title" content="change hexo to hugo - Nivrrex&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://nivrrex.github.io/post/change-hexo-to-hugo/">
+<meta property="og:image" content="http://nivrrex.github.io/images/default.png">
+<meta property="og:site_name" content="Nivrrex&#39;s blog">
+<meta property="og:description" content="缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：hugo 这个go语言写的大杀器。 A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移下载hugo hugo就是一个执行文件，可以直接从官网下载windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/生成站点 可以到Hugo - Introduction to Hugo自行学习Hugo - Hugo Quickstart Guide 快速上手指南生成站点比较简单：hugo new site sitename  主题 可以到以下站址找自己喜欢的主题，我最终选择的是 beg Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：cd themes git clone https://github.com/dim0627/hugo_theme_beg.git  生成页面 hugo new post/about.md  然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Nivrrex&#39;s blog">
+<meta name="twitter:url" content="http://nivrrex.github.io/post/change-hexo-to-hugo/">
+<meta name="twitter:title" content="change hexo to hugo - Nivrrex&#39;s blog">
+<meta name="twitter:description" content="缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：hugo 这个go语言写的大杀器。 A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移下载hugo hugo就是一个执行文件，可以直接从官网下载windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/生成站点 可以到Hugo - Introduction to Hugo自行学习Hugo - Hugo Quickstart Guide 快速上手指南生成站点比较简单：hugo new site sitename  主题 可以到以下站址找自己喜欢的主题，我最终选择的是 beg Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：cd themes git clone https://github.com/dim0627/hugo_theme_beg.git  生成页面 hugo new post/about.md  然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor">
+<meta name="twitter:image" content="http://nivrrex.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://nivrrex.github.io/"
+    },
+    "headline": "change hexo to hugo - Nivrrex&#39;s blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://nivrrex.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2017-04-23T11:22:28JST",
+    "dateModified": "2017-04-23T11:22:28JST",
+    "author": {
+      "@type": "Person",
+      "name": "Nivrrex&#39;s blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nivrrex&#39;s blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://nivrrex.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。
+于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：
+hugo 这个go语言写的大杀器。
+ A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
+迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移
+下载hugo hugo就是一个执行文件，可以直接从官网下载
+windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/
+生成站点 可以到Hugo - Introduction to Hugo自行学习
+Hugo - Hugo Quickstart Guide 快速上手指南
+生成站点比较简单：
+hugo new site sitename  主题 可以到以下站址找自己喜欢的主题，我最终选择的是 beg
+ Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
+cd themes git clone https://github.com/dim0627/hugo_theme_beg.git  生成页面 hugo new post/about.md  然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor"
+  }
+</script>
+
+
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://nivrrex.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://nivrrex.github.io/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">change hexo to hugo</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2017-04-23T11:22:28JST">Apr 23, 2017</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">change hexo to hugo</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h4 id="缘由">缘由</h4>
+
+<p>好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。
+而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。</p>
+
+<p>于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：</p>
+
+<p><strong><a href="https://gohugo.io/">hugo</a></strong> 这个go语言写的大杀器。</p>
+
+<ul>
+<li>A fast and modern static website engine</li>
+<li>Language:Go</li>
+<li>License:APL 2.0</li>
+</ul>
+
+<p>目前在<a href="https://www.staticgen.com/">StaticGen</a>上排名已经超过<a href="hexo.io">Hexo</a>了，仅次于<a href="jekyllrb.com">Jekyll</a>，于是兴起了试用的念头。</p>
+
+<h4 id="迁移">迁移</h4>
+
+<p>因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章<a href="https://github.com/nodejh/nodejh.github.io/issues/11">从 Hexo 迁移到 Hugo</a>介绍了如何迁移</p>
+
+<h4 id="下载hugo">下载hugo</h4>
+
+<p>hugo就是一个执行文件，可以直接从<a href="https://github.com/spf13/hugo/releases">官网</a>下载</p>
+
+<p>windows下执行环境可以参考<a href="https://gohugo.io/tutorials/installing-on-windows/">https://gohugo.io/tutorials/installing-on-windows/</a></p>
+
+<h4 id="生成站点">生成站点</h4>
+
+<p>可以到<a href="http://gohugo.io/overview/introduction/">Hugo - Introduction to Hugo</a>自行学习</p>
+
+<p><strong><a href="http://gohugo.io/overview/quickstart/">Hugo - Hugo Quickstart Guide</a></strong>  快速上手指南</p>
+
+<p>生成站点比较简单：</p>
+
+<pre><code class="language-bash">hugo new site sitename
+</code></pre>
+
+<h4 id="主题">主题</h4>
+
+<p>可以到以下站址找自己喜欢的主题，我最终选择的是 <a href="https://github.com/dim0627/hugo_theme_beg">beg</a></p>
+
+<ul>
+<li><a href="https://themes.gohugo.io/">Hugo Themes Site</a></li>
+<li><a href="https://github.com/spf13/hugoThemes">hugoThemes: All Themes Hugo</a></li>
+</ul>
+
+<p>安装比较简单：</p>
+
+<pre><code class="language-bash">cd themes
+git clone https://github.com/dim0627/hugo_theme_beg.git
+</code></pre>
+
+<h4 id="生成页面">生成页面</h4>
+
+<pre><code class="language-bash">hugo new post/about.md
+</code></pre>
+
+<p>然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 <a href="https://github.com/jijinggang/MarkdownEditor">MarkdownEditor</a></p>
+
+<h4 id="本地测试">本地测试</h4>
+
+<pre><code class="language-bash">hugo server --buildDrafts --watch --theme themename
+</code></pre>
+
+<p>运行后可以在 <a href="http://localhost:1313/">http://localhost:1313/</a> 查看具体效果</p>
+
+<h4 id="生成静态页面">生成静态页面</h4>
+
+<p>还是一个命令：</p>
+
+<pre><code class="language-bash">hugo
+</code></pre>
+
+<p>基本上页面数量少的话，都是在ms级别</p>
+
+<h4 id="发布到github">发布到github</h4>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://nivrrex.github.io/tags/live/">live</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/hexo/">hexo</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/hugo/">hugo</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

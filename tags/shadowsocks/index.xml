@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shadowsocks on Nivrrex&#39;s blog</title>
+    <link>http://nivrrex.github.io/tags/shadowsocks/</link>
+    <description>Recent content in Shadowsocks on Nivrrex&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 24 Jul 2015 12:57:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://nivrrex.github.io/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>fanqiang with shadowsocks</title>
+      <link>http://nivrrex.github.io/post/fanqiang-with-shadowsocks/</link>
+      <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/post/fanqiang-with-shadowsocks/</guid>
+      <description>来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
+最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
+VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
+编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
+git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;amp;&amp;amp; make make install  配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json  具体格式如下：
+{ &amp;quot;server&amp;quot;:&amp;quot;my_server_ip&amp;quot;, &amp;quot;server_port&amp;quot;:8388, &amp;quot;local_port&amp;quot;:1080, &amp;quot;password&amp;quot;:&amp;quot;barfoo!&amp;quot;, &amp;quot;timeout&amp;quot;:600, &amp;quot;method&amp;quot;:&amp;quot;table&amp;quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;rdquo;aes-256-cfb&amp;rdquo;  vi /etc/rc.</description>
+    </item>
+    
+  </channel>
+</rss>

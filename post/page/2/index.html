@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://nivrrex.github.io/post/index.xml">
+
+<link rel="canonical" href="http://nivrrex.github.io/post/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>Posts - Nivrrex&#39;s blog</title>
+    
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    
+    <header class="page-header">
+      <h1>Posts</h1>
+    </header>
+    
+
+    <ul class="p-articles">
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-25T21:45:26JST">Jun 25, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-goagent/">fanqiang with goagent</a></h2>
+  </header>
+
+  
+  <div class="summary">来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如：
+ 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如：
+ 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是：
+ 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&gt; Preferences -&gt; Advanced -&gt; Network -&gt; Proxy Servers -&gt; &ldquo;Use automatic proxy configuration&rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。  结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。</div>
+
+  <footer>
+    <a href="http://nivrrex.github.io/post/fanqiang-with-goagent/" title="fanqiang with goagent">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-15T17:24:30JST">Jun 15, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/">some problems for golang excel update</a></h2>
+  </header>
+
+  
+  <div class="summary">趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见这里 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。 首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
+GOPATH设置 golang有几个关键环境变量，需要进行设置
+ GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）  我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
+mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import  Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
+小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。</div>
+
+  <footer>
+    <a href="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/" title="some problems for golang excel update">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-12T22:32:51JST">Jun 12, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://nivrrex.github.io/post/commonly-used-software/">commonly used software</a></h2>
+  </header>
+
+  
+  <div class="summary">开发工具 Ruby Ruby Lang RubyInstaller for Windows
+Golang Golang Downloads Go Language Resources
+GCC MinGW MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64
+GTK+ The GTK+ Project tarnyko GTK
+Tcc Tiny C Compiler
+经典软件 系统强化 Total Commander Listary Everthing ImDisk SoftPerfect RAM Disk
+系统美化 MacType Fences
+输入法 rimeime - 中州韻輸入法引擎
+编辑器 SciTE Sublime Text
+网络 goagent</div>
+
+  <footer>
+    <a href="http://nivrrex.github.io/post/commonly-used-software/" title="commonly used software">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-12T19:37:32JST">Jun 12, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://nivrrex.github.io/post/hello-github/">Hello GitHub</a></h2>
+  </header>
+
+  
+  <div class="summary">欢迎来到我的GitHub blog！
+这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
+Git的一些基本命令 git config --global user.name &quot;nivrrex&quot; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &quot;nivrrex@gmail.com&quot; ssh -T git@github.com -i ./.ssh/id_rsa  更多命令可以到git - 简明指南去查看
+Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &quot;My New Post&quot; hexo server hexo generate hexo deploy  更多文档可以到Hexo docs上查看</div>
+
+  <footer>
+    <a href="http://nivrrex.github.io/post/hello-github/" title="Hello GitHub">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+      <li><article class="li">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-10T13:55:26JST">Jun 10, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+    <h2 class="title"><a href="http://nivrrex.github.io/post/about-me/">About this blog</a></h2>
+  </header>
+
+  
+  <div class="summary">欢迎来到Nivrrex的GitHub blog！
+本blog将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。</div>
+
+  <footer>
+    <a href="http://nivrrex.github.io/post/about-me/" title="About this blog">Read More…</a>
+  </footer>
+</article>
+</li>
+      
+    </ul>
+
+    
+<nav>
+  <ul class="pager">
+
+    
+    <li><a href="/post/">Previous</a></li>
+    
+
+    
+    <li class="disabled"><a href="#">Next</a></li>
+    
+
+  </ul>
+</nav>
+
+
+
+  </div>
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+
+
+<link rel="canonical" href="http://nivrrex.github.io/post/change-editer-with-sublime-text/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>change editer with sublime text - Nivrrex&#39;s blog</title>
+    
+<meta name="description" content="来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl&#43;`键，调出控制台，输入以下命令：import urllib.request,os,hashlib; h = &#39;eb2297e1a458f27d836c04bb0cbaf282&#39; &#43; &#39;d0e7a3098092775ccb37ca9d6b2e4b7d&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; &#43; pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.">
+
+<meta property="og:title" content="change editer with sublime text - Nivrrex&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://nivrrex.github.io/post/change-editer-with-sublime-text/">
+<meta property="og:image" content="http://nivrrex.github.io/images/default.png">
+<meta property="og:site_name" content="Nivrrex&#39;s blog">
+<meta property="og:description" content="来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl&#43;`键，调出控制台，输入以下命令：import urllib.request,os,hashlib; h = &#39;eb2297e1a458f27d836c04bb0cbaf282&#39; &#43; &#39;d0e7a3098092775ccb37ca9d6b2e4b7d&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; &#43; pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Nivrrex&#39;s blog">
+<meta name="twitter:url" content="http://nivrrex.github.io/post/change-editer-with-sublime-text/">
+<meta name="twitter:title" content="change editer with sublime text - Nivrrex&#39;s blog">
+<meta name="twitter:description" content="来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl&#43;`键，调出控制台，输入以下命令：import urllib.request,os,hashlib; h = &#39;eb2297e1a458f27d836c04bb0cbaf282&#39; &#43; &#39;d0e7a3098092775ccb37ca9d6b2e4b7d&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; &#43; pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.">
+<meta name="twitter:image" content="http://nivrrex.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://nivrrex.github.io/"
+    },
+    "headline": "change editer with sublime text - Nivrrex&#39;s blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://nivrrex.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-08-01T15:41:45JST",
+    "dateModified": "2015-08-01T15:41:45JST",
+    "author": {
+      "@type": "Person",
+      "name": "Nivrrex&#39;s blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nivrrex&#39;s blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://nivrrex.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
+Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
+import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os."
+  }
+</script>
+
+
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://nivrrex.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://nivrrex.github.io/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">change editer with sublime text</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-08-01T15:41:45JST">Aug 1, 2015</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">change editer with sublime text</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h4 id="来由">来由</h4>
+
+<p>本来一直使用的编译器是<a href="http://www.scintilla.org/SciTE.html">SciTE</a>，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。
+最近看了<a href="http://www.tudou.com/home/golang/item/">Golang中国的教学视频</a>，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇<a href="http://www.linuxeden.com/html/news/20150730/162107.html">Sublime Text 全程指南</a>，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。</p>
+
+<!-- more -->
+
+<h4 id="sublime-text安装">Sublime Text安装</h4>
+
+<p>首先到Sublime Text的<a href="http://www.sublimetext.com/">官网</a>下载最新的版本，我下载的是3.3083的portable version版
+然后是最重要的事情了，安装<a href="https://packagecontrol.io/installation#st3">Package Control</a>,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。
+打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：</p>
+
+<pre><code class="language-python">import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+</code></pre>
+
+<h4 id="package-control及插件安装">Package Control及插件安装</h4>
+
+<p>根据提示，重启Sublime Text即可完成安装。
+在Sublime Text中按ctrl+shift+p快捷键，即可调出Package Control控制台，它可以对Packages完成以下操作：</p>
+
+<pre><code class="language-bash">install
+remove
+list
+enable
+disable
+upgrade
+</code></pre>
+
+<p>根据我的需求，我安装了以下插件</p>
+
+<pre><code class="language-bash">GoSublime             #go语言提示插件
+SideBarEnhancements   #侧边栏增强插件
+All Autocomplete      #自动完成增强插件
+ConvertToUTF8         #GBK等中文文件编码增强插件
+Markdown Preview      #Markdown文件预览插件
+Markdown Extended     #Markdown语法扩展插件，可以对代码区域进行语法高亮
+Monokai Extended      #主题插件，但是可以对Markdown进行语法高亮
+JSONLint              #JSON的智能提示插件，对出错的语法进行实时标注
+JSFormat              #可以对javascript进行格式化输出，同样对JSON也可以格式化
+</code></pre>
+
+<h4 id="sublime-text配置">Sublime Text配置</h4>
+
+<p>Sublime Text3的配置，主要采用JSON格式，后缀名是sublime-settings
+不知道是不是Bug，其主要配置需要手动创建，菜单无法选择（后来证实是汉化包的Bug），于是根据网上提示，新建
+C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入以下内容：</p>
+
+<pre><code class="language-json">{
+    &quot;font_face&quot;: &quot;Consolas&quot;,                            //字体名称
+    &quot;font_size&quot;: 12,                                    //字体大小
+
+    &quot;caret_style&quot;: &quot;phase&quot;,                             //光标闪烁
+    &quot;wide_caret&quot;: true,                                 //光标变粗
+
+    &quot;draw_white_space&quot;: &quot;all&quot;,                          //显示所有空白符号
+    &quot;highlight_line&quot;: true,                             //高亮当前行
+    &quot;highlight_modified_tabs&quot;: true,                    //编辑过的标签高亮显示
+
+    &quot;auto_complete_commit_on_tab&quot;: true,                //tab键自动完成
+    &quot;tab_size&quot;: 4,                                      //tab键长度
+    &quot;translate_tabs_to_spaces&quot;: true,                   //自动将tab转换成空格
+
+    &quot;spell_check&quot;: false,                               //语法检查
+    &quot;trim_trailing_white_space_on_save&quot;: true,          //删除行尾的空格
+    &quot;ensure_newline_at_eof_on_save&quot;: true,              //文件结束后保存加入新行
+
+    &quot;color_scheme&quot;: &quot;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&quot;,     //主题包Monokai
+
+    &quot;ignored_packages&quot;:                                 //忽略的包
+    [
+        &quot;Vintage&quot;
+    ]
+}
+</code></pre>
+
+<h4 id="gosublime配置">GoSublime配置</h4>
+
+<p>因为我用Golang和Ruby比较多，在安装了GoSublime后，还需要配置下GoSublime，以便进行编译
+路径如下：&rdquo;Preferences&rdquo; - &ldquo;Package Setting&rdquo; - &ldquo;GoSublime&rdquo; - &ldquo;Settings User&rdquo;</p>
+
+<pre><code class="language-json">{
+    &quot;env&quot;: {
+        &quot;PATH&quot;:&quot;C:\\go\\bin&quot;,
+        &quot;GOPATH&quot;:&quot;C:\\go\\import&quot;,
+        &quot;GOROOT&quot;:&quot;C:\\go&quot;,
+        &quot;GOBIN&quot;:&quot;C:\\go\\bin&quot;,
+        &quot;GOOS&quot;:&quot;windows&quot;
+    },
+    &quot;build_command&quot;: [&quot;go&quot;,&quot;run&quot;,&quot;$_fn&quot;],
+
+    &quot;fmt_enabled&quot;: true,
+    &quot;fmt_tab_indent&quot;: false,
+    &quot;fmt_tab_width&quot;: 4
+}
+</code></pre>
+
+<h4 id="tinycc编译系统">TinyCC编译系统</h4>
+
+<p>因为我偶尔用TinyCC编译小的C语言程序，所以自定义了一个编译系统，具体代码如下：</p>
+
+<pre><code class="language-json">{
+  &quot;path&quot;: &quot;C:\\ Sublime Text\\tcc\\&quot;,
+  &quot;file_regex&quot;: &quot;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&quot;,
+  &quot;working_dir&quot;: &quot;${file_path}&quot;,
+  &quot;selector&quot;: &quot;source.c&quot;,
+
+  &quot;variants&quot;: [
+    {
+      &quot;name&quot;: &quot;Run&quot;,
+      &quot;cmd&quot;: [&quot;tcc&quot;, &quot;-run&quot;, &quot;${file}&quot;],
+      &quot;working_dir&quot;: &quot;${file_path}&quot;
+    }
+  ]
+}
+</code></pre>
+
+<h4 id="结">结</h4>
+
+<p>试用了几天后，Sublime Text是比Scite要强大的多，虽然Scite也可以进行很多的配置，关键是Package Control上现成的插件太多了，有人维护的话，真是太省心了呢，已经将以前针对Scite写的部分脚本转移到Sublime Text上了，开心的编程啦~ \^o^/</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://nivrrex.github.io/tags/soft/">soft</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/sublime-text/">sublime-text</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+
+
+<link rel="canonical" href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>update debian linux image with backports - Nivrrex&#39;s blog</title>
+    
+<meta name="description" content="来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。如何查看Linux版本 共有5种方式，具体如下cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue  我的Debian更新过，显示是Debian GNU/Linux 8.1 (jessie)  但是，内核为什么还是Linux 2.6.32-042stab093.4 i686  好吧，更新，更新！使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目其官方Wiki上面说Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源vi /etc/apt/sources.list  添加如下内容deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main  更新数据sudo apt-get update #sudo apt-get -t jessie-backports upgrade  搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件apt-get install aptitude aptitude search kernel-image  根据搜索出来的内核文件，进行安装，我的是">
+
+<meta property="og:title" content="update debian linux image with backports - Nivrrex&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/">
+<meta property="og:image" content="http://nivrrex.github.io/images/default.png">
+<meta property="og:site_name" content="Nivrrex&#39;s blog">
+<meta property="og:description" content="来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。如何查看Linux版本 共有5种方式，具体如下cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue  我的Debian更新过，显示是Debian GNU/Linux 8.1 (jessie)  但是，内核为什么还是Linux 2.6.32-042stab093.4 i686  好吧，更新，更新！使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目其官方Wiki上面说Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源vi /etc/apt/sources.list  添加如下内容deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main  更新数据sudo apt-get update #sudo apt-get -t jessie-backports upgrade  搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件apt-get install aptitude aptitude search kernel-image  根据搜索出来的内核文件，进行安装，我的是">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Nivrrex&#39;s blog">
+<meta name="twitter:url" content="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/">
+<meta name="twitter:title" content="update debian linux image with backports - Nivrrex&#39;s blog">
+<meta name="twitter:description" content="来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。如何查看Linux版本 共有5种方式，具体如下cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue  我的Debian更新过，显示是Debian GNU/Linux 8.1 (jessie)  但是，内核为什么还是Linux 2.6.32-042stab093.4 i686  好吧，更新，更新！使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目其官方Wiki上面说Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源vi /etc/apt/sources.list  添加如下内容deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main  更新数据sudo apt-get update #sudo apt-get -t jessie-backports upgrade  搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件apt-get install aptitude aptitude search kernel-image  根据搜索出来的内核文件，进行安装，我的是">
+<meta name="twitter:image" content="http://nivrrex.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://nivrrex.github.io/"
+    },
+    "headline": "update debian linux image with backports - Nivrrex&#39;s blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://nivrrex.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2015-07-27T22:36:17JST",
+    "dateModified": "2015-07-27T22:36:17JST",
+    "author": {
+      "@type": "Person",
+      "name": "Nivrrex&#39;s blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nivrrex&#39;s blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://nivrrex.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
+如何查看Linux版本 共有5种方式，具体如下
+cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue  我的Debian更新过，显示是
+Debian GNU/Linux 8.1 (jessie)  但是，内核为什么还是
+Linux 2.6.32-042stab093.4 i686  好吧，更新，更新！
+使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目
+其官方Wiki上面说
+Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。
+开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源
+vi /etc/apt/sources.list  添加如下内容
+deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main  更新数据
+sudo apt-get update #sudo apt-get -t jessie-backports upgrade  搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件
+apt-get install aptitude aptitude search kernel-image  根据搜索出来的内核文件，进行安装，我的是"
+  }
+</script>
+
+
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://nivrrex.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://nivrrex.github.io/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">update debian linux image with backports</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-27T22:36:17JST">Jul 27, 2015</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">update debian linux image with backports</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h4 id="来由">来由</h4>
+
+<p>因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。</p>
+
+<!-- more -->
+
+<hr />
+
+<h4 id="如何查看linux版本">如何查看Linux版本</h4>
+
+<p>共有5种方式，具体如下</p>
+
+<pre><code class="language-bash">cat /etc/*-release
+lsb_release -a
+cat /proc/version
+uname -a  #uname -mrs
+cat /etc/issue
+</code></pre>
+
+<p>我的Debian更新过，显示是</p>
+
+<pre><code class="language-bash">Debian GNU/Linux 8.1 (jessie)
+</code></pre>
+
+<p>但是，内核为什么还是</p>
+
+<pre><code class="language-bash">Linux 2.6.32-042stab093.4 i686
+</code></pre>
+
+<p>好吧，更新，更新！</p>
+
+<h4 id="使用backports源">使用Backports源</h4>
+
+<p>对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目</p>
+
+<p>其<a href="https://wiki.debian.org/zh_CN/Backports">官方Wiki</a>上面说</p>
+
+<p>Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。</p>
+
+<h4 id="开始更新">开始更新</h4>
+
+<h6 id="更新软件源">更新软件源</h6>
+
+<p>首先在apt的sources.list文件中添加Backports源</p>
+
+<pre><code class="language-bash">vi /etc/apt/sources.list
+</code></pre>
+
+<p>添加如下内容</p>
+
+<pre><code class="language-bash">deb http://ftp.debian.org/debian/ jessie-backports main
+deb-src http://ftp.debian.org/debian/ jessie-backports main
+</code></pre>
+
+<p>更新数据</p>
+
+<pre><code class="language-bash">sudo apt-get update
+#sudo apt-get -t jessie-backports upgrade
+</code></pre>
+
+<h6 id="搜索并安装linux-image文件">搜索并安装linux-image文件</h6>
+
+<p>安装aptitude，以便搜索最新的linux-image文件</p>
+
+<pre><code class="language-bash">apt-get install aptitude
+aptitude search kernel-image
+</code></pre>
+
+<p>根据搜索出来的内核文件，进行安装，我的是</p>
+
+<pre><code class="language-bash">sudo apt-get -t jessie-backports install linux-image-3.16.0-4-686-pae
+#sudo apt-get -t jessie-backports install linux-image-686-pae
+</code></pre>
+
+<h6 id="显示已安装的linux-image内核版本">显示已安装的linux-image内核版本</h6>
+
+<p>显示已经安装的linux-image内核版本</p>
+
+<pre><code class="language-bash">dpkg --get-selections |grep linux-image
+</code></pre>
+
+<h6 id="删除旧内核">删除旧内核</h6>
+
+<p>如果要删除旧内核，运行以下命令</p>
+
+<pre><code class="language-bash">sudo apt-get remove linux-image-3.16.0-4-686-pae
+</code></pre>
+
+<h6 id="更新grub">更新grub</h6>
+
+<p>在/boot/grub/grub.cfg中查看是否已经有新内核3.16，有的话，就已经OK。否则，自己手动更新grub。
+sudo update-grub</p>
+
+<h4 id="安装结果">安装结果</h4>
+
+<p>我兴高采烈的在我的RamNode的VPS折腾了半天后，重新Reboot后发现，内核为什么还是2.6.32!!!</p>
+
+<pre><code class="language-bash">Linux 2.6.32-042stab093.4 i686
+</code></pre>
+
+<h6 id="google原因">Google原因</h6>
+
+<p>OpenVZ的内核和 Host的内核是一致的
+也就是说，由于我的VPS是OpenVZ的，所以我自己更新linux-image的版本是没有用的。。。</p>
+
+<h4 id="结">结</h4>
+
+<p>伤心了 -__- ，于是写下这篇小结，算是个记录。顺便把家里的Debian主机更新了下内核，3.16更新到3.16，小版本也要更新！。。。</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://nivrrex.github.io/tags/debian/">debian</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/vps/">vps</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

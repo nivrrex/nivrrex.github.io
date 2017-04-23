@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="pinterest" content="nopin">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<meta name="generator" content="Hugo 0.20.2" />
+
+
+
+<link rel="canonical" href="http://nivrrex.github.io/post/fanqiang-with-goagent/">
+
+
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
+    <title>fanqiang with goagent - Nivrrex&#39;s blog</title>
+    
+<meta name="description" content="来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如： 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如： 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是： 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&amp;gt; Preferences -&amp;gt; Advanced -&amp;gt; Network -&amp;gt; Proxy Servers -&amp;gt; &amp;ldquo;Use automatic proxy configuration&amp;rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。  结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。">
+
+<meta property="og:title" content="fanqiang with goagent - Nivrrex&#39;s blog">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://nivrrex.github.io/post/fanqiang-with-goagent/">
+<meta property="og:image" content="http://nivrrex.github.io/images/default.png">
+<meta property="og:site_name" content="Nivrrex&#39;s blog">
+<meta property="og:description" content="来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如： 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如： 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是： 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&amp;gt; Preferences -&amp;gt; Advanced -&amp;gt; Network -&amp;gt; Proxy Servers -&amp;gt; &amp;ldquo;Use automatic proxy configuration&amp;rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。  结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="Nivrrex&#39;s blog">
+<meta name="twitter:url" content="http://nivrrex.github.io/post/fanqiang-with-goagent/">
+<meta name="twitter:title" content="fanqiang with goagent - Nivrrex&#39;s blog">
+<meta name="twitter:description" content="来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如： 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如： 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是： 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&amp;gt; Preferences -&amp;gt; Advanced -&amp;gt; Network -&amp;gt; Proxy Servers -&amp;gt; &amp;ldquo;Use automatic proxy configuration&amp;rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。  结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。">
+<meta name="twitter:image" content="http://nivrrex.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"http://nivrrex.github.io/"
+    },
+    "headline": "fanqiang with goagent - Nivrrex&#39;s blog",
+    "image": {
+      "@type": "ImageObject",
+      "url": "http://nivrrex.github.io/images/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2014-06-25T21:45:26JST",
+    "dateModified": "2014-06-25T21:45:26JST",
+    "author": {
+      "@type": "Person",
+      "name": "Nivrrex&#39;s blog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Nivrrex&#39;s blog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "http://nivrrex.github.io/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如：
+ 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如：
+ 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是：
+ 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&gt; Preferences -&gt; Advanced -&gt; Network -&gt; Proxy Servers -&gt; &ldquo;Use automatic proxy configuration&rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。  结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。"
+  }
+</script>
+
+
+    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    
+    
+
+    <header class="l-header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+          </div>
+
+          
+
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        
+<div class="row">
+  <div class="col-md-8">
+
+    <nav class="p-crumb">
+      <ol class="breadcrumb">
+        <li><a href="http://nivrrex.github.io/"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+        
+        <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://nivrrex.github.io/post/" itemprop="url"><span itemprop="title">post</span></a></li>
+        
+        <li class="active">fanqiang with goagent</li>
+      </ol>
+    </nav>
+
+    <article class="single">
+  <header>
+    <ul class="p-facts">
+      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-25T21:45:26JST">Jun 25, 2014</time></li>
+      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
+      
+    </ul>
+
+    <h1 class="title">fanqiang with goagent</h1>
+  </header>
+
+  
+
+  <div class="article-body">
+
+<h4 id="来由">来由</h4>
+
+<p>最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。
+刚开始以为一段时间就OK了，就用了临时性的解决方案。
+<!-- more -->
+比如：</p>
+
+<ul>
+<li>使用<a href="http://www.bing.com/?mkt=zh-CN">Bing</a>代替。 <em>搜索效果相比Google还有差距</em></li>
+<li>使用<a href="https://www.startpage.com/">StartPage</a>代替。 <em>相比原版，存在部分结果搜索不到的问题</em></li>
+<li>直接用<a href="https://github.com/justjavac/Google-IPs/blob/master/README.md">Google IP</a>进行搜索。 <em>可以使用的IP被飞快的封锁</em></li>
+<li>使用网上的免翻墙镜像网站<a href="https://github.com/greatfire/wiki">greatfire</a>。 <em>是个不错的解决方案，但是怕被封锁后还要重新设置</em></li>
+<li>使用网上的免费VPN<a href="http://ilvpn.com/free-vpn/">免费VPN资源</a>。 <em>免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢</em></li>
+<li>使用google的GAE平台的<a href="https://code.google.com/p/goagent/">goagent</a>。 <em>强烈推荐</em></li>
+</ul>
+
+<hr />
+
+<h4 id="goagent设置">goagent设置</h4>
+
+<p>这个网上教程很多，随便搜索都有好几个，如：</p>
+
+<ul>
+<li><a href="http://maolihui.com/goagent-detail.html">猫理会的goagent教程详细版</a></li>
+<li><a href="https://www.x-berry.com/goagent/">软矿的GoAgent图文设置教程</a></li>
+<li><a href="http://blog.4a8a.com/post-133.html">海盗船博客的2014最新翻墙方法之goagent翻墙教程</a></li>
+</ul>
+
+<hr />
+
+<h4 id="软件设置">软件设置</h4>
+
+<p>在搭建好goagent后，就是如何使用它配合浏览器上网了
+我常用的浏览器有IE、猎豹、Opera
+为统一解决，我的方法是：</p>
+
+<ul>
+<li>1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。</li>
+<li>2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。</li>
+<li>3、Opera浏览器：Tools -&gt; Preferences -&gt; Advanced -&gt; Network -&gt; Proxy Servers -&gt; &ldquo;Use automatic proxy configuration&rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。</li>
+<li>4、IE和Opera都需要安装goagent的证书，否则访问时会出错。</li>
+<li>5、可以在<a href="https://code.google.com/p/autoproxy-gfwlist/">这里</a>订阅部分数据。</li>
+</ul>
+
+<hr />
+
+<h4 id="结">结</h4>
+
+<p>堵不如疏，闭关锁国只能让自己更落伍。
+人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。
+大多数人使用Google只是想查找自己想要的知识。</p>
+</div>
+
+  <footer class="article-footer">
+    
+    
+    
+    
+    
+    <section class="bordered">
+      <header>
+        <div class="panel-title">TAGS</div>
+      </header>
+      <div>
+        <ul class="p-terms">
+          
+          <li><a href="http://nivrrex.github.io/tags/internet/">internet</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/fanqiang/">fanqiang</a></li>
+          
+          <li><a href="http://nivrrex.github.io/tags/goagent/">goagent</a></li>
+          
+        </ul>
+      </div>
+    </section>
+    
+    
+  </footer>
+
+</article>
+
+
+    
+  </div>
+
+  <div class="col-md-4">
+    
+<aside class="l-sidebar">
+
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">LATESTS</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
+      
+      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
+      
+      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
+      
+      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
+      
+      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
+      
+      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
+      
+    </div>
+  </section>
+
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">CATEGORY</div>
+    </div>
+    <div class="list-group">
+      
+    </div>
+  </section>
+  
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">TAG</div>
+    </div>
+    <div class="list-group">
+      
+      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
+      
+      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
+      
+      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
+      
+      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
+      
+      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
+      
+      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
+      
+      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
+      
+      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
+      
+      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
+      
+      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
+      
+    </div>
+  </section>
+  
+
+</aside>
+
+
+  </div>
+</div>
+
+      </div>
+    </main>
+
+    <footer class="l-footer">
+      <div class="container">
+        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
+        <aside>
+          
+        </aside>
+      </div>
+    </footer>
+
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

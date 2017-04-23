@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Live on Nivrrex&#39;s blog</title>
+    <link>http://nivrrex.github.io/tags/live/</link>
+    <description>Recent content in Live on Nivrrex&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Apr 2017 11:22:28 +0800</lastBuildDate>
+    
+	<atom:link href="http://nivrrex.github.io/tags/live/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>change hexo to hugo</title>
+      <link>http://nivrrex.github.io/post/change-hexo-to-hugo/</link>
+      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/post/change-hexo-to-hugo/</guid>
+      <description>缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。
+于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：
+hugo 这个go语言写的大杀器。
+ A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
+迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移
+下载hugo hugo就是一个执行文件，可以直接从官网下载
+windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/
+生成站点 可以到Hugo - Introduction to Hugo自行学习
+Hugo - Hugo Quickstart Guide 快速上手指南
+生成站点比较简单：
+hugo new site sitename  主题 可以到以下站址找自己喜欢的主题，我最终选择的是 beg
+ Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
+cd themes git clone https://github.com/dim0627/hugo_theme_beg.git  生成页面 hugo new post/about.md  然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+    </item>
+    
+    <item>
+      <title>Hello GitHub</title>
+      <link>http://nivrrex.github.io/post/hello-github/</link>
+      <pubDate>Thu, 12 Jun 2014 19:37:32 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/post/hello-github/</guid>
+      <description>欢迎来到我的GitHub blog！
+这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
+Git的一些基本命令 git config --global user.name &amp;quot;nivrrex&amp;quot; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;quot;nivrrex@gmail.com&amp;quot; ssh -T git@github.com -i ./.ssh/id_rsa  更多命令可以到git - 简明指南去查看
+Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;quot;My New Post&amp;quot; hexo server hexo generate hexo deploy  更多文档可以到Hexo docs上查看</description>
+    </item>
+    
+  </channel>
+</rss>

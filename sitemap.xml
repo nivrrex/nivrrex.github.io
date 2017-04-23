@@ -1,102 +1,204 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://nivrrex.github.io/2016/04/04/start-to-use-python/</loc>
-    
-    <lastmod>2016-04-04T09:05:37.806Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/change-hexo-to-hugo/</loc>
+    <lastmod>2017-04-23T11:22:28+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/about/index.html</loc>
-    
-    <lastmod>2016-04-04T08:58:59.141Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/start-to-use-python/</loc>
+    <lastmod>2016-04-04T09:05:37+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2015/07/27/update-debian-linux-image-with-backports/</loc>
-    
-    <lastmod>2016-04-04T08:58:36.097Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/change-editer-with-sublime-text/</loc>
+    <lastmod>2015-08-01T15:41:45+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2015/07/24/fanqiang-with-shadowsocks/</loc>
-    
-    <lastmod>2016-04-04T08:57:54.218Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/update-debian-linux-image-with-backports/</loc>
+    <lastmod>2015-07-27T22:36:17+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2015/07/26/fanqiang-with-dnsmasq/</loc>
-    
-    <lastmod>2016-04-04T08:57:42.340Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/fanqiang-with-dnsmasq/</loc>
+    <lastmod>2015-07-26T17:51:59+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2015/07/26/fanqiang-with-chinadns/</loc>
-    
-    <lastmod>2016-04-04T08:57:33.135Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/fanqiang-with-chinadns/</loc>
+    <lastmod>2015-07-26T12:54:59+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2015/08/01/change-editer-with-sublime-text/</loc>
-    
-    <lastmod>2016-04-04T08:57:13.327Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/fanqiang-with-shadowsocks/</loc>
+    <lastmod>2015-07-24T12:57:00+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/07/17/build-openwrt-with-image-builder/</loc>
-    
-    <lastmod>2016-04-04T08:56:40.610Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/build-openwrt-with-image-builder/</loc>
+    <lastmod>2014-07-17T22:17:11+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/06/12/commonly-used-software/</loc>
-    
-    <lastmod>2015-08-01T07:46:42.633Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/</loc>
+    <lastmod>2014-07-08T21:27:40+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/06/12/hello-github/</loc>
-    
-    <lastmod>2015-07-24T05:58:21.627Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/</loc>
+    <lastmod>2014-06-28T10:48:47+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/06/15/some-problems-for-golang-excel-update/</loc>
-    
-    <lastmod>2014-07-17T14:05:12.577Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/fanqiang-with-goagent/</loc>
+    <lastmod>2014-06-25T21:45:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes/</loc>
-    
-    <lastmod>2014-07-17T14:05:02.772Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/some-problems-for-golang-excel-update/</loc>
+    <lastmod>2014-06-15T17:24:30+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/</loc>
-    
-    <lastmod>2014-07-17T14:04:33.808Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/commonly-used-software/</loc>
+    <lastmod>2014-06-12T22:32:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/2014/06/25/fanqiang-with-goagent/</loc>
-    
-    <lastmod>2014-07-17T14:04:03.604Z</lastmod>
-    
+    <loc>http://nivrrex.github.io/post/hello-github/</loc>
+    <lastmod>2014-06-12T19:37:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/post/about-me/</loc>
+    <lastmod>2014-06-10T13:55:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/chinadns/</loc>
+    <lastmod>2015-07-26T12:54:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/debian/</loc>
+    <lastmod>2015-07-27T22:36:17+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/dnsmasq/</loc>
+    <lastmod>2015-07-26T17:51:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/fanqiang/</loc>
+    <lastmod>2015-07-26T17:51:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/goagent/</loc>
+    <lastmod>2014-06-25T21:45:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/golang/</loc>
+    <lastmod>2014-06-15T17:24:30+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/hexo/</loc>
+    <lastmod>2017-04-23T11:22:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/hugo/</loc>
+    <lastmod>2017-04-23T11:22:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/internet/</loc>
+    <lastmod>2015-07-26T17:51:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/live/</loc>
+    <lastmod>2017-04-23T11:22:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/</loc>
+    <lastmod>2017-04-23T11:22:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/openwrt/</loc>
+    <lastmod>2015-07-26T12:54:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/post/</loc>
+    <lastmod>2017-04-23T11:22:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/python/</loc>
+    <lastmod>2016-04-04T09:05:37+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/shadowsocks/</loc>
+    <lastmod>2015-07-24T12:57:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/soft/</loc>
+    <lastmod>2015-08-01T15:41:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/sublime-text/</loc>
+    <lastmod>2015-08-01T15:41:45+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/</loc>
+    <lastmod>2015-07-26T12:54:59+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/vpn/</loc>
+    <lastmod>2014-06-28T10:48:47+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/vps/</loc>
+    <lastmod>2015-07-27T22:36:17+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
