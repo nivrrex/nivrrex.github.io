@@ -1,190 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20.2" />
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://nivrrex.github.io/tags/dnsmasq/index.xml">
-
-<link rel="canonical" href="http://nivrrex.github.io/tags/dnsmasq/">
-
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Dnsmasq - Nivrrex&#39;s blog</title>
-    
-    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
-  </head>
-
-  <body>
+  <title>
     
     
+    Dnsmasq - Nivrrex&#39;s blog
     
-
-    <header class="l-header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
-          </div>
-
-          
-
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        
-<div class="row">
-  <div class="col-md-8">
-
-    
-    <header class="page-header">
-      <h1>Dnsmasq</h1>
-    </header>
-    
-
-    <ul class="p-articles">
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-26T17:51:59JST">Jul 26, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/">fanqiang with dnsmasq</a></h2>
-  </header>
-
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
   
-  <div class="summary">来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~ DNSmasq安装 我的系统是Debian，直接运行以下命令
-sudo apt-get update sudo apt-get install dnsmasq  DNSmasq配置 编辑/etc/dnsmasq.conf文件
-vi /etc/dnsmasq.conf  修改以下参数
-resolv-file=/etc/resolv.conf strict-order listen-address=xxx.xxx.xxx.xxx,127.0.0.1 port=443 cache-size=1024 log-queries  编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器
-nameserver 8.8.8.8 nameserver 208.67.222.222  将服务重启即可
-/etc/init.d/dnsmasq restart  将DNSmasq加入启动项
-sudo vi /etc/rc.local  将以下命令添加进去即可
-/etc/init.d/dnsmasq start  DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
-结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</div>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" title="fanqiang with dnsmasq">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-    </ul>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://nivrrex.github.io/tags/dnsmasq/">
+  <link href="http://nivrrex.github.io/tags/dnsmasq/index.xml" rel="alternate" type="application/rss+xml" title="Dnsmasq" />
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+    </div>
 
     
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
 
+	
 
-  </div>
-  <div class="col-md-4">
-    
-<aside class="l-sidebar">
+	
 
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
-      
-      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
-      
-      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
-      
-      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
-      
-      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
-      
-    </div>
-  </section>
+	
 
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
-    </div>
-    <div class="list-group">
-      
-    </div>
-  </section>
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">TAG</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
-      
-      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
-      
-      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
-      
-      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
-      
-      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
-      
-      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
-      
-      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
-      
-      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
-      
-      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
-      
-      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
-      
-    </div>
-  </section>
-  
+	
 
-</aside>
+	
 
+	
 
-  </div>
-</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id="post">
+	<h2>Dnsmasq &nbsp;</h2>
+	<hr/>
+	
+	<h3>2015</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Sun, Jul 26, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/">
+	      <span itemprop="name">fanqiang with dnsmasq</span></a>
+	    <meta itemprop="datePublished"  content="Jul 26, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<hr/>
+	 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
+ <div class="addthis_inline_share_toolbox"></div>
+<hr/>
 
       </div>
-    </main>
+    </div>
+    </div>
 
-    <footer class="l-footer">
-      <div class="container">
-        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
-        <aside>
-          
-        </aside>
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">Your tips content</small>
       </div>
-    </footer>
+   </div>
+ </div>
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
-
+</body></html>

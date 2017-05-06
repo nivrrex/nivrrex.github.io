@@ -1,186 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20.2" />
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://nivrrex.github.io/tags/golang/index.xml">
-
-<link rel="canonical" href="http://nivrrex.github.io/tags/golang/">
-
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Golang - Nivrrex&#39;s blog</title>
-    
-    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
-  </head>
-
-  <body>
+  <title>
     
     
+    Golang - Nivrrex&#39;s blog
     
-
-    <header class="l-header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
-          </div>
-
-          
-
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        
-<div class="row">
-  <div class="col-md-8">
-
-    
-    <header class="page-header">
-      <h1>Golang</h1>
-    </header>
-    
-
-    <ul class="p-articles">
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-15T17:24:30JST">Jun 15, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/">some problems for golang excel update</a></h2>
-  </header>
-
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
   
-  <div class="summary">趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见这里 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。 首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
-GOPATH设置 golang有几个关键环境变量，需要进行设置
- GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）  我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
-mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import  Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
-小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。</div>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
-  <footer>
-    <a href="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/" title="some problems for golang excel update">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-    </ul>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://nivrrex.github.io/tags/golang/">
+  <link href="http://nivrrex.github.io/tags/golang/index.xml" rel="alternate" type="application/rss+xml" title="Golang" />
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+    </div>
 
     
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
 
+	
 
-  </div>
-  <div class="col-md-4">
-    
-<aside class="l-sidebar">
+	
 
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
-      
-      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
-      
-      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
-      
-      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
-      
-      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
-      
-    </div>
-  </section>
+	
 
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
-    </div>
-    <div class="list-group">
-      
-    </div>
-  </section>
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">TAG</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
-      
-      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
-      
-      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
-      
-      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
-      
-      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
-      
-      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
-      
-      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
-      
-      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
-      
-      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
-      
-      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
-      
-    </div>
-  </section>
-  
+	
 
-</aside>
+	
 
+	
 
-  </div>
-</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id="post">
+	<h2>Golang &nbsp;</h2>
+	<hr/>
+	
+	<h3>2014</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Sun, Jun 15, 2014&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/">
+	      <span itemprop="name">some problems for golang excel update</span></a>
+	    <meta itemprop="datePublished"  content="Jun 15, 2014" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<hr/>
+	 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
+ <div class="addthis_inline_share_toolbox"></div>
+<hr/>
 
       </div>
-    </main>
+    </div>
+    </div>
 
-    <footer class="l-footer">
-      <div class="container">
-        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
-        <aside>
-          
-        </aside>
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">Your tips content</small>
       </div>
-    </footer>
+   </div>
+ </div>
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
-
+</body></html>

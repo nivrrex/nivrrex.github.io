@@ -1,313 +1,177 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20.2" />
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://nivrrex.github.io/tags/fanqiang/index.xml">
-
-<link rel="canonical" href="http://nivrrex.github.io/tags/fanqiang/">
-
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Fanqiang - Nivrrex&#39;s blog</title>
-    
-    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
-  </head>
-
-  <body>
+  <title>
     
     
+    Fanqiang - Nivrrex&#39;s blog
     
-
-    <header class="l-header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
-          </div>
-
-          
-
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        
-<div class="row">
-  <div class="col-md-8">
-
-    
-    <header class="page-header">
-      <h1>Fanqiang</h1>
-    </header>
-    
-
-    <ul class="p-articles">
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-26T17:51:59JST">Jul 26, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/">fanqiang with dnsmasq</a></h2>
-  </header>
-
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
   
-  <div class="summary">来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~ DNSmasq安装 我的系统是Debian，直接运行以下命令
-sudo apt-get update sudo apt-get install dnsmasq  DNSmasq配置 编辑/etc/dnsmasq.conf文件
-vi /etc/dnsmasq.conf  修改以下参数
-resolv-file=/etc/resolv.conf strict-order listen-address=xxx.xxx.xxx.xxx,127.0.0.1 port=443 cache-size=1024 log-queries  编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器
-nameserver 8.8.8.8 nameserver 208.67.222.222  将服务重启即可
-/etc/init.d/dnsmasq restart  将DNSmasq加入启动项
-sudo vi /etc/rc.local  将以下命令添加进去即可
-/etc/init.d/dnsmasq start  DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
-结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</div>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" title="fanqiang with dnsmasq">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-26T12:54:59JST">Jul 26, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/">fanqiang with chinadns</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
-Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
-安装 首先需要在OpenWRT上安装如下包：
-opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32  配置 然后配置iptables的防火墙策略
-vi /etc/firewall.user  添加如下命令
-iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &quot;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&quot; -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|042442B2|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|0807C62D|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|1759053C|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|253D369E|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|2E52AE44|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|31027B38|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|364C8701|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|3B1803AD|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|402158A1|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4021632F|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4042A3FB|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4168CAFC|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|41A0DB71|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|422DFCED|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|480ECD63|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|480ECD68|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D2766|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D2771|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D7F66|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4A7D9B66|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4D04075C|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|4E10310F|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|5D2E0859|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|76053106|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|80797E8B|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|9F6A794B|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|A9840D67|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|BC050460|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|BDA31105|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|C043C606|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|C504040C|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CA6A0102|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CAB50755|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CB620741|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CBA1E6AB|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|CF0C5862|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D0381F2B|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1244921|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D155E58A|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1913632|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D1DC1EAE|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D35E4293|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D5A9FB23|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D8DDBCB6|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|D8EAB30D|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|F3B9BB27|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|F9812E30|&quot; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &quot;|FD9D0EA5|&quot; --from 60 --to 180 -j DROP  重启防火墙即可</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" title="fanqiang with chinadns">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-24T12:57:00JST">Jul 24, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/">fanqiang with shadowsocks</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
-最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
-VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
-编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
-git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;&amp; make make install  配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json  具体格式如下：
-{ &quot;server&quot;:&quot;my_server_ip&quot;, &quot;server_port&quot;:8388, &quot;local_port&quot;:1080, &quot;password&quot;:&quot;barfoo!&quot;, &quot;timeout&quot;:600, &quot;method&quot;:&quot;table&quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&rdquo;aes-256-cfb&rdquo;  vi /etc/rc.</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" title="fanqiang with shadowsocks">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-07-08T21:27:40JST">Jul 8, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/">fanqiang with openwrt&#43;vps</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 在上一篇《fanqiang with vpn+chnroutes》中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！ 找合适的VPS 由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。 开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃 又找到了RamNode，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。 它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。 由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~
-使用VPS架设VPN 这个就不赘述了，网上一搜一大堆，我选择的操作系统是Debian：
- 乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》 郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》 howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》 波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》 在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：
- 永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》
-  路由器+VPN 淘OpenWrt路由器 可以独享VPN上网后，还是不满足啊，因为家里2台电脑，手机还想无线上网，一台一台指定好费事啊 上一篇《fanqiang with vpn+chnroutes》，最后提到，可以用开源的路由器固件，搞定路由器上VPN的问题。 Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好的Huawei HG255d，基本在￥40-￥60之间。CPU为Ralink RT3052，FLASH容量为16MB，内存容量为32MB DDR。我淘的是硬改内存64MB+散热片，刷了不死uboot的，毕竟没那么多精力折腾。
-刷新最新OpenWrt固件 买回来后，淘宝店主刷新的是比较老的OpenWrt-DreamBox 20120828版本，对应的OpenWrt-DreamBox的源软件包地址已经改变，没法下载新软件，就开始折腾，找了半天，由于DreamBox版本比较老，所以换成了比较新的PandoraBox版本，可以到http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/ 下载编译的最新固件，我选择的是最新的20140505版。 不得不说，有了uboot，可以一键刷机，还是比较放心的进行折腾的。在找到目前的固件前，刷新了不少版本，但都没啥问题。
-设置路由器+VPN+chnroutes静态路由 这个根据各人情况都不相同，总而言之，最终搞定。
-存在问题 一个是VPN拨号后，需要手动添加一下静态路由，不过是自己的VPS架设的VPN，想待多久就待多久，除了掉线，一般也不会下线滴。 另一个是，可能淘的Huawei HG255d有问题，路由器在对文件进行操作时，折腾一段时间后，会出现&rdquo;input/output error&rdquo;问题，怀疑是硬改导致的？ 解决方案就是路由器关电重启解决，不过除了装软件，折腾东东，一般不影响使用，所以也不准备找淘宝店主问这个问题了。
-总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" title="fanqiang with openwrt&#43;vps">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-28T10:48:47JST">Jun 28, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/">fanqiang with vpn&#43;chnroutes</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。 翻来覆去的太麻烦。只好换招了。 VPN 这两天主要做的就是先找到一些免费的VPN，然后通过VPN直接翻墙。不用再去设置goagent的代理了。缺点是所有流量通过VPN走，国内网站访问慢，但是可以通过路由表调整，下面会介绍。 随便搜索了下，免费的VPN还是很多的，但是免费的午餐，延时、流量等需要能忍受啊。幸好需要访问的国外网站不是很多~
-VPN推荐网站:
- 免费VPN推荐网 免费VPN资源网  网友推荐:
- rsouls《国内最给力五大免费VPN商家》 oovpn的《十大免费翻墙VPN代理软件推荐》 zq530885040的《八个提供免费VPN账号的网站》  chnroutes 但是VPN的最大缺点是，所有流量全部从VPN走了，这样访问国内网站也从国外绕一圈，自找不自在啊。 幸好，网上的大拿们，开发了一个针对国内IP地址段的路由更新表，通过批处理配置路由表等方式，将国内IP指向本机网关，避免VPN绕行，具体项目在：
- chnroutes 每日更新路由下载  网上其他人的使用  MacTalk的《VPN – 长城内外，惟余莽莽》 markzhang的《Chnroutes的使用（Mac OS X Mavericks）》 ratazzi的《优化 VPN 和 chnroutes》  路由器自动配置 为了避免家里每台电脑都要设置，又有人考虑，直接设置路由器，然后自动fq。 只能说，人的懒惰是天生的啊。 主要思想是将路由器固件更新为开源固件
- DD-WRT OpenWrt Tomato  然后通过
- autoddvpn 进行自动的VPN的FQ方案实施。  具体参考的有：
- 北落师门的《在wr841n上刷openwrt并使用openvpn自动VPN》 错乱の年轮的《DD-WRT+Autoddvpn+OpenVPN=智能翻墙路由》 hauy的《配置DD-WRT通过autoddvpn的graceMode自动翻墙(PPTP)》 ntcn的《DD-WRT搭配autoddvpn全自动FQ配置精简教程》 因为我的路由器不匹配，所以没有实验。  通过VPN+chnroutes，目前已经可以轻松的上Goolge、Twitter、Facebook等网站了，挺好的~</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" title="fanqiang with vpn&#43;chnroutes">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-25T21:45:26JST">Jun 25, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-goagent/">fanqiang with goagent</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如：
- 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如：
- 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是：
- 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&gt; Preferences -&gt; Advanced -&gt; Network -&gt; Proxy Servers -&gt; &ldquo;Use automatic proxy configuration&rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。  结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-goagent/" title="fanqiang with goagent">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-    </ul>
-
-    
-
-
-  </div>
-  <div class="col-md-4">
-    
-<aside class="l-sidebar">
-
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://nivrrex.github.io/tags/fanqiang/">
+  <link href="http://nivrrex.github.io/tags/fanqiang/index.xml" rel="alternate" type="application/rss+xml" title="Fanqiang" />
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
     </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
-      
-      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
-      
-      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
-      
-      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
-      
-      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
-      
-    </div>
-  </section>
 
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
-    </div>
-    <div class="list-group">
-      
-    </div>
-  </section>
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">TAG</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
-      
-      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
-      
-      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
-      
-      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
-      
-      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
-      
-      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
-      
-      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
-      
-      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
-      
-      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
-      
-      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
-      
-    </div>
-  </section>
-  
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
 
-</aside>
+	
 
+	
 
-  </div>
-</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id="post">
+	<h2>Fanqiang &nbsp;</h2>
+	<hr/>
+	
+	<h3>2015</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Sun, Jul 26, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/">
+	      <span itemprop="name">fanqiang with dnsmasq</span></a>
+	    <meta itemprop="datePublished"  content="Jul 26, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/"/>
+	  </li>
+	  
+	  <li>Sun, Jul 26, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-chinadns/">
+	      <span itemprop="name">fanqiang with chinadns</span></a>
+	    <meta itemprop="datePublished"  content="Jul 26, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-chinadns/"/>
+	  </li>
+	  
+	  <li>Fri, Jul 24, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/">
+	      <span itemprop="name">fanqiang with shadowsocks</span></a>
+	    <meta itemprop="datePublished"  content="Jul 24, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<h3>2014</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Tue, Jul 8, 2014&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/">
+	      <span itemprop="name">fanqiang with openwrt&#43;vps</span></a>
+	    <meta itemprop="datePublished"  content="Jul 08, 2014" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/"/>
+	  </li>
+	  
+	  <li>Sat, Jun 28, 2014&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/">
+	      <span itemprop="name">fanqiang with vpn&#43;chnroutes</span></a>
+	    <meta itemprop="datePublished"  content="Jun 28, 2014" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/"/>
+	  </li>
+	  
+	  <li>Wed, Jun 25, 2014&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-goagent/">
+	      <span itemprop="name">fanqiang with goagent</span></a>
+	    <meta itemprop="datePublished"  content="Jun 25, 2014" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-goagent/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<hr/>
+	 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
+ <div class="addthis_inline_share_toolbox"></div>
+<hr/>
 
       </div>
-    </main>
+    </div>
+    </div>
 
-    <footer class="l-footer">
-      <div class="container">
-        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
-        <aside>
-          
-        </aside>
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">Your tips content</small>
       </div>
-    </footer>
+   </div>
+ </div>
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
-
+</body></html>

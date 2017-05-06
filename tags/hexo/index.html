@@ -1,216 +1,153 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20.2" />
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://nivrrex.github.io/tags/hexo/index.xml">
-
-<link rel="canonical" href="http://nivrrex.github.io/tags/hexo/">
-
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Hexo - Nivrrex&#39;s blog</title>
-    
-    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
-  </head>
-
-  <body>
+  <title>
     
     
+    Hexo - Nivrrex&#39;s blog
     
-
-    <header class="l-header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
-          </div>
-
-          
-
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        
-<div class="row">
-  <div class="col-md-8">
-
-    
-    <header class="page-header">
-      <h1>Hexo</h1>
-    </header>
-    
-
-    <ul class="p-articles">
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2017-04-23T11:22:28JST">Apr 23, 2017</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/change-hexo-to-hugo/">change hexo to hugo</a></h2>
-  </header>
-
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
   
-  <div class="summary">缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。
-于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：
-hugo 这个go语言写的大杀器。
- A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
-迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移
-下载hugo hugo就是一个执行文件，可以直接从官网下载
-windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/
-生成站点 可以到Hugo - Introduction to Hugo自行学习
-Hugo - Hugo Quickstart Guide 快速上手指南
-生成站点比较简单：
-hugo new site sitename  主题 可以到以下站址找自己喜欢的主题，我选择的是 beg
- Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themes git clone https://github.com/dim0627/hugo_theme_beg.git  生成页面 hugo new post/about.md  然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</div>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
-  <footer>
-    <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" title="change hexo to hugo">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-06-12T19:37:32JST">Jun 12, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/hello-github/">Hello GitHub</a></h2>
-  </header>
-
-  
-  <div class="summary">欢迎来到我的GitHub blog！
-这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
-Git的一些基本命令 git config --global user.name &quot;nivrrex&quot; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &quot;nivrrex@gmail.com&quot; ssh -T git@github.com -i ./.ssh/id_rsa  更多命令可以到git - 简明指南去查看
-Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &quot;My New Post&quot; hexo server hexo generate hexo deploy  更多文档可以到Hexo docs上查看</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/hello-github/" title="Hello GitHub">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-    </ul>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://nivrrex.github.io/tags/hexo/">
+  <link href="http://nivrrex.github.io/tags/hexo/index.xml" rel="alternate" type="application/rss+xml" title="Hexo" />
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+    </div>
 
     
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
 
+	
 
-  </div>
-  <div class="col-md-4">
-    
-<aside class="l-sidebar">
+	
 
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
-      
-      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
-      
-      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
-      
-      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
-      
-      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
-      
-    </div>
-  </section>
+	
 
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
-    </div>
-    <div class="list-group">
-      
-    </div>
-  </section>
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">TAG</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
-      
-      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
-      
-      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
-      
-      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
-      
-      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
-      
-      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
-      
-      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
-      
-      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
-      
-      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
-      
-      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
-      
-    </div>
-  </section>
-  
+	
 
-</aside>
+	
 
+	
 
-  </div>
-</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id="post">
+	<h2>Hexo &nbsp;</h2>
+	<hr/>
+	
+	<h3>2017</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Sun, Apr 23, 2017&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/change-hexo-to-hugo/">
+	      <span itemprop="name">change hexo to hugo</span></a>
+	    <meta itemprop="datePublished"  content="Apr 23, 2017" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/change-hexo-to-hugo/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<h3>2014</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Thu, Jun 12, 2014&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/hello-github/">
+	      <span itemprop="name">Hello GitHub</span></a>
+	    <meta itemprop="datePublished"  content="Jun 12, 2014" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/hello-github/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<hr/>
+	 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
+ <div class="addthis_inline_share_toolbox"></div>
+<hr/>
 
       </div>
-    </main>
+    </div>
+    </div>
 
-    <footer class="l-footer">
-      <div class="container">
-        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
-        <aside>
-          
-        </aside>
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">Your tips content</small>
       </div>
-    </footer>
+   </div>
+ </div>
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
-
+</body></html>

@@ -1,272 +1,165 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-<meta name="pinterest" content="nopin">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="generator" content="Hugo 0.20.2" />
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
 
-<link rel="alternate" type="application/rss+xml" title="RSS" href="http://nivrrex.github.io/tags/vps/index.xml">
-
-<link rel="canonical" href="http://nivrrex.github.io/tags/vps/">
-
-
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/solarized_dark.min.css">
-    <title>Vps - Nivrrex&#39;s blog</title>
-    
-    <link href="http://nivrrex.github.io/css/styles.css" rel="stylesheet">
-  </head>
-
-  <body>
+  <title>
     
     
+    Vps - Nivrrex&#39;s blog
     
-
-    <header class="l-header">
-      <nav class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
-          </div>
-
-          
-
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div class="container">
-        
-<div class="row">
-  <div class="col-md-8">
-
-    
-    <header class="page-header">
-      <h1>Vps</h1>
-    </header>
-    
-
-    <ul class="p-articles">
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-27T22:36:17JST">Jul 27, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/">update debian linux image with backports</a></h2>
-  </header>
-
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
   
-  <div class="summary">来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
-如何查看Linux版本 共有5种方式，具体如下
-cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue  我的Debian更新过，显示是
-Debian GNU/Linux 8.1 (jessie)  但是，内核为什么还是
-Linux 2.6.32-042stab093.4 i686  好吧，更新，更新！
-使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目
-其官方Wiki上面说
-Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。
-开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源
-vi /etc/apt/sources.list  添加如下内容
-deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main  更新数据
-sudo apt-get update #sudo apt-get -t jessie-backports upgrade  搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件
-apt-get install aptitude aptitude search kernel-image  根据搜索出来的内核文件，进行安装，我的是</div>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
-  <footer>
-    <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" title="update debian linux image with backports">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-26T17:51:59JST">Jul 26, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/">fanqiang with dnsmasq</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~ DNSmasq安装 我的系统是Debian，直接运行以下命令
-sudo apt-get update sudo apt-get install dnsmasq  DNSmasq配置 编辑/etc/dnsmasq.conf文件
-vi /etc/dnsmasq.conf  修改以下参数
-resolv-file=/etc/resolv.conf strict-order listen-address=xxx.xxx.xxx.xxx,127.0.0.1 port=443 cache-size=1024 log-queries  编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器
-nameserver 8.8.8.8 nameserver 208.67.222.222  将服务重启即可
-/etc/init.d/dnsmasq restart  将DNSmasq加入启动项
-sudo vi /etc/rc.local  将以下命令添加进去即可
-/etc/init.d/dnsmasq start  DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
-结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" title="fanqiang with dnsmasq">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2015-07-24T12:57:00JST">Jul 24, 2015</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/">fanqiang with shadowsocks</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
-最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
-VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
-编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
-git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;&amp; make make install  配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json  具体格式如下：
-{ &quot;server&quot;:&quot;my_server_ip&quot;, &quot;server_port&quot;:8388, &quot;local_port&quot;:1080, &quot;password&quot;:&quot;barfoo!&quot;, &quot;timeout&quot;:600, &quot;method&quot;:&quot;table&quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&rdquo;aes-256-cfb&rdquo;  vi /etc/rc.</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" title="fanqiang with shadowsocks">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-      <li><article class="li">
-  <header>
-    <ul class="p-facts">
-      <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="2014-07-08T21:27:40JST">Jul 8, 2014</time></li>
-      <li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="http://nivrrex.github.io/post/">post</a></li>
-      
-    </ul>
-    <h2 class="title"><a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/">fanqiang with openwrt&#43;vps</a></h2>
-  </header>
-
-  
-  <div class="summary">来由 在上一篇《fanqiang with vpn+chnroutes》中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！ 找合适的VPS 由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。 开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃 又找到了RamNode，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。 它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。 由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~
-使用VPS架设VPN 这个就不赘述了，网上一搜一大堆，我选择的操作系统是Debian：
- 乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》 郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》 howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》 波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》 在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：
- 永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》
-  路由器+VPN 淘OpenWrt路由器 可以独享VPN上网后，还是不满足啊，因为家里2台电脑，手机还想无线上网，一台一台指定好费事啊 上一篇《fanqiang with vpn+chnroutes》，最后提到，可以用开源的路由器固件，搞定路由器上VPN的问题。 Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好的Huawei HG255d，基本在￥40-￥60之间。CPU为Ralink RT3052，FLASH容量为16MB，内存容量为32MB DDR。我淘的是硬改内存64MB+散热片，刷了不死uboot的，毕竟没那么多精力折腾。
-刷新最新OpenWrt固件 买回来后，淘宝店主刷新的是比较老的OpenWrt-DreamBox 20120828版本，对应的OpenWrt-DreamBox的源软件包地址已经改变，没法下载新软件，就开始折腾，找了半天，由于DreamBox版本比较老，所以换成了比较新的PandoraBox版本，可以到http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/ 下载编译的最新固件，我选择的是最新的20140505版。 不得不说，有了uboot，可以一键刷机，还是比较放心的进行折腾的。在找到目前的固件前，刷新了不少版本，但都没啥问题。
-设置路由器+VPN+chnroutes静态路由 这个根据各人情况都不相同，总而言之，最终搞定。
-存在问题 一个是VPN拨号后，需要手动添加一下静态路由，不过是自己的VPS架设的VPN，想待多久就待多久，除了掉线，一般也不会下线滴。 另一个是，可能淘的Huawei HG255d有问题，路由器在对文件进行操作时，折腾一段时间后，会出现&rdquo;input/output error&rdquo;问题，怀疑是硬改导致的？ 解决方案就是路由器关电重启解决，不过除了装软件，折腾东东，一般不影响使用，所以也不准备找淘宝店主问这个问题了。
-总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~</div>
-
-  <footer>
-    <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" title="fanqiang with openwrt&#43;vps">Read More…</a>
-  </footer>
-</article>
-</li>
-      
-    </ul>
-
-    
-
-
-  </div>
-  <div class="col-md-4">
-    
-<aside class="l-sidebar">
-
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">LATESTS</div>
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://nivrrex.github.io/tags/vps/">
+  <link href="http://nivrrex.github.io/tags/vps/index.xml" rel="alternate" type="application/rss+xml" title="Vps" />
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
     </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" class="list-group-item">change hexo to hugo</a>
-      
-      <a href="http://nivrrex.github.io/post/start-to-use-python/" class="list-group-item">start to use python</a>
-      
-      <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" class="list-group-item">change editer with sublime text</a>
-      
-      <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" class="list-group-item">update debian linux image with backports</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" class="list-group-item">fanqiang with dnsmasq</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" class="list-group-item">fanqiang with chinadns</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" class="list-group-item">fanqiang with shadowsocks</a>
-      
-      <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" class="list-group-item">build openwrt with image builder</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" class="list-group-item">fanqiang with openwrt&#43;vps</a>
-      
-      <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" class="list-group-item">fanqiang with vpn&#43;chnroutes</a>
-      
-    </div>
-  </section>
 
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">CATEGORY</div>
-    </div>
-    <div class="list-group">
-      
-    </div>
-  </section>
-  
-  <section class="panel panel-default">
-    <div class="panel-heading">
-      <div class="panel-title">TAG</div>
-    </div>
-    <div class="list-group">
-      
-      <a href="http://nivrrex.github.io/tags/fanqiang" class="list-group-item">fanqiang</a>
-      
-      <a href="http://nivrrex.github.io/tags/internet" class="list-group-item">internet</a>
-      
-      <a href="http://nivrrex.github.io/tags/vps" class="list-group-item">vps</a>
-      
-      <a href="http://nivrrex.github.io/tags/openwrt" class="list-group-item">openwrt</a>
-      
-      <a href="http://nivrrex.github.io/tags/hexo" class="list-group-item">hexo</a>
-      
-      <a href="http://nivrrex.github.io/tags/live" class="list-group-item">live</a>
-      
-      <a href="http://nivrrex.github.io/tags/soft" class="list-group-item">soft</a>
-      
-      <a href="http://nivrrex.github.io/tags/chinadns" class="list-group-item">chinadns</a>
-      
-      <a href="http://nivrrex.github.io/tags/debian" class="list-group-item">debian</a>
-      
-      <a href="http://nivrrex.github.io/tags/dnsmasq" class="list-group-item">dnsmasq</a>
-      
-    </div>
-  </section>
-  
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
 
-</aside>
+	
 
+	
 
-  </div>
-</div>
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div id="post">
+	<h2>Vps &nbsp;</h2>
+	<hr/>
+	
+	<h3>2015</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Mon, Jul 27, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/">
+	      <span itemprop="name">update debian linux image with backports</span></a>
+	    <meta itemprop="datePublished"  content="Jul 27, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/"/>
+	  </li>
+	  
+	  <li>Sun, Jul 26, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/">
+	      <span itemprop="name">fanqiang with dnsmasq</span></a>
+	    <meta itemprop="datePublished"  content="Jul 26, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/"/>
+	  </li>
+	  
+	  <li>Fri, Jul 24, 2015&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/">
+	      <span itemprop="name">fanqiang with shadowsocks</span></a>
+	    <meta itemprop="datePublished"  content="Jul 24, 2015" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<h3>2014</h3>
+	<div itemscorpe itemtype="http://schema.org/ItemList" itemListElement>
+	<ul>
+	  
+	  <li>Tue, Jul 8, 2014&nbsp;<a itemListElement  itemtype="http://schema.org/ListItem" href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/">
+	      <span itemprop="name">fanqiang with openwrt&#43;vps</span></a>
+	    <meta itemprop="datePublished"  content="Jul 08, 2014" />
+	    <meta  itemprop="url" content="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/"/>
+	  </li>
+	  
+	</ul></div>
+	
+	<hr/>
+	 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
+ <div class="addthis_inline_share_toolbox"></div>
+<hr/>
 
       </div>
-    </main>
+    </div>
+    </div>
 
-    <footer class="l-footer">
-      <div class="container">
-        <p><span class="h-logo">&copy; Nivrrex&#39;s blog</span></p>
-        <aside>
-          
-        </aside>
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">Your tips content</small>
       </div>
-    </footer>
+   </div>
+ </div>
 
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </body>
-</html>
-
+</body></html>
