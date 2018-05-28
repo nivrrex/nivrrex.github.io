@@ -20,7 +20,7 @@
       <guid>http://nivrrex.github.io/post/change-editer-with-sublime-text/</guid>
       <description>来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
 Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
-import urllib.request,os,hashlib; h = &#39;eb2297e1a458f27d836c04bb0cbaf282&#39; + &#39;d0e7a3098092775ccb37ca9d6b2e4b7d&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; + pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.</description>
+import urllib.request,os,hashlib; h = &#39;6f4c264a24d933ce70df5dedcf1dcaee&#39; + &#39;ebe013ee18cced0ef93d5f746d80ef60&#39;; pf = &#39;Package Control.sublime-package&#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &#39;http://packagecontrol.io/&#39; + pf.replace(&#39; &#39;, &#39;%20&#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&#39;Error validating download (got %s instead of %s), please try manual install&#39; % (dh, h)) if dh != h else open(os.</description>
     </item>
     
   </channel>
