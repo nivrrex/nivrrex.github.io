@@ -197,6 +197,9 @@ C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入�
     &quot;trim_trailing_white_space_on_save&quot;: true,          //删除行尾的空格
     &quot;ensure_newline_at_eof_on_save&quot;: true,              //文件结束后保存加入新行
 
+    &quot;update_check&quot;: false,                              //禁止自动更新
+
+
     &quot;color_scheme&quot;: &quot;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&quot;,     //主题包Monokai
 
     &quot;ignored_packages&quot;:                                 //忽略的包
@@ -208,7 +211,7 @@ C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入�
 
 <h4 id="gosublime配置">GoSublime配置</h4>
 
-<p>因为我用Golang和Ruby比较多，在安装了GoSublime后，还需要配置下GoSublime，以便进行编译
+<p>因为我用Golang和Ruby比较多，在安装了GoSublime后，还需要配置下GoSublime，以便进行编译。
 路径如下：&rdquo;Preferences&rdquo; - &ldquo;Package Setting&rdquo; - &ldquo;GoSublime&rdquo; - &ldquo;Settings User&rdquo;</p>
 
 <pre><code class="language-json">{
@@ -229,7 +232,8 @@ C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入�
 
 <h4 id="tinycc编译系统">TinyCC编译系统</h4>
 
-<p>因为我偶尔用TinyCC编译小的C语言程序，所以自定义了一个编译系统，具体代码如下：</p>
+<p>因为我偶尔用TinyCC编译小的C语言程序，所以自定义了一个编译系统，编辑文件C:\Sublime Text\Data\Packages\User\TinyCC.sublime-build
+具体代码如下：</p>
 
 <pre><code class="language-json">{
   &quot;path&quot;: &quot;C:\\ Sublime Text\\tcc\\&quot;,
@@ -245,6 +249,13 @@ C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入�
     }
   ]
 }
+</code></pre>
+
+<h4 id="f5快捷键">F5快捷键</h4>
+
+<p>平时喜欢把F5设置成脚本Run的快捷键盘，具体设置路径如下：&rdquo;Preferences&rdquo; - &ldquo;Key Bindings&rdquo;，增加如下代码</p>
+
+<pre><code class="language-json">    { &quot;keys&quot;: [&quot;f5&quot;], &quot;command&quot;: &quot;build&quot; },
 </code></pre>
 
 <h4 id="结">结</h4>
