@@ -157,7 +157,7 @@ $(document).ready(function() {
 
 <p>安裝 cmder</p>
 
-<p>先到 cmder 官网(<a href="http://cmder.net/)下载此工具，有两个版本，分別是">http://cmder.net/)下载此工具，有两个版本，分別是</a> mini 和 full 版。区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。</p>
+<p>先到 cmder 官网 <a href="http://cmder.net/">http://cmder.net/</a> 下载此工具，有两个版本，分別是 mini 和 full 版，区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。</p>
 
 <h3 id="外部链接">外部链接</h3>
 
@@ -176,14 +176,14 @@ $(document).ready(function() {
 
 <h3 id="配置">配置</h3>
 
-<h5 id="注册cmder-文档的右键菜单添加cmder-here">注册Cmder，文档的右键菜单添加Cmder here</h5>
+<h4 id="注册cmder-文档的右键菜单添加cmder-here">注册Cmder，文档的右键菜单添加Cmder here</h4>
 
 <pre><code class="language-bash">Cmder.exe /REGISTER ALL
 </code></pre>
 
-<h5 id="cmder使用ls中文显示乱码解决方案">Cmder使用ls中文显示乱码解决方案</h5>
+<h4 id="cmder使用ls中文显示乱码解决方案">Cmder使用ls中文显示乱码解决方案</h4>
 
-<h6 id="方案1">方案1</h6>
+<h5 id="方案1">方案1</h5>
 
 <p>默认配置不支持使用ls显示中文命名的文件列表。</p>
 
@@ -197,13 +197,13 @@ set LC_ALL=zh_CN.utf8
 
 <p>重启Cmder，发现使用ls，中文正确显示了。</p>
 
-<h6 id="备注">备注</h6>
+<h5 id="备注">备注</h5>
 
 <p>因ConEmu的bug，该设置无法保存，可以去
 <a href="https://github.com/Maximus5/ConEmu/releases">https://github.com/Maximus5/ConEmu/releases</a>
 下载最新或历史版本的ConEmu，替换Cmder自带的版本，则可以解决这个问题</p>
 
-<h6 id="方案2">方案2</h6>
+<h5 id="方案2">方案2</h5>
 
 <p>修改cmder\vendor\conemu-maximus5\ConEmu.xml文件</p>
 
