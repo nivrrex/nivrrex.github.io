@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright right infomation.</copyright>
-    <lastBuildDate>Mon, 04 Jun 2018 14:24:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 10:22:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>use KoolProxy for adblock</title>
+      <link>http://nivrrex.github.io/post/use-koolproxy-for-adblock/</link>
+      <pubDate>Tue, 05 Jun 2018 10:22:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/post/use-koolproxy-for-adblock/</guid>
+      <description>KoolProxy 路由器上的广告过滤插件 ###介绍 KoolProxy 是一个免费的广告过滤软件，可以通过自己安装证书的方式支持https的广告过滤。看见后，想自己试用一下，用来过滤自己的机顶盒广告。
+###安装 在官网http://firmware.koolshare.cn/binary/KoolProxy/ 根据自己路由器对应的版本，分别安装luci和koolproxy
+安装luci 在 https://firmware.koolshare.cn/binary/KoolProxy/luci/ 按指导说明安装ipk ；注意要提前安装dnsmasq-full , ipset
+opkg update opkg install openssl-util ipset dnsmasq-full diffutils iptables-mod-nat-extra opkg install wget ca-bundle ca-certificates libustream-openssl  opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/luci/luci-app-koolproxy_2.0-1_all.ipk opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/luci/luci-i18n-koolproxy-zh-cn_2.0-1_all.ipk  安装koolproxy主程序 我的路由器是netgear的wntr4300，所以就是 ar71xx 的 koolproxy_3.7.2-20180127_mips_24kc.ipk 这个ipk
+opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/ar71xx/koolproxy_3.7.2-20180127_mips_24kc.ipk  如果没有对应的ipk，需要自己手动安装
+mkdir /usr/share/koolproxy cd /usr/share/koolproxy wget https://koolproxy.com/downloads/XXX mv XXX koolproxy chmod 777 koolproxy mkdir data cd data mkdir rules cd rules wget https://kprule.</description>
+    </item>
     
     <item>
       <title>use cmder</title>
