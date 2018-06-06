@@ -203,6 +203,18 @@ config global
 
 <p>具体问题可以看 <a href="http://koolshare.b0.upaiyun.com/index7.html">http://koolshare.b0.upaiyun.com/index7.html</a> 中介绍。</p>
 
+<h3 id="卸载">卸载</h3>
+
+<p>如因部分原因不继续使用，openwrt路由器可以按以下脚本卸载:</p>
+
+<pre><code class="language-bash">opkg remove luci-i18n-koolproxy-zh-cn
+opkg remove luci-app-koolproxy
+opkg remove koolproxy
+
+rm -r /usr/share/koolproxy
+rm /etc/config/koolproxy 
+</code></pre>
+
 <h3 id="结">结</h3>
 
 <p>过滤效果还不错，可以正常使用啦~</p>
