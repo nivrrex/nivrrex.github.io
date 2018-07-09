@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+   <head>
+   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
+
+  <title>
+    
+    
+    use koolproxy for adblock - Nivrrex&#39;s blog
+    
+  </title>
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/holder.min.js" type='text/javascript'></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://nivrrex.github.io/post/use-koolproxy-for-adblock/">
+  
+   </head>
+   <body data-spy="scroll" data-target="#toc">
+     <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+    </div>
+
+    
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+	
+	
+	<li  ><a href="/">Home</a></li>
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+      </ul>
+</nav>
+</header>
+
+     <div class="jumbotron masthead" role="main">
+       <div class="container">
+	 <div class="row">
+
+ 	   <div class="col-md-8 col-md-offset-2 ">
+	   
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script type="text/javascript">
+  hljs.initHighlightingOnLoad();
+$(document).ready(function() {
+  $('pre').each(function(i, block) {
+  hljs.highlightBlock(block);
+  });
+});
+</script>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article itemscope itemtype="http://schema.org/BlogPosting" id="post" >
+	        <p><h1 itemprop="name headline"> use koolproxy for adblock </h1></p>
+	<p>
+	  
+	  <small class="text-muted">
+	    <span itemprop="author" itemscope itemtype="http://schema.org/Person" >
+	      <span itemprop="name">nivrrex</span>
+	    </span>  posted by:&nbsp;<time itemprop="datePublished"  content="Tue Jun 5,5066"  datetime="2018-06-05 10:22:00 &#43;0800 CST" itemprop="datePublished">Tue Jun 5, 2018 </time>
+	  </small>
+	</p>
+
+	<p>
+	  
+	  <a href='/'><span class="label label-danger"></span></a>
+
+	</p>
+
+
+	<hr/>
+	<span itemprop="articleBody">
+	  
+
+<p>KoolProxy 路由器上的广告过滤插件</p>
+
+<h3 id="介绍">介绍</h3>
+
+<p>KoolProxy 是一个免费的广告过滤软件，可以通过自己安装证书的方式支持https的广告过滤。看见后，想自己试用一下，用来过滤自己的机顶盒广告。</p>
+
+<h3 id="安装">安装</h3>
+
+<p>在官网<a href="http://firmware.koolshare.cn/binary/KoolProxy/">http://firmware.koolshare.cn/binary/KoolProxy/</a> 根据自己路由器对应的版本，分别安装luci和koolproxy</p>
+
+<h4 id="安装luci">安装luci</h4>
+
+<p>在 <a href="https://firmware.koolshare.cn/binary/KoolProxy/luci/">https://firmware.koolshare.cn/binary/KoolProxy/luci/</a> 按指导说明安装ipk ；注意要提前安装dnsmasq-full , ipset</p>
+
+<pre><code class="language-bash">opkg update 
+opkg install openssl-util ipset dnsmasq-full diffutils iptables-mod-nat-extra 
+opkg install wget ca-bundle ca-certificates libustream-openssl
+</code></pre>
+
+<pre><code class="language-bash">opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/luci/luci-app-koolproxy_2.0-1_all.ipk 
+opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/luci/luci-i18n-koolproxy-zh-cn_2.0-1_all.ipk 
+</code></pre>
+
+<h4 id="安装koolproxy主程序">安装koolproxy主程序</h4>
+
+<p>我的路由器是netgear的wntr4300，所以就是 ar71xx 的 koolproxy_3.7.2-20180127_mips_24kc.ipk 这个ipk</p>
+
+<pre><code class="language-bash">opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/ar71xx/koolproxy_3.7.2-20180127_mips_24kc.ipk 
+</code></pre>
+
+<p>如果没有对应的ipk，需要自己手动安装</p>
+
+<pre><code class="language-bash">mkdir /usr/share/koolproxy
+cd /usr/share/koolproxy
+
+wget https://koolproxy.com/downloads/XXX
+mv XXX koolproxy
+chmod 777 koolproxy
+
+mkdir data
+cd data
+mkdir rules
+cd rules
+wget https://kprule.com/koolproxy.txt
+wget https://kprule.com/kp.dat
+wget https://kprule.com/user.txt
+wget https://kprule.com/daily.txt
+
+vi /etc/config/koolproxy 
+=================================
+config global
+    option filter_mode 'adblock'
+    option enabled '1'
+=================================
+</code></pre>
+
+<h3 id="使用介绍">使用介绍</h3>
+
+<p>具体可以参考 <a href="http://koolshare.b0.upaiyun.com/index.html">http://koolshare.b0.upaiyun.com/index.html</a> 中说明</p>
+
+<p>Koolproxy提供过滤模式:</p>
+
+<ul>
+<li>全局模式: 经过80和443端口(开启https)的流量会全部被过滤,过滤完整,效果极佳!(路由器性能不行的可能会出现卡网)</li>
+<li>视频模式: 只会过滤部分视频站点以及用户自定义规则广告,过滤可能不完全,效果不会太好!</li>
+<li>ipset模式(黑名单): 过滤取决于ipset.conf文件集合里面的网站,相对于视频模式过滤较好,但比较麻烦，需要维护这个过滤网站列表!</li>
+</ul>
+
+<p>因为我主要是用想用 Koolproxy 过滤路由器下机顶盒的视频广告，而且怕影响部分网页的正常使用，路由器上不好调整，所以使用的是视频模式。</p>
+
+<p>不过视频模式，部分视频网站无法全部过滤，此时可以变更为全局模式。</p>
+
+<p>具体问题可以看 <a href="http://koolshare.b0.upaiyun.com/index7.html">http://koolshare.b0.upaiyun.com/index7.html</a> 中介绍。</p>
+
+<h3 id="结">结</h3>
+
+<p>过滤效果还不错，可以正常使用啦~</p>
+
+	</span>
+
+	
+	<hr/>
+<p>
+  
+
+	  
+	<br/>
+	
+	
+<strong>Tags:</strong>
+  <a itemprop="keywords" class=" label label-danger" href="/tags/openwrt">openwrt</a> <a itemprop="keywords" class=" label label-danger" href="/tags/soft">soft</a>
+
+
+	<hr/>
+	
+ <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
+ <div class="addthis_inline_share_toolbox"></div>
+<hr/>
+
+
+      </div>
+      </div></article>
+
+
+	 </div>
+
+	 </div>
+       </div>
+     </div>
+
+ <div class="container footer">
+  <div class="row">
+    <div class="col-md-10">
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+    </div>
+    <div class="col-md-2">
+      <small class="text-muted">Your tips content</small>
+      </div>
+   </div>
+ </div>
+
+</body></html>
