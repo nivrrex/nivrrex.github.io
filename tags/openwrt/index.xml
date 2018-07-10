@@ -7,10 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright right infomation.</copyright>
-    <lastBuildDate>Tue, 05 Jun 2018 10:22:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ubnt er-x use openwrt</title>
+      <link>http://nivrrex.github.io/post/ubnt-erx-use-openwrt/</link>
+      <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/post/ubnt-erx-use-openwrt/</guid>
+      <description>给UBNT的ER-X刷OpenWrt固件
+缘 UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。
+于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks + ChinaDNS + DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
+安装 前期问题 刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。
+于是到 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=15243 帖子中和国外的一个帖子中提到的 http://s000.tinyupload.com/index.php?file_id=07741512272586742124 ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：
+Request timed out  而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
+恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
+##这一部分不是帖子的内容，是前期准备工作 #在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下 wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tar tar -xf ER-e50.</description>
+    </item>
     
     <item>
       <title>use koolproxy for adblock</title>
