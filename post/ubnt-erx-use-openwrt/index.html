@@ -220,17 +220,10 @@ reboot
 
 <pre><code>#PC上下载sysupgrade固件，并上传
 wget http://downloads.opennet-initiative.de/openwrt/stable/latest/targets/ramips/mt7621/lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar
-<<<<<<< HEAD
 scp -P 22 lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar root@192.168.1.1:/tmp
 
 #登录路由器，并更新OpenWrt系统
 ssh -p 22 root@192.168.1.1
-=======
-scp -P 22 lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar root@172.16.0.1:/tmp
-
-#登录路由器，并更新OpenWrt系统
-ssh -p 22 root@172.16.0.1   #密码admin
->>>>>>> b365b24c409f3413fc4d90146cd65d49523d93b3
 cd /tmp
 sysupgrade lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar
 </code></pre>
