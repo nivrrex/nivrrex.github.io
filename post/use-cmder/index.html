@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
    <head>
    <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="XN4YmHgE76jTp2kNQ9qnsVSApl6yIQBzdyLe0BnbFks" />
-
+  <meta name="Description" content="Nivrrex&#39;s blog | This is nivrrex&#39;s home">
   <title>
     
     
@@ -14,15 +14,28 @@
   </title>
   <link rel="shortcut icon" href="/favicon.ico" />
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="all">
   <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  <script src="/js/holder.min.js" type='text/javascript'></script>
+<script src="/js/jquery.min.js"></script>
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/highlight/styles/.css">  
+  <script src="/highlight/highlight.pack.js" type='text/javascript'></script>
+  <script src="/js/bootstrap.min.js"></script>
+ <script src="/js/holder.min.js" type='text/javascript'></script>
+<script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+	hljs.initHighlightingOnLoad();
+    $('div.src').each(function(i, block) {
+	hljs.highlightBlock(block);
+    });
+});
+  </script>
+
+
   <link rel="canonical" href="http://nivrrex.github.io/post/use-cmder/">
-  
+  <link href="" rel="alternate" type="application/rss+xml" title="use cmder" />
    </head>
    <body data-spy="scroll" data-target="#toc">
      <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
@@ -45,49 +58,95 @@
 	<li  ><a href="/">Home</a></li>
 	
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/ubnt-erx-use-openwrt/" >ubnt er-x use openwrt</a></li>
 	
 
 	
-
+	
+	<li  class="active"  > <a href="http://nivrrex.github.io/post/use-cmder/" >use cmder</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/" >change hexo to hugo</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/start-to-use-python/" >start to use python</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/change-editer-with-sublime-text/" >change editer with sublime text</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/update-debian-linux-image-with-backports/" >update debian linux image with backports</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/fanqiang-with-dnsmasq/" >fanqiang with dnsmasq</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/fanqiang-with-chinadns/" >fanqiang with chinadns</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/fanqiang-with-shadowsocks/" >fanqiang with shadowsocks</a></li>
 	
 
 	
-
+	
+	<li > <a href="http://nivrrex.github.io/post/build-openwrt-with-image-builder/" >build openwrt with image builder</a></li>
 	
 
 	
+	
+	<li > <a href="http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/" >fanqiang with openwrt&#43;vps</a></li>
+	
 
+	
+	
+	<li > <a href="http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/" >fanqiang with vpn&#43;chnroutes</a></li>
+	
+
+	
+	
+	<li > <a href="http://nivrrex.github.io/post/fanqiang-with-goagent/" >fanqiang with goagent</a></li>
+	
+
+	
+	
+	<li > <a href="http://nivrrex.github.io/post/some-problems-for-golang-excel-update/" >some problems for golang excel update</a></li>
+	
+
+	
+	
+	<li > <a href="http://nivrrex.github.io/post/commonly-used-software/" >commonly used software</a></li>
+	
+
+	
+	
+	<li > <a href="http://nivrrex.github.io/post/hello-github/" >Hello GitHub</a></li>
+	
+
+	
+	
+	<li > <a href="http://nivrrex.github.io/post/about-me/" >About this blog</a></li>
+	
+
+
+	
+	<li > <a href="/tags/" >Tags</a></li>
       </ul>
-</nav>
+    </nav>
 </header>
 
      <div class="jumbotron masthead" role="main">
@@ -96,39 +155,15 @@
 
  	   <div class="col-md-8 col-md-offset-2 ">
 	   
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/github.min.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
-<script type="text/javascript">
-  hljs.initHighlightingOnLoad();
-$(document).ready(function() {
-  $('pre').each(function(i, block) {
-  hljs.highlightBlock(block);
-  });
-});
-</script>
-
 <div class="panel panel-default">
   <div class="panel-body">
-      <article itemscope itemtype="http://schema.org/BlogPosting" id="post" >
-	        <p><h1 itemprop="name headline"> use cmder </h1></p>
-	<p>
+      <article id='post' >
+	<div class='title'> use cmder </div>
 	  
-	  <small class="text-muted">
-	    <span itemprop="author" itemscope itemtype="http://schema.org/Person" >
-	      <span itemprop="name">nivrrex</span>
-	    </span>  posted by:&nbsp;<time itemprop="datePublished"  content="Mon Jun 4,4066"  datetime="2018-06-04 14:24:00 &#43;0800 CST" itemprop="datePublished">Mon Jun 4, 2018 </time>
-	  </small>
-	</p>
+	  <span class="text-muted"><ion-icon name="ios-calendar"></ion-icon>Posted by:&nbsp; <time tile="创建于" itemprop="dateCreated datePublished" datetime="Mon Jun 4, 2018">Mon Jun 4, 2018</time> | 
+	  <ion-icon name="ios-podium"></ion-icon>Word Count: 115&nbsp;&nbsp; | 
+	  <ion-icon name="ios-time"></ion-icon> Reading Time: 1 Minute&nbsp;&nbsp;</span>
 
-	<p>
-	  
-	  <a href='/'><span class="label label-danger"></span></a>
-
-	</p>
-
-
-	<hr/>
-	<span itemprop="articleBody">
 	  
 
 <h3 id="缘来">缘来</h3>
@@ -213,17 +248,17 @@ set LC_ALL=zh_CN.utf8
 <p>修改cmder\vendor\conemu-maximus5\ConEmu.xml文件</p>
 
 <pre><code class="language-bash">&lt;value name=&quot;EnvironmentSet&quot; type=&quot;multi&quot;&gt;
-    &lt;line data=&quot;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&quot;/&gt;
+	&lt;line data=&quot;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&quot;/&gt;
 &lt;/value&gt;
 </code></pre>
 
 <p>修改添加为：</p>
 
 <pre><code class="language-bash">&lt;value name=&quot;EnvironmentSet&quot; type=&quot;multi&quot;&gt;
-    &lt;line data=&quot;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&quot;/&gt;
-    &lt;line data=&quot;set LANG=zh_CN.UTF-8&quot;/&gt;
-    &lt;line data=&quot;set LANG=zh_CN.gbk&quot;/&gt;
-    &lt;line data=&quot;set LC_ALL=zh_CN.utf8&quot;/&gt;
+	&lt;line data=&quot;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&quot;/&gt;
+	&lt;line data=&quot;set LANG=zh_CN.UTF-8&quot;/&gt;
+	&lt;line data=&quot;set LANG=zh_CN.gbk&quot;/&gt;
+	&lt;line data=&quot;set LC_ALL=zh_CN.utf8&quot;/&gt;
 &lt;/value&gt;
 </code></pre>
 
@@ -231,29 +266,36 @@ set LC_ALL=zh_CN.utf8
 
 <p>就这样，配置完成后，就可以用啦~</p>
 
-	</span>
-
-	
-	<hr/>
-<p>
-  
 
 	  
-	<br/>
-	
-	
-<strong>Tags:</strong>
-  <a itemprop="keywords" class=" label label-danger" href="/tags/soft">soft</a>
+	  	  <div class="tags">	
+
+	      
+	    
+<p><ion-icon name="pricetag"></ion-icon>  <a itemprop="keywords"  class="label label-danger" href="/tags/soft">soft</a></p>
 
 
-	<hr/>
-	
- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58540b2e297efcbc"></script> 
- <div class="addthis_inline_share_toolbox"></div>
-<hr/>
+
+	    	  </div>
+	    
+<nav aria-label="...">
+  <ul class="pager">
+    
+    <li class="previous">
+      <a href="http://nivrrex.github.io/post/change-hexo-to-hugo/"><span aria-hidden="true">&larr;</span>change hexo to hugo</a>
+      
+    </li>
+    	
+     
+    
+    <li class="next"><a href="http://nivrrex.github.io/post/ubnt-erx-use-openwrt/">ubnt er-x use openwrt<span aria-hidden="true">&rarr;</span></a></li>
+    
+  </ul>
+</nav>
 
 
-      </div>
+
+     </div>
       </div></article>
 
 
@@ -266,7 +308,7 @@ set LC_ALL=zh_CN.utf8
  <div class="container footer">
   <div class="row">
     <div class="col-md-10">
-      <small class="text-muted">Copyright right infomation. Theme:<a href="https://leonhe.me/">eiio</a></small>
+      <small class="text-muted">Copyright right infomation. Theme:<a href="https://hii8.com/">LeonHe</a></small>
     </div>
     <div class="col-md-2">
       <small class="text-muted">Your tips content</small>
@@ -274,4 +316,5 @@ set LC_ALL=zh_CN.utf8
    </div>
  </div>
 
-</body></html>
+   </body>
+     </html>

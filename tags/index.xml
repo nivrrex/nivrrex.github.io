@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Nivrrex&#39;s blog</title>
@@ -7,103 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright right infomation.</copyright>
-    <lastBuildDate>Sun, 26 Jul 2015 12:54:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Chinadns</title>
-      <link>http://nivrrex.github.io/tags/chinadns/</link>
-      <pubDate>Sun, 26 Jul 2015 12:54:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/chinadns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Debian</title>
-      <link>http://nivrrex.github.io/tags/debian/</link>
-      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dnsmasq</title>
-      <link>http://nivrrex.github.io/tags/dnsmasq/</link>
-      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/dnsmasq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fanqiang</title>
-      <link>http://nivrrex.github.io/tags/fanqiang/</link>
-      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/fanqiang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Goagent</title>
-      <link>http://nivrrex.github.io/tags/goagent/</link>
-      <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/goagent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>http://nivrrex.github.io/tags/golang/</link>
-      <pubDate>Sun, 15 Jun 2014 17:24:30 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hexo</title>
-      <link>http://nivrrex.github.io/tags/hexo/</link>
-      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>http://nivrrex.github.io/tags/hugo/</link>
-      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Internet</title>
-      <link>http://nivrrex.github.io/tags/internet/</link>
-      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/internet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Live</title>
-      <link>http://nivrrex.github.io/tags/live/</link>
-      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/live/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Openwrt</title>
+      <title>openwrt</title>
       <link>http://nivrrex.github.io/tags/openwrt/</link>
       <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
       
@@ -112,43 +22,7 @@
     </item>
     
     <item>
-      <title>Python</title>
-      <link>http://nivrrex.github.io/tags/python/</link>
-      <pubDate>Mon, 04 Apr 2016 09:05:37 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shadowsocks</title>
-      <link>http://nivrrex.github.io/tags/shadowsocks/</link>
-      <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/shadowsocks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Soft</title>
-      <link>http://nivrrex.github.io/tags/soft/</link>
-      <pubDate>Tue, 05 Jun 2018 10:22:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/soft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sublime Text</title>
-      <link>http://nivrrex.github.io/tags/sublime-text/</link>
-      <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/sublime-text/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ubnt</title>
+      <title>ubnt</title>
       <link>http://nivrrex.github.io/tags/ubnt/</link>
       <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
       
@@ -157,7 +31,124 @@
     </item>
     
     <item>
-      <title>Vpn</title>
+      <title>soft</title>
+      <link>http://nivrrex.github.io/tags/soft/</link>
+      <pubDate>Mon, 04 Jun 2018 14:24:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/soft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hexo</title>
+      <link>http://nivrrex.github.io/tags/hexo/</link>
+      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>http://nivrrex.github.io/tags/hugo/</link>
+      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>live</title>
+      <link>http://nivrrex.github.io/tags/live/</link>
+      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/live/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>http://nivrrex.github.io/tags/python/</link>
+      <pubDate>Mon, 04 Apr 2016 09:05:37 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sublime-text</title>
+      <link>http://nivrrex.github.io/tags/sublime-text/</link>
+      <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/sublime-text/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>debian</title>
+      <link>http://nivrrex.github.io/tags/debian/</link>
+      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>http://nivrrex.github.io/tags/vps/</link>
+      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/vps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dnsmasq</title>
+      <link>http://nivrrex.github.io/tags/dnsmasq/</link>
+      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/dnsmasq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fanqiang</title>
+      <link>http://nivrrex.github.io/tags/fanqiang/</link>
+      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/fanqiang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>internet</title>
+      <link>http://nivrrex.github.io/tags/internet/</link>
+      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/internet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chinadns</title>
+      <link>http://nivrrex.github.io/tags/chinadns/</link>
+      <pubDate>Sun, 26 Jul 2015 12:54:59 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/chinadns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shadowsocks</title>
+      <link>http://nivrrex.github.io/tags/shadowsocks/</link>
+      <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/shadowsocks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vpn</title>
       <link>http://nivrrex.github.io/tags/vpn/</link>
       <pubDate>Sat, 28 Jun 2014 10:48:47 +0800</pubDate>
       
@@ -166,11 +157,20 @@
     </item>
     
     <item>
-      <title>Vps</title>
-      <link>http://nivrrex.github.io/tags/vps/</link>
-      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
+      <title>goagent</title>
+      <link>http://nivrrex.github.io/tags/goagent/</link>
+      <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/tags/vps/</guid>
+      <guid>http://nivrrex.github.io/tags/goagent/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>http://nivrrex.github.io/tags/golang/</link>
+      <pubDate>Sun, 15 Jun 2014 17:24:30 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/golang/</guid>
       <description></description>
     </item>
     

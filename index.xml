@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nivrrex&#39;s blog</title>
@@ -26,21 +26,6 @@
 Request timed out  而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
 恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
 ##这一部分不是帖子的内容，是前期准备工作 #在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下 wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tar tar -xf ER-e50.</description>
-    </item>
-    
-    <item>
-      <title>use koolproxy for adblock</title>
-      <link>http://nivrrex.github.io/post/use-koolproxy-for-adblock/</link>
-      <pubDate>Tue, 05 Jun 2018 10:22:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/post/use-koolproxy-for-adblock/</guid>
-      <description>KoolProxy 路由器上的广告过滤插件
-介绍 KoolProxy 是一个免费的广告过滤软件，可以通过自己安装证书的方式支持https的广告过滤。看见后，想自己试用一下，用来过滤自己的机顶盒广告。
-安装 在官网http://firmware.koolshare.cn/binary/KoolProxy/ 根据自己路由器对应的版本，分别安装luci和koolproxy
-安装luci 在 https://firmware.koolshare.cn/binary/KoolProxy/luci/ 按指导说明安装ipk ；注意要提前安装dnsmasq-full , ipset
-opkg update opkg install openssl-util ipset dnsmasq-full diffutils iptables-mod-nat-extra opkg install wget ca-bundle ca-certificates libustream-openssl  opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/luci/luci-app-koolproxy_2.0-1_all.ipk opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/luci/luci-i18n-koolproxy-zh-cn_2.0-1_all.ipk  安装koolproxy主程序 我的路由器是netgear的wntr4300，所以就是 ar71xx 的 koolproxy_3.7.2-20180127_mips_24kc.ipk 这个ipk
-opkg install --force-depends http://firmware.koolshare.cn/binary/KoolProxy/ar71xx/koolproxy_3.7.2-20180127_mips_24kc.ipk  如果没有对应的ipk，需要自己手动安装
-mkdir /usr/share/koolproxy cd /usr/share/koolproxy wget https://koolproxy.com/downloads/XXX mv XXX koolproxy chmod 777 koolproxy mkdir data cd data mkdir rules cd rules wget https://kprule.</description>
     </item>
     
     <item>
@@ -176,7 +161,8 @@ iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &amp;quot;0&amp;
 VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;amp;&amp;amp; make make install  配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json  具体格式如下：
-{ &amp;quot;server&amp;quot;:&amp;quot;my_server_ip&amp;quot;, &amp;quot;server_port&amp;quot;:8388, &amp;quot;local_port&amp;quot;:1080, &amp;quot;password&amp;quot;:&amp;quot;barfoo!&amp;quot;, &amp;quot;timeout&amp;quot;:600, &amp;quot;method&amp;quot;:&amp;quot;table&amp;quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;rdquo;aes-256-cfb&amp;rdquo;  vi /etc/rc.</description>
+{ &amp;quot;server&amp;quot;:&amp;quot;my_server_ip&amp;quot;, &amp;quot;server_port&amp;quot;:8388, &amp;quot;local_port&amp;quot;:1080, &amp;quot;password&amp;quot;:&amp;quot;barfoo!&amp;quot;, &amp;quot;timeout&amp;quot;:600, &amp;quot;method&amp;quot;:&amp;quot;table&amp;quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;rdquo;aes-256-cfb&amp;rdquo;
+vi /etc/rc.local   添加以下自启动命令</description>
     </item>
     
     <item>

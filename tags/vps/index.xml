@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vps on Nivrrex&#39;s blog</title>
+    <title>vps on Nivrrex&#39;s blog</title>
     <link>http://nivrrex.github.io/tags/vps/</link>
-    <description>Recent content in Vps on Nivrrex&#39;s blog</description>
+    <description>Recent content in vps on Nivrrex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright right infomation.</copyright>
@@ -61,7 +61,8 @@ sudo vi /etc/rc.local  将以下命令添加进去即可
 VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;amp;&amp;amp; make make install  配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json  具体格式如下：
-{ &amp;quot;server&amp;quot;:&amp;quot;my_server_ip&amp;quot;, &amp;quot;server_port&amp;quot;:8388, &amp;quot;local_port&amp;quot;:1080, &amp;quot;password&amp;quot;:&amp;quot;barfoo!&amp;quot;, &amp;quot;timeout&amp;quot;:600, &amp;quot;method&amp;quot;:&amp;quot;table&amp;quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;rdquo;aes-256-cfb&amp;rdquo;  vi /etc/rc.</description>
+{ &amp;quot;server&amp;quot;:&amp;quot;my_server_ip&amp;quot;, &amp;quot;server_port&amp;quot;:8388, &amp;quot;local_port&amp;quot;:1080, &amp;quot;password&amp;quot;:&amp;quot;barfoo!&amp;quot;, &amp;quot;timeout&amp;quot;:600, &amp;quot;method&amp;quot;:&amp;quot;table&amp;quot; }   server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;rdquo;aes-256-cfb&amp;rdquo;
+vi /etc/rc.local   添加以下自启动命令</description>
     </item>
     
     <item>
