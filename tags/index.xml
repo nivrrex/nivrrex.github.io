@@ -7,17 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Copyright right infomation.</copyright>
-    <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>golang</title>
+      <link>http://nivrrex.github.io/tags/golang/</link>
+      <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>openwrt</title>
       <link>http://nivrrex.github.io/tags/openwrt/</link>
-      <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
+      <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/openwrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nim</title>
+      <link>http://nivrrex.github.io/tags/nim/</link>
+      <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/nim/</guid>
       <description></description>
     </item>
     
@@ -162,15 +180,6 @@
       <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/goagent/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>http://nivrrex.github.io/tags/golang/</link>
-      <pubDate>Sun, 15 Jun 2014 17:24:30 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/golang/</guid>
       <description></description>
     </item>
     

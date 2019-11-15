@@ -9,7 +9,7 @@
   <title>
     
     
-    Categories - Nivrrex&#39;s blog
+    crosscompiling-for-openwrt-with-golang - Nivrrex&#39;s blog
     
   </title>
   <link rel="shortcut icon" href="/favicon.ico" />
@@ -34,8 +34,8 @@
   </script>
 
 
-  <link rel="canonical" href="http://nivrrex.github.io/categories/">
-  <link href="/categories/index.xml" rel="alternate" type="application/rss+xml" title="Categories" />
+  <link rel="canonical" href="http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-golang/">
+  <link href="" rel="alternate" type="application/rss+xml" title="crosscompiling-for-openwrt-with-golang" />
    </head>
    <body data-spy="scroll" data-target="#toc">
      <header class="navbar navbar-default navbar-fixed-top" id="top" role="navigation">
@@ -59,7 +59,7 @@
 	
 	
 	
-	<li > <a href="http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-golang/" >crosscompiling-for-openwrt-with-golang</a></li>
+	<li  class="active"  > <a href="http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-golang/" >crosscompiling-for-openwrt-with-golang</a></li>
 	
 
 	
@@ -164,20 +164,98 @@
 	 <div class="row">
 
  	   <div class="col-md-8 col-md-offset-2 ">
-	     <div class="panel panel-default">
-    <div class="panel-body">
-      <div id="post">
-	<div class='title'>Categories</div>
+	   
+<div class="panel panel-default">
+  <div class="panel-body">
+      <article id='post' >
+	<div class='title'> crosscompiling-for-openwrt-with-golang </div>
+	  
+	  <span class="text-muted"><ion-icon name="ios-calendar"></ion-icon>Posted by:&nbsp; <time tile="创建于" itemprop="dateCreated datePublished" datetime="Fri Nov 15, 2019">Fri Nov 15, 2019</time> | 
+	  <ion-icon name="ios-podium"></ion-icon>Word Count: 165&nbsp;&nbsp; | 
+	  <ion-icon name="ios-time"></ion-icon> Reading Time: 1 Minute&nbsp;&nbsp;</span>
 
-	<div class="terms">
-<div class="terms-title">
-        Total : 0 
-      </div>
-<div class="terms-tags">
+	  
 
-    </div>
-    </div>
-</div></div></div>
+<h3 id="缘来">缘来</h3>
+
+<p>实验了下nim语言(<a href="https://nim-lang.org/">nimlang</a>)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。</p>
+
+<!-- more -->
+
+<hr />
+
+<h3 id="golang支持的交叉编译平台">Golang支持的交叉编译平台</h3>
+
+<pre><code class="language-bash">amd64 (also known as x86-64)
+A mature implementation.
+
+386 (x86 or x86-32)
+Comparable to the amd64 port.
+
+arm (ARM)
+Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.
+
+arm64 (AArch64)
+Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.
+
+ppc64, ppc64le (64-bit PowerPC big- and little-endian)
+Supports Linux binaries. New in 1.5 and not as well exercised as other ports.
+
+mips, mipsle (32-bit MIPS big- and little-endian)
+Supports Linux binaries. New in 1.8 and not as well exercised as other ports.
+
+mips64, mips64le (64-bit MIPS big- and little-endian)
+Supports Linux binaries. New in 1.6 and not as well exercised as other ports.
+
+s390x (IBM System z)
+Supports Linux binaries. New in 1.7 and not as well exercised as other ports.
+
+wasm (WebAssembly)
+Targets the WebAssembly platform. New in 1.11 and not as well exercised as other ports.
+</code></pre>
+
+<h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译</h3>
+
+<pre><code class="language-bash">GOOS=linux GOARCH=mips GOMIPS=softfloat go build test.go
+</code></pre>
+
+<p>指定系统、CPU架构，就可以直接交叉编译啦。</p>
+
+<p>mips/mipsle对应的OpenWRT系统，注意加上GOMIPS=softfloat变量，不然可能出现&rdquo;Illegal instruction&rdquo;错误。</p>
+
+<h3 id="结">结</h3>
+
+<p>就这样，更简单的直接生成对应系统和CPU架构下的可执行文件啦~</p>
+
+
+	  
+	  	  <div class="tags">	
+
+	      
+	    
+<p><ion-icon name="pricetag"></ion-icon>  <a itemprop="keywords"  class="label label-danger" href="/tags/golang">golang</a> <a itemprop="keywords"  class="label label-danger" href="/tags/openwrt">openwrt</a></p>
+
+
+
+	    	  </div>
+	    
+<nav aria-label="...">
+  <ul class="pager">
+    
+    <li class="previous">
+      <a href="http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/"><span aria-hidden="true">&larr;</span>crosscompiling-for-openwrt-with-nim</a>
+      
+    </li>
+    	
+     
+  </ul>
+</nav>
+
+
+
+     </div>
+      </div></article>
+
 
 	 </div>
 

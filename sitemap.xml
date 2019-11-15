@@ -3,29 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-golang/</loc>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/golang/</loc>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://nivrrex.github.io/</loc>
-    <lastmod>2018-07-09T20:12:00+08:00</lastmod>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/openwrt/</loc>
-    <lastmod>2018-07-09T20:12:00+08:00</lastmod>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/post/</loc>
-    <lastmod>2018-07-09T20:12:00+08:00</lastmod>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/</loc>
-    <lastmod>2018-07-09T20:12:00+08:00</lastmod>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/</loc>
+    <lastmod>2019-11-15T23:21:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/nim/</loc>
+    <lastmod>2019-11-15T23:21:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -229,13 +257,6 @@
   <url>
     <loc>http://nivrrex.github.io/tags/goagent/</loc>
     <lastmod>2014-06-25T21:45:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/tags/golang/</loc>
-    <lastmod>2014-06-15T17:24:30+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
