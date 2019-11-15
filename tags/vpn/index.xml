@@ -6,7 +6,7 @@
     <description>Recent content in vpn on Nivrrex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Copyright right infomation.</copyright>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Sat, 28 Jun 2014 10:48:47 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +14,10 @@
     
     <item>
       <title>fanqiang with vpn&#43;chnroutes</title>
-      <link>http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/</link>
+      <link>http://nivrrex.github.io/posts/fanqiang-with-vpn&#43;chnroutes/</link>
       <pubDate>Sat, 28 Jun 2014 10:48:47 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/</guid>
+      <guid>http://nivrrex.github.io/posts/fanqiang-with-vpn&#43;chnroutes/</guid>
       <description>来由 用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。 翻来覆去的太麻烦。只好换招了。 VPN 这两天主要做的就是先找到一些免费的VPN，然后通过VPN直接翻墙。不用再去设置goagent的代理了。缺点是所有流量通过VPN走，国内网站访问慢，但是可以通过路由表调整，下面会介绍。 随便搜索了下，免费的VPN还是很多的，但是免费的午餐，延时、流量等需要能忍受啊。幸好需要访问的国外网站不是很多~
 VPN推荐网站:
  免费VPN推荐网 免费VPN资源网  网友推荐:

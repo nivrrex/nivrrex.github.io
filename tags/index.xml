@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Nivrrex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Copyright right infomation.</copyright>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -99,87 +99,6 @@
       <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/sublime-text/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>debian</title>
-      <link>http://nivrrex.github.io/tags/debian/</link>
-      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vps</title>
-      <link>http://nivrrex.github.io/tags/vps/</link>
-      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/vps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dnsmasq</title>
-      <link>http://nivrrex.github.io/tags/dnsmasq/</link>
-      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/dnsmasq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>fanqiang</title>
-      <link>http://nivrrex.github.io/tags/fanqiang/</link>
-      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/fanqiang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>internet</title>
-      <link>http://nivrrex.github.io/tags/internet/</link>
-      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/internet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>chinadns</title>
-      <link>http://nivrrex.github.io/tags/chinadns/</link>
-      <pubDate>Sun, 26 Jul 2015 12:54:59 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/chinadns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shadowsocks</title>
-      <link>http://nivrrex.github.io/tags/shadowsocks/</link>
-      <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/shadowsocks/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vpn</title>
-      <link>http://nivrrex.github.io/tags/vpn/</link>
-      <pubDate>Sat, 28 Jun 2014 10:48:47 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/vpn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>goagent</title>
-      <link>http://nivrrex.github.io/tags/goagent/</link>
-      <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/goagent/</guid>
       <description></description>
     </item>
     

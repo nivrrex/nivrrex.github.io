@@ -6,7 +6,7 @@
     <description>Recent content in goagent on Nivrrex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Copyright right infomation.</copyright>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 25 Jun 2014 21:45:26 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/goagent/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +14,10 @@
     
     <item>
       <title>fanqiang with goagent</title>
-      <link>http://nivrrex.github.io/post/fanqiang-with-goagent/</link>
+      <link>http://nivrrex.github.io/posts/fanqiang-with-goagent/</link>
       <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/post/fanqiang-with-goagent/</guid>
+      <guid>http://nivrrex.github.io/posts/fanqiang-with-goagent/</guid>
       <description>来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。 比如：
  使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐  goagent设置 这个网上教程很多，随便搜索都有好几个，如：
  猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程  软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是：

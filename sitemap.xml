@@ -3,296 +3,208 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-golang/</loc>
+    <loc>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/golang/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/openwrt/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/</loc>
+    <loc>http://nivrrex.github.io/posts/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/</loc>
+    <loc>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/</loc>
     <lastmod>2019-11-15T23:21:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/nim/</loc>
     <lastmod>2019-11-15T23:21:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/ubnt/</loc>
     <lastmod>2018-07-09T20:12:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/ubnt-erx-use-openwrt/</loc>
+    <loc>http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</loc>
     <lastmod>2018-07-09T20:12:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/soft/</loc>
     <lastmod>2018-06-04T14:24:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/use-cmder/</loc>
+    <loc>http://nivrrex.github.io/posts/use-cmder/</loc>
     <lastmod>2018-06-04T14:24:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/change-hexo-to-hugo/</loc>
+    <loc>http://nivrrex.github.io/posts/change-hexo-to-hugo/</loc>
     <lastmod>2017-04-23T11:22:28+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/hexo/</loc>
     <lastmod>2017-04-23T11:22:28+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/hugo/</loc>
     <lastmod>2017-04-23T11:22:28+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/live/</loc>
     <lastmod>2017-04-23T11:22:28+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/python/</loc>
     <lastmod>2016-04-04T09:05:37+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/start-to-use-python/</loc>
+    <loc>http://nivrrex.github.io/posts/start-to-use-python/</loc>
     <lastmod>2016-04-04T09:05:37+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/change-editer-with-sublime-text/</loc>
+    <loc>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</loc>
     <lastmod>2015-08-01T15:41:45+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/sublime-text/</loc>
     <lastmod>2015-08-01T15:41:45+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/debian/</loc>
     <lastmod>2015-07-27T22:36:17+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/update-debian-linux-image-with-backports/</loc>
+    <loc>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</loc>
     <lastmod>2015-07-27T22:36:17+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/vps/</loc>
     <lastmod>2015-07-27T22:36:17+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/dnsmasq/</loc>
     <lastmod>2015-07-26T17:51:59+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/fanqiang/</loc>
     <lastmod>2015-07-26T17:51:59+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/fanqiang-with-dnsmasq/</loc>
+    <loc>http://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</loc>
     <lastmod>2015-07-26T17:51:59+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/internet/</loc>
     <lastmod>2015-07-26T17:51:59+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/chinadns/</loc>
     <lastmod>2015-07-26T12:54:59+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/fanqiang-with-chinadns/</loc>
+    <loc>http://nivrrex.github.io/posts/fanqiang-with-chinadns/</loc>
     <lastmod>2015-07-26T12:54:59+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/fanqiang-with-shadowsocks/</loc>
+    <loc>http://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</loc>
     <lastmod>2015-07-24T12:57:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/shadowsocks/</loc>
     <lastmod>2015-07-24T12:57:00+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/build-openwrt-with-image-builder/</loc>
+    <loc>http://nivrrex.github.io/posts/build-openwrt-with-image-builder/</loc>
     <lastmod>2014-07-17T22:17:11+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/fanqiang-with-openwrt&#43;vps/</loc>
+    <loc>http://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</loc>
     <lastmod>2014-07-08T21:27:40+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/fanqiang-with-vpn&#43;chnroutes/</loc>
+    <loc>http://nivrrex.github.io/posts/fanqiang-with-vpn&#43;chnroutes/</loc>
     <lastmod>2014-06-28T10:48:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/vpn/</loc>
     <lastmod>2014-06-28T10:48:47+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/fanqiang-with-goagent/</loc>
+    <loc>http://nivrrex.github.io/posts/fanqiang-with-goagent/</loc>
     <lastmod>2014-06-25T21:45:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/goagent/</loc>
     <lastmod>2014-06-25T21:45:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/some-problems-for-golang-excel-update/</loc>
+    <loc>http://nivrrex.github.io/posts/some-problems-for-golang-excel-update/</loc>
     <lastmod>2014-06-15T17:24:30+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/commonly-used-software/</loc>
+    <loc>http://nivrrex.github.io/posts/commonly-used-software/</loc>
     <lastmod>2014-06-12T22:32:51+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/hello-github/</loc>
+    <loc>http://nivrrex.github.io/posts/hello-github/</loc>
     <lastmod>2014-06-12T19:37:32+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://nivrrex.github.io/post/about-me/</loc>
+    <loc>http://nivrrex.github.io/posts/about-me/</loc>
     <lastmod>2014-06-10T13:55:26+08:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/categories/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   
 </urlset>

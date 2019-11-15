@@ -6,7 +6,7 @@
     <description>Recent content in debian on Nivrrex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Copyright right infomation.</copyright>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 27 Jul 2015 22:36:17 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
@@ -14,23 +14,24 @@
     
     <item>
       <title>update debian linux image with backports</title>
-      <link>http://nivrrex.github.io/post/update-debian-linux-image-with-backports/</link>
+      <link>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</link>
       <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/post/update-debian-linux-image-with-backports/</guid>
+      <guid>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
       <description>来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
 如何查看Linux版本 共有5种方式，具体如下
-cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue  我的Debian更新过，显示是
-Debian GNU/Linux 8.1 (jessie)  但是，内核为什么还是
-Linux 2.6.32-042stab093.4 i686  好吧，更新，更新！
+cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue 我的Debian更新过，显示是
+Debian GNU/Linux 8.1 (jessie) 但是，内核为什么还是
+Linux 2.6.32-042stab093.4 i686 好吧，更新，更新！
 使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目
 其官方Wiki上面说
 Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。
 开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源
-vi /etc/apt/sources.list  添加如下内容
-deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main  更新数据
-sudo apt-get update #sudo apt-get -t jessie-backports upgrade  搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件
-apt-get install aptitude aptitude search kernel-image  根据搜索出来的内核文件，进行安装，我的是</description>
+vi /etc/apt/sources.list 添加如下内容
+deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main 更新数据
+sudo apt-get update #sudo apt-get -t jessie-backports upgrade 搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件
+apt-get install aptitude aptitude search kernel-image 根据搜索出来的内核文件，进行安装，我的是
+sudo apt-get -t jessie-backports install linux-image-3.</description>
     </item>
     
   </channel>

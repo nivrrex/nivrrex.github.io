@@ -6,7 +6,7 @@
     <description>Recent content in ubnt on Nivrrex&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Copyright right infomation.</copyright>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/ubnt/index.xml" rel="self" type="application/rss+xml" />
@@ -14,10 +14,10 @@
     
     <item>
       <title>ubnt er-x use openwrt</title>
-      <link>http://nivrrex.github.io/post/ubnt-erx-use-openwrt/</link>
+      <link>http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</link>
       <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/post/ubnt-erx-use-openwrt/</guid>
+      <guid>http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</guid>
       <description>给UBNT的ER-X刷OpenWrt固件
 缘 UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。
 于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks + ChinaDNS + DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
