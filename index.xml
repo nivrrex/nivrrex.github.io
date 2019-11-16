@@ -28,7 +28,7 @@ Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implemen
       <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
-      <description>缘来 nim语言(nimlang)最近更新到1.02版本了,感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
+      <description>缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
 Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
     </item>
     
@@ -84,10 +84,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 生成站点 可以到Hugo - Introduction to Hugo自行学习
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
-hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio
+hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
  Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themes git clone https://github.com/leonhe/hugo_eiio 生成页面 hugo new post/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor
-本地测试 hugo server --buildDrafts --watch --theme themename 运行后可以在 http://localhost:1313/ 查看具体效果</description>
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
     </item>
     
     <item>

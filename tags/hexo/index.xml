@@ -28,10 +28,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 生成站点 可以到Hugo - Introduction to Hugo自行学习
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
-hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio
+hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
  Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themes git clone https://github.com/leonhe/hugo_eiio 生成页面 hugo new post/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor
-本地测试 hugo server --buildDrafts --watch --theme themename 运行后可以在 http://localhost:1313/ 查看具体效果</description>
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
     </item>
     
     <item>
