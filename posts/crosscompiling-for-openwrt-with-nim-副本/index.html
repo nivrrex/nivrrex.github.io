@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-<meta itemprop="name" content="crosscompiling-for-openwrt-with-nim">
+<meta itemprop="name" content="crosscompiling for openwrt with nim">
 <meta itemprop="description" content="缘来 nim语言(nimlang)最近更新到1.02版本了,感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
 Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~">
 
@@ -19,7 +19,7 @@ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.o
 
 
 <meta itemprop="keywords" content="nim,openwrt," />
-<meta property="og:title" content="crosscompiling-for-openwrt-with-nim" />
+<meta property="og:title" content="crosscompiling for openwrt with nim" />
 <meta property="og:description" content="缘来 nim语言(nimlang)最近更新到1.02版本了,感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
 Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~" />
 <meta property="og:type" content="article" />
@@ -27,7 +27,7 @@ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.o
 <meta property="article:published_time" content="2019-11-15T23:21:00+08:00" />
 <meta property="article:modified_time" content="2019-11-15T23:21:00+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="crosscompiling-for-openwrt-with-nim"/>
+<meta name="twitter:title" content="crosscompiling for openwrt with nim"/>
 <meta name="twitter:description" content="缘来 nim语言(nimlang)最近更新到1.02版本了,感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
 Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~"/>
 
@@ -38,7 +38,7 @@ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.o
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
 	<link rel="shortcut icon" href="/favicon.ico">
 
-	<title>crosscompiling-for-openwrt-with-nim</title>
+	<title>crosscompiling for openwrt with nim</title>
 	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
 	
 </head>
@@ -75,7 +75,7 @@ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.o
 		<article class="thin">
 			<header class="post-header">
 				<div class="post-meta"><span>Nov 15, 2019</span></div>
-				<h1>crosscompiling-for-openwrt-with-nim</h1>
+				<h1>crosscompiling for openwrt with nim</h1>
 			</header>
 			<div class="content">
 				
@@ -117,7 +117,7 @@ nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux 
 		</article>
 		<div class="post-nav thin">
 			<a class="next-post" href="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>crosscompiling-for-openwrt-with-golang</span>
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>crosscompiling for openwrt with golang</span>
 			</a>
 			<a class="prev-post" href="http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/">
 				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>ubnt er-x use openwrt</span>

@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>crosscompiling-for-openwrt-with-golang</title>
+      <title>crosscompiling for openwrt with golang</title>
       <link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
       
@@ -23,7 +23,7 @@ Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implemen
     </item>
     
     <item>
-      <title>crosscompiling-for-openwrt-with-nim</title>
+      <title>crosscompiling for openwrt with nim</title>
       <link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/</link>
       <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
       

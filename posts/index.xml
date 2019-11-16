@@ -10,7 +10,7 @@
 		<atom:link href="http://nivrrex.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>crosscompiling-for-openwrt-with-golang</title>
+			<title>crosscompiling for openwrt with golang</title>
 			<link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
 			<pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
 			
@@ -55,19 +55,17 @@ Supports Linux binaries. New in <span class="m">1</span>.7 and not as well exerc
 wasm <span class="o">(</span>WebAssembly<span class="o">)</span>
 Targets the WebAssembly platform. New in <span class="m">1</span>.11 and not as well exercised as other ports.</code></pre></div>
 <h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译</h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build test.go</code></pre></div>
-<p>指定系统、CPU架构，就可以直接交叉编译啦。</p>
-
-<p>mips/mipsle对应的OpenWRT系统，注意加上GOMIPS=softfloat变量，不然可能出现&rdquo;Illegal instruction&rdquo;错误。</p>
-
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go</code></pre></div>
+<p>如果出现&rdquo;Illegal instruction&rdquo;错误，注意加上GOMIPS=softfloat变量</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go</code></pre></div>
 <h3 id="结">结</h3>
 
-<p>就这样，更简单的直接生成对应系统和CPU架构下的可执行文件啦~</p>
+<p>就这样，golang可以更简单的直接生成对应系统和CPU架构下的可执行文件~</p>
 ]]></content>
 		</item>
 		
 		<item>
-			<title>crosscompiling-for-openwrt-with-nim</title>
+			<title>crosscompiling for openwrt with nim</title>
 			<link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/</link>
 			<pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
 			
