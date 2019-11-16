@@ -1424,16 +1424,17 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 			<pubDate>Thu, 12 Jun 2014 22:32:51 +0800</pubDate>
 			
 			<guid>http://nivrrex.github.io/posts/commonly-used-software/</guid>
-			<description> 开发工具 Ruby  Ruby Lang Ruby官方网站 RubyInstaller for Windows Ruby的Windows安装打包  Golang  Golang Downloads Golang官方网站 Go Language Resources 非官方的Golang资源收集  GCC MinGW  MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64  GTK+  The GTK+ Project GTK的官方网站 tarnyko GTK 日本人做的GTK静态编译  Tcc  Tiny C Compiler 极简的c语言编译器  经典软件 系统强化  Total Commander Windows下的资源管理工具 Listary Windows下的文件搜索和程序启动工具 Everthing 基于NTFS格式的快速搜索工具 ImDisk 虚拟磁盘工具 SoftPerfect RAM Disk 虚拟磁盘工具  系统美化  MacType Windows下的字体美化工具 Fences Windows下的图标分区优化工具  输入法  rimeime - 中州韻輸入法引擎 很好用的输入法工具，可配置功能较多  编辑器  SciTE 轻量级的程序编辑器 Sublime Text 跨平台、可扩展的程序编辑器 Notepad2 Mod Notepad的替代编辑器  网络  goagent 基于GAE的fan qiang工具 shadowsocks-libev shadowsocks的c语言实现的服务器端,可布置在vps上使用 shadowsocks-windows shadowsocks的windows客户端，可自动更新GFWlist的PAC文件  </description>
+			<description> 开发工具 Python  Python Lang Python官方网站 Python PyPI Python packages的官方下载站点 Awesome Python Python框架，库，软件和资源的精选清单  Golang  Golang Downloads Golang官方网站 Go Language Resources 非官方的Golang资源收集 Awesome Go Go框架，库和软件的精选清单  Nim  Nim Language Nim语言官方网站 Nim 中文社区 Nim语言中文社区 Nim Package Directory 官方的nimble资源收集 Awesome Nim 中文社区的Nim框架，库和软件的精选清单  Ruby  Ruby Lang Ruby官方网站 RubyInstaller for Windows Ruby的Windows安装打包  GCC MinGW  MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64  GTK+  The GTK+ Project GTK的官方网站 tarnyko GTK 日本人做的GTK静态编译  Tcc  Tiny C Compiler 极简的c语言编译器  经典软件 系统强化  Total Commander Windows下的资源管理工具 Listary Windows下的文件搜索和程序启动工具 Everthing 基于NTFS格式的快速搜索工具 ImDisk 虚拟磁盘工具 SoftPerfect RAM Disk 虚拟磁盘工具  系统美化  MacType Windows下的字体美化工具 Fences Windows下的图标分区优化工具  输入法  rimeime - 中州韻輸入法引擎 很好用的输入法工具，可配置功能较多  编辑器  SciTE 轻量级的程序编辑器 Sublime Text 跨平台、可扩展的程序编辑器 Notepad2 Mod Notepad的替代编辑器 Notepad3 Notepad2不更新后的替代编辑器  网络  goagent 基于GAE的fan qiang工具 shadowsocks-libev shadowsocks的c语言实现的服务器端,可布置在vps上使用 shadowsocks-windows shadowsocks的windows客户端，可自动更新GFWlist的PAC文件  </description>
 			<content type="html"><![CDATA[
 
 <h2 id="开发工具">开发工具</h2>
 
-<h4 id="ruby">Ruby</h4>
+<h4 id="python">Python</h4>
 
 <ul>
-<li><a href="https://www.ruby-lang.org/en/">Ruby Lang</a> Ruby官方网站</li>
-<li><a href="http://rubyinstaller.org/">RubyInstaller for Windows</a> Ruby的Windows安装打包</li>
+<li><a href="https://www.python.org/">Python Lang</a> Python官方网站</li>
+<li><a href="https://pypi.org/">Python PyPI</a> Python packages的官方下载站点</li>
+<li><a href="https://awesome-python.com/">Awesome Python</a> Python框架，库，软件和资源的精选清单</li>
 </ul>
 
 <!-- more -->
@@ -1443,6 +1444,23 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 <ul>
 <li><a href="http://golang.org/dl/">Golang Downloads</a> Golang官方网站</li>
 <li><a href="http://go-lang.cat-v.org/">Go Language Resources</a> 非官方的Golang资源收集</li>
+<li><a href="https://awesome-go.com/">Awesome Go</a> Go框架，库和软件的精选清单</li>
+</ul>
+
+<h4 id="nim">Nim</h4>
+
+<ul>
+<li><a href="https://nim-lang.org/">Nim Language</a> Nim语言官方网站</li>
+<li><a href="https://nim-cn.com/">Nim 中文社区</a> Nim语言中文社区</li>
+<li><a href="https://nimble.directory/">Nim Package Directory</a> 官方的nimble资源收集</li>
+<li><a href="https://github.com/nim-lang-cn/awesome-nim">Awesome Nim</a> 中文社区的Nim框架，库和软件的精选清单</li>
+</ul>
+
+<h4 id="ruby">Ruby</h4>
+
+<ul>
+<li><a href="https://www.ruby-lang.org/en/">Ruby Lang</a> Ruby官方网站</li>
+<li><a href="http://rubyinstaller.org/">RubyInstaller for Windows</a> Ruby的Windows安装打包</li>
 </ul>
 
 <h4 id="gcc-mingw">GCC MinGW</h4>
@@ -1501,6 +1519,7 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 <li><a href="http://www.scintilla.org/SciTE.html">SciTE</a> 轻量级的程序编辑器</li>
 <li><a href="http://www.sublimetext.com/">Sublime Text</a> 跨平台、可扩展的程序编辑器</li>
 <li><a href="https://xhmikosr.github.io/notepad2-mod/">Notepad2 Mod</a> Notepad的替代编辑器</li>
+<li><a href="https://github.com/rizonesoft/Notepad3">Notepad3</a> Notepad2不更新后的替代编辑器</li>
 </ul>
 
 <h4 id="网络">网络</h4>
@@ -1583,10 +1602,10 @@ Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm in
 			
 			<guid>http://nivrrex.github.io/posts/about-me/</guid>
 			<description>欢迎来到Nivrrex的GitHub blog！
-本blog将记录我在GitHub和生活中的点点滴滴，主要关注Ruby Python、Golang和nim。</description>
+本blog将记录我在GitHub和生活中的点点滴滴，主要关注Ruby Python、Golang和Nim。</description>
 			<content type="html"><![CDATA[<p>欢迎来到Nivrrex的<a href="http://nivrrex.github.io/">GitHub blog</a>！</p>
 
-<p>本blog将记录我在GitHub和生活中的点点滴滴，主要关注<del>Ruby</del> Python、Golang和nim。</p>
+<p>本blog将记录我在GitHub和生活中的点点滴滴，主要关注<del>Ruby</del> Python、Golang和Nim。</p>
 ]]></content>
 		</item>
 		
