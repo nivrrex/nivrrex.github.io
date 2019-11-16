@@ -14,7 +14,7 @@ Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implemen
 
 <meta itemprop="datePublished" content="2019-11-15T23:29:00&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-15T23:29:00&#43;08:00" />
-<meta itemprop="wordCount" content="173">
+<meta itemprop="wordCount" content="174">
 
 
 
@@ -117,7 +117,9 @@ wasm <span class="o">(</span>WebAssembly<span class="o">)</span>
 Targets the WebAssembly platform. New in <span class="m">1</span>.11 and not as well exercised as other ports.</code></pre></div>
 <h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译<a href="#golang针对mips系统的交叉编译" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go</code></pre></div>
-<p>如果出现&rdquo;Illegal instruction&rdquo;错误，注意加上GOMIPS=softfloat变量</p>
+<p>直接指定目标系统和CPU架构，就直接可以编译生成对应平台下的可执行文件</p>
+
+<p>在mips架构下，如OpenWRT系统，文件执行时出现&rdquo;Illegal instruction&rdquo;错误，注意加上GOMIPS=softfloat变量</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go</code></pre></div>
 <h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
@@ -134,7 +136,7 @@ Targets the WebAssembly platform. New in <span class="m">1</span>.11 and not as 
 			</footer>
 		</article>
 		<div class="post-nav thin">
-			<a class="prev-post" href="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim-%E5%89%AF%E6%9C%AC/">
+			<a class="prev-post" href="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/">
 				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>crosscompiling for openwrt with nim</span>
 			</a>
 		</div>
