@@ -18,11 +18,11 @@
       <pubDate>Sun, 30 Aug 2020 09:19:10 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</guid>
-      <description>简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在讲具体过程记录一下。
+      <description>简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
 mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
 cd /root/ wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz mkdir mipsel mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/ rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64 设置环境变量
 cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrc export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR alias strip-mipsel=&amp;#39;mipsel-openwrt-linux-strip -s&amp;#39; EOF source /etc/bash.bashrc 如上，mipsel的gcc交叉编译环境就配置好了
-ldc 下载 到ldc官网下载最新版本的ldc，并将其下载设置到 /root/ldc2/ 目录下
+ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
 wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz tar xvf ldc2-1.23.0-linux-x86_64.tar.xz rm ldc2-1.23.0-linux-x86_64.tar.xz mv ldc2-1.23.0-linux-x86_64 ldc2 cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrc export PATH=$PATH:/root/ldc2/bin EOF source /etc/bash.bashrc 编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .</description>
     </item>
     
