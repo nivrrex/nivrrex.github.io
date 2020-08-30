@@ -3,7 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-<<<<<<< HEAD
     <loc>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</loc>
     <lastmod>2020-08-30T09:19:10+08:00</lastmod>
   </url>
@@ -30,54 +29,21 @@
   
   <url>
     <loc>http://nivrrex.github.io/tags/openwrt/</loc>
-=======
-    <loc>http://nivrrex.github.io/posts/compile-nim-with-tcc/</loc>
-    <lastmod>2019-11-17T09:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/tags/nim/</loc>
-    <lastmod>2019-11-17T09:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/</loc>
-    <lastmod>2019-11-17T09:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/posts/</loc>
-    <lastmod>2019-11-17T09:09:00+08:00</lastmod>
+    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/tags/</loc>
-    <lastmod>2019-11-17T09:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/tags/tcc/</loc>
-    <lastmod>2019-11-17T09:09:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</loc>
->>>>>>> fd72933fad3b2cf289e3c0901969a25e29383400
-    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/tags/golang/</loc>
-    <lastmod>2019-11-15T23:29:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://nivrrex.github.io/tags/openwrt/</loc>
     <lastmod>2019-11-15T23:29:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</loc>
+    <lastmod>2019-11-15T23:21:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://nivrrex.github.io/tags/nim/</loc>
     <lastmod>2019-11-15T23:21:00+08:00</lastmod>
   </url>
   
