@@ -7,29 +7,32 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-<meta itemprop="name" content="About this blog">
-<meta itemprop="description" content="欢迎来到Nivrrex的GitHub blog！
-本blog将记录我在GitHub和生活中的点点滴滴，主要关注Python、Golang、C、Lua。">
+<meta itemprop="name" content="compile nim with tcc">
+<meta itemprop="description" content="缘来 Nim语言可以转换成C、C&#43;&#43;、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
+配置 其实配置很简单，打开nim\config\nim.cfg文件
+cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~">
 
 
-<meta itemprop="datePublished" content="2014-06-10T13:55:26&#43;08:00" />
-<meta itemprop="dateModified" content="2014-06-10T13:55:26&#43;08:00" />
-<meta itemprop="wordCount" content="4">
+<meta itemprop="datePublished" content="2019-11-17T09:09:00&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-17T09:09:00&#43;08:00" />
+<meta itemprop="wordCount" content="13">
 
 
 
-<meta itemprop="keywords" content="" />
-<meta property="og:title" content="About this blog" />
-<meta property="og:description" content="欢迎来到Nivrrex的GitHub blog！
-本blog将记录我在GitHub和生活中的点点滴滴，主要关注Python、Golang、C、Lua。" />
+<meta itemprop="keywords" content="nim,tcc," />
+<meta property="og:title" content="compile nim with tcc" />
+<meta property="og:description" content="缘来 Nim语言可以转换成C、C&#43;&#43;、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
+配置 其实配置很简单，打开nim\config\nim.cfg文件
+cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://nivrrex.github.io/posts/about-me/" />
-<meta property="article:published_time" content="2014-06-10T13:55:26+08:00" />
-<meta property="article:modified_time" content="2014-06-10T13:55:26+08:00" />
+<meta property="og:url" content="http://nivrrex.github.io/posts/compile-nim-with-tcc/" />
+<meta property="article:published_time" content="2019-11-17T09:09:00+08:00" />
+<meta property="article:modified_time" content="2019-11-17T09:09:00+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="About this blog"/>
-<meta name="twitter:description" content="欢迎来到Nivrrex的GitHub blog！
-本blog将记录我在GitHub和生活中的点点滴滴，主要关注Python、Golang、C、Lua。"/>
+<meta name="twitter:title" content="compile nim with tcc"/>
+<meta name="twitter:description" content="缘来 Nim语言可以转换成C、C&#43;&#43;、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
+配置 其实配置很简单，打开nim\config\nim.cfg文件
+cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -38,7 +41,7 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
 	<link rel="shortcut icon" href="/favicon.ico">
 
-	<title>About this blog</title>
+	<title>compile nim with tcc</title>
 	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
 	
 </head>
@@ -74,24 +77,43 @@
 	<main class="site-main section-inner animated fadeIn faster">
 		<article class="thin">
 			<header class="post-header">
-				<div class="post-meta"><span>Jun 10, 2014</span></div>
-				<h1>About this blog</h1>
+				<div class="post-meta"><span>Nov 17, 2019</span></div>
+				<h1>compile nim with tcc</h1>
 			</header>
 			<div class="content">
-				<p>欢迎来到Nivrrex的<a href="http://nivrrex.github.io/">GitHub blog</a>！</p>
+				
 
-<p>本blog将记录我在GitHub和生活中的点点滴滴，主要关注Python、Golang、C、Lua。</p>
+<h3 id="缘来">缘来<a href="#缘来" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。</p>
+
+<!-- more -->
+
+<hr />
+
+<h3 id="配置">配置<a href="#配置" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>其实配置很简单，打开nim\config\nim.cfg文件</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">cc</span> <span class="o">=</span> gcc
+修改为
+<span class="nv">cc</span> <span class="o">=</span> tcc</code></pre></div>
+<h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+
+<p>就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</p>
 
 			</div>
 			<hr class="post-end">
 			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://nivrrex.github.io/tags/nim">nim</a></span><span class="tag"><a href="http://nivrrex.github.io/tags/tcc">tcc</a></span>
+				</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2014-06-10 13:55 &#43;0800</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-11-17 09:09 &#43;0800</p>
 			</footer>
 		</article>
 		<div class="post-nav thin">
-			<a class="next-post" href="http://nivrrex.github.io/posts/hello-github/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span>Hello GitHub</span>
+			<a class="prev-post" href="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>crosscompiling for openwrt with golang</span>
 			</a>
 		</div>
 		<div id="comments" class="thin">
@@ -99,7 +121,7 @@
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2020 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2019 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

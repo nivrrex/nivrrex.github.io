@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>nim</title>
+      <link>http://nivrrex.github.io/tags/nim/</link>
+      <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/nim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tcc</title>
+      <link>http://nivrrex.github.io/tags/tcc/</link>
+      <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/tcc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>golang</title>
@@ -27,15 +45,6 @@
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/openwrt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nim</title>
-      <link>http://nivrrex.github.io/tags/nim/</link>
-      <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/nim/</guid>
       <description></description>
     </item>
     
@@ -90,15 +99,6 @@
       <pubDate>Mon, 04 Apr 2016 09:05:37 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sublime-text</title>
-      <link>http://nivrrex.github.io/tags/sublime-text/</link>
-      <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/sublime-text/</guid>
       <description></description>
     </item>
     
