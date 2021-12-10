@@ -28,9 +28,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 生成站点 可以到Hugo - Introduction to Hugo自行学习
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
-hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
+hugo new site sitename主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
  Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+cd themesgit clone https://github.com/Track3/hermit.git themes/hermit生成页面 hugo new posts/about.md然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
     </item>
     
     <item>
@@ -41,8 +41,8 @@ cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页
       <guid>http://nivrrex.github.io/posts/hello-github/</guid>
       <description>欢迎来到我的GitHub blog！
 这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
-Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34; ssh -T git@github.com -i ./.ssh/id_rsa  更多命令可以到git - 简明指南去查看
-Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;#34;My New Post&amp;#34; hexo server hexo generate hexo deploy  更多文档可以到Hexo docs上查看</description>
+ Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34;git config --global user.email nivrrex@gmail.comssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34;ssh -T git@github.com -i ./.ssh/id_rsa更多命令可以到git - 简明指南去查看
+ Hexo的一些基本命令 npm install hexo-cli -gnpm install hexo --savenpm install hexo-generator-index --savenpm install hexo-generator-archive --savenpm install hexo-generator-category --savenpm install hexo-generator-tag --savenpm install hexo-generator-sitemap --savenpm install hexo-generator-feed --savenpm install hexo-renderer-ejs --savenpm install hexo-renderer-stylus --savenpm install hexo-renderer-marked --savenpm install hexo-server --savenpm install hexo-deployer-git --savehexo inithexo new [post] &amp;#34;My New Post&amp;#34;hexo serverhexo generatehexo deploy更多文档可以到Hexo docs上查看</description>
     </item>
     
   </channel>

@@ -9,23 +9,20 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="fanqiang with chinadns">
 <meta itemprop="description" content="来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
-Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
+ Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
 安装 首先需要在OpenWRT上安装如下包：
 opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32 配置 然后配置iptables的防火墙策略
 vi /etc/firewall.user 添加如下命令
 iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &#34;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&#34; -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|042442B2|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|0807C62D|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|1759053C|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|253D369E|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|2E52AE44|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|31027B38|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|364C8701|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|3B1803AD|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|402158A1|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4021632F|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4042A3FB|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4168CAFC|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|41A0DB71|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|422DFCED|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|480ECD63|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|480ECD68|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4A7D2766|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4A7D2771|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4A7D7F66|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4A7D9B66|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4D04075C|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|4E10310F|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|5D2E0859|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|76053106|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|80797E8B|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|9F6A794B|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|A9840D67|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|BC050460|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|BDA31105|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|C043C606|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|C504040C|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|CA6A0102|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|CAB50755|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|CB620741|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|CBA1E6AB|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|CF0C5862|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D0381F2B|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D1244921|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D155E58A|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D1913632|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D1DC1EAE|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D35E4293|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D5A9FB23|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D8DDBCB6|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|D8EAB30D|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|F3B9BB27|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|F9812E30|&#34; --from 60 --to 180 -j DROP iptables -t mangle -I PREROUTING -p udp --sport 53 -m string --algo bm --hex-string &#34;|FD9D0EA5|&#34; --from 60 --to 180 -j DROP 重启防火墙即可">
-
-
 <meta itemprop="datePublished" content="2015-07-26T12:54:59&#43;08:00" />
 <meta itemprop="dateModified" content="2015-07-26T12:54:59&#43;08:00" />
 <meta itemprop="wordCount" content="1197">
 
 
 
-<meta itemprop="keywords" content="internet,fanqiang,openwrt,chinadns," />
-<meta property="og:title" content="fanqiang with chinadns" />
+<meta itemprop="keywords" content="internet,fanqiang,openwrt,chinadns," /><meta property="og:title" content="fanqiang with chinadns" />
 <meta property="og:description" content="来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
-Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
+ Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
 安装 首先需要在OpenWRT上安装如下包：
 opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32 配置 然后配置iptables的防火墙策略
 vi /etc/firewall.user 添加如下命令
@@ -37,7 +34,7 @@ iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &#34;0&amp;0x0F0
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="fanqiang with chinadns"/>
 <meta name="twitter:description" content="来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
-Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
+ Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
 安装 首先需要在OpenWRT上安装如下包：
 opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32 配置 然后配置iptables的防火墙策略
 vi /etc/firewall.user 添加如下命令
@@ -90,30 +87,20 @@ iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &#34;0&amp;0x0F0
 				<h1>fanqiang with chinadns</h1>
 			</header>
 			<div class="content">
-				
-
-<h4 id="来由">来由<a href="#来由" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+				<h4 id="heading">来由<a href="#heading" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。</p>
-
-<!-- more -->
-
-<hr />
-
-<h4 id="old解决方案-freerouterv2">Old解决方案 - FreeRouterV2<a href="#old解决方案-freerouterv2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+<!-- raw HTML omitted -->
+<hr>
+<h4 id="old---freerouterv2">Old解决方案 - FreeRouterV2<a href="#old---freerouterv2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>以前的解决方案是借用<a href="https://github.com/lifetyper/FreeRouter_V2">FreeRouterV2</a>的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，<a href="https://github.com/lifetyper/FreeRouter_V2/blob/master/FreeRouterV2_HandBook.pdf">如下</a></p>
-
-<h6 id="安装">安装<a href="#安装" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
-
+<h6 id="heading-1">安装<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <p>首先需要在OpenWRT上安装如下包：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">opkg update
-opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32</code></pre></div>
-<h6 id="配置">配置<a href="#配置" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
-
+opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32
+</code></pre></div><h6 id="heading-2">配置<a href="#heading-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <p>然后配置iptables的防火墙策略</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/firewall.user</code></pre></div>
-<p>添加如下命令</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/firewall.user
+</code></pre></div><p>添加如下命令</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m u32 --u32 <span class="s2">&#34;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&#34;</span> -j DROP
 iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|042442B2|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
 iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|0807C62D|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
@@ -162,29 +149,27 @@ iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m str
 iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D8EAB30D|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
 iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|F3B9BB27|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
 iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|F9812E30|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|FD9D0EA5|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP</code></pre></div>
-<p>重启防火墙即可</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/firewall restart</code></pre></div>
-<h4 id="chinadns解决方案">ChinaDNS解决方案<a href="#chinadns解决方案" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|FD9D0EA5|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</code></pre></div><p>重启防火墙即可</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/firewall restart
+</code></pre></div><h4 id="chinadns">ChinaDNS解决方案<a href="#chinadns" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>以上的方案挺好，但是GFW的污染IP似乎有增多现象，所以想省心一点，正好shadowsocks作者<a href="https://github.com/clowwindy">clowwindy</a>有一个针对DNS污染的作品<a href="https://github.com/clowwindy/ChinaDNS">ChinaDNS</a>，就直接拿过来用了。
 针对OpenWRT/Gargoyle，作者有直接编译完毕的ipk包，下载后安装到OpenWRT即可，地址<a href="https://github.com/clowwindy/ChinaDNS/releases">如下</a></p>
-
-<h6 id="安装-1">安装<a href="#安装-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
+<h6 id="heading-3">安装<a href="#heading-3" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">opkg install ChinaDNS_1.x.x_ar71xx.ipk
 /etc/init.d/chinadns start
-/etc/init.d/chinadns enable</code></pre></div>
-<h6 id="配置-1">配置<a href="#配置-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/dnsmasq.conf</code></pre></div>
-<p>添加如下内容并保存退出</p>
+/etc/init.d/chinadns <span class="nb">enable</span>
+</code></pre></div><h6 id="heading-4">配置<a href="#heading-4" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/dnsmasq.conf
+</code></pre></div><p>添加如下内容并保存退出</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">no-resolv
-<span class="nv">server</span><span class="o">=</span><span class="m">127</span>.0.0.1#5353</code></pre></div>
-<p>重新启动</p>
+<span class="nv">server</span><span class="o">=</span>127.0.0.1#5353
+</code></pre></div><p>重新启动</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/chinadns restart
-/etc/init.d/dnsmasq restart</code></pre></div>
-<p>此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/init.d/chinadns</code></pre></div>
-<p>具体参数如下</p>
+/etc/init.d/dnsmasq restart
+</code></pre></div><p>此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/init.d/chinadns
+</code></pre></div><p>具体参数如下</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">usage: chinadns <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-l IPLIST_FILE<span class="o">]</span> <span class="o">[</span>-b BIND_ADDR<span class="o">]</span> <span class="o">[</span>-p BIND_PORT<span class="o">]</span>
        <span class="o">[</span>-c CHNROUTE_FILE<span class="o">]</span> <span class="o">[</span>-s DNS<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span>
 Forward DNS requests.
@@ -194,35 +179,28 @@ Forward DNS requests.
 -c CHNROUTE_FILE      path to china route file
                       <span class="k">if</span> not specified, CHNRoute will be turned off
 -d                    <span class="nb">enable</span> bi-directional CHNRoute filter
--y                    delay <span class="nb">time</span> <span class="k">for</span> suspects, default: <span class="m">0</span>.3
--b BIND_ADDR          address that listens, default: <span class="m">127</span>.0.0.1
+-y                    delay <span class="nb">time</span> <span class="k">for</span> suspects, default: 0.3
+-b BIND_ADDR          address that listens, default: 127.0.0.1
 -p BIND_PORT          port that listens, default: <span class="m">53</span>
 -s DNS                DNS servers to use, default:
-                      <span class="m">114</span>.114.114.114,208.67.222.222:443,8.8.8.8
+                      114.114.114.114,208.67.222.222:443,8.8.8.8
 -m                    Using DNS compression pointer mutation
                       <span class="o">(</span>backlist and delaying would be disabled<span class="o">)</span>
--v                    verbose logging</code></pre></div>
-<h4 id="sftp登录">SFTP登录<a href="#sftp登录" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+-v                    verbose logging
+</code></pre></div><h4 id="sftp">SFTP登录<a href="#sftp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>在将ipx文件上传到OpenWRT路由器上时，刚开始没有使用WinSCP，而且OpenWRT上也没有SFTP服务，所以是用Everything的HTTP服务器功能，然后在OpenWRT上用wget下载的。后来知道可以直接通过SFTP上传、下载文件后，就开始在OpenWRT上折腾了。</p>
-
-<h6 id="openwrt安装sftp">OpenWRT安装SFTP<a href="#openwrt安装sftp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
-
+<h6 id="openwrtsftp">OpenWRT安装SFTP<a href="#openwrtsftp" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <p>安装及配置命令如下：</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">opkg update
 opkg install vsftpd openssh-sftp-server
 /etc/init.d/vsftpd <span class="nb">enable</span>
-/etc/init.d/vsftpd start</code></pre></div>
-<h6 id="md5sum-mismatch-错误">md5sum mismatch 错误<a href="#md5sum-mismatch-错误" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
-
+/etc/init.d/vsftpd start
+</code></pre></div><h6 id="md5sum-mismatch-">md5sum mismatch 错误<a href="#md5sum-mismatch-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <p>其中opkg在线安装openssh-sftp-server时出现了md5sum mismatch，无法安装，网上Google了一下，表示可能是linux内核不匹配导致的，解决方法是下载到本地，直接安装即可
 好吧，打开Everything的HTTP服务器，先下载到OpenWRT路由器上，然后手动安装成功。</p>
-
-<hr />
-
-<h4 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
-<p>没有了DNS污染，所有被屏蔽的网站也可以通过Shadowsocks+GFWList PAC绕过去科学上网了，自由遨游Internet的感觉真好啊~ \^O^/</p>
+<hr>
+<h4 id="heading-5">结<a href="#heading-5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<p>没有了DNS污染，所有被屏蔽的网站也可以通过Shadowsocks+GFWList PAC绕过去科学上网了，自由遨游Internet的感觉真好啊~ ^O^/</p>
 
 			</div>
 			<hr class="post-end">
@@ -247,7 +225,7 @@ opkg install vsftpd openssh-sftp-server
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2021 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

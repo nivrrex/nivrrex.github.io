@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Dec 2021 10:15:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fanqiang</title>
+      <link>http://nivrrex.github.io/tags/fanqiang/</link>
+      <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/fanqiang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>live</title>
+      <link>http://nivrrex.github.io/tags/live/</link>
+      <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/live/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>http://nivrrex.github.io/tags/vps/</link>
+      <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/vps/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>nim</title>
@@ -72,33 +99,6 @@
       <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/hexo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>http://nivrrex.github.io/tags/hugo/</link>
-      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>live</title>
-      <link>http://nivrrex.github.io/tags/live/</link>
-      <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/live/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>python</title>
-      <link>http://nivrrex.github.io/tags/python/</link>
-      <pubDate>Mon, 04 Apr 2016 09:05:37 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/python/</guid>
       <description></description>
     </item>
     

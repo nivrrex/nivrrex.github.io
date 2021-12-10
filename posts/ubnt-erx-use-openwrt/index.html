@@ -13,27 +13,24 @@
 于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks &#43; ChinaDNS &#43; DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
 安装 前期问题 刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。
 于是到 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=15243 帖子中和国外的一个帖子中提到的 http://s000.tinyupload.com/index.php?file_id=07741512272586742124 ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：
-Request timed out  而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
+Request timed out而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
 恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
-##这一部分不是帖子的内容，是前期准备工作 #在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下 wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tar tar -xf ER-e50.">
-
-
+##这一部分不是帖子的内容，是前期准备工作#在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tartar -xf ER-e50.">
 <meta itemprop="datePublished" content="2018-07-09T20:12:00&#43;08:00" />
 <meta itemprop="dateModified" content="2018-07-09T20:12:00&#43;08:00" />
 <meta itemprop="wordCount" content="241">
 
 
 
-<meta itemprop="keywords" content="ubnt,openwrt," />
-<meta property="og:title" content="ubnt er-x use openwrt" />
+<meta itemprop="keywords" content="ubnt,openwrt," /><meta property="og:title" content="ubnt er-x use openwrt" />
 <meta property="og:description" content="给UBNT的ER-X刷OpenWrt固件
 缘 UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。
 于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks &#43; ChinaDNS &#43; DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
 安装 前期问题 刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。
 于是到 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=15243 帖子中和国外的一个帖子中提到的 http://s000.tinyupload.com/index.php?file_id=07741512272586742124 ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：
-Request timed out  而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
+Request timed out而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
 恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
-##这一部分不是帖子的内容，是前期准备工作 #在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下 wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tar tar -xf ER-e50." />
+##这一部分不是帖子的内容，是前期准备工作#在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tartar -xf ER-e50." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/" />
 <meta property="article:published_time" content="2018-07-09T20:12:00+08:00" />
@@ -45,9 +42,9 @@ Request timed out  而且这两个系统，都无法保存设置，安装新软�
 于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks &#43; ChinaDNS &#43; DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
 安装 前期问题 刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。
 于是到 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=15243 帖子中和国外的一个帖子中提到的 http://s000.tinyupload.com/index.php?file_id=07741512272586742124 ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：
-Request timed out  而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
+Request timed out而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
 恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
-##这一部分不是帖子的内容，是前期准备工作 #在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下 wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tar tar -xf ER-e50."/>
+##这一部分不是帖子的内容，是前期准备工作#在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tartar -xf ER-e50."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -96,35 +93,19 @@ Request timed out  而且这两个系统，都无法保存设置，安装新软�
 				<h1>ubnt er-x use openwrt</h1>
 			</header>
 			<div class="content">
-				
-
-<p>给UBNT的ER-X刷OpenWrt固件</p>
-
-<h3 id="缘">缘<a href="#缘" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+				<p>给UBNT的ER-X刷OpenWrt固件</p>
+<h3 id="heading">缘<a href="#heading" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。</p>
-
 <p>于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks + ChinaDNS + DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 <a href="https://cokebar.info/archives/664">https://cokebar.info/archives/664</a> 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。</p>
-
-<!-- more -->
-
-<h3 id="安装">安装<a href="#安装" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
-<h4 id="前期问题">前期问题<a href="#前期问题" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+<!-- raw HTML omitted -->
+<h3 id="heading-1">安装<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<h4 id="heading-2">前期问题<a href="#heading-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。</p>
-
 <p>于是到 <a href="http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=15243">http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=15243</a> 帖子中和国外的一个帖子中提到的 <a href="http://s000.tinyupload.com/index.php?file_id=07741512272586742124">http://s000.tinyupload.com/index.php?file_id=07741512272586742124</a> ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：</p>
-
 <pre><code>Request timed out
-</code></pre>
-
-<p>而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。</p>
-
-<h4 id="恢复官方固件">恢复官方固件<a href="#恢复官方固件" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><p>而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。</p>
+<h4 id="heading-3">恢复官方固件<a href="#heading-3" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>后来在 <a href="http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=19800">http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;tid=19800</a> 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：</p>
-
 <pre><code>##这一部分不是帖子的内容，是前期准备工作
 #在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下
 wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tar
@@ -151,24 +132,14 @@ dd if=vmlinux.tmp of=/dev/mtdblock3
 dd if=vmlinux.tmp of=/dev/mtdblock4
 
 reboot
-</code></pre>
-
-<p>正常重启后，应该就恢复成官方1.7系统了，然后注意把网线接入Eth0口，正常配置下 edgeRouter 系统就行了。</p>
-
+</code></pre><p>正常重启后，应该就恢复成官方1.7系统了，然后注意把网线接入Eth0口，正常配置下 edgeRouter 系统就行了。</p>
 <p><strong>注意</strong>：目前实验的，似乎只有上边的两个装不了新软件的 OpenWrt 系统的可以刷回官方系统，OpenWrt 官方的系统刷机时，会出现以下错误（但是应该用TTL线还是可以刷回官方系统的，可以参考上边的帖子的前半部分内容）：</p>
-
 <pre><code>ubidetach: error!: cannot detach &quot;/dev/mtd5&quot;
            error 16 (Resource busy)
-</code></pre>
-
-<h3 id="柳暗花明">柳暗花明<a href="#柳暗花明" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+</code></pre><h3 id="heading-4">柳暗花明<a href="#heading-4" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>刷会官方系统后，本来以为没办法了。后来搜索到一个网站 <a href="https://wiki.opennet-initiative.de/wiki/Ubiquiti_EdgeRouter">https://wiki.opennet-initiative.de/wiki/Ubiquiti_EdgeRouter</a> ,似乎是一个在 OpenWrt 系统上叠加 OpenNet 安全网络的组织。网页上有详细的从官方系统刷新到 OpenWrt系统的说明，而且有对应的固件。</p>
-
-<h4 id="安装initramfs-factory">安装initramfs-factory<a href="#安装initramfs-factory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+<h4 id="initramfs-factory">安装initramfs-factory<a href="#initramfs-factory" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>按该网站的说明，首先从官方系统，刷新成OpenWrt系统，下面记录下具体的步骤</p>
-
 <pre><code>#PC上下载factory固件，并上传
 wget http://downloads.opennet-initiative.de/ubnt/edgeos/openwrt-ramips-mt7621-ubnt-erx-initramfs-factory.tar
 scp -P 22 openwrt-ramips-mt7621-ubnt-erx-initramfs-factory.tar ubnt@192.168.1.1:/tmp
@@ -179,12 +150,8 @@ cd /tmp
 add system image openwrt-ramips-mt7621-ubnt-erx-initramfs-factory.tar
 show system image
 reboot 
-</code></pre>
-
-<p>正常情况下，重启后，将进入 OpenNet 的 OpenWrt 系统，然后可以刷新最新的 OpenWrt 系统（应该也可以刷新 OpenWrt 的官方系统，这里是更新成了 OpenNet 的系统）</p>
-
-<h4 id="更新squashfs-sysupgrade">更新squashfs-sysupgrade<a href="#更新squashfs-sysupgrade" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
-
+</code></pre><p>正常情况下，重启后，将进入 OpenNet 的 OpenWrt 系统，然后可以刷新最新的 OpenWrt 系统（应该也可以刷新 OpenWrt 的官方系统，这里是更新成了 OpenNet 的系统）</p>
+<h4 id="squashfs-sysupgrade">更新squashfs-sysupgrade<a href="#squashfs-sysupgrade" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <pre><code>#PC上下载sysupgrade固件，并上传
 wget http://downloads.opennet-initiative.de/openwrt/stable/latest/targets/ramips/mt7621/lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar
 scp -P 22 lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar root@192.168.1.1:/tmp
@@ -193,16 +160,10 @@ scp -P 22 lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar root@19
 ssh -p 22 root@192.168.1.1
 cd /tmp
 sysupgrade lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar
-</code></pre>
-
-<p>sysupgrade 更新后会自动重启，结束后就是 OpenNet 的最新的 OpenWrt 系统了。我是在这个系统基础上，又更新成官方的 OpenWrt 系统了。</p>
-
-<p><strong>注意</strong>： OpenNet 的 OpenWrt 系统，网段是172.16.0.<sup>1</sup>&frasl;<sub>24</sub> , 帐号root , 密码admin</p>
-
-<h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-
+</code></pre><p>sysupgrade 更新后会自动重启，结束后就是 OpenNet 的最新的 OpenWrt 系统了。我是在这个系统基础上，又更新成官方的 OpenWrt 系统了。</p>
+<p><strong>注意</strong>： OpenNet 的 OpenWrt 系统，网段是172.16.0.1/24 , 帐号root , 密码admin</p>
+<h3 id="heading-5">结<a href="#heading-5" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>至此，ER-X 刷新 OpenWrt 系统成功。（如果此时还想恢复官方系统，就必须通过TTL线了）</p>
-
 <p>虽然 OpenWrt 对比 Ubnt 的 edgeRouter 系统可能性能有点弱势，但是比不了方便啊，而且支持 OpenWrt 的翻墙类软件还是比较丰富和更新及时的，就这样用啦~</p>
 
 			</div>
@@ -228,7 +189,7 @@ sysupgrade lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2019 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2021 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>

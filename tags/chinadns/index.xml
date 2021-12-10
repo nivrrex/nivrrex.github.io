@@ -19,7 +19,7 @@
       
       <guid>http://nivrrex.github.io/posts/fanqiang-with-chinadns/</guid>
       <description>来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
-Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
+ Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
 安装 首先需要在OpenWRT上安装如下包：
 opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32 配置 然后配置iptables的防火墙策略
 vi /etc/firewall.user 添加如下命令

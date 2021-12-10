@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 27 Jul 2015 22:36:17 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 10 Dec 2021 10:15:00 +0800</lastBuildDate>
     
 	<atom:link href="http://nivrrex.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021summary</title>
+      <link>http://nivrrex.github.io/posts/2021summary/</link>
+      <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/posts/2021summary/</guid>
+      <description>折腾的一年，回归平淡
+GFW 这一年里， VPS 换了好几家，科学上网技术也换了好几种：ss / ss+kcptun+udp2raw / trojan / xray(vless) / naiveproxy / hysteria ， bbr 核心也反复调整。后来，是因为运营商的网络调整，国外 ip 连接不再丢包了，便随意选择了一种，用了下去。线路质量远比技术方案选择重要的多。
+路由器 这一年里，路由器也折腾了不少，常见的固件基本上都用了下，openwrt / padavan / tomato / merlin / dd-wrt / libremesh / aruba / ruckus 。也试着编译几种常见的固件，增补或删减了部分功能。后来发现还是官方固件更稳定，而科学上网就交给 OrangePi(OpenWrt) 旁路由来解决。大部门之前折腾的路由器也都挂海鲜市场了，目前是使用 tplink-xdr5430 ，不折腾。
+编程 这一年里，程序折腾的不太多，主要是用 lua 写了几个 openwrt 的 wifi 方面的小程序， c 完善了几个常用程序的功能。关注的 nim / zig / dlang / golang 都没有太折腾。
+结 发现这几年来折腾来折腾去，实际意义却不大。有的时候，花点小钱，去解决你需要花大量时间去解决的问题，却是很值得的。不过所有能折腾的都有了了解，后边也没太大折腾的想法了。回归平淡，不再为了折腾而折腾~</description>
+    </item>
     
     <item>
       <title>update debian linux image with backports</title>
@@ -19,7 +32,7 @@
       
       <guid>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
       <description>来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
-如何查看Linux版本 共有5种方式，具体如下
+ 如何查看Linux版本 共有5种方式，具体如下
 cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue 我的Debian更新过，显示是
 Debian GNU/Linux 8.1 (jessie) 但是，内核为什么还是
 Linux 2.6.32-042stab093.4 i686 好吧，更新，更新！
@@ -40,7 +53,8 @@ sudo apt-get -t jessie-backports install linux-image-3.</description>
       <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</guid>
-      <description>来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~ DNSmasq安装 我的系统是Debian，直接运行以下命令
+      <description>来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~
+DNSmasq安装 我的系统是Debian，直接运行以下命令
 sudo apt-get update sudo apt-get install dnsmasq DNSmasq配置 编辑/etc/dnsmasq.conf文件
 vi /etc/dnsmasq.conf 修改以下参数
 resolv-file=/etc/resolv.conf strict-order listen-address=xxx.xxx.xxx.xxx,127.0.0.1 port=443 cache-size=1024 log-queries 编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器
@@ -48,7 +62,7 @@ nameserver 8.8.8.8 nameserver 208.67.222.222 将服务重启即可
 /etc/init.d/dnsmasq restart 将DNSmasq加入启动项
 sudo vi /etc/rc.local 将以下命令添加进去即可
 /etc/init.d/dnsmasq start DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
-结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</description>
+ 结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</description>
     </item>
     
     <item>
@@ -59,11 +73,10 @@ sudo vi /etc/rc.local 将以下命令添加进去即可
       <guid>http://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</guid>
       <description>来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
 最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
-VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
+ VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;amp;&amp;amp; make make install 配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json 具体格式如下：
-{ &amp;#34;server&amp;#34;:&amp;#34;my_server_ip&amp;#34;, &amp;#34;server_port&amp;#34;:8388, &amp;#34;local_port&amp;#34;:1080, &amp;#34;password&amp;#34;:&amp;#34;barfoo!&amp;#34;, &amp;#34;timeout&amp;#34;:600, &amp;#34;method&amp;#34;:&amp;#34;table&amp;#34; }  server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;rdquo;aes-256-cfb&amp;rdquo;
-vi /etc/rc.local  添加以下自启动命令
+{ &amp;#34;server&amp;#34;:&amp;#34;my_server_ip&amp;#34;, &amp;#34;server_port&amp;#34;:8388, &amp;#34;local_port&amp;#34;:1080, &amp;#34;password&amp;#34;:&amp;#34;barfoo!&amp;#34;, &amp;#34;timeout&amp;#34;:600, &amp;#34;method&amp;#34;:&amp;#34;table&amp;#34; }  server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;quot;aes-256-cfb&amp;rdquo;  vi /etc/rc.local 添加以下自启动命令
 /usr/bin/ss-server -c /etc/shadowsocks-libev/config.</description>
     </item>
     
@@ -73,15 +86,19 @@ vi /etc/rc.local  添加以下自启动命令
       <pubDate>Tue, 08 Jul 2014 21:27:40 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</guid>
-      <description>来由 在上一篇《fanqiang with vpn+chnroutes》中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！ 找合适的VPS 由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。 开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃 又找到了RamNode，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。 它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。 由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~
+      <description>来由 在上一篇《fanqiang with vpn+chnroutes》中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！
+ 找合适的VPS 由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。 开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃 又找到了RamNode，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。 它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。 由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~
 使用VPS架设VPN 这个就不赘述了，网上一搜一大堆，我选择的操作系统是Debian：
- 乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》 郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》 howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》 波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》 在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：
- 永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》
+  乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》
+  郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》
+  howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》
+  波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》 在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：
+  永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》
   路由器+VPN 淘OpenWrt路由器 可以独享VPN上网后，还是不满足啊，因为家里2台电脑，手机还想无线上网，一台一台指定好费事啊 上一篇《fanqiang with vpn+chnroutes》，最后提到，可以用开源的路由器固件，搞定路由器上VPN的问题。 Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好的Huawei HG255d，基本在￥40-￥60之间。CPU为Ralink RT3052，FLASH容量为16MB，内存容量为32MB DDR。我淘的是硬改内存64MB+散热片，刷了不死uboot的，毕竟没那么多精力折腾。
 刷新最新OpenWrt固件 买回来后，淘宝店主刷新的是比较老的OpenWrt-DreamBox 20120828版本，对应的OpenWrt-DreamBox的源软件包地址已经改变，没法下载新软件，就开始折腾，找了半天，由于DreamBox版本比较老，所以换成了比较新的PandoraBox版本，可以到http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/ 下载编译的最新固件，我选择的是最新的20140505版。 不得不说，有了uboot，可以一键刷机，还是比较放心的进行折腾的。在找到目前的固件前，刷新了不少版本，但都没啥问题。
 设置路由器+VPN+chnroutes静态路由 这个根据各人情况都不相同，总而言之，最终搞定。
-存在问题 一个是VPN拨号后，需要手动添加一下静态路由，不过是自己的VPS架设的VPN，想待多久就待多久，除了掉线，一般也不会下线滴。 另一个是，可能淘的Huawei HG255d有问题，路由器在对文件进行操作时，折腾一段时间后，会出现&amp;rdquo;input/output error&amp;rdquo;问题，怀疑是硬改导致的？ 解决方案就是路由器关电重启解决，不过除了装软件，折腾东东，一般不影响使用，所以也不准备找淘宝店主问这个问题了。
-总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~</description>
+存在问题 一个是VPN拨号后，需要手动添加一下静态路由，不过是自己的VPS架设的VPN，想待多久就待多久，除了掉线，一般也不会下线滴。 另一个是，可能淘的Huawei HG255d有问题，路由器在对文件进行操作时，折腾一段时间后，会出现&amp;quot;input/output error&amp;quot;问题，怀疑是硬改导致的？ 解决方案就是路由器关电重启解决，不过除了装软件，折腾东东，一般不影响使用，所以也不准备找淘宝店主问这个问题了。
+ 总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~</description>
     </item>
     
   </channel>
