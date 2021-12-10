@@ -32,6 +32,20 @@ GFW 这一年里， VPS 换了好几家，科学上网技术也换了好几种�
     </item>
     
     <item>
+      <title>dlang with ldc in mipsel</title>
+      <link>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</link>
+      <pubDate>Sun, 30 Aug 2020 09:19:10 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</guid>
+      <description>简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
+mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
+cd /root/wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzmkdir mipselmv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64设置环境变量
+cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrcexport PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATHexport STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIRalias strip-mipsel=&amp;#39;mipsel-openwrt-linux-strip -s&amp;#39;EOFsource /etc/bash.bashrc如上，mipsel的gcc交叉编译环境就配置好了
+ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
+wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xztar xvf ldc2-1.23.0-linux-x86_64.tar.xzrm ldc2-1.23.0-linux-x86_64.tar.xzmv ldc2-1.23.0-linux-x86_64 ldc2cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrcexport PATH=$PATH:/root/ldc2/binEOFsource /etc/bash.bashrc编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .</description>
+    </item>
+    
+    <item>
       <title>compile nim with tcc</title>
       <link>http://nivrrex.github.io/posts/compile-nim-with-tcc/</link>
       <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
@@ -146,28 +160,6 @@ Python的好处就是编码样式比较统一，第三方类库超多。可以�
       <description>来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
 Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
 import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39;&amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
-    </item>
-    
-    <item>
-      <title>update debian linux image with backports</title>
-      <link>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</link>
-      <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
-      <description>来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
- 如何查看Linux版本 共有5种方式，具体如下
-cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue 我的Debian更新过，显示是
-Debian GNU/Linux 8.1 (jessie) 但是，内核为什么还是
-Linux 2.6.32-042stab093.4 i686 好吧，更新，更新！
-使用Backports源 对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目
-其官方Wiki上面说
-Backports是从testing版本 （大部分）和 unstable版本 (可能性极小,例如：安全更新等)重新编译的软件包,因此他们在稳定的debian发行版中不需要新的库就可以运行（无论如何，这是可能的）。推荐你挑选一个能够满足你需求的单个的backports软件源，不要使用所有可用的backports源。
-开始更新 更新软件源 首先在apt的sources.list文件中添加Backports源
-vi /etc/apt/sources.list 添加如下内容
-deb http://ftp.debian.org/debian/ jessie-backports main deb-src http://ftp.debian.org/debian/ jessie-backports main 更新数据
-sudo apt-get update #sudo apt-get -t jessie-backports upgrade 搜索并安装linux-image文件 安装aptitude，以便搜索最新的linux-image文件
-apt-get install aptitude aptitude search kernel-image 根据搜索出来的内核文件，进行安装，我的是
-sudo apt-get -t jessie-backports install linux-image-3.</description>
     </item>
     
   </channel>
