@@ -10,11 +10,11 @@
 		<atom:link href="http://nivrrex.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
 		
 		<item>
-			<title>2021summary</title>
-			<link>http://nivrrex.github.io/posts/2021summary/</link>
+			<title>2021 summary</title>
+			<link>http://nivrrex.github.io/posts/2021-summary/</link>
 			<pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
 			
-			<guid>http://nivrrex.github.io/posts/2021summary/</guid>
+			<guid>http://nivrrex.github.io/posts/2021-summary/</guid>
 			<description>折腾的一年，回归平淡
 GFW 这一年里， VPS 换了好几家，科学上网技术也换了好几种：ss / ss+kcptun+udp2raw / trojan / xray(vless) / naiveproxy / hysteria ， bbr 核心也反复调整。后来，是因为运营商的网络调整，国外 ip 连接不再丢包了，便随意选择了一种，用了下去。线路质量远比技术方案选择重要的多。
 路由器 这一年里，路由器也折腾了不少，常见的固件基本上都用了下，openwrt / padavan / tomato / merlin / dd-wrt / libremesh / aruba / ruckus 。也试着编译几种常见的固件，增补或删减了部分功能。后来发现还是官方固件更稳定，而科学上网就交给 OrangePi(OpenWrt) 旁路由来解决。大部门之前折腾的路由器也都挂海鲜市场了，目前是使用 tplink-xdr5430 ，不折腾。
