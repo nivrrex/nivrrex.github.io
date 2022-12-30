@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/tcc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/tcc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>compile nim with tcc</title>
       <link>http://nivrrex.github.io/posts/compile-nim-with-tcc/</link>
@@ -20,7 +16,7 @@
       <guid>http://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
       <description>缘来 Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
  配置 其实配置很简单，打开nim\config\nim.cfg文件
-cc = gcc修改为cc = tcc结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
+cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
     </item>
     
   </channel>

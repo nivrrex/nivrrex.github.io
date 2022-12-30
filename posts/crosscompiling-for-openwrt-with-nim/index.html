@@ -9,24 +9,21 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="crosscompiling for openwrt with nim">
 <meta itemprop="description" content="缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
- Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;apt updateapt -t sid install nim -yDebian系统下安装gcc等编译环境 apt-get install build-essential下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATHnim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim结 就这样，就可以生成对应路由器下的可执行文件啦~">
-<meta itemprop="datePublished" content="2019-11-15T23:21:00&#43;08:00" />
-<meta itemprop="dateModified" content="2019-11-15T23:21:00&#43;08:00" />
+ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~"><meta itemprop="datePublished" content="2019-11-15T23:21:00+08:00" />
+<meta itemprop="dateModified" content="2019-11-15T23:21:00+08:00" />
 <meta itemprop="wordCount" content="47">
-
-
-
 <meta itemprop="keywords" content="nim,openwrt," /><meta property="og:title" content="crosscompiling for openwrt with nim" />
 <meta property="og:description" content="缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
- Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;apt updateapt -t sid install nim -yDebian系统下安装gcc等编译环境 apt-get install build-essential下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATHnim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim结 就这样，就可以生成对应路由器下的可执行文件啦~" />
+ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/" />
+<meta property="og:url" content="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-11-15T23:21:00+08:00" />
 <meta property="article:modified_time" content="2019-11-15T23:21:00+08:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="crosscompiling for openwrt with nim"/>
 <meta name="twitter:description" content="缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
- Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;apt updateapt -t sid install nim -yDebian系统下安装gcc等编译环境 apt-get install build-essential下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATHnim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim结 就这样，就可以生成对应路由器下的可执行文件啦~"/>
+ Debian系统下下载nim语言 sh -c &#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -75,24 +72,24 @@
 				<h1>crosscompiling for openwrt with nim</h1>
 			</header>
 			<div class="content">
-				<h3 id="heading">缘来<a href="#heading" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+				<h3 id="缘来">缘来<a href="#缘来" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>nim语言(<a href="https://nim-lang.org/">nimlang</a>)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。</p>
 <!-- raw HTML omitted -->
 <hr>
-<h3 id="debiannim">Debian系统下下载nim语言<a href="#debiannim" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sh -c <span class="s1">&#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;</span>
+<h3 id="debian系统下下载nim语言">Debian系统下下载nim语言<a href="#debian系统下下载nim语言" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sh -c <span class="s1">&#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;</span>
 apt update
 apt -t sid install nim -y
-</code></pre></div><h3 id="debiangcc">Debian系统下安装gcc等编译环境<a href="#debiangcc" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">apt-get install build-essential
-</code></pre></div><h3 id="openwrttoolchain">下载对应架构的OpenWRT编译工具链toolchain<a href="#openwrttoolchain" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+</code></pre></div><h3 id="debian系统下安装gcc等编译环境">Debian系统下安装gcc等编译环境<a href="#debian系统下安装gcc等编译环境" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt-get install build-essential
+</code></pre></div><h3 id="下载对应架构的openwrt编译工具链toolchain">下载对应架构的OpenWRT编译工具链toolchain<a href="#下载对应架构的openwrt编译工具链toolchain" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
 rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-</code></pre></div><h3 id="heading-1">设置环境并进行编译<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:<span class="nv">$PATH</span>
+</code></pre></div><h3 id="设置环境并进行编译">设置环境并进行编译<a href="#设置环境并进行编译" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:<span class="nv">$PATH</span>
 nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim
-</code></pre></div><h3 id="heading-2">结<a href="#heading-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+</code></pre></div><h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>就这样，就可以生成对应路由器下的可执行文件啦~</p>
 
 			</div>
@@ -118,7 +115,7 @@ nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux 
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2021 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2022 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -126,7 +123,7 @@ nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux 
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
 	
 
 </body>

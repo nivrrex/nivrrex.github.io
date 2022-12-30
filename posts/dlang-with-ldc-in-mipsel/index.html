@@ -10,35 +10,32 @@
 <meta itemprop="name" content="dlang with ldc in mipsel">
 <meta itemprop="description" content="简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
 mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
-cd /root/wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzmkdir mipselmv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64设置环境变量
-cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrcexport PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATHexport STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIRalias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39;EOFsource /etc/bash.bashrc如上，mipsel的gcc交叉编译环境就配置好了
+cd /root/ wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz mkdir mipsel mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/ rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64 设置环境变量
+cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR alias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39; EOF source /etc/bash.bashrc 如上，mipsel的gcc交叉编译环境就配置好了
 ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
-wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xztar xvf ldc2-1.23.0-linux-x86_64.tar.xzrm ldc2-1.23.0-linux-x86_64.tar.xzmv ldc2-1.23.0-linux-x86_64 ldc2cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrcexport PATH=$PATH:/root/ldc2/binEOFsource /etc/bash.bashrc编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .">
-<meta itemprop="datePublished" content="2020-08-30T09:19:10&#43;08:00" />
-<meta itemprop="dateModified" content="2020-08-30T09:19:10&#43;08:00" />
+wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz tar xvf ldc2-1.23.0-linux-x86_64.tar.xz rm ldc2-1.23.0-linux-x86_64.tar.xz mv ldc2-1.23.0-linux-x86_64 ldc2 cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc export PATH=$PATH:/root/ldc2/bin EOF source /etc/bash.bashrc 编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 ."><meta itemprop="datePublished" content="2020-08-30T09:19:10+08:00" />
+<meta itemprop="dateModified" content="2020-08-30T09:19:10+08:00" />
 <meta itemprop="wordCount" content="194">
-
-
-
 <meta itemprop="keywords" content="" /><meta property="og:title" content="dlang with ldc in mipsel" />
 <meta property="og:description" content="简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
 mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
-cd /root/wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzmkdir mipselmv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64设置环境变量
-cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrcexport PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATHexport STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIRalias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39;EOFsource /etc/bash.bashrc如上，mipsel的gcc交叉编译环境就配置好了
+cd /root/ wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz mkdir mipsel mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/ rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64 设置环境变量
+cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR alias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39; EOF source /etc/bash.bashrc 如上，mipsel的gcc交叉编译环境就配置好了
 ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
-wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xztar xvf ldc2-1.23.0-linux-x86_64.tar.xzrm ldc2-1.23.0-linux-x86_64.tar.xzmv ldc2-1.23.0-linux-x86_64 ldc2cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrcexport PATH=$PATH:/root/ldc2/binEOFsource /etc/bash.bashrc编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 ." />
+wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz tar xvf ldc2-1.23.0-linux-x86_64.tar.xz rm ldc2-1.23.0-linux-x86_64.tar.xz mv ldc2-1.23.0-linux-x86_64 ldc2 cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc export PATH=$PATH:/root/ldc2/bin EOF source /etc/bash.bashrc 编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/" />
+<meta property="og:url" content="http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-08-30T09:19:10+08:00" />
 <meta property="article:modified_time" content="2020-08-30T09:19:10+08:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="dlang with ldc in mipsel"/>
 <meta name="twitter:description" content="简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
 mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
-cd /root/wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzmkdir mipselmv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64设置环境变量
-cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrcexport PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATHexport STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIRalias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39;EOFsource /etc/bash.bashrc如上，mipsel的gcc交叉编译环境就配置好了
+cd /root/ wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz mkdir mipsel mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/ rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64 设置环境变量
+cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR alias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39; EOF source /etc/bash.bashrc 如上，mipsel的gcc交叉编译环境就配置好了
 ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
-wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xztar xvf ldc2-1.23.0-linux-x86_64.tar.xzrm ldc2-1.23.0-linux-x86_64.tar.xzmv ldc2-1.23.0-linux-x86_64 ldc2cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrcexport PATH=$PATH:/root/ldc2/binEOFsource /etc/bash.bashrc编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 ."/>
+wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz tar xvf ldc2-1.23.0-linux-x86_64.tar.xz rm ldc2-1.23.0-linux-x86_64.tar.xz mv ldc2-1.23.0-linux-x86_64 ldc2 cat &lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc export PATH=$PATH:/root/ldc2/bin EOF source /etc/bash.bashrc 编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 ."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -87,11 +84,11 @@ wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0
 				<h1>dlang with ldc in mipsel</h1>
 			</header>
 			<div class="content">
-				<h1 id="heading">简介<a href="#heading" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+				<h1 id="简介">简介<a href="#简介" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下<a href="https://wiki.dlang.org/Cross-compiling_with_LDC">Cross-compiling with LDC</a>，现在将具体过程记录一下。</p>
 <h1 id="mipsel-gcc">mipsel gcc<a href="#mipsel-gcc" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /root/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /root/
 wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
 tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
 rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
@@ -99,16 +96,16 @@ mkdir mipsel
 mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/
 rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64
 </code></pre></div><p>设置环境变量</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
 </span><span class="s">export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH
 </span><span class="s">export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR
 </span><span class="s">alias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39;
 </span><span class="s">EOF</span>
 <span class="nb">source</span> /etc/bash.bashrc
 </code></pre></div><p>如上，mipsel的gcc交叉编译环境就配置好了</p>
-<h1 id="ldc-">ldc 下载<a href="#ldc-" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h1 id="ldc-下载">ldc 下载<a href="#ldc-下载" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz
 tar xvf ldc2-1.23.0-linux-x86_64.tar.xz
 rm ldc2-1.23.0-linux-x86_64.tar.xz
 mv ldc2-1.23.0-linux-x86_64 ldc2
@@ -117,17 +114,17 @@ cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
 </span><span class="s">export PATH=$PATH:/root/ldc2/bin
 </span><span class="s">EOF</span>
 <span class="nb">source</span> /etc/bash.bashrc
-</code></pre></div><h1 id="mipselruntime">编译mipsel的runtime<a href="#mipselruntime" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+</code></pre></div><h1 id="编译mipsel的runtime">编译mipsel的runtime<a href="#编译mipsel的runtime" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .so .a 文件移动到/root/ldc2/ldc-runtime/mipsel目录下</p>
-<pre><code>apt install cmake ninja-build -y
+<pre tabindex="0"><code>apt install cmake ninja-build -y
 cd /root
 CC=mipsel-openwrt-linux-gcc ldc-build-runtime --ninja --dFlags=&quot;-w;-mtriple=mipsel-linux;-march=mipsel;-mcpu=mips32;--float-abi=soft&quot; --cFlags=&quot;-march=mips32&quot; --targetSystem=&quot;Linux;UNIX&quot;
 mkdir /root/ldc2/ldc-runtime/mipsel -p
 mv ldc-build-runtime.tmp/lib/ /root/ldc2/ldc-runtime/mipsel
 rm ldc-build-runtime.tmp/ -r
-</code></pre><h1 id="libexecinfo">编译下载libexecinfo<a href="#libexecinfo" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
-<p>如果此时直接进行编译，会出现 <strong>undefined reference to `backtrace_symbols&rsquo;</strong>  错误，还需要编译libexecinfo库。</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /root
+</code></pre><h1 id="编译下载libexecinfo">编译下载libexecinfo<a href="#编译下载libexecinfo" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<p>如果此时直接进行编译，会出现 <strong>undefined reference to `backtrace_symbols'</strong>  错误，还需要编译libexecinfo库。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /root
 wget https://github.com/mikroskeem/libexecinfo/archive/1.1-3.tar.gz
 tar xvf 1.1-3.tar.gz
 rm 1.1-3.tar.gz
@@ -136,26 +133,26 @@ sed -i <span class="s2">&#34;s%CC=cc%CC=mipsel-openwrt-linux-gcc%g&#34;</span> M
 sed -i <span class="s2">&#34;s%AR=ar%AR=mipsel-openwrt-linux-ar%g&#34;</span> Makefile 
 make
 </code></pre></div><p>编译后的库文件放置到 /root/ldc2/ldc-runtime/mipsel/lib/ 文件夹下，便于后续使用</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">mv libexecinfo.a /root/ldc2/ldc-runtime/mipsel/lib/
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv libexecinfo.a /root/ldc2/ldc-runtime/mipsel/lib/
 mv libexecinfo.so.1 /root/ldc2/ldc-runtime/mipsel/lib/
 mv stacktraverse.So /root/ldc2/ldc-runtime/mipsel/lib/
 mv execinfo.So /root/ldc2/ldc-runtime/mipsel/lib/
 rm /root/libexecinfo-1.1-3/ -r
-</code></pre></div><h1 id="d">编译.d代码文件<a href="#d" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+</code></pre></div><h1 id="编译d代码文件">编译.d代码文件<a href="#编译d代码文件" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>简单的hello world代码</p>
-<div class="highlight"><pre class="chroma"><code class="language-d" data-lang="d"><span class="kn">import</span> <span class="nn">std.stdio</span><span class="o">;</span>
-<span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="o">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-d" data-lang="d"><span class="kn">import</span> <span class="nn">std.stdio</span><span class="o">;</span>
+<span class="kt">void</span> <span class="nf">main</span><span class="o">()</span>
 <span class="o">{</span>
-    <span class="n">writeln</span><span class="o">(</span><span class="s">&#34;Hello, world! dlang in mipsel!&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">writeln</span><span class="o">(</span><span class="s">&#34;Hello, world! dlang in mipsel!&#34;</span><span class="o">);</span>
 <span class="o">}</span>
 </code></pre></div><p>编译至mipsel环境</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">ldc2 -mtriple<span class="o">=</span>mipsel-linux -march<span class="o">=</span>mipsel -mcpu<span class="o">=</span>mips32 --float-abi<span class="o">=</span>soft -gcc<span class="o">=</span>mipsel-openwrt-linux-gcc --linker<span class="o">=</span>bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib<span class="o">=</span>phobos2-ldc,druntime-ldc --platformlib<span class="o">=</span>execinfo hello.d
-</code></pre></div><h1 id="alias">设置alias<a href="#alias" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ldc2 -mtriple<span class="o">=</span>mipsel-linux -march<span class="o">=</span>mipsel -mcpu<span class="o">=</span>mips32 --float-abi<span class="o">=</span>soft -gcc<span class="o">=</span>mipsel-openwrt-linux-gcc --linker<span class="o">=</span>bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib<span class="o">=</span>phobos2-ldc,druntime-ldc --platformlib<span class="o">=</span>execinfo hello.d
+</code></pre></div><h1 id="设置alias">设置alias<a href="#设置alias" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
 </span><span class="s">alias ldc2-mipsel=&#34;ldc2 -mtriple=mipsel-linux -march=mipsel -mcpu=mips32 --float-abi=soft --release -Os -gcc=mipsel-openwrt-linux-gcc --linker=bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib=phobos2-ldc,druntime-ldc --platformlib=execinfo&#34;
 </span><span class="s">EOF</span>
 <span class="nb">source</span> /etc/bash.bashrc
-</code></pre></div><h1 id="heading-1">结<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+</code></pre></div><h1 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>至此，dlang在linux环境下，编译mipsel架构的编译环境就搭配好了，平时可以用dlang针对mipsel的openwrt路由器写点小工具啦~</p>
 
 			</div>
@@ -178,7 +175,7 @@ rm /root/libexecinfo-1.1-3/ -r
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2021 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2022 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -186,7 +183,7 @@ rm /root/libexecinfo-1.1-3/ -r
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
 	
 
 </body>

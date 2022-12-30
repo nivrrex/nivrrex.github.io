@@ -17,13 +17,9 @@ nameserver 8.8.8.8 nameserver 208.67.222.222 将服务重启即可
 /etc/init.d/dnsmasq restart 将DNSmasq加入启动项
 sudo vi /etc/rc.local 将以下命令添加进去即可
 /etc/init.d/dnsmasq start DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
- 结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~">
-<meta itemprop="datePublished" content="2015-07-26T17:51:59&#43;08:00" />
-<meta itemprop="dateModified" content="2015-07-26T17:51:59&#43;08:00" />
+ 结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~"><meta itemprop="datePublished" content="2015-07-26T17:51:59+08:00" />
+<meta itemprop="dateModified" content="2015-07-26T17:51:59+08:00" />
 <meta itemprop="wordCount" content="42">
-
-
-
 <meta itemprop="keywords" content="internet,fanqiang,vps,dnsmasq," /><meta property="og:title" content="fanqiang with dnsmasq" />
 <meta property="og:description" content="来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~
 DNSmasq安装 我的系统是Debian，直接运行以下命令
@@ -36,9 +32,10 @@ sudo vi /etc/rc.local 将以下命令添加进去即可
 /etc/init.d/dnsmasq start DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
  结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://nivrrex.github.io/posts/fanqiang-with-dnsmasq/" />
+<meta property="og:url" content="http://nivrrex.github.io/posts/fanqiang-with-dnsmasq/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-07-26T17:51:59+08:00" />
 <meta property="article:modified_time" content="2015-07-26T17:51:59+08:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="fanqiang with dnsmasq"/>
 <meta name="twitter:description" content="来由 本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~
@@ -99,18 +96,18 @@ sudo vi /etc/rc.local 将以下命令添加进去即可
 				<h1>fanqiang with dnsmasq</h1>
 			</header>
 			<div class="content">
-				<h4 id="heading">来由<a href="#heading" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+				<h4 id="来由">来由<a href="#来由" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~</p>
 <!-- raw HTML omitted -->
-<h4 id="dnsmasq">DNSmasq安装<a href="#dnsmasq" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="dnsmasq安装">DNSmasq安装<a href="#dnsmasq安装" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>我的系统是Debian，直接运行以下命令</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
 sudo apt-get install dnsmasq
-</code></pre></div><h4 id="dnsmasq-1">DNSmasq配置<a href="#dnsmasq-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+</code></pre></div><h4 id="dnsmasq配置">DNSmasq配置<a href="#dnsmasq配置" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>编辑/etc/dnsmasq.conf文件</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">vi /etc/dnsmasq.conf
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/dnsmasq.conf
 </code></pre></div><p>修改以下参数</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">resolv-file<span class="o">=</span>/etc/resolv.conf
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">resolv-file<span class="o">=</span>/etc/resolv.conf
 strict-order
 
 listen-address<span class="o">=</span>xxx.xxx.xxx.xxx,127.0.0.1
@@ -119,19 +116,19 @@ listen-address<span class="o">=</span>xxx.xxx.xxx.xxx,127.0.0.1
 cache-size<span class="o">=</span><span class="m">1024</span>
 log-queries
 </code></pre></div><p>编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">nameserver 8.8.8.8
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nameserver 8.8.8.8
 nameserver 208.67.222.222
 </code></pre></div><p>将服务重启即可</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq restart
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq restart
 </code></pre></div><p>将DNSmasq加入启动项</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">sudo vi /etc/rc.local
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo vi /etc/rc.local
 </code></pre></div><p>将以下命令添加进去即可</p>
-<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq start
-</code></pre></div><h4 id="dns">DNS污染解决方案<a href="#dns" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq start
+</code></pre></div><h4 id="dns污染解决方案">DNS污染解决方案<a href="#dns污染解决方案" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p><a href="http://sourceforge.net/projects/openwrt-dist/">OpenWrt-dist</a>上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。
 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，<strong><a href="http://sourceforge.net/p/openwrt-dist/wiki/DNS/">地址</a></strong></p>
 <hr>
-<h4 id="heading-1">结<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</p>
 
 			</div>
@@ -157,7 +154,7 @@ nameserver 208.67.222.222
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2021 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2022 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -165,7 +162,7 @@ nameserver 208.67.222.222
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
 	
 
 </body>

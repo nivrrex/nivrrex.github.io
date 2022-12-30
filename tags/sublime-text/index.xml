@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 01 Aug 2015 15:41:45 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 01 Aug 2015 15:41:45 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>change editer with sublime text</title>
       <link>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</link>
@@ -20,7 +16,7 @@
       <guid>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
       <description>来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
 Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
-import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39;&amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
+import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39; &amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
     </item>
     
   </channel>

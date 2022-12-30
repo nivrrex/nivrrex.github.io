@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/nim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/nim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>compile nim with tcc</title>
       <link>http://nivrrex.github.io/posts/compile-nim-with-tcc/</link>
@@ -20,7 +16,7 @@
       <guid>http://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
       <description>缘来 Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
  配置 其实配置很简单，打开nim\config\nim.cfg文件
-cc = gcc修改为cc = tcc结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
+cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
     </item>
     
     <item>
@@ -30,7 +26,7 @@ cc = gcc修改为cc = tcc结 就这样，保存文件配置完成后，就可
       
       <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
       <description>缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
- Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39;apt updateapt -t sid install nim -yDebian系统下安装gcc等编译环境 apt-get install build-essential下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATHnim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
+ Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
     </item>
     
   </channel>

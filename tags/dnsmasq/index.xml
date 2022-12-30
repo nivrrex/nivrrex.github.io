@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 26 Jul 2015 17:51:59 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/dnsmasq/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 26 Jul 2015 17:51:59 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/dnsmasq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fanqiang with dnsmasq</title>
       <link>http://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</link>

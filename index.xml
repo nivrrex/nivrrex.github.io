@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 10 Dec 2021 10:15:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 30 Dec 2022 09:55:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 summary</title>
+      <link>http://nivrrex.github.io/posts/2022-summary/</link>
+      <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/posts/2022-summary/</guid>
+      <description>平淡的一年
+GFW 这一年里， 买了几家新的 VPS ，试用了后，或多或少有点问题，决定明年就续约那两家固定的。科学上网技术也实验了几个新的 hysteria / tuic / gost / glider / mieru / pingtunnel ，目前稳定的在使用 naiveproxy。速度不重要，稳定才重要。
+路由器 这一年里，基本上没怎么在折腾路由器了，家里买了几个 WiFi6 路由器，Ruijie / H3C / TP-Link / GL-iNet 各种品牌，放在不同的地方使用，都挺稳定的。有特殊需求的，加个 Pi 盒子作为旁路由，就解决了。
+编程 这一年里，程序基本上没有怎么折腾。
+结 一年很快，工作很忙，平淡的过去，未必不是一种幸福~</description>
+    </item>
     
     <item>
       <title>2021 summary</title>
@@ -39,10 +48,10 @@ GFW 这一年里， VPS 换了好几家，科学上网技术也换了好几种�
       <guid>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</guid>
       <description>简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
 mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
-cd /root/wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xzmkdir mipselmv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64设置环境变量
-cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrcexport PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATHexport STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIRalias strip-mipsel=&amp;#39;mipsel-openwrt-linux-strip -s&amp;#39;EOFsource /etc/bash.bashrc如上，mipsel的gcc交叉编译环境就配置好了
+cd /root/ wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz mkdir mipsel mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/ rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64 设置环境变量
+cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrc export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR alias strip-mipsel=&amp;#39;mipsel-openwrt-linux-strip -s&amp;#39; EOF source /etc/bash.bashrc 如上，mipsel的gcc交叉编译环境就配置好了
 ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
-wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xztar xvf ldc2-1.23.0-linux-x86_64.tar.xzrm ldc2-1.23.0-linux-x86_64.tar.xzmv ldc2-1.23.0-linux-x86_64 ldc2cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrcexport PATH=$PATH:/root/ldc2/binEOFsource /etc/bash.bashrc编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .</description>
+wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz tar xvf ldc2-1.23.0-linux-x86_64.tar.xz rm ldc2-1.23.0-linux-x86_64.tar.xz mv ldc2-1.23.0-linux-x86_64 ldc2 cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrc export PATH=$PATH:/root/ldc2/bin EOF source /etc/bash.bashrc 编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .</description>
     </item>
     
     <item>
@@ -53,7 +62,7 @@ wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0
       <guid>http://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
       <description>缘来 Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
  配置 其实配置很简单，打开nim\config\nim.cfg文件
-cc = gcc修改为cc = tcc结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
+cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
     </item>
     
     <item>
@@ -63,7 +72,7 @@ cc = gcc修改为cc = tcc结 就这样，保存文件配置完成后，就可
       
       <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
       <description>缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
- Golang支持的交叉编译平台 amd64 (also known as x86-64)A mature implementation.386 (x86 or x86-32)Comparable to the amd64 port.arm (ARM)Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.arm64 (AArch64)Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.ppc64, ppc64le (64-bit PowerPC big- and little-endian)Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
+ Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
     </item>
     
     <item>
@@ -73,7 +82,7 @@ cc = gcc修改为cc = tcc结 就这样，保存文件配置完成后，就可
       
       <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
       <description>缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
- Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39;apt updateapt -t sid install nim -yDebian系统下安装gcc等编译环境 apt-get install build-essential下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xztar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xzrm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATHnim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
+ Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
     </item>
     
     <item>
@@ -128,9 +137,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 生成站点 可以到Hugo - Introduction to Hugo自行学习
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
-hugo new site sitename主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
+hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
  Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themesgit clone https://github.com/Track3/hermit.git themes/hermit生成页面 hugo new posts/about.md然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
     </item>
     
     <item>
@@ -145,21 +154,10 @@ cd themesgit clone https://github.com/Track3/hermit.git themes/hermit生成页
 Python3 vs Python2 这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。
 但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。
 print无法输出中文 这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：
-import io, syssys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&amp;#39;utf8&amp;#39;)相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
+import io, sys sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&amp;#39;utf8&amp;#39;) 相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
 Python VS Ruby 这个题目比较大，只能简单的就第一感觉来说：
-Python的好处就是编码样式比较统一，第三方类库超多。可以关注自己需要解决的问题，不用费心思在语法细节上。Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。但是第三方类库和Python相比差距还是比较大。结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
+Python的好处就是编码样式比较统一，第三方类库超多。 可以关注自己需要解决的问题，不用费心思在语法细节上。 Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。 但是第三方类库和Python相比差距还是比较大。 结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
 最终还是选择了Python，而且可能近期都会使用它。</description>
-    </item>
-    
-    <item>
-      <title>change editer with sublime text</title>
-      <link>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</link>
-      <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
-      <description>来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
-Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
-import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39;&amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
     </item>
     
   </channel>

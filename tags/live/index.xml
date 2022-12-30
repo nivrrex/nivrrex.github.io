@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 10 Dec 2021 10:15:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/live/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 30 Dec 2022 09:55:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/live/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2022 summary</title>
+      <link>http://nivrrex.github.io/posts/2022-summary/</link>
+      <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/posts/2022-summary/</guid>
+      <description>平淡的一年
+GFW 这一年里， 买了几家新的 VPS ，试用了后，或多或少有点问题，决定明年就续约那两家固定的。科学上网技术也实验了几个新的 hysteria / tuic / gost / glider / mieru / pingtunnel ，目前稳定的在使用 naiveproxy。速度不重要，稳定才重要。
+路由器 这一年里，基本上没怎么在折腾路由器了，家里买了几个 WiFi6 路由器，Ruijie / H3C / TP-Link / GL-iNet 各种品牌，放在不同的地方使用，都挺稳定的。有特殊需求的，加个 Pi 盒子作为旁路由，就解决了。
+编程 这一年里，程序基本上没有怎么折腾。
+结 一年很快，工作很忙，平淡的过去，未必不是一种幸福~</description>
+    </item>
     
     <item>
       <title>2021 summary</title>
@@ -47,9 +56,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 生成站点 可以到Hugo - Introduction to Hugo自行学习
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
-hugo new site sitename主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
+hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
  Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themesgit clone https://github.com/Track3/hermit.git themes/hermit生成页面 hugo new posts/about.md然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
     </item>
     
     <item>
@@ -60,8 +69,8 @@ cd themesgit clone https://github.com/Track3/hermit.git themes/hermit生成页
       <guid>http://nivrrex.github.io/posts/hello-github/</guid>
       <description>欢迎来到我的GitHub blog！
 这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
- Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34;git config --global user.email nivrrex@gmail.comssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34;ssh -T git@github.com -i ./.ssh/id_rsa更多命令可以到git - 简明指南去查看
- Hexo的一些基本命令 npm install hexo-cli -gnpm install hexo --savenpm install hexo-generator-index --savenpm install hexo-generator-archive --savenpm install hexo-generator-category --savenpm install hexo-generator-tag --savenpm install hexo-generator-sitemap --savenpm install hexo-generator-feed --savenpm install hexo-renderer-ejs --savenpm install hexo-renderer-stylus --savenpm install hexo-renderer-marked --savenpm install hexo-server --savenpm install hexo-deployer-git --savehexo inithexo new [post] &amp;#34;My New Post&amp;#34;hexo serverhexo generatehexo deploy更多文档可以到Hexo docs上查看</description>
+ Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34; ssh -T git@github.com -i ./.ssh/id_rsa 更多命令可以到git - 简明指南去查看
+ Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;#34;My New Post&amp;#34; hexo server hexo generate hexo deploy 更多文档可以到Hexo docs上查看</description>
     </item>
     
   </channel>

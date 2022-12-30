@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/ubnt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/ubnt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ubnt er-x use openwrt</title>
       <link>http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</link>

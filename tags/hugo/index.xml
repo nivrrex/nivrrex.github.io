@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 23 Apr 2017 11:22:28 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 23 Apr 2017 11:22:28 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>change hexo to hugo</title>
       <link>http://nivrrex.github.io/posts/change-hexo-to-hugo/</link>
@@ -28,9 +24,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 生成站点 可以到Hugo - Introduction to Hugo自行学习
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
-hugo new site sitename主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
+hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
  Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themesgit clone https://github.com/Track3/hermit.git themes/hermit生成页面 hugo new posts/about.md然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
     </item>
     
   </channel>

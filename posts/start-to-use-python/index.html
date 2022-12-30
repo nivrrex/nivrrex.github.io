@@ -14,16 +14,12 @@
 Python3 vs Python2 这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。
 但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。
 print无法输出中文 这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：
-import io, syssys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#39;utf8&#39;)相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
+import io, sys sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#39;utf8&#39;) 相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
 Python VS Ruby 这个题目比较大，只能简单的就第一感觉来说：
-Python的好处就是编码样式比较统一，第三方类库超多。可以关注自己需要解决的问题，不用费心思在语法细节上。Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。但是第三方类库和Python相比差距还是比较大。结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
-最终还是选择了Python，而且可能近期都会使用它。">
-<meta itemprop="datePublished" content="2016-04-04T09:05:37&#43;08:00" />
-<meta itemprop="dateModified" content="2016-04-04T09:05:37&#43;08:00" />
+Python的好处就是编码样式比较统一，第三方类库超多。 可以关注自己需要解决的问题，不用费心思在语法细节上。 Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。 但是第三方类库和Python相比差距还是比较大。 结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
+最终还是选择了Python，而且可能近期都会使用它。"><meta itemprop="datePublished" content="2016-04-04T09:05:37+08:00" />
+<meta itemprop="dateModified" content="2016-04-04T09:05:37+08:00" />
 <meta itemprop="wordCount" content="30">
-
-
-
 <meta itemprop="keywords" content="python," /><meta property="og:title" content="start to use python" />
 <meta property="og:description" content="缘来 最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。
  开始 整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。
@@ -31,14 +27,15 @@ Python的好处就是编码样式比较统一，第三方类库超多。可以�
 Python3 vs Python2 这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。
 但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。
 print无法输出中文 这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：
-import io, syssys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#39;utf8&#39;)相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
+import io, sys sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#39;utf8&#39;) 相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
 Python VS Ruby 这个题目比较大，只能简单的就第一感觉来说：
-Python的好处就是编码样式比较统一，第三方类库超多。可以关注自己需要解决的问题，不用费心思在语法细节上。Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。但是第三方类库和Python相比差距还是比较大。结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
+Python的好处就是编码样式比较统一，第三方类库超多。 可以关注自己需要解决的问题，不用费心思在语法细节上。 Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。 但是第三方类库和Python相比差距还是比较大。 结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
 最终还是选择了Python，而且可能近期都会使用它。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://nivrrex.github.io/posts/start-to-use-python/" />
+<meta property="og:url" content="http://nivrrex.github.io/posts/start-to-use-python/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2016-04-04T09:05:37+08:00" />
 <meta property="article:modified_time" content="2016-04-04T09:05:37+08:00" />
+
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="start to use python"/>
 <meta name="twitter:description" content="缘来 最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。
@@ -47,9 +44,9 @@ Python的好处就是编码样式比较统一，第三方类库超多。可以�
 Python3 vs Python2 这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。
 但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。
 print无法输出中文 这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：
-import io, syssys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#39;utf8&#39;)相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
+import io, sys sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding=&#39;utf8&#39;) 相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。
 Python VS Ruby 这个题目比较大，只能简单的就第一感觉来说：
-Python的好处就是编码样式比较统一，第三方类库超多。可以关注自己需要解决的问题，不用费心思在语法细节上。Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。但是第三方类库和Python相比差距还是比较大。结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
+Python的好处就是编码样式比较统一，第三方类库超多。 可以关注自己需要解决的问题，不用费心思在语法细节上。 Ruby的优势是处理文本效率很高，语法糖很多，用起来很省心。 但是第三方类库和Python相比差距还是比较大。 结 其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。
 最终还是选择了Python，而且可能近期都会使用它。"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -99,28 +96,28 @@ Python的好处就是编码样式比较统一，第三方类库超多。可以�
 				<h1>start to use python</h1>
 			</header>
 			<div class="content">
-				<h4 id="heading">缘来<a href="#heading" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+				<h4 id="缘来">缘来<a href="#缘来" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。</p>
 <!-- raw HTML omitted -->
 <hr>
-<h4 id="heading-1">开始<a href="#heading-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="开始">开始<a href="#开始" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。</p>
 <p>整个切换过程还是比较顺利的，毕竟两个语言有很大的相近的地方。当然也遇到了不少坑，比如Python3和Python2的选择，print输出的坑。</p>
 <h4 id="python3-vs-python2">Python3 vs Python2<a href="#python3-vs-python2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。</p>
 <p>但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。</p>
-<h4 id="print">print无法输出中文<a href="#print" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<h4 id="print无法输出中文">print无法输出中文<a href="#print无法输出中文" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">utf8</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
 </code></pre></div><p>相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。</p>
 <h4 id="python-vs-ruby">Python VS Ruby<a href="#python-vs-ruby" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>这个题目比较大，只能简单的就第一感觉来说：</p>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Python的好处就是编码样式比较统一</span><span class="err">，</span><span class="err">第</span><span class="err">三</span><span class="err">方</span><span class="err">类</span><span class="err">库</span><span class="err">超</span><span class="err">多</span><span class="err">。</span>
-<span class="err">可</span><span class="err">以</span><span class="err">关</span><span class="err">注</span><span class="err">自</span><span class="err">己</span><span class="err">需</span><span class="err">要</span><span class="err">解</span><span class="err">决</span><span class="err">的</span><span class="err">问</span><span class="err">题</span><span class="err">，</span><span class="err">不</span><span class="err">用</span><span class="err">费</span><span class="err">心</span><span class="err">思</span><span class="err">在</span><span class="err">语</span><span class="err">法</span><span class="err">细</span><span class="err">节</span><span class="err">上</span><span class="err">。</span>
-</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-ruby" data-lang="ruby"><span class="no">Ruby的优势是处理文本效率很高</span><span class="err">，</span><span class="err">语</span><span class="err">法</span><span class="err">糖</span><span class="err">很</span><span class="err">多</span><span class="err">，</span><span class="err">用</span><span class="err">起</span><span class="err">来</span><span class="err">很</span><span class="err">省</span><span class="err">心</span><span class="err">。</span>
-<span class="err">但</span><span class="err">是</span><span class="err">第</span><span class="err">三</span><span class="err">方</span><span class="err">类</span><span class="err">库</span><span class="err">和</span><span class="no">Python相比差距还是比较大</span><span class="err">。</span>
-</code></pre></div><h4 id="heading-2">结<a href="#heading-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Python的好处就是编码样式比较统一</span><span class="err">，</span><span class="n">第三方类库超多</span><span class="err">。</span>
+<span class="n">可以关注自己需要解决的问题</span><span class="err">，</span><span class="n">不用费心思在语法细节上</span><span class="err">。</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="no">Ruby的优势是处理文本效率很高</span><span class="err">，语法糖很多，用起来很省心。</span>
+<span class="err">但是第三方类库和</span><span class="no">Python相比差距还是比较大</span><span class="err">。</span>
+</code></pre></div><h4 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。</p>
 <p>最终还是选择了Python，而且可能近期都会使用它。</p>
 
@@ -147,7 +144,7 @@ Python的好处就是编码样式比较统一，第三方类库超多。可以�
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2021 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2022 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -155,7 +152,7 @@ Python的好处就是编码样式比较统一，第三方类库超多。可以�
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
 	
 
 </body>

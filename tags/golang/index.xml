@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
-    
-	<atom:link href="http://nivrrex.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>crosscompiling for openwrt with golang</title>
       <link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
@@ -19,7 +15,7 @@
       
       <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
       <description>缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
- Golang支持的交叉编译平台 amd64 (also known as x86-64)A mature implementation.386 (x86 or x86-32)Comparable to the amd64 port.arm (ARM)Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.arm64 (AArch64)Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.ppc64, ppc64le (64-bit PowerPC big- and little-endian)Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
+ Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
     </item>
     
     <item>
