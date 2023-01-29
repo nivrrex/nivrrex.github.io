@@ -39,7 +39,7 @@ printf(&quot;Author: Eric Ma &lt;mazq."><meta itemprop="datePublished" content="
 因为原先的源代码是C&#43;&#43;写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
 源代码 #include &lt;stdio.h&gt;
 #include &lt;windows.h&gt;
-#include &quot;wininet.h&quot;
+#include &lt;wininet.h&gt;
 BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);
 BOOL DisableConnectionProxy(LPCTSTR conn_name);
 int main(int argc, char* argv[])
