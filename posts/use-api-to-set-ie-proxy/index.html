@@ -67,7 +67,7 @@ printf(&quot;Author: Eric Ma &lt;mazq." />
 因为原先的源代码是C&#43;&#43;写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
 源代码 #include &lt;stdio.h&gt;
 #include &lt;windows.h&gt;
-#include &quot;wininet.h&quot;
+#include &lt;wininet.h&gt;
 BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);
 BOOL DisableConnectionProxy(LPCTSTR conn_name);
 int main(int argc, char* argv[])
@@ -138,7 +138,7 @@ printf(&quot;Author: Eric Ma &lt;mazq."/>
 <h3 id="源代码">源代码<a href="#源代码" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <pre tabindex="0"><code>#include &lt;stdio.h&gt;
 #include &lt;windows.h&gt;
-#include &quot;wininet.h&quot;
+#include &lt;wininet.h&gt;
 
 BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);
 BOOL DisableConnectionProxy(LPCTSTR conn_name);
