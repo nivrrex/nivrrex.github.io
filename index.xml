@@ -19,7 +19,7 @@
 注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
 通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
 因为原先的源代码是C++写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;quot;wininet.h&amp;quot;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;quot;SetProxy Usage:\n\n&amp;quot;);printf(&amp;quot;Examples:\n&amp;quot;);printf(&amp;quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;quot; );printf(&amp;quot;SetProxy.exe \&amp;quot;\&amp;quot; -- disable proxy, set proxy to null.\n&amp;quot; );printf(&amp;quot;\n&amp;quot;);printf(&amp;quot;Version 1.0.0\n&amp;quot;);printf(&amp;quot;Author: Eric Ma &amp;lt;mazq.</description>
+源代码 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;lt;wininet.h&amp;gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;quot;SetProxy Usage:\n\n&amp;quot;);printf(&amp;quot;Examples:\n&amp;quot;);printf(&amp;quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;quot; );printf(&amp;quot;SetProxy.exe \&amp;quot;\&amp;quot; -- disable proxy, set proxy to null.\n&amp;quot; );printf(&amp;quot;\n&amp;quot;);printf(&amp;quot;Version 1.0.0\n&amp;quot;);printf(&amp;quot;Author: Eric Ma &amp;lt;mazq.</description>
     </item>
     
     <item>
