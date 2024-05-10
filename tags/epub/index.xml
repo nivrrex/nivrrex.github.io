@@ -9,11 +9,11 @@
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/epub/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title></title>
-      <link>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</link>
+      <title>use mupdf to read epub and use css set epub font</title>
+      <link>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
       <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</guid>
+      <guid>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
       <description>缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
 获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
 最终考虑的是使用开源的 epub 格式书籍。

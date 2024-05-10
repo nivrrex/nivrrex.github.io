@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</loc>
-    <lastmod>2024-05-10T10:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://nivrrex.github.io/tags/css/</loc>
     <lastmod>2024-05-10T10:00:00+08:00</lastmod>
   </url><url>
@@ -21,6 +18,9 @@
     <lastmod>2024-05-10T10:00:00+08:00</lastmod>
   </url><url>
     <loc>http://nivrrex.github.io/tags/</loc>
+    <lastmod>2024-05-10T10:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</loc>
     <lastmod>2024-05-10T10:00:00+08:00</lastmod>
   </url><url>
     <loc>http://nivrrex.github.io/tags/internet/</loc>

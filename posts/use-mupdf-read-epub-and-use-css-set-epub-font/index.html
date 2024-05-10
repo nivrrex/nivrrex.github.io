@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="use mupdf to read epub and use css set epub font">
+<meta itemprop="description" content="缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
+获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
+最终考虑的是使用开源的 epub 格式书籍。
+格式转换 目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。
+kaf-cli 从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。GitHub - ystyle/kaf-cli ，自动识别章节、生成目录，还有很多细节的设置，比较方便。
+如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。
+linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。
+最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
+mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 &#43; 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&gt;、j 向后翻页 b、PageUp、↑、&lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?"><meta itemprop="datePublished" content="2024-05-10T10:00:00+08:00" />
+<meta itemprop="dateModified" content="2024-05-10T10:00:00+08:00" />
+<meta itemprop="wordCount" content="246">
+<meta itemprop="keywords" content="epub,css,soft," /><meta property="og:title" content="use mupdf to read epub and use css set epub font" />
+<meta property="og:description" content="缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
+获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
+最终考虑的是使用开源的 epub 格式书籍。
+格式转换 目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。
+kaf-cli 从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。GitHub - ystyle/kaf-cli ，自动识别章节、生成目录，还有很多细节的设置，比较方便。
+如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。
+linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。
+最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
+mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 &#43; 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&gt;、j 向后翻页 b、PageUp、↑、&lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-05-10T10:00:00+08:00" />
+<meta property="article:modified_time" content="2024-05-10T10:00:00+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="use mupdf to read epub and use css set epub font"/>
+<meta name="twitter:description" content="缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
+获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
+最终考虑的是使用开源的 epub 格式书籍。
+格式转换 目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。
+kaf-cli 从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。GitHub - ystyle/kaf-cli ，自动识别章节、生成目录，还有很多细节的设置，比较方便。
+如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。
+linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。
+最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
+mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 &#43; 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&gt;、j 向后翻页 b、PageUp、↑、&lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>use mupdf to read epub and use css set epub font</title>
+	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.835f01e49ba3fb1af85a367c1d24ded4e808c992894adc90feecaba6562f7cd9.css" integrity="sha256-g18B5Juj+xr4WjZ8HSTe1OgIyZKJStyQ/uyrplYvfNk=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="http://nivrrex.github.io/">Nivrrex&#39;s blog</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="http://nivrrex.github.io/posts/">Posts</a>
+				<a href="http://nivrrex.github.io/posts/about-me">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://stackoverflow.com/" target="_blank" rel="noopener me" title="Stackoverflow"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.913 16.041v6.848h17.599v-6.848M7.16 18.696h8.925M7.65 13.937l8.675 1.8M9.214 9.124l8.058 3.758M12.086 4.65l6.849 5.66M15.774 1.111l5.313 7.162"/></svg></a><a href="https://telegram.org/" target="_blank" rel="noopener me" title="Telegram"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.509 1.793.997 3.592 1.48 5.388.16.36.506.494.864.498l-.002.018s.281.028.555-.038a2.1 2.1 0 0 0 .933-.517c.345-.324 1.28-1.244 1.811-1.764l3.999 2.952.032.018s.442.311 1.09.355c.324.022.75-.04 1.116-.308.37-.27.613-.702.728-1.196.342-1.492 2.61-12.285 2.997-14.072l-.01.042c.27-1.006.17-1.928-.455-2.474a1.654 1.654 0 0 0-1.034-.407z"/></svg></a><a href="https://twitter.com/" target="_blank" rel="noopener me" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="http://nivrrex.github.io/posts/">Posts</a></li>
+			<li><a href="http://nivrrex.github.io/posts/about-me">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>May 10, 2024</span></div>
+				<h1>use mupdf to read epub and use css set epub font</h1>
+			</header>
+			<div class="content">
+				<h3 id="缘来">缘来<a href="#缘来" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。</p>
+<!-- raw HTML omitted -->
+<hr>
+<h3 id="获取电子书">获取电子书<a href="#获取电子书" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。</p>
+<p>最终考虑的是使用开源的 epub 格式书籍。</p>
+<h3 id="格式转换">格式转换<a href="#格式转换" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。</p>
+<h5 id="kaf-cli">kaf-cli<a href="#kaf-cli" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h5>
+<p>从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。<a href="https://github.com/ystyle/kaf-cli">GitHub - ystyle/kaf-cli</a> ，自动识别章节、生成目录，还有很多细节的设置，比较方便。</p>
+<p>如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。</p>
+<h3 id="linux-下-epub-阅读软件---mupdf">linux 下 EPUB 阅读软件 - mupdf<a href="#linux-下-epub-阅读软件---mupdf" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。</p>
+<p>最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。</p>
+<h5 id="mupdf-命令行参数">mupdf 命令行参数<a href="#mupdf-命令行参数" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usage: mupdf <span class="o">[</span>options<span class="o">]</span> file.pdf <span class="o">[</span>page<span class="o">]</span>
+</span></span><span class="line"><span class="cl">        -p -    password
+</span></span><span class="line"><span class="cl">        -r -    resolution
+</span></span><span class="line"><span class="cl">        -A -    <span class="nb">set</span> anti-aliasing quality in bits <span class="o">(</span><span class="nv">0</span><span class="o">=</span>off, <span class="nv">8</span><span class="o">=</span>best<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        -C -    RRGGBB <span class="o">(</span>tint color in hexadecimal syntax<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        -W -    page width <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -H -    page height <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -I -    invert colors
+</span></span><span class="line"><span class="cl">        -S -    font size <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -U -    user style sheet <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -X      disable document styles <span class="k">for</span> EPUB layout
+</span></span></code></pre></div><h5 id="mupdf-快捷键">mupdf 快捷键<a href="#mupdf-快捷键" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">切换全屏</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">调整窗口来适配阅读页面</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">调整页面宽度适配窗口</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">开启或关闭抗锯齿</td>
+</tr>
+<tr>
+<td style="text-align:center">[number]z</td>
+<td style="text-align:center">按照DPI设置缩放比例</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">放大</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">缩小</td>
+</tr>
+<tr>
+<td style="text-align:center">[</td>
+<td style="text-align:center">逆时针旋转</td>
+</tr>
+<tr>
+<td style="text-align:center">]</td>
+<td style="text-align:center">顺时针旋转</td>
+</tr>
+<tr>
+<td style="text-align:center">空格、PageDown、↓、&gt;、j</td>
+<td style="text-align:center">向后翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">b、PageUp、↑、&lt;、k</td>
+<td style="text-align:center">向前翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">[number]g</td>
+<td style="text-align:center">跳转至[number]页</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">向前搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">先后搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">继续向前搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">继续向后搜索</td>
+</tr>
+</tbody>
+</table>
+<p>基本上以上的快捷键，足够日常使用了。</p>
+<h5 id="css-设置-epub-字体">css 设置 EPUB 字体<a href="#css-设置-epub-字体" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h5>
+<p>mupdf 设置字体稍微麻烦点，也是要通过命令行参数解决。通过 &ldquo;-U&rdquo; 参数指定外部 css 文件进行设置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;HYQiHei 55S&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;HYQiHei 55S&#39;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">src</span><span class="p">:</span><span class="nd">url</span><span class="o">(/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">mupdf</span><span class="o">/</span><span class="nt">HYQiHei</span><span class="p">.</span><span class="nc">ttf</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;turetype&#39;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #414c41 rgb(65,76,65)背景色：箬竹色 #b5eecd rgb(181,238,205) */</span>
+</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #494c49 rgb(73,76,73)背景色：赭石色 #d5c6ac rgb(213,198,172) */</span>
+</span></span><span class="line"><span class="cl"><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">65</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">181</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">205</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>我这里使用的是汉仪旗黑字体，放置在了 /etc/mupdf/ 目录下，字体大小、颜色、背景色也有所调整。</p>
+<h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>至此，从 txt 文件转成 epub ，用 mupdf 打开 epub 文件，并通过 css 设置 epub 文件的字体和背景等都已解决，可以开心的在电脑和墨水屏阅读器上看书啦~</p>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="http://nivrrex.github.io/tags/epub">epub</a></span><span class="tag"><a href="http://nivrrex.github.io/tags/css">css</a></span><span class="tag"><a href="http://nivrrex.github.io/tags/soft">soft</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2024-05-10 10:00 &#43;0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="http://nivrrex.github.io/posts/use-api-to-set-ie-proxy/">
+				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>use Windows API to set IE proxy</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2024 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="http://nivrrex.github.io/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
