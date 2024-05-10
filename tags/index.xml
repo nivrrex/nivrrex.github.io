@@ -9,11 +9,29 @@
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>epub css soft</title>
-      <link>http://nivrrex.github.io/tags/epub-css-soft/</link>
+      <title>css</title>
+      <link>http://nivrrex.github.io/tags/css/</link>
       <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/tags/epub-css-soft/</guid>
+      <guid>http://nivrrex.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>epub</title>
+      <link>http://nivrrex.github.io/tags/epub/</link>
+      <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/epub/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>soft</title>
+      <link>http://nivrrex.github.io/tags/soft/</link>
+      <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/soft/</guid>
       <description></description>
     </item>
     
@@ -23,15 +41,6 @@
       <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/internet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>soft</title>
-      <link>http://nivrrex.github.io/tags/soft/</link>
-      <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/soft/</guid>
       <description></description>
     </item>
     
@@ -86,15 +95,6 @@
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>openwrt</title>
-      <link>http://nivrrex.github.io/tags/openwrt/</link>
-      <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/openwrt/</guid>
       <description></description>
     </item>
     
