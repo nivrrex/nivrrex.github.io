@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>epub css soft on Nivrrex&#39;s blog</title>
+    <link>http://nivrrex.github.io/tags/epub-css-soft/</link>
+    <description>Recent content in epub css soft on Nivrrex&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/epub-css-soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</link>
+      <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</guid>
+      <description>缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
+获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
+最终考虑的是使用开源的 epub 格式书籍。
+格式转换 目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。
+kaf-cli 从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。GitHub - ystyle/kaf-cli ，自动识别章节、生成目录，还有很多细节的设置，比较方便。
+如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。
+linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。
+最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
+mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 + 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&amp;gt;、j 向后翻页 b、PageUp、↑、&amp;lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -10,35 +10,34 @@
 <meta itemprop="name" content="fanqiang with shadowsocks">
 <meta itemprop="description" content="来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
 最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
- VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
+VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;&amp; make make install 配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json 具体格式如下：
-{ &#34;server&#34;:&#34;my_server_ip&#34;, &#34;server_port&#34;:8388, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;barfoo!&#34;, &#34;timeout&#34;:600, &#34;method&#34;:&#34;table&#34; }  server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot;  vi /etc/rc.local 添加以下自启动命令
-/usr/bin/ss-server -c /etc/shadowsocks-libev/config."><meta itemprop="datePublished" content="2015-07-24T12:57:00+08:00" />
+{ &#34;server&#34;:&#34;my_server_ip&#34;, &#34;server_port&#34;:8388, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;barfoo!&#34;, &#34;timeout&#34;:600, &#34;method&#34;:&#34;table&#34; } server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot; vi /etc/rc.local 添加以下自启动命令
+/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json 保存退出即可"><meta itemprop="datePublished" content="2015-07-24T12:57:00+08:00" />
 <meta itemprop="dateModified" content="2015-07-24T12:57:00+08:00" />
 <meta itemprop="wordCount" content="121">
 <meta itemprop="keywords" content="internet,fanqiang,vps,shadowsocks," /><meta property="og:title" content="fanqiang with shadowsocks" />
 <meta property="og:description" content="来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
 最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
- VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
+VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;&amp; make make install 配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json 具体格式如下：
-{ &#34;server&#34;:&#34;my_server_ip&#34;, &#34;server_port&#34;:8388, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;barfoo!&#34;, &#34;timeout&#34;:600, &#34;method&#34;:&#34;table&#34; }  server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot;  vi /etc/rc.local 添加以下自启动命令
-/usr/bin/ss-server -c /etc/shadowsocks-libev/config." />
+{ &#34;server&#34;:&#34;my_server_ip&#34;, &#34;server_port&#34;:8388, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;barfoo!&#34;, &#34;timeout&#34;:600, &#34;method&#34;:&#34;table&#34; } server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot; vi /etc/rc.local 添加以下自启动命令
+/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json 保存退出即可" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://nivrrex.github.io/posts/fanqiang-with-shadowsocks/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2015-07-24T12:57:00+08:00" />
 <meta property="article:modified_time" content="2015-07-24T12:57:00+08:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="fanqiang with shadowsocks"/>
 <meta name="twitter:description" content="来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
 最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
- VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
+VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;&amp; make make install 配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json 具体格式如下：
-{ &#34;server&#34;:&#34;my_server_ip&#34;, &#34;server_port&#34;:8388, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;barfoo!&#34;, &#34;timeout&#34;:600, &#34;method&#34;:&#34;table&#34; }  server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot;  vi /etc/rc.local 添加以下自启动命令
-/usr/bin/ss-server -c /etc/shadowsocks-libev/config."/>
+{ &#34;server&#34;:&#34;my_server_ip&#34;, &#34;server_port&#34;:8388, &#34;local_port&#34;:1080, &#34;password&#34;:&#34;barfoo!&#34;, &#34;timeout&#34;:600, &#34;method&#34;:&#34;table&#34; } server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot; vi /etc/rc.local 添加以下自启动命令
+/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json 保存退出即可"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -48,7 +47,7 @@ git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-li
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<title>fanqiang with shadowsocks</title>
-	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.835f01e49ba3fb1af85a367c1d24ded4e808c992894adc90feecaba6562f7cd9.css" integrity="sha256-g18B5Juj+xr4WjZ8HSTe1OgIyZKJStyQ/uyrplYvfNk=" crossorigin="anonymous">
 	
 </head>
 
@@ -99,43 +98,43 @@ git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-li
 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了<a href="https://github.com/shadowsocks/shadowsocks-libev">shadowsocks-libev</a></p>
 <h6 id="编译shadowsocks">编译Shadowsocks<a href="#编译shadowsocks" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <p>我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/shadowsocks/shadowsocks-libev.git
-<span class="nb">cd</span> shadowsocks-libev
-sudo apt-get install build-essential autoconf libtool libssl-dev
-./configure <span class="o">&amp;&amp;</span> make
-make install
-</code></pre></div><h6 id="配置shadowsocks服务器端">配置Shadowsocks服务器端<a href="#配置shadowsocks服务器端" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/shadowsocks-libev/config.json
-</code></pre></div><p>具体格式如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
-    <span class="s2">&#34;server&#34;</span>:<span class="s2">&#34;my_server_ip&#34;</span>,
-    <span class="s2">&#34;server_port&#34;</span>:8388,
-    <span class="s2">&#34;local_port&#34;</span>:1080,
-    <span class="s2">&#34;password&#34;</span>:<span class="s2">&#34;barfoo!&#34;</span>,
-    <span class="s2">&#34;timeout&#34;</span>:600,
-    <span class="s2">&#34;method&#34;</span>:<span class="s2">&#34;table&#34;</span>
-<span class="o">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/shadowsocks/shadowsocks-libev.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> shadowsocks-libev
+</span></span><span class="line"><span class="cl">sudo apt-get install build-essential autoconf libtool libssl-dev
+</span></span><span class="line"><span class="cl">./configure <span class="o">&amp;&amp;</span> make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></div><h6 id="配置shadowsocks服务器端">配置Shadowsocks服务器端<a href="#配置shadowsocks服务器端" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/shadowsocks-libev/config.json
+</span></span></code></pre></div><p>具体格式如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;server&#34;</span>:<span class="s2">&#34;my_server_ip&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;server_port&#34;</span>:8388,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;local_port&#34;</span>:1080,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;password&#34;</span>:<span class="s2">&#34;barfoo!&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;timeout&#34;</span>:600,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;method&#34;</span>:<span class="s2">&#34;table&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><ul>
 <li>server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6).</li>
 <li>server_port: 你的Shadowsocks服务器端口.</li>
 <li>local_port: 本地端口.</li>
 <li>password: 你的Shadowsocks服务器的账号密码.</li>
 <li>method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot;</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/rc.local
-</code></pre></div><p>添加以下自启动命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json
-</code></pre></div><p>保存退出即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/rc.local
+</span></span></code></pre></div><p>添加以下自启动命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json
+</span></span></code></pre></div><p>保存退出即可</p>
 <p>如果希望加入udp转发功能(enable udprelay mode)，用以搭建DNS转发线路，启动时需要加上-u参数，似乎目前只有shadowsocks-libev有该功能
 即添加以下自启动命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u
-</code></pre></div><p>保存退出即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u
+</span></span></code></pre></div><p>保存退出即可</p>
 <p>由于shadowsocks-libev不支持多端口，多用户，如果多人使用的话，需开多个实例，每一个config.json使用不同端口、密码即可
 官方示例如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ss-server -c config1.json -f pid1
-ss-server -c config2.json -f pid2
-ss-server -c config3.json -f pid3
-</code></pre></div><h6 id="配置shadowsocks客户端">配置Shadowsocks客户端<a href="#配置shadowsocks客户端" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ss-server -c config1.json -f pid1
+</span></span><span class="line"><span class="cl">ss-server -c config2.json -f pid2
+</span></span><span class="line"><span class="cl">ss-server -c config3.json -f pid3
+</span></span></code></pre></div><h6 id="配置shadowsocks客户端">配置Shadowsocks客户端<a href="#配置shadowsocks客户端" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h6>
 <p>可以直接从官网上推荐的各平台<a href="http://shadowsocks.org/en/download/clients.html">clients</a>选择自己需要的客户端
 我选择的是<a href="https://github.com/shadowsocks/shadowsocks-csharp">shadowsocks-csharp</a>
 最新的release可以在<a href="https://github.com/shadowsocks/shadowsocks-csharp/releases">这里</a>下载
@@ -184,7 +183,7 @@ ss-server -c config3.json -f pid3
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2024 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -192,7 +191,7 @@ ss-server -c config3.json -f pid3
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
 	
 
 </body>

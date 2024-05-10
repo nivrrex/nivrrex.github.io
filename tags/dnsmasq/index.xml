@@ -23,7 +23,7 @@ nameserver 8.8.8.8 nameserver 208.67.222.222 将服务重启即可
 /etc/init.d/dnsmasq restart 将DNSmasq加入启动项
 sudo vi /etc/rc.local 将以下命令添加进去即可
 /etc/init.d/dnsmasq start DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
- 结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</description>
+结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</description>
     </item>
     
   </channel>

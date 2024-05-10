@@ -9,33 +9,32 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="some problems for golang excel update">
 <meta itemprop="description" content="趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见这里 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。
- 首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
- GOPATH设置 golang有几个关键环境变量，需要进行设置
- GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）  我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
-mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import  Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
- 小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。"><meta itemprop="datePublished" content="2014-06-15T17:24:30+08:00" />
+首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
+GOPATH设置 golang有几个关键环境变量，需要进行设置
+GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm） 我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
+mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
+小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。"><meta itemprop="datePublished" content="2014-06-15T17:24:30+08:00" />
 <meta itemprop="dateModified" content="2014-06-15T17:24:30+08:00" />
 <meta itemprop="wordCount" content="42">
 <meta itemprop="keywords" content="golang," /><meta property="og:title" content="some problems for golang excel update" />
 <meta property="og:description" content="趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见这里 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。
- 首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
- GOPATH设置 golang有几个关键环境变量，需要进行设置
- GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）  我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
-mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import  Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
- 小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。" />
+首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
+GOPATH设置 golang有几个关键环境变量，需要进行设置
+GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm） 我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
+mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
+小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://nivrrex.github.io/posts/some-problems-for-golang-excel-update/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2014-06-15T17:24:30+08:00" />
 <meta property="article:modified_time" content="2014-06-15T17:24:30+08:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="some problems for golang excel update"/>
 <meta name="twitter:description" content="趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见这里 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。
- 首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
- GOPATH设置 golang有几个关键环境变量，需要进行设置
- GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）  我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
-mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import  Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
- 小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。"/>
+首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
+GOPATH设置 golang有几个关键环境变量，需要进行设置
+GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm） 我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
+mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
+小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -45,7 +44,7 @@ mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\g
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<title>some problems for golang excel update</title>
-	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.835f01e49ba3fb1af85a367c1d24ded4e808c992894adc90feecaba6562f7cd9.css" integrity="sha256-g18B5Juj+xr4WjZ8HSTe1OgIyZKJStyQ/uyrplYvfNk=" crossorigin="anonymous">
 	
 </head>
 
@@ -101,11 +100,11 @@ mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\g
 <li>GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）</li>
 </ul>
 <p>我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Batch" data-lang="Batch"><span class="k">mkdir</span> C:\Go\import
-<span class="k">mkdir</span> C:\Go\import\src
-<span class="k">mkdir</span> C:\Go\import\pkg
-<span class="k">set</span> <span class="nv">GOPATH</span><span class="p">=</span>C:\go\import
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Batch" data-lang="Batch"><span class="line"><span class="cl"><span class="k">mkdir</span> C:\Go\import
+</span></span><span class="line"><span class="cl"><span class="k">mkdir</span> C:\Go\import\src
+</span></span><span class="line"><span class="cl"><span class="k">mkdir</span> C:\Go\import\pkg
+</span></span><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">GOPATH</span><span class="p">=</span>C:\go\import
+</span></span></code></pre></div><hr>
 <h4 id="go-build无法生成文件">Go build无法生成文件<a href="#go-build无法生成文件" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h4>
 <p>这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^</p>
 <hr>
@@ -137,7 +136,7 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2024 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -145,7 +144,7 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
 	
 
 </body>

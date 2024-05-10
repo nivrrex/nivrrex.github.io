@@ -15,7 +15,7 @@
       
       <guid>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
       <description>来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
- 如何查看Linux版本 共有5种方式，具体如下
+如何查看Linux版本 共有5种方式，具体如下
 cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue 我的Debian更新过，显示是
 Debian GNU/Linux 8.1 (jessie) 但是，内核为什么还是
 Linux 2.6.32-042stab093.4 i686 好吧，更新，更新！

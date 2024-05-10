@@ -13,21 +13,22 @@
 注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
 通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
 因为原先的源代码是C&#43;&#43;写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 #include &lt;stdio.h&gt;#include &lt;windows.h&gt;#include &lt;wininet.h&gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&lt;2) { printf(&quot;SetProxy Usage:\n\n&quot;);printf(&quot;Examples:\n&quot;);printf(&quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&quot; );printf(&quot;SetProxy.exe \&quot;\&quot; -- disable proxy, set proxy to null.\n&quot; );printf(&quot;\n&quot;);printf(&quot;Version 1.0.0\n&quot;);printf(&quot;Author: Eric Ma &lt;mazq."><meta itemprop="datePublished" content="2023-01-29T09:10:00+08:00" />
+源代码 SetProxy.c
+#include &lt;stdio.h&gt;#include &lt;windows.h&gt;#include &lt;wininet.h&gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&lt;2) { printf(&#34;SetProxy Usage:\n\n&#34;);printf(&#34;Examples:\n&#34;);printf(&#34;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&#34; );printf(&#34;SetProxy.exe \&#34;\&#34; -- disable proxy, set proxy to null.\n&#34; );printf(&#34;\n&#34;);printf(&#34;Version 1."><meta itemprop="datePublished" content="2023-01-29T09:10:00+08:00" />
 <meta itemprop="dateModified" content="2023-01-29T09:10:00+08:00" />
-<meta itemprop="wordCount" content="401">
+<meta itemprop="wordCount" content="402">
 <meta itemprop="keywords" content="internet,soft," /><meta property="og:title" content="use Windows API to set IE proxy" />
 <meta property="og:description" content="使用 Windows API 设置 IE 代理服务器
 缘 最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。
 注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
 通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
 因为原先的源代码是C&#43;&#43;写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 #include &lt;stdio.h&gt;#include &lt;windows.h&gt;#include &lt;wininet.h&gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&lt;2) { printf(&quot;SetProxy Usage:\n\n&quot;);printf(&quot;Examples:\n&quot;);printf(&quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&quot; );printf(&quot;SetProxy.exe \&quot;\&quot; -- disable proxy, set proxy to null.\n&quot; );printf(&quot;\n&quot;);printf(&quot;Version 1.0.0\n&quot;);printf(&quot;Author: Eric Ma &lt;mazq." />
+源代码 SetProxy.c
+#include &lt;stdio.h&gt;#include &lt;windows.h&gt;#include &lt;wininet.h&gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&lt;2) { printf(&#34;SetProxy Usage:\n\n&#34;);printf(&#34;Examples:\n&#34;);printf(&#34;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&#34; );printf(&#34;SetProxy.exe \&#34;\&#34; -- disable proxy, set proxy to null.\n&#34; );printf(&#34;\n&#34;);printf(&#34;Version 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://nivrrex.github.io/posts/use-api-to-set-ie-proxy/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-01-29T09:10:00+08:00" />
 <meta property="article:modified_time" content="2023-01-29T09:10:00+08:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="use Windows API to set IE proxy"/>
 <meta name="twitter:description" content="使用 Windows API 设置 IE 代理服务器
@@ -35,7 +36,8 @@
 注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
 通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
 因为原先的源代码是C&#43;&#43;写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 #include &lt;stdio.h&gt;#include &lt;windows.h&gt;#include &lt;wininet.h&gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&lt;2) { printf(&quot;SetProxy Usage:\n\n&quot;);printf(&quot;Examples:\n&quot;);printf(&quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&quot; );printf(&quot;SetProxy.exe \&quot;\&quot; -- disable proxy, set proxy to null.\n&quot; );printf(&quot;\n&quot;);printf(&quot;Version 1.0.0\n&quot;);printf(&quot;Author: Eric Ma &lt;mazq."/>
+源代码 SetProxy.c
+#include &lt;stdio.h&gt;#include &lt;windows.h&gt;#include &lt;wininet.h&gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&lt;2) { printf(&#34;SetProxy Usage:\n\n&#34;);printf(&#34;Examples:\n&#34;);printf(&#34;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&#34; );printf(&#34;SetProxy.exe \&#34;\&#34; -- disable proxy, set proxy to null.\n&#34; );printf(&#34;\n&#34;);printf(&#34;Version 1."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -45,7 +47,7 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<title>use Windows API to set IE proxy</title>
-	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.835f01e49ba3fb1af85a367c1d24ded4e808c992894adc90feecaba6562f7cd9.css" integrity="sha256-g18B5Juj+xr4WjZ8HSTe1OgIyZKJStyQ/uyrplYvfNk=" crossorigin="anonymous">
 	
 </head>
 
@@ -91,6 +93,7 @@
 <p>通过Google，查到了在 <a href="www.systutorials.com">SysTutorials</a> 上，ERIC MA 的一篇<a href="https://www.systutorials.com/setproxy-%E4%B8%80%E4%B8%AA%E8%AE%BE%E7%BD%AEie%E4%BB%A3%E7%90%86%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/">文章</a>有相关实现。</p>
 <p>因为原先的源代码是C++写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：</p>
 <h3 id="源代码">源代码<a href="#源代码" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>SetProxy.c</p>
 <pre tabindex="0"><code>#include &lt;stdio.h&gt;
 #include &lt;windows.h&gt;
 #include &lt;wininet.h&gt;
@@ -104,32 +107,32 @@ int main(int argc, char* argv[])
 	
 	//set proxy
 	if (argc&lt;2) { 
-		printf(&quot;SetProxy Usage:\n\n&quot;);
-		printf(&quot;Examples:\n&quot;);
-		printf(&quot;SetProxy.exe 10.1.1.1:8080       -- set proxy to 10.1.1.1:8080.\n&quot; );
-		printf(&quot;SetProxy.exe \&quot;\&quot;                  -- disable proxy, set proxy to null.\n&quot; );
-		printf(&quot;\n&quot;);
-		printf(&quot;Version 1.0.0\n&quot;);
-		printf(&quot;Author: Eric Ma &lt;mazq.eric@gmail.com&gt;.\n\n&quot;);
-		printf(&quot;Version 1.0.1\n&quot;);
-		printf(&quot;Editor: Nivrrex &lt;nivrrex@gmail.com&gt;.&quot;);
+		printf(&#34;SetProxy Usage:\n\n&#34;);
+		printf(&#34;Examples:\n&#34;);
+		printf(&#34;SetProxy.exe 10.1.1.1:8080       -- set proxy to 10.1.1.1:8080.\n&#34; );
+		printf(&#34;SetProxy.exe \&#34;\&#34;                  -- disable proxy, set proxy to null.\n&#34; );
+		printf(&#34;\n&#34;);
+		printf(&#34;Version 1.0.0\n&#34;);
+		printf(&#34;Author: Eric Ma &lt;mazq.eric@gmail.com&gt;.\n\n&#34;);
+		printf(&#34;Version 1.0.1\n&#34;);
+		printf(&#34;Editor: Nivrrex &lt;nivrrex@gmail.com&gt;.&#34;);
 		return 1;
 	}
 	
-	const char *connection_name=&quot;&quot;;
+	const char *connection_name=&#34;&#34;;
 	char* proxy_addr=argv[1];
 	
 	if (SetConnectionOptions(connection_name,proxy_addr)) {
-		char msg[100]=&quot;Proxy &quot;;
+		char msg[100]=&#34;Proxy &#34;;
 		if (strlen(proxy_addr)!=0) {
-			strcat(msg,&quot;set to &quot;);
+			strcat(msg,&#34;set to &#34;);
 			strcat(msg,proxy_addr);
 		}
 		else {
 			DisableConnectionProxy(connection_name);
-			strcat(msg,&quot;disabled&quot;);
+			strcat(msg,&#34;disabled&#34;);
 		}
-		printf(&quot;%s\n&quot;,msg);
+		printf(&#34;%s\n&#34;,msg);
 	}
 	return nRetCode;
 }
@@ -137,7 +140,7 @@ int main(int argc, char* argv[])
 BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr)
 {
     //conn_name: active connection name. 
-    //proxy_full_addr : eg &quot;210.78.22.87:8000&quot;
+    //proxy_full_addr : eg &#34;210.78.22.87:8000&#34;
     INTERNET_PER_CONN_OPTION_LIST list;
     BOOL    bReturn;
     DWORD   dwBufSize = sizeof(list);
@@ -151,8 +154,8 @@ BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr)
     // Make sure the memory was allocated.
     if(NULL == list.pOptions)
     {
-        // Return FALSE if the memory wasn't allocated.
-        OutputDebugString(&quot;failed to allocat memory in SetConnectionOptions()&quot;);
+        // Return FALSE if the memory wasn&#39;t allocated.
+        OutputDebugString(&#34;failed to allocat memory in SetConnectionOptions()&#34;);
         return FALSE;
     }
     // Set flags.
@@ -162,12 +165,12 @@ BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr)
 	
     // Set proxy name.
     list.pOptions[1].dwOption = INTERNET_PER_CONN_PROXY_SERVER;
-    list.pOptions[1].Value.pszValue = proxy_full_addr;//&quot;http://proxy:80&quot;;
+    list.pOptions[1].Value.pszValue = proxy_full_addr;//&#34;http://proxy:80&#34;;
 	
 	/*
     // Set proxy override.
     list.pOptions[2].dwOption = INTERNET_PER_CONN_PROXY_BYPASS;
-    list.pOptions[2].Value.pszValue = &quot;local&quot;;
+    list.pOptions[2].Value.pszValue = &#34;local&#34;;
 	*/
 	
     // Set the options on the connection.
@@ -199,8 +202,8 @@ BOOL DisableConnectionProxy(LPCTSTR conn_name)
     // Make sure the memory was allocated.
     if(NULL == list.pOptions)
     {
-        // Return FALSE if the memory wasn't allocated.
-        OutputDebugString(&quot;failed to allocat memory in DisableConnectionProxy()&quot;);
+        // Return FALSE if the memory wasn&#39;t allocated.
+        OutputDebugString(&#34;failed to allocat memory in DisableConnectionProxy()&#34;);
         return FALSE;
     }
     // Set flags.
@@ -215,14 +218,13 @@ BOOL DisableConnectionProxy(LPCTSTR conn_name)
     InternetSetOption(NULL, INTERNET_OPTION_REFRESH , NULL, 0);
     return bReturn;
 }
-
 </code></pre><h3 id="编译步骤">编译步骤<a href="#编译步骤" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>原始程序是 32 位的，原作者用 VC 编译的，我是在 Debian11 下，用 mingw64 编译的，具体编译步骤如下：</p>
 <pre tabindex="0"><code>i686-w64-mingw32-gcc SetProxy.c -lwininet -O2 -o setproxy.exe
 i686-w64-mingw32-strip --strip-unneeded setproxy.exe
 </code></pre><h3 id="使用方式">使用方式<a href="#使用方式" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <pre tabindex="0"><code>setproxy.exe 127.0.0.1:1080    #设置代理服务器
-setproxy.exe &quot;&quot;                #取消代理服务器
+setproxy.exe &#34;&#34;                #取消代理服务器
 </code></pre><h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>比较注册表方式，用起来要稳定的多，就这样开心的用起来了~</p>
 
@@ -237,6 +239,9 @@ setproxy.exe &quot;&quot;                #取消代理服务器
 			</footer>
 		</article>
 		<div class="post-nav thin">
+			<a class="next-post" href="http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;</span><br><span></span>
+			</a>
 			<a class="prev-post" href="http://nivrrex.github.io/posts/2022-summary/">
 				<span class="post-nav-label">&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>2022 summary</span>
 			</a>
@@ -246,7 +251,7 @@ setproxy.exe &quot;&quot;                #取消代理服务器
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2024 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -254,7 +259,7 @@ setproxy.exe &quot;&quot;                #取消代理服务器
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
 	
 
 </body>

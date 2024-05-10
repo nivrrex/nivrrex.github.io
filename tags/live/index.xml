@@ -49,7 +49,7 @@ GFW 这一年里， VPS 换了好几家，科学上网技术也换了好几种�
       <description>缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。
 于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：
 hugo 这个go语言写的大杀器。
- A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
+A fast and modern static website engine Language:Go License:APL 2.0 目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
 迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移
 下载hugo hugo就是一个执行文件，可以直接从官网下载
 windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/
@@ -57,8 +57,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
 hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
- Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+Hugo Themes Site hugoThemes: All Themes Hugo 安装比较简单：
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor
+本地测试 hugo server --buildDrafts --watch --theme themename 运行后可以在 http://localhost:1313/ 查看具体效果</description>
     </item>
     
     <item>
@@ -69,8 +70,8 @@ cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页
       <guid>http://nivrrex.github.io/posts/hello-github/</guid>
       <description>欢迎来到我的GitHub blog！
 这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
- Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34; ssh -T git@github.com -i ./.ssh/id_rsa 更多命令可以到git - 简明指南去查看
- Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;#34;My New Post&amp;#34; hexo server hexo generate hexo deploy 更多文档可以到Hexo docs上查看</description>
+Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34; ssh -T git@github.com -i ./.ssh/id_rsa 更多命令可以到git - 简明指南去查看
+Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;#34;My New Post&amp;#34; hexo server hexo generate hexo deploy 更多文档可以到Hexo docs上查看</description>
     </item>
     
   </channel>

@@ -6,8 +6,159 @@
 		<generator>Hugo -- gohugo.io</generator>
 		<language>zh-CN</language>
 		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-		<lastBuildDate>Sun, 29 Jan 2023 09:10:00 +0800</lastBuildDate>
+		<lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate>
 		<atom:link href="http://nivrrex.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title></title>
+			<link>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</link>
+			<pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
+			
+			<guid>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-font/</guid>
+			<description>缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
+获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
+最终考虑的是使用开源的 epub 格式书籍。
+格式转换 目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。
+kaf-cli 从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。GitHub - ystyle/kaf-cli ，自动识别章节、生成目录，还有很多细节的设置，比较方便。
+如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。
+linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。
+最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
+mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 + 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&amp;gt;、j 向后翻页 b、PageUp、↑、&amp;lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?</description>
+			<content type="html"><![CDATA[<h3 id="缘来">缘来</h3>
+<p>最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。</p>
+<!-- raw HTML omitted -->
+<hr>
+<h3 id="获取电子书">获取电子书</h3>
+<p>目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。</p>
+<p>最终考虑的是使用开源的 epub 格式书籍。</p>
+<h3 id="格式转换">格式转换</h3>
+<p>目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。</p>
+<h5 id="kaf-cli">kaf-cli</h5>
+<p>从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。<a href="https://github.com/ystyle/kaf-cli">GitHub - ystyle/kaf-cli</a> ，自动识别章节、生成目录，还有很多细节的设置，比较方便。</p>
+<p>如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。</p>
+<h3 id="linux-下-epub-阅读软件---mupdf">linux 下 EPUB 阅读软件 - mupdf</h3>
+<p>近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。</p>
+<p>最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。</p>
+<h5 id="mupdf-命令行参数">mupdf 命令行参数</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usage: mupdf <span class="o">[</span>options<span class="o">]</span> file.pdf <span class="o">[</span>page<span class="o">]</span>
+</span></span><span class="line"><span class="cl">        -p -    password
+</span></span><span class="line"><span class="cl">        -r -    resolution
+</span></span><span class="line"><span class="cl">        -A -    <span class="nb">set</span> anti-aliasing quality in bits <span class="o">(</span><span class="nv">0</span><span class="o">=</span>off, <span class="nv">8</span><span class="o">=</span>best<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        -C -    RRGGBB <span class="o">(</span>tint color in hexadecimal syntax<span class="o">)</span>
+</span></span><span class="line"><span class="cl">        -W -    page width <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -H -    page height <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -I -    invert colors
+</span></span><span class="line"><span class="cl">        -S -    font size <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -U -    user style sheet <span class="k">for</span> EPUB layout
+</span></span><span class="line"><span class="cl">        -X      disable document styles <span class="k">for</span> EPUB layout
+</span></span></code></pre></div><h5 id="mupdf-快捷键">mupdf 快捷键</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">快捷键</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">f</td>
+<td style="text-align:center">切换全屏</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">调整窗口来适配阅读页面</td>
+</tr>
+<tr>
+<td style="text-align:center">W</td>
+<td style="text-align:center">调整页面宽度适配窗口</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">开启或关闭抗锯齿</td>
+</tr>
+<tr>
+<td style="text-align:center">[number]z</td>
+<td style="text-align:center">按照DPI设置缩放比例</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">放大</td>
+</tr>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">缩小</td>
+</tr>
+<tr>
+<td style="text-align:center">[</td>
+<td style="text-align:center">逆时针旋转</td>
+</tr>
+<tr>
+<td style="text-align:center">]</td>
+<td style="text-align:center">顺时针旋转</td>
+</tr>
+<tr>
+<td style="text-align:center">空格、PageDown、↓、&gt;、j</td>
+<td style="text-align:center">向后翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">b、PageUp、↑、&lt;、k</td>
+<td style="text-align:center">向前翻页</td>
+</tr>
+<tr>
+<td style="text-align:center">[number]g</td>
+<td style="text-align:center">跳转至[number]页</td>
+</tr>
+<tr>
+<td style="text-align:center">/</td>
+<td style="text-align:center">向前搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">?</td>
+<td style="text-align:center">先后搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">n</td>
+<td style="text-align:center">继续向前搜索</td>
+</tr>
+<tr>
+<td style="text-align:center">N</td>
+<td style="text-align:center">继续向后搜索</td>
+</tr>
+</tbody>
+</table>
+<p>基本上以上的快捷键，足够日常使用了。</p>
+<h5 id="css-设置-epub-字体">css 设置 EPUB 字体</h5>
+<p>mupdf 设置字体稍微麻烦点，也是要通过命令行参数解决。通过 &ldquo;-U&rdquo; 参数指定外部 css 文件进行设置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">title</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;HYQiHei 55S&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;HYQiHei 55S&#39;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">src</span><span class="p">:</span><span class="nd">url</span><span class="o">(/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">mupdf</span><span class="o">/</span><span class="nt">HYQiHei</span><span class="p">.</span><span class="nc">ttf</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;turetype&#39;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #414c41 rgb(65,76,65)背景色：箬竹色 #b5eecd rgb(181,238,205) */</span>
+</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #494c49 rgb(73,76,73)背景色：赭石色 #d5c6ac rgb(213,198,172) */</span>
+</span></span><span class="line"><span class="cl"><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">65</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">181</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">205</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>我这里使用的是汉仪旗黑字体，放置在了 /etc/mupdf/ 目录下，字体大小、颜色、背景色也有所调整。</p>
+<h3 id="结">结</h3>
+<p>至此，从 txt 文件转成 epub ，用 mupdf 打开 epub 文件，并通过 css 设置 epub 文件的字体和背景等都已解决，可以开心的在电脑和墨水屏阅读器上看书啦~</p>
+]]></content>
+		</item>
 		
 		<item>
 			<title>use Windows API to set IE proxy</title>
@@ -20,7 +171,8 @@
 注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
 通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
 因为原先的源代码是C++写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;lt;wininet.h&amp;gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;quot;SetProxy Usage:\n\n&amp;quot;);printf(&amp;quot;Examples:\n&amp;quot;);printf(&amp;quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;quot; );printf(&amp;quot;SetProxy.exe \&amp;quot;\&amp;quot; -- disable proxy, set proxy to null.\n&amp;quot; );printf(&amp;quot;\n&amp;quot;);printf(&amp;quot;Version 1.0.0\n&amp;quot;);printf(&amp;quot;Author: Eric Ma &amp;lt;mazq.</description>
+源代码 SetProxy.c
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;lt;wininet.h&amp;gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;#34;SetProxy Usage:\n\n&amp;#34;);printf(&amp;#34;Examples:\n&amp;#34;);printf(&amp;#34;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;#34; );printf(&amp;#34;SetProxy.exe \&amp;#34;\&amp;#34; -- disable proxy, set proxy to null.\n&amp;#34; );printf(&amp;#34;\n&amp;#34;);printf(&amp;#34;Version 1.</description>
 			<content type="html"><![CDATA[<p>使用 Windows API 设置 IE 代理服务器</p>
 <h3 id="缘">缘</h3>
 <p>最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。</p>
@@ -28,6 +180,7 @@
 <p>通过Google，查到了在 <a href="www.systutorials.com">SysTutorials</a> 上，ERIC MA 的一篇<a href="https://www.systutorials.com/setproxy-%E4%B8%80%E4%B8%AA%E8%AE%BE%E7%BD%AEie%E4%BB%A3%E7%90%86%E7%9A%84%E5%B0%8F%E5%B7%A5%E5%85%B7/">文章</a>有相关实现。</p>
 <p>因为原先的源代码是C++写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：</p>
 <h3 id="源代码">源代码</h3>
+<p>SetProxy.c</p>
 <pre tabindex="0"><code>#include &lt;stdio.h&gt;
 #include &lt;windows.h&gt;
 #include &lt;wininet.h&gt;
@@ -41,32 +194,32 @@ int main(int argc, char* argv[])
 	
 	//set proxy
 	if (argc&lt;2) { 
-		printf(&quot;SetProxy Usage:\n\n&quot;);
-		printf(&quot;Examples:\n&quot;);
-		printf(&quot;SetProxy.exe 10.1.1.1:8080       -- set proxy to 10.1.1.1:8080.\n&quot; );
-		printf(&quot;SetProxy.exe \&quot;\&quot;                  -- disable proxy, set proxy to null.\n&quot; );
-		printf(&quot;\n&quot;);
-		printf(&quot;Version 1.0.0\n&quot;);
-		printf(&quot;Author: Eric Ma &lt;mazq.eric@gmail.com&gt;.\n\n&quot;);
-		printf(&quot;Version 1.0.1\n&quot;);
-		printf(&quot;Editor: Nivrrex &lt;nivrrex@gmail.com&gt;.&quot;);
+		printf(&#34;SetProxy Usage:\n\n&#34;);
+		printf(&#34;Examples:\n&#34;);
+		printf(&#34;SetProxy.exe 10.1.1.1:8080       -- set proxy to 10.1.1.1:8080.\n&#34; );
+		printf(&#34;SetProxy.exe \&#34;\&#34;                  -- disable proxy, set proxy to null.\n&#34; );
+		printf(&#34;\n&#34;);
+		printf(&#34;Version 1.0.0\n&#34;);
+		printf(&#34;Author: Eric Ma &lt;mazq.eric@gmail.com&gt;.\n\n&#34;);
+		printf(&#34;Version 1.0.1\n&#34;);
+		printf(&#34;Editor: Nivrrex &lt;nivrrex@gmail.com&gt;.&#34;);
 		return 1;
 	}
 	
-	const char *connection_name=&quot;&quot;;
+	const char *connection_name=&#34;&#34;;
 	char* proxy_addr=argv[1];
 	
 	if (SetConnectionOptions(connection_name,proxy_addr)) {
-		char msg[100]=&quot;Proxy &quot;;
+		char msg[100]=&#34;Proxy &#34;;
 		if (strlen(proxy_addr)!=0) {
-			strcat(msg,&quot;set to &quot;);
+			strcat(msg,&#34;set to &#34;);
 			strcat(msg,proxy_addr);
 		}
 		else {
 			DisableConnectionProxy(connection_name);
-			strcat(msg,&quot;disabled&quot;);
+			strcat(msg,&#34;disabled&#34;);
 		}
-		printf(&quot;%s\n&quot;,msg);
+		printf(&#34;%s\n&#34;,msg);
 	}
 	return nRetCode;
 }
@@ -74,7 +227,7 @@ int main(int argc, char* argv[])
 BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr)
 {
     //conn_name: active connection name. 
-    //proxy_full_addr : eg &quot;210.78.22.87:8000&quot;
+    //proxy_full_addr : eg &#34;210.78.22.87:8000&#34;
     INTERNET_PER_CONN_OPTION_LIST list;
     BOOL    bReturn;
     DWORD   dwBufSize = sizeof(list);
@@ -88,8 +241,8 @@ BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr)
     // Make sure the memory was allocated.
     if(NULL == list.pOptions)
     {
-        // Return FALSE if the memory wasn't allocated.
-        OutputDebugString(&quot;failed to allocat memory in SetConnectionOptions()&quot;);
+        // Return FALSE if the memory wasn&#39;t allocated.
+        OutputDebugString(&#34;failed to allocat memory in SetConnectionOptions()&#34;);
         return FALSE;
     }
     // Set flags.
@@ -99,12 +252,12 @@ BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr)
 	
     // Set proxy name.
     list.pOptions[1].dwOption = INTERNET_PER_CONN_PROXY_SERVER;
-    list.pOptions[1].Value.pszValue = proxy_full_addr;//&quot;http://proxy:80&quot;;
+    list.pOptions[1].Value.pszValue = proxy_full_addr;//&#34;http://proxy:80&#34;;
 	
 	/*
     // Set proxy override.
     list.pOptions[2].dwOption = INTERNET_PER_CONN_PROXY_BYPASS;
-    list.pOptions[2].Value.pszValue = &quot;local&quot;;
+    list.pOptions[2].Value.pszValue = &#34;local&#34;;
 	*/
 	
     // Set the options on the connection.
@@ -136,8 +289,8 @@ BOOL DisableConnectionProxy(LPCTSTR conn_name)
     // Make sure the memory was allocated.
     if(NULL == list.pOptions)
     {
-        // Return FALSE if the memory wasn't allocated.
-        OutputDebugString(&quot;failed to allocat memory in DisableConnectionProxy()&quot;);
+        // Return FALSE if the memory wasn&#39;t allocated.
+        OutputDebugString(&#34;failed to allocat memory in DisableConnectionProxy()&#34;);
         return FALSE;
     }
     // Set flags.
@@ -152,14 +305,13 @@ BOOL DisableConnectionProxy(LPCTSTR conn_name)
     InternetSetOption(NULL, INTERNET_OPTION_REFRESH , NULL, 0);
     return bReturn;
 }
-
 </code></pre><h3 id="编译步骤">编译步骤</h3>
 <p>原始程序是 32 位的，原作者用 VC 编译的，我是在 Debian11 下，用 mingw64 编译的，具体编译步骤如下：</p>
 <pre tabindex="0"><code>i686-w64-mingw32-gcc SetProxy.c -lwininet -O2 -o setproxy.exe
 i686-w64-mingw32-strip --strip-unneeded setproxy.exe
 </code></pre><h3 id="使用方式">使用方式</h3>
 <pre tabindex="0"><code>setproxy.exe 127.0.0.1:1080    #设置代理服务器
-setproxy.exe &quot;&quot;                #取消代理服务器
+setproxy.exe &#34;&#34;                #取消代理服务器
 </code></pre><h3 id="结">结</h3>
 <p>比较注册表方式，用起来要稳定的多，就这样开心的用起来了~</p>
 ]]></content>
@@ -239,71 +391,71 @@ wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0
 <p>突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下<a href="https://wiki.dlang.org/Cross-compiling_with_LDC">Cross-compiling with LDC</a>，现在将具体过程记录一下。</p>
 <h1 id="mipsel-gcc">mipsel gcc</h1>
 <p>首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /root/
-wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
-mkdir mipsel
-mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/
-rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64
-</code></pre></div><p>设置环境变量</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
-</span><span class="s">export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH
-</span><span class="s">export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR
-</span><span class="s">alias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39;
-</span><span class="s">EOF</span>
-<span class="nb">source</span> /etc/bash.bashrc
-</code></pre></div><p>如上，mipsel的gcc交叉编译环境就配置好了</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root/
+</span></span><span class="line"><span class="cl">wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">mkdir mipsel
+</span></span><span class="line"><span class="cl">mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/
+</span></span><span class="line"><span class="cl">rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64
+</span></span></code></pre></div><p>设置环境变量</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
+</span></span></span><span class="line"><span class="cl"><span class="s">export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH
+</span></span></span><span class="line"><span class="cl"><span class="s">export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR
+</span></span></span><span class="line"><span class="cl"><span class="s">alias strip-mipsel=&#39;mipsel-openwrt-linux-strip -s&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/bash.bashrc
+</span></span></code></pre></div><p>如上，mipsel的gcc交叉编译环境就配置好了</p>
 <h1 id="ldc-下载">ldc 下载</h1>
 <p>到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz
-tar xvf ldc2-1.23.0-linux-x86_64.tar.xz
-rm ldc2-1.23.0-linux-x86_64.tar.xz
-mv ldc2-1.23.0-linux-x86_64 ldc2
-
-cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
-</span><span class="s">export PATH=$PATH:/root/ldc2/bin
-</span><span class="s">EOF</span>
-<span class="nb">source</span> /etc/bash.bashrc
-</code></pre></div><h1 id="编译mipsel的runtime">编译mipsel的runtime</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">tar xvf ldc2-1.23.0-linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">rm ldc2-1.23.0-linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">mv ldc2-1.23.0-linux-x86_64 ldc2
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
+</span></span></span><span class="line"><span class="cl"><span class="s">export PATH=$PATH:/root/ldc2/bin
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/bash.bashrc
+</span></span></code></pre></div><h1 id="编译mipsel的runtime">编译mipsel的runtime</h1>
 <p>需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .so .a 文件移动到/root/ldc2/ldc-runtime/mipsel目录下</p>
 <pre tabindex="0"><code>apt install cmake ninja-build -y
 cd /root
-CC=mipsel-openwrt-linux-gcc ldc-build-runtime --ninja --dFlags=&quot;-w;-mtriple=mipsel-linux;-march=mipsel;-mcpu=mips32;--float-abi=soft&quot; --cFlags=&quot;-march=mips32&quot; --targetSystem=&quot;Linux;UNIX&quot;
+CC=mipsel-openwrt-linux-gcc ldc-build-runtime --ninja --dFlags=&#34;-w;-mtriple=mipsel-linux;-march=mipsel;-mcpu=mips32;--float-abi=soft&#34; --cFlags=&#34;-march=mips32&#34; --targetSystem=&#34;Linux;UNIX&#34;
 mkdir /root/ldc2/ldc-runtime/mipsel -p
 mv ldc-build-runtime.tmp/lib/ /root/ldc2/ldc-runtime/mipsel
 rm ldc-build-runtime.tmp/ -r
 </code></pre><h1 id="编译下载libexecinfo">编译下载libexecinfo</h1>
-<p>如果此时直接进行编译，会出现 <strong>undefined reference to `backtrace_symbols'</strong>  错误，还需要编译libexecinfo库。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> /root
-wget https://github.com/mikroskeem/libexecinfo/archive/1.1-3.tar.gz
-tar xvf 1.1-3.tar.gz
-rm 1.1-3.tar.gz
-<span class="nb">cd</span> libexecinfo-1.1-3
-sed -i <span class="s2">&#34;s%CC=cc%CC=mipsel-openwrt-linux-gcc%g&#34;</span> Makefile 
-sed -i <span class="s2">&#34;s%AR=ar%AR=mipsel-openwrt-linux-ar%g&#34;</span> Makefile 
-make
-</code></pre></div><p>编译后的库文件放置到 /root/ldc2/ldc-runtime/mipsel/lib/ 文件夹下，便于后续使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">mv libexecinfo.a /root/ldc2/ldc-runtime/mipsel/lib/
-mv libexecinfo.so.1 /root/ldc2/ldc-runtime/mipsel/lib/
-mv stacktraverse.So /root/ldc2/ldc-runtime/mipsel/lib/
-mv execinfo.So /root/ldc2/ldc-runtime/mipsel/lib/
-rm /root/libexecinfo-1.1-3/ -r
-</code></pre></div><h1 id="编译d代码文件">编译.d代码文件</h1>
+<p>如果此时直接进行编译，会出现 <strong>undefined reference to `backtrace_symbols&rsquo;</strong>  错误，还需要编译libexecinfo库。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /root
+</span></span><span class="line"><span class="cl">wget https://github.com/mikroskeem/libexecinfo/archive/1.1-3.tar.gz
+</span></span><span class="line"><span class="cl">tar xvf 1.1-3.tar.gz
+</span></span><span class="line"><span class="cl">rm 1.1-3.tar.gz
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> libexecinfo-1.1-3
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s%CC=cc%CC=mipsel-openwrt-linux-gcc%g&#34;</span> Makefile 
+</span></span><span class="line"><span class="cl">sed -i <span class="s2">&#34;s%AR=ar%AR=mipsel-openwrt-linux-ar%g&#34;</span> Makefile 
+</span></span><span class="line"><span class="cl">make
+</span></span></code></pre></div><p>编译后的库文件放置到 /root/ldc2/ldc-runtime/mipsel/lib/ 文件夹下，便于后续使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mv libexecinfo.a /root/ldc2/ldc-runtime/mipsel/lib/
+</span></span><span class="line"><span class="cl">mv libexecinfo.so.1 /root/ldc2/ldc-runtime/mipsel/lib/
+</span></span><span class="line"><span class="cl">mv stacktraverse.So /root/ldc2/ldc-runtime/mipsel/lib/
+</span></span><span class="line"><span class="cl">mv execinfo.So /root/ldc2/ldc-runtime/mipsel/lib/
+</span></span><span class="line"><span class="cl">rm /root/libexecinfo-1.1-3/ -r
+</span></span></code></pre></div><h1 id="编译d代码文件">编译.d代码文件</h1>
 <p>简单的hello world代码</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-d" data-lang="d"><span class="kn">import</span> <span class="nn">std.stdio</span><span class="o">;</span>
-<span class="kt">void</span> <span class="nf">main</span><span class="o">()</span>
-<span class="o">{</span>
-    <span class="n">writeln</span><span class="o">(</span><span class="s">&#34;Hello, world! dlang in mipsel!&#34;</span><span class="o">);</span>
-<span class="o">}</span>
-</code></pre></div><p>编译至mipsel环境</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ldc2 -mtriple<span class="o">=</span>mipsel-linux -march<span class="o">=</span>mipsel -mcpu<span class="o">=</span>mips32 --float-abi<span class="o">=</span>soft -gcc<span class="o">=</span>mipsel-openwrt-linux-gcc --linker<span class="o">=</span>bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib<span class="o">=</span>phobos2-ldc,druntime-ldc --platformlib<span class="o">=</span>execinfo hello.d
-</code></pre></div><h1 id="设置alias">设置alias</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
-</span><span class="s">alias ldc2-mipsel=&#34;ldc2 -mtriple=mipsel-linux -march=mipsel -mcpu=mips32 --float-abi=soft --release -Os -gcc=mipsel-openwrt-linux-gcc --linker=bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib=phobos2-ldc,druntime-ldc --platformlib=execinfo&#34;
-</span><span class="s">EOF</span>
-<span class="nb">source</span> /etc/bash.bashrc
-</code></pre></div><h1 id="结">结</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-d" data-lang="d"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">std.stdio</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">main</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">writeln</span><span class="o">(</span><span class="s">&#34;Hello, world! dlang in mipsel!&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>编译至mipsel环境</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ldc2 -mtriple<span class="o">=</span>mipsel-linux -march<span class="o">=</span>mipsel -mcpu<span class="o">=</span>mips32 --float-abi<span class="o">=</span>soft -gcc<span class="o">=</span>mipsel-openwrt-linux-gcc --linker<span class="o">=</span>bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib<span class="o">=</span>phobos2-ldc,druntime-ldc --platformlib<span class="o">=</span>execinfo hello.d
+</span></span></code></pre></div><h1 id="设置alias">设置alias</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat <span class="s">&lt;&lt; \EOF &gt;&gt; /etc/bash.bashrc
+</span></span></span><span class="line"><span class="cl"><span class="s">alias ldc2-mipsel=&#34;ldc2 -mtriple=mipsel-linux -march=mipsel -mcpu=mips32 --float-abi=soft --release -Os -gcc=mipsel-openwrt-linux-gcc --linker=bfd -L-L/root/ldc2/ldc-runtime/mipsel/lib -defaultlib=phobos2-ldc,druntime-ldc --platformlib=execinfo&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> /etc/bash.bashrc
+</span></span></code></pre></div><h1 id="结">结</h1>
 <p>至此，dlang在linux环境下，编译mipsel架构的编译环境就搭配好了，平时可以用dlang针对mipsel的openwrt路由器写点小工具啦~</p>
 ]]></content>
 		</item>
@@ -315,7 +467,7 @@ rm /root/libexecinfo-1.1-3/ -r
 			
 			<guid>http://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
 			<description>缘来 Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
- 配置 其实配置很简单，打开nim\config\nim.cfg文件
+配置 其实配置很简单，打开nim\config\nim.cfg文件
 cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
 			<content type="html"><![CDATA[<h3 id="缘来">缘来</h3>
 <p>Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。</p>
@@ -323,10 +475,10 @@ cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可
 <hr>
 <h3 id="配置">配置</h3>
 <p>其实配置很简单，打开nim\config\nim.cfg文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">cc</span> <span class="o">=</span> gcc
-修改为
-<span class="nv">cc</span> <span class="o">=</span> tcc
-</code></pre></div><h3 id="结">结</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">cc</span> <span class="o">=</span> gcc
+</span></span><span class="line"><span class="cl">修改为
+</span></span><span class="line"><span class="cl"><span class="nv">cc</span> <span class="o">=</span> tcc
+</span></span></code></pre></div><h3 id="结">结</h3>
 <p>就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</p>
 ]]></content>
 		</item>
@@ -338,44 +490,44 @@ cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可
 			
 			<guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
 			<description>缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
- Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
+Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
 			<content type="html"><![CDATA[<h3 id="缘来">缘来</h3>
 <p>实验了下nim语言(<a href="https://nim-lang.org/">nimlang</a>)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。</p>
 <!-- raw HTML omitted -->
 <hr>
 <h3 id="golang支持的交叉编译平台">Golang支持的交叉编译平台</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">amd64 <span class="o">(</span>also known as x86-64<span class="o">)</span>
-A mature implementation.
-
-<span class="m">386</span> <span class="o">(</span>x86 or x86-32<span class="o">)</span>
-Comparable to the amd64 port.
-
-arm <span class="o">(</span>ARM<span class="o">)</span>
-Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.
-
-arm64 <span class="o">(</span>AArch64<span class="o">)</span>
-Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.
-
-ppc64, ppc64le <span class="o">(</span>64-bit PowerPC big- and little-endian<span class="o">)</span>
-Supports Linux binaries. New in 1.5 and not as well exercised as other ports.
-
-mips, mipsle <span class="o">(</span>32-bit MIPS big- and little-endian<span class="o">)</span>
-Supports Linux binaries. New in 1.8 and not as well exercised as other ports.
-
-mips64, mips64le <span class="o">(</span>64-bit MIPS big- and little-endian<span class="o">)</span>
-Supports Linux binaries. New in 1.6 and not as well exercised as other ports.
-
-s390x <span class="o">(</span>IBM System z<span class="o">)</span>
-Supports Linux binaries. New in 1.7 and not as well exercised as other ports.
-
-wasm <span class="o">(</span>WebAssembly<span class="o">)</span>
-Targets the WebAssembly platform. New in 1.11 and not as well exercised as other ports.
-</code></pre></div><h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
-</code></pre></div><p>直接指定目标系统和CPU架构，就直接可以编译生成对应平台下的可执行文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">amd64 <span class="o">(</span>also known as x86-64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">A mature implementation.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">386</span> <span class="o">(</span>x86 or x86-32<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Comparable to the amd64 port.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">arm <span class="o">(</span>ARM<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">arm64 <span class="o">(</span>AArch64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ppc64, ppc64le <span class="o">(</span>64-bit PowerPC big- and little-endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.5 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mips, mipsle <span class="o">(</span>32-bit MIPS big- and little-endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.8 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mips64, mips64le <span class="o">(</span>64-bit MIPS big- and little-endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.6 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">s390x <span class="o">(</span>IBM System z<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.7 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wasm <span class="o">(</span>WebAssembly<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Targets the WebAssembly platform. New in 1.11 and not as well exercised as other ports.
+</span></span></code></pre></div><h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
+</span></span></code></pre></div><p>直接指定目标系统和CPU架构，就直接可以编译生成对应平台下的可执行文件</p>
 <p>在mips架构下，如OpenWRT系统，文件执行时出现&quot;Illegal instruction&quot;错误，注意加上GOMIPS=softfloat变量</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
-</code></pre></div><h3 id="结">结</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
+</span></span></code></pre></div><h3 id="结">结</h3>
 <p>就这样，golang可以更简单的直接生成对应系统和CPU架构下的可执行文件~</p>
 ]]></content>
 		</item>
@@ -387,25 +539,25 @@ Targets the WebAssembly platform. New in 1.11 and not as well exercised as other
 			
 			<guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
 			<description>缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
- Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
+Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
 			<content type="html"><![CDATA[<h3 id="缘来">缘来</h3>
 <p>nim语言(<a href="https://nim-lang.org/">nimlang</a>)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。</p>
 <!-- raw HTML omitted -->
 <hr>
 <h3 id="debian系统下下载nim语言">Debian系统下下载nim语言</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sh -c <span class="s1">&#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;</span>
-apt update
-apt -t sid install nim -y
-</code></pre></div><h3 id="debian系统下安装gcc等编译环境">Debian系统下安装gcc等编译环境</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt-get install build-essential
-</code></pre></div><h3 id="下载对应架构的openwrt编译工具链toolchain">下载对应架构的OpenWRT编译工具链toolchain</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
-</code></pre></div><h3 id="设置环境并进行编译">设置环境并进行编译</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:<span class="nv">$PATH</span>
-nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim
-</code></pre></div><h3 id="结">结</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sh -c <span class="s1">&#39;printf &#34;deb http://ftp.cn.debian.org/debian/ sid main&#34; &gt; /etc/apt/sources.list.d/sid.list&#39;</span>
+</span></span><span class="line"><span class="cl">apt update
+</span></span><span class="line"><span class="cl">apt -t sid install nim -y
+</span></span></code></pre></div><h3 id="debian系统下安装gcc等编译环境">Debian系统下安装gcc等编译环境</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt-get install build-essential
+</span></span></code></pre></div><h3 id="下载对应架构的openwrt编译工具链toolchain">下载对应架构的OpenWRT编译工具链toolchain</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+</span></span><span class="line"><span class="cl">rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz
+</span></span></code></pre></div><h3 id="设置环境并进行编译">设置环境并进行编译</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:<span class="nv">$PATH</span>
+</span></span><span class="line"><span class="cl">nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim
+</span></span></code></pre></div><h3 id="结">结</h3>
 <p>就这样，就可以生成对应路由器下的可执行文件啦~</p>
 ]]></content>
 		</item>
@@ -421,7 +573,7 @@ nim -d:release --opt<span class="o">=</span>size -d:ssl --cpu:mipsel --os:linux 
 于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks + ChinaDNS + DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
 安装 前期问题 刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。
 于是到 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=15243 帖子中和国外的一个帖子中提到的 http://s000.tinyupload.com/index.php?file_id=07741512272586742124 ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：
-Request timed out而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
+Request timed out 而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
 恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
 ##这一部分不是帖子的内容，是前期准备工作#在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tartar -xf ER-e50.</description>
 			<content type="html"><![CDATA[<p>给UBNT的ER-X刷OpenWrt固件</p>
@@ -465,7 +617,7 @@ dd if=vmlinux.tmp of=/dev/mtdblock4
 reboot
 </code></pre><p>正常重启后，应该就恢复成官方1.7系统了，然后注意把网线接入Eth0口，正常配置下 edgeRouter 系统就行了。</p>
 <p><strong>注意</strong>：目前实验的，似乎只有上边的两个装不了新软件的 OpenWrt 系统的可以刷回官方系统，OpenWrt 官方的系统刷机时，会出现以下错误（但是应该用TTL线还是可以刷回官方系统的，可以参考上边的帖子的前半部分内容）：</p>
-<pre tabindex="0"><code>ubidetach: error!: cannot detach &quot;/dev/mtd5&quot;
+<pre tabindex="0"><code>ubidetach: error!: cannot detach &#34;/dev/mtd5&#34;
            error 16 (Resource busy)
 </code></pre><h3 id="柳暗花明">柳暗花明</h3>
 <p>刷会官方系统后，本来以为没办法了。后来搜索到一个网站 <a href="https://wiki.opennet-initiative.de/wiki/Ubiquiti_EdgeRouter">https://wiki.opennet-initiative.de/wiki/Ubiquiti_EdgeRouter</a> ,似乎是一个在 OpenWrt 系统上叠加 OpenNet 安全网络的组织。网页上有详细的从官方系统刷新到 OpenWrt系统的说明，而且有对应的固件。</p>
@@ -506,17 +658,17 @@ sysupgrade lede-0.5.4-2283-ramips-mt7621-ubnt-erx-squashfs-sysupgrade.tar
 			
 			<guid>http://nivrrex.github.io/posts/use-cmder/</guid>
 			<description>缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。
- 介绍 cmder由3部分组成：
+介绍 cmder由3部分组成：
 ConEmu ConEmu 是一套 Windows 控制台模拟器 (console emulator)
 Clink Clink将GNU Readline 函数库整合进原生的Windows 命令行控制台，提供命令行模式下强大的编辑和输入能力
 msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的命令行工具，如 less, ls, tar, unzip, md5sum, grep, sed &amp;hellip; 等
 安装 安裝 cmder
 先到 cmder 官网 http://cmder.net/ 下载此工具，有两个版本，分別是 mini 和 full 版，区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。
 外部链接 具体使用就不想介绍了，网上有详细的使用介绍和说明，这里推荐3篇文章，大家可以看一下：
-  介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 ) https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx
-  Win下必备神器之Cmder https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/
-  cmder 一个比cmd强n倍的神器 https://www.jianshu.com/p/7a706c0a3411
-  配置 注册Cmder，文档的右键菜单添加Cmder here Cmder.</description>
+介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 ) https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx
+Win下必备神器之Cmder https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/
+cmder 一个比cmd强n倍的神器 https://www.jianshu.com/p/7a706c0a3411
+配置 注册Cmder，文档的右键菜单添加Cmder here Cmder.exe /REGISTER ALL Cmder使用ls中文显示乱码解决方案 方案1 默认配置不支持使用ls显示中文命名的文件列表。</description>
 			<content type="html"><![CDATA[<h3 id="缘来">缘来</h3>
 <p>Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了<a href="http://cmder.net/">cmder</a>这个很方便的替代windows自带命令行的好工具，记录一下。</p>
 <!-- raw HTML omitted -->
@@ -550,17 +702,17 @@ msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的
 </ul>
 <h3 id="配置">配置</h3>
 <h4 id="注册cmder文档的右键菜单添加cmder-here">注册Cmder，文档的右键菜单添加Cmder here</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Cmder.exe /REGISTER ALL
-</code></pre></div><h4 id="cmder使用ls中文显示乱码解决方案">Cmder使用ls中文显示乱码解决方案</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Cmder.exe /REGISTER ALL
+</span></span></code></pre></div><h4 id="cmder使用ls中文显示乱码解决方案">Cmder使用ls中文显示乱码解决方案</h4>
 <h5 id="方案1">方案1</h5>
 <p>默认配置不支持使用ls显示中文命名的文件列表。</p>
 <p>解决方法：
 按下Win+Alt+P打开设置。
 在StartUp - Environment里添加</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">set</span> <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8
-<span class="nb">set</span> <span class="nv">LANG</span><span class="o">=</span>zh_CN.GBK
-<span class="nb">set</span> <span class="nv">LC_ALL</span><span class="o">=</span>zh_CN.utf8
-</code></pre></div><p>保存配置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">LANG</span><span class="o">=</span>zh_CN.UTF-8
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">LANG</span><span class="o">=</span>zh_CN.GBK
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> <span class="nv">LC_ALL</span><span class="o">=</span>zh_CN.utf8
+</span></span></code></pre></div><p>保存配置</p>
 <p>重启Cmder，发现使用ls，中文正确显示了。</p>
 <h5 id="备注">备注</h5>
 <p>因ConEmu的bug，该设置无法保存，可以去
@@ -568,17 +720,17 @@ msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的
 下载最新或历史版本的ConEmu，替换Cmder自带的版本，则可以解决这个问题</p>
 <h5 id="方案2">方案2</h5>
 <p>修改cmder\vendor\conemu-maximus5\ConEmu.xml文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&lt;value <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EnvironmentSet&#34;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&#34;multi&#34;</span>&gt;
-	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&#34;</span>/&gt;
-&lt;/value&gt;
-</code></pre></div><p>修改添加为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">&lt;value <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EnvironmentSet&#34;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&#34;multi&#34;</span>&gt;
-	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&#34;</span>/&gt;
-	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set LANG=zh_CN.UTF-8&#34;</span>/&gt;
-	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set LANG=zh_CN.gbk&#34;</span>/&gt;
-	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set LC_ALL=zh_CN.utf8&#34;</span>/&gt;
-&lt;/value&gt;
-</code></pre></div><h3 id="结">结</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;value <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EnvironmentSet&#34;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&#34;multi&#34;</span>&gt;
+</span></span><span class="line"><span class="cl">	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&#34;</span>/&gt;
+</span></span><span class="line"><span class="cl">&lt;/value&gt;
+</span></span></code></pre></div><p>修改添加为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">&lt;value <span class="nv">name</span><span class="o">=</span><span class="s2">&#34;EnvironmentSet&#34;</span> <span class="nv">type</span><span class="o">=</span><span class="s2">&#34;multi&#34;</span>&gt;
+</span></span><span class="line"><span class="cl">	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&#34;</span>/&gt;
+</span></span><span class="line"><span class="cl">	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set LANG=zh_CN.UTF-8&#34;</span>/&gt;
+</span></span><span class="line"><span class="cl">	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set LANG=zh_CN.gbk&#34;</span>/&gt;
+</span></span><span class="line"><span class="cl">	&lt;line <span class="nv">data</span><span class="o">=</span><span class="s2">&#34;set LC_ALL=zh_CN.utf8&#34;</span>/&gt;
+</span></span><span class="line"><span class="cl">&lt;/value&gt;
+</span></span></code></pre></div><h3 id="结">结</h3>
 <p>就这样，配置完成后，就可以用啦~</p>
 ]]></content>
 		</item>
@@ -592,7 +744,7 @@ msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的
 			<description>缘由 好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。
 于是就随便在网上搜索了一下，看看有什么替代的静态站点生成器，结果发现了：
 hugo 这个go语言写的大杀器。
- A fast and modern static website engine Language:Go License:APL 2.0  目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
+A fast and modern static website engine Language:Go License:APL 2.0 目前在StaticGen上排名已经超过Hexo了，仅次于Jekyll，于是兴起了试用的念头。
 迁移 因为blog上文章不多，迁移比较方便，主要是将Hexo的YAML转换为Hugo的TOML，网上有篇文章从 Hexo 迁移到 Hugo介绍了如何迁移
 下载hugo hugo就是一个执行文件，可以直接从官网下载
 windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-windows/
@@ -600,8 +752,9 @@ windows下执行环境可以参考https://gohugo.io/tutorials/installing-on-wind
 Hugo - Hugo Quickstart Guide 快速上手指南
 生成站点比较简单：
 hugo new site sitename 主题 可以到以下站址找自己喜欢的主题，我选择的是 hugo_eiio hermit主题
- Hugo Themes Site hugoThemes: All Themes Hugo  安装比较简单：
-cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor</description>
+Hugo Themes Site hugoThemes: All Themes Hugo 安装比较简单：
+cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页面 hugo new posts/about.md 然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 MarkdownEditor
+本地测试 hugo server --buildDrafts --watch --theme themename 运行后可以在 http://localhost:1313/ 查看具体效果</description>
 			<content type="html"><![CDATA[<h4 id="缘由">缘由</h4>
 <p>好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。
 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。</p>
@@ -622,26 +775,26 @@ cd themes git clone https://github.com/Track3/hermit.git themes/hermit 生成页
 <p>可以到<a href="http://gohugo.io/overview/introduction/">Hugo - Introduction to Hugo</a>自行学习</p>
 <p><strong><a href="http://gohugo.io/overview/quickstart/">Hugo - Hugo Quickstart Guide</a></strong>  快速上手指南</p>
 <p>生成站点比较简单：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new site sitename
-</code></pre></div><h4 id="主题">主题</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new site sitename
+</span></span></code></pre></div><h4 id="主题">主题</h4>
 <p>可以到以下站址找自己喜欢的主题，我选择的是 <del><a href="https://themes.gohugo.io/hugo_eiio/">hugo_eiio</a></del> <a href="https://github.com/Track3/hermit">hermit</a>主题</p>
 <ul>
 <li><a href="https://themes.gohugo.io/">Hugo Themes Site</a></li>
 <li><a href="https://github.com/spf13/hugoThemes">hugoThemes: All Themes Hugo</a></li>
 </ul>
 <p>安装比较简单：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">cd</span> themes
-git clone https://github.com/Track3/hermit.git themes/hermit
-</code></pre></div><h4 id="生成页面">生成页面</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo new posts/about.md
-</code></pre></div><p>然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 <a href="https://github.com/jijinggang/MarkdownEditor">MarkdownEditor</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> themes
+</span></span><span class="line"><span class="cl">git clone https://github.com/Track3/hermit.git themes/hermit
+</span></span></code></pre></div><h4 id="生成页面">生成页面</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo new posts/about.md
+</span></span></code></pre></div><p>然后用自己喜欢的MD编辑器编辑就行啦，我用的是这款 <a href="https://github.com/jijinggang/MarkdownEditor">MarkdownEditor</a></p>
 <h4 id="本地测试">本地测试</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo server --buildDrafts --watch --theme themename
-</code></pre></div><p>运行后可以在 <a href="http://localhost:1313/">http://localhost:1313/</a> 查看具体效果</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo server --buildDrafts --watch --theme themename
+</span></span></code></pre></div><p>运行后可以在 <a href="http://localhost:1313/">http://localhost:1313/</a> 查看具体效果</p>
 <h4 id="生成静态页面">生成静态页面</h4>
 <p>还是一个命令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">hugo
-</code></pre></div><p>基本上页面数量少的话，都是在ms级别，生成文件在public文件夹内</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">hugo
+</span></span></code></pre></div><p>基本上页面数量少的话，都是在ms级别，生成文件在public文件夹内</p>
 <h4 id="发布到github">发布到github</h4>
 <p>将public文件夹中文件和github.io进行同步即可</p>
 <hr>
@@ -657,7 +810,7 @@ git clone https://github.com/Track3/hermit.git themes/hermit
 			
 			<guid>http://nivrrex.github.io/posts/start-to-use-python/</guid>
 			<description>缘来 最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。
- 开始 整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。
+开始 整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。
 整个切换过程还是比较顺利的，毕竟两个语言有很大的相近的地方。当然也遇到了不少坑，比如Python3和Python2的选择，print输出的坑。
 Python3 vs Python2 这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。
 但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。
@@ -678,16 +831,16 @@ Python的好处就是编码样式比较统一，第三方类库超多。 可以�
 <p>但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。</p>
 <h4 id="print无法输出中文">print无法输出中文</h4>
 <p>这是比较大的一个坑，找到和解决它花了不少时间，开始以为是其它地方的问题。最后是在网上看到的一个解决方案，因为python3的print不是全编码输出的，必须指定一下，添加以下的代码就OK了：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
-</code></pre></div><p>相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">io</span><span class="o">,</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl"><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>相比较而言，不得不说，Python的print没有Ruby的puts和p好用啊。</p>
 <h4 id="python-vs-ruby">Python VS Ruby</h4>
 <p>这个题目比较大，只能简单的就第一感觉来说：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="n">Python的好处就是编码样式比较统一</span><span class="err">，</span><span class="n">第三方类库超多</span><span class="err">。</span>
-<span class="n">可以关注自己需要解决的问题</span><span class="err">，</span><span class="n">不用费心思在语法细节上</span><span class="err">。</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="no">Ruby的优势是处理文本效率很高</span><span class="err">，语法糖很多，用起来很省心。</span>
-<span class="err">但是第三方类库和</span><span class="no">Python相比差距还是比较大</span><span class="err">。</span>
-</code></pre></div><h4 id="结">结</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">Python的好处就是编码样式比较统一</span><span class="err">，</span><span class="n">第三方类库超多</span><span class="err">。</span>
+</span></span><span class="line"><span class="cl"><span class="n">可以关注自己需要解决的问题</span><span class="err">，</span><span class="n">不用费心思在语法细节上</span><span class="err">。</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ruby" data-lang="ruby"><span class="line"><span class="cl"><span class="no">Ruby</span><span class="err">的优势是处理文本效率很高，语法糖很多，用起来很省心。</span>
+</span></span><span class="line"><span class="cl"><span class="err">但是第三方类库和</span><span class="no">Python</span><span class="err">相比差距还是比较大。</span>
+</span></span></code></pre></div><h4 id="结">结</h4>
 <p>其实后来回顾时，针对我脚本中的部分功能，Ruby的处理文字、正则的效率可能比Python还强，但是由于没有Python那么完善的第三方类库。如NumPy,Pandas这些，所以最终效率还是Python领先了。</p>
 <p>最终还是选择了Python，而且可能近期都会使用它。</p>
 ]]></content>
@@ -701,7 +854,7 @@ Python的好处就是编码样式比较统一，第三方类库超多。 可以�
 			<guid>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
 			<description>来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
 Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
-import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39; &amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
+import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39; &amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %s instead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>本来一直使用的编译器是<a href="http://www.scintilla.org/SciTE.html">SciTE</a>，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。
 最近看了<a href="http://www.tudou.com/home/golang/item/">Golang中国的教学视频</a>，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇<a href="http://www.linuxeden.com/html/news/20150730/162107.html">Sublime Text 全程指南</a>，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。</p>
@@ -710,96 +863,96 @@ import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&
 <p>首先到Sublime Text的<a href="http://www.sublimetext.com/">官网</a>下载最新的版本，我下载的是3.3083的portable version版
 然后是最重要的事情了，安装<a href="https://packagecontrol.io/installation#st3">Package Control</a>,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。
 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">hashlib</span><span class="p">;</span> <span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;6f4c264a24d933ce70df5dedcf1dcaee&#39;</span> <span class="o">+</span> <span class="s1">&#39;ebe013ee18cced0ef93d5f746d80ef60&#39;</span><span class="p">;</span> <span class="n">pf</span> <span class="o">=</span> <span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="n">ipp</span> <span class="o">=</span> <span class="n">sublime</span><span class="o">.</span><span class="n">installed_packages_path</span><span class="p">();</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">())</span> <span class="p">);</span> <span class="n">by</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span> <span class="s1">&#39;http://packagecontrol.io/&#39;</span> <span class="o">+</span> <span class="n">pf</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;%20&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">();</span> <span class="n">dh</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">by</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">();</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error validating download (got </span><span class="si">%s</span><span class="s1"> instead of </span><span class="si">%s</span><span class="s1">), please try manual install&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dh</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span> <span class="k">if</span> <span class="n">dh</span> <span class="o">!=</span> <span class="n">h</span> <span class="k">else</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">ipp</span><span class="p">,</span> <span class="n">pf</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
-</code></pre></div><h4 id="package-control及插件安装">Package Control及插件安装</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">hashlib</span><span class="p">;</span> <span class="n">h</span> <span class="o">=</span> <span class="s1">&#39;6f4c264a24d933ce70df5dedcf1dcaee&#39;</span> <span class="o">+</span> <span class="s1">&#39;ebe013ee18cced0ef93d5f746d80ef60&#39;</span><span class="p">;</span> <span class="n">pf</span> <span class="o">=</span> <span class="s1">&#39;Package Control.sublime-package&#39;</span><span class="p">;</span> <span class="n">ipp</span> <span class="o">=</span> <span class="n">sublime</span><span class="o">.</span><span class="n">installed_packages_path</span><span class="p">();</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">install_opener</span><span class="p">(</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build_opener</span><span class="p">(</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">ProxyHandler</span><span class="p">())</span> <span class="p">);</span> <span class="n">by</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span> <span class="s1">&#39;http://packagecontrol.io/&#39;</span> <span class="o">+</span> <span class="n">pf</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;%20&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">read</span><span class="p">();</span> <span class="n">dh</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">by</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">();</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error validating download (got </span><span class="si">%s</span><span class="s1"> instead of </span><span class="si">%s</span><span class="s1">), please try manual install&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">dh</span><span class="p">,</span> <span class="n">h</span><span class="p">))</span> <span class="k">if</span> <span class="n">dh</span> <span class="o">!=</span> <span class="n">h</span> <span class="k">else</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span> <span class="n">ipp</span><span class="p">,</span> <span class="n">pf</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span> <span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="package-control及插件安装">Package Control及插件安装</h4>
 <p>根据提示，重启Sublime Text即可完成安装。
 在Sublime Text中按ctrl+shift+p快捷键，即可调出Package Control控制台，它可以对Packages完成以下操作：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">install
-remove
-list
-<span class="nb">enable</span>
-disable
-upgrade
-</code></pre></div><p>根据我的需求，我安装了以下插件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">GoSublime             <span class="c1">#go语言提示插件</span>
-SideBarEnhancements   <span class="c1">#侧边栏增强插件</span>
-All Autocomplete      <span class="c1">#自动完成增强插件</span>
-ConvertToUTF8         <span class="c1">#GBK等中文文件编码增强插件</span>
-Markdown Preview      <span class="c1">#Markdown文件预览插件</span>
-Markdown Extended     <span class="c1">#Markdown语法扩展插件，可以对代码区域进行语法高亮</span>
-Monokai Extended      <span class="c1">#主题插件，但是可以对Markdown进行语法高亮</span>
-JSONLint              <span class="c1">#JSON的智能提示插件，对出错的语法进行实时标注</span>
-JSFormat              <span class="c1">#可以对javascript进行格式化输出，同样对JSON也可以格式化</span>
-Material Theme        <span class="c1">#语法高亮插件，Material MonoKai</span>
-</code></pre></div><h4 id="sublime-text配置">Sublime Text配置</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">install
+</span></span><span class="line"><span class="cl">remove
+</span></span><span class="line"><span class="cl">list
+</span></span><span class="line"><span class="cl"><span class="nb">enable</span>
+</span></span><span class="line"><span class="cl">disable
+</span></span><span class="line"><span class="cl">upgrade
+</span></span></code></pre></div><p>根据我的需求，我安装了以下插件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">GoSublime             <span class="c1">#go语言提示插件</span>
+</span></span><span class="line"><span class="cl">SideBarEnhancements   <span class="c1">#侧边栏增强插件</span>
+</span></span><span class="line"><span class="cl">All Autocomplete      <span class="c1">#自动完成增强插件</span>
+</span></span><span class="line"><span class="cl">ConvertToUTF8         <span class="c1">#GBK等中文文件编码增强插件</span>
+</span></span><span class="line"><span class="cl">Markdown Preview      <span class="c1">#Markdown文件预览插件</span>
+</span></span><span class="line"><span class="cl">Markdown Extended     <span class="c1">#Markdown语法扩展插件，可以对代码区域进行语法高亮</span>
+</span></span><span class="line"><span class="cl">Monokai Extended      <span class="c1">#主题插件，但是可以对Markdown进行语法高亮</span>
+</span></span><span class="line"><span class="cl">JSONLint              <span class="c1">#JSON的智能提示插件，对出错的语法进行实时标注</span>
+</span></span><span class="line"><span class="cl">JSFormat              <span class="c1">#可以对javascript进行格式化输出，同样对JSON也可以格式化</span>
+</span></span><span class="line"><span class="cl">Material Theme        <span class="c1">#语法高亮插件，Material MonoKai</span>
+</span></span></code></pre></div><h4 id="sublime-text配置">Sublime Text配置</h4>
 <p>Sublime Text3的配置，主要采用JSON格式，后缀名是sublime-settings
 不知道是不是Bug，其主要配置需要手动创建，菜单无法选择（后来证实是汉化包的Bug），于是根据网上提示，新建
 C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入以下内容：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;font_face&#34;</span><span class="p">:</span> <span class="s2">&#34;Consolas&#34;</span><span class="p">,</span>                            <span class="c1">//字体名称
-</span><span class="c1"></span>    <span class="nt">&#34;font_size&#34;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>                                    <span class="c1">//字体大小
-</span><span class="c1"></span>
-    <span class="nt">&#34;caret_style&#34;</span><span class="p">:</span> <span class="s2">&#34;phase&#34;</span><span class="p">,</span>                             <span class="c1">//光标闪烁
-</span><span class="c1"></span>    <span class="nt">&#34;wide_caret&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                                 <span class="c1">//光标变粗
-</span><span class="c1"></span>
-    <span class="nt">&#34;draw_white_space&#34;</span><span class="p">:</span> <span class="s2">&#34;all&#34;</span><span class="p">,</span>                          <span class="c1">//显示所有空白符号
-</span><span class="c1"></span>    <span class="nt">&#34;highlight_line&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                             <span class="c1">//高亮当前行
-</span><span class="c1"></span>    <span class="nt">&#34;highlight_modified_tabs&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                    <span class="c1">//编辑过的标签高亮显示
-</span><span class="c1"></span>
-    <span class="nt">&#34;auto_complete_commit_on_tab&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                <span class="c1">//tab键自动完成
-</span><span class="c1"></span>    <span class="nt">&#34;tab_size&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                      <span class="c1">//tab键长度
-</span><span class="c1"></span>    <span class="nt">&#34;translate_tabs_to_spaces&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                   <span class="c1">//自动将tab转换成空格
-</span><span class="c1"></span>
-    <span class="nt">&#34;spell_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                               <span class="c1">//语法检查
-</span><span class="c1"></span>    <span class="nt">&#34;trim_trailing_white_space_on_save&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>          <span class="c1">//删除行尾的空格
-</span><span class="c1"></span>    <span class="nt">&#34;ensure_newline_at_eof_on_save&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>              <span class="c1">//文件结束后保存加入新行
-</span><span class="c1"></span>
-    <span class="nt">&#34;update_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                              <span class="c1">//禁止自动更新
-</span><span class="c1"></span>
-    <span class="nt">&#34;color_scheme&#34;</span><span class="p">:</span> <span class="s2">&#34;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&#34;</span><span class="p">,</span>     <span class="c1">//主题包Monokai
-</span><span class="c1"></span>
-    <span class="nt">&#34;ignored_packages&#34;</span><span class="p">:</span>                                 <span class="c1">//忽略的包
-</span><span class="c1"></span>    <span class="p">[</span>
-        <span class="s2">&#34;Vintage&#34;</span>
-    <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div><h4 id="gosublime配置">GoSublime配置</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;font_face&#34;</span><span class="p">:</span> <span class="s2">&#34;Consolas&#34;</span><span class="p">,</span>                            <span class="c1">//字体名称
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;font_size&#34;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>                                    <span class="c1">//字体大小
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;caret_style&#34;</span><span class="p">:</span> <span class="s2">&#34;phase&#34;</span><span class="p">,</span>                             <span class="c1">//光标闪烁
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;wide_caret&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                                 <span class="c1">//光标变粗
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;draw_white_space&#34;</span><span class="p">:</span> <span class="s2">&#34;all&#34;</span><span class="p">,</span>                          <span class="c1">//显示所有空白符号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;highlight_line&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                             <span class="c1">//高亮当前行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;highlight_modified_tabs&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                    <span class="c1">//编辑过的标签高亮显示
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;auto_complete_commit_on_tab&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                <span class="c1">//tab键自动完成
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;tab_size&#34;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>                                      <span class="c1">//tab键长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;translate_tabs_to_spaces&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>                   <span class="c1">//自动将tab转换成空格
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;spell_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                               <span class="c1">//语法检查
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;trim_trailing_white_space_on_save&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>          <span class="c1">//删除行尾的空格
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;ensure_newline_at_eof_on_save&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>              <span class="c1">//文件结束后保存加入新行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;update_check&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>                              <span class="c1">//禁止自动更新
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;color_scheme&#34;</span><span class="p">:</span> <span class="s2">&#34;Packages/Monokai Extended/Monokai Extended Bright.tmTheme&#34;</span><span class="p">,</span>     <span class="c1">//主题包Monokai
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ignored_packages&#34;</span><span class="p">:</span>                                 <span class="c1">//忽略的包
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;Vintage&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="gosublime配置">GoSublime配置</h4>
 <p>因为我用Golang和Ruby比较多，在安装了GoSublime后，还需要配置下GoSublime，以便进行编译
 路径如下：&ldquo;Preferences&rdquo; - &ldquo;Package Setting&rdquo; - &ldquo;GoSublime&rdquo; - &ldquo;Settings User&rdquo;</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-    <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="nt">&#34;PATH&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go\\bin&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;GOPATH&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go\\import&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;GOROOT&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;GOBIN&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go\\bin&#34;</span><span class="p">,</span>
-        <span class="nt">&#34;GOOS&#34;</span><span class="p">:</span><span class="s2">&#34;windows&#34;</span>
-    <span class="p">},</span>
-    <span class="nt">&#34;build_command&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;go&#34;</span><span class="p">,</span><span class="s2">&#34;run&#34;</span><span class="p">,</span><span class="s2">&#34;$_fn&#34;</span><span class="p">],</span>
-
-    <span class="nt">&#34;fmt_enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
-    <span class="nt">&#34;fmt_tab_indent&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
-    <span class="nt">&#34;fmt_tab_width&#34;</span><span class="p">:</span> <span class="mi">4</span>
-<span class="p">}</span>
-</code></pre></div><h4 id="tinycc编译系统">TinyCC编译系统</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;env&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;PATH&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go\\bin&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;GOPATH&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go\\import&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;GOROOT&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;GOBIN&#34;</span><span class="p">:</span><span class="s2">&#34;C:\\go\\bin&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;GOOS&#34;</span><span class="p">:</span><span class="s2">&#34;windows&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;build_command&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;go&#34;</span><span class="p">,</span><span class="s2">&#34;run&#34;</span><span class="p">,</span><span class="s2">&#34;$_fn&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;fmt_enabled&#34;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;fmt_tab_indent&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;fmt_tab_width&#34;</span><span class="p">:</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="tinycc编译系统">TinyCC编译系统</h4>
 <p>因为我偶尔用TinyCC编译小的C语言程序，所以自定义了一个编译系统，具体代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;C:\\ Sublime Text\\tcc\\&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;file_regex&#34;</span><span class="p">:</span> <span class="s2">&#34;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;working_dir&#34;</span><span class="p">:</span> <span class="s2">&#34;${file_path}&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;selector&#34;</span><span class="p">:</span> <span class="s2">&#34;source.c&#34;</span><span class="p">,</span>
-
-  <span class="nt">&#34;variants&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Run&#34;</span><span class="p">,</span>
-      <span class="nt">&#34;cmd&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;tcc&#34;</span><span class="p">,</span> <span class="s2">&#34;-run&#34;</span><span class="p">,</span> <span class="s2">&#34;${file}&#34;</span><span class="p">],</span>
-      <span class="nt">&#34;working_dir&#34;</span><span class="p">:</span> <span class="s2">&#34;${file_path}&#34;</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div><h4 id="f5快捷键">F5快捷键</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;path&#34;</span><span class="p">:</span> <span class="s2">&#34;C:\\ Sublime Text\\tcc\\&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;file_regex&#34;</span><span class="p">:</span> <span class="s2">&#34;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;working_dir&#34;</span><span class="p">:</span> <span class="s2">&#34;${file_path}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;selector&#34;</span><span class="p">:</span> <span class="s2">&#34;source.c&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;variants&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Run&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;cmd&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;tcc&#34;</span><span class="p">,</span> <span class="s2">&#34;-run&#34;</span><span class="p">,</span> <span class="s2">&#34;${file}&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;working_dir&#34;</span><span class="p">:</span> <span class="s2">&#34;${file_path}&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="f5快捷键">F5快捷键</h4>
 <p>平时喜欢把F5设置成脚本Run的快捷键盘，具体设置路径如下：”Preferences” - “Key Bindings”，在右部的User文件C:\Sublime Text\Data\Packages\User\Default (Windows).sublime-keymap增加如下代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json">    <span class="p">{</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;f5&#34;</span><span class="p">],</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;build&#34;</span> <span class="p">}</span><span class="err">,</span>
-</code></pre></div><h4 id="结">结</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl">    <span class="p">{</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;f5&#34;</span><span class="p">],</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;build&#34;</span> <span class="p">}</span><span class="err">,</span>
+</span></span></code></pre></div><h4 id="结">结</h4>
 <p>试用了几天后，Sublime Text是比Scite要强大的多，虽然Scite也可以进行很多的配置，关键是Package Control上现成的插件太多了，有人维护的话，真是太省心了呢，已经将以前针对Scite写的部分脚本转移到Sublime Text上了，开心的编程啦~ ^o^/</p>
 ]]></content>
 		</item>
@@ -811,7 +964,7 @@ C:\Sublime Text\Data\Packages\User\Preferences.sublime-settings文件，输入�
 			
 			<guid>http://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
 			<description>来由 因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。
- 如何查看Linux版本 共有5种方式，具体如下
+如何查看Linux版本 共有5种方式，具体如下
 cat /etc/*-release lsb_release -a cat /proc/version uname -a #uname -mrs cat /etc/issue 我的Debian更新过，显示是
 Debian GNU/Linux 8.1 (jessie) 但是，内核为什么还是
 Linux 2.6.32-042stab093.4 i686 好吧，更新，更新！
@@ -830,16 +983,16 @@ sudo apt-get -t jessie-backports install linux-image-3.</description>
 <hr>
 <h4 id="如何查看linux版本">如何查看Linux版本</h4>
 <p>共有5种方式，具体如下</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">cat /etc/*-release
-lsb_release -a
-cat /proc/version
-uname -a  <span class="c1">#uname -mrs</span>
-cat /etc/issue
-</code></pre></div><p>我的Debian更新过，显示是</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Debian GNU/Linux 8.1 <span class="o">(</span>jessie<span class="o">)</span>
-</code></pre></div><p>但是，内核为什么还是</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Linux 2.6.32-042stab093.4 i686
-</code></pre></div><p>好吧，更新，更新！</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cat /etc/*-release
+</span></span><span class="line"><span class="cl">lsb_release -a
+</span></span><span class="line"><span class="cl">cat /proc/version
+</span></span><span class="line"><span class="cl">uname -a  <span class="c1">#uname -mrs</span>
+</span></span><span class="line"><span class="cl">cat /etc/issue
+</span></span></code></pre></div><p>我的Debian更新过，显示是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Debian GNU/Linux 8.1 <span class="o">(</span>jessie<span class="o">)</span>
+</span></span></code></pre></div><p>但是，内核为什么还是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Linux 2.6.32-042stab093.4 i686
+</span></span></code></pre></div><p>好吧，更新，更新！</p>
 <h4 id="使用backports源">使用Backports源</h4>
 <p>对于Debian来说，其稳定版的软件虽然稳定，但是都好OLD啊，但是好在它有个Backports项目</p>
 <p>其<a href="https://wiki.debian.org/zh_CN/Backports">官方Wiki</a>上面说</p>
@@ -847,33 +1000,33 @@ cat /etc/issue
 <h4 id="开始更新">开始更新</h4>
 <h6 id="更新软件源">更新软件源</h6>
 <p>首先在apt的sources.list文件中添加Backports源</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/apt/sources.list
-</code></pre></div><p>添加如下内容</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">deb http://ftp.debian.org/debian/ jessie-backports main
-deb-src http://ftp.debian.org/debian/ jessie-backports main
-</code></pre></div><p>更新数据</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
-<span class="c1">#sudo apt-get -t jessie-backports upgrade</span>
-</code></pre></div><h6 id="搜索并安装linux-image文件">搜索并安装linux-image文件</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/apt/sources.list
+</span></span></code></pre></div><p>添加如下内容</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">deb http://ftp.debian.org/debian/ jessie-backports main
+</span></span><span class="line"><span class="cl">deb-src http://ftp.debian.org/debian/ jessie-backports main
+</span></span></code></pre></div><p>更新数据</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl"><span class="c1">#sudo apt-get -t jessie-backports upgrade</span>
+</span></span></code></pre></div><h6 id="搜索并安装linux-image文件">搜索并安装linux-image文件</h6>
 <p>安装aptitude，以便搜索最新的linux-image文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">apt-get install aptitude
-aptitude search kernel-image
-</code></pre></div><p>根据搜索出来的内核文件，进行安装，我的是</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get -t jessie-backports install linux-image-3.16.0-4-686-pae
-<span class="c1">#sudo apt-get -t jessie-backports install linux-image-686-pae</span>
-</code></pre></div><h6 id="显示已安装的linux-image内核版本">显示已安装的linux-image内核版本</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apt-get install aptitude
+</span></span><span class="line"><span class="cl">aptitude search kernel-image
+</span></span></code></pre></div><p>根据搜索出来的内核文件，进行安装，我的是</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get -t jessie-backports install linux-image-3.16.0-4-686-pae
+</span></span><span class="line"><span class="cl"><span class="c1">#sudo apt-get -t jessie-backports install linux-image-686-pae</span>
+</span></span></code></pre></div><h6 id="显示已安装的linux-image内核版本">显示已安装的linux-image内核版本</h6>
 <p>显示已经安装的linux-image内核版本</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">dpkg --get-selections <span class="p">|</span>grep linux-image
-</code></pre></div><h6 id="删除旧内核">删除旧内核</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">dpkg --get-selections <span class="p">|</span>grep linux-image
+</span></span></code></pre></div><h6 id="删除旧内核">删除旧内核</h6>
 <p>如果要删除旧内核，运行以下命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get remove linux-image-3.16.0-4-686-pae
-</code></pre></div><h6 id="更新grub">更新grub</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get remove linux-image-3.16.0-4-686-pae
+</span></span></code></pre></div><h6 id="更新grub">更新grub</h6>
 <p>在/boot/grub/grub.cfg中查看是否已经有新内核3.16，有的话，就已经OK。否则，自己手动更新grub。
 sudo update-grub</p>
 <h4 id="安装结果">安装结果</h4>
 <p>我兴高采烈的在我的RamNode的VPS折腾了半天后，重新Reboot后发现，内核为什么还是2.6.32!!!</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">Linux 2.6.32-042stab093.4 i686
-</code></pre></div><h6 id="google原因">Google原因</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">Linux 2.6.32-042stab093.4 i686
+</span></span></code></pre></div><h6 id="google原因">Google原因</h6>
 <p>OpenVZ的内核和 Host的内核是一致的
 也就是说，由于我的VPS是OpenVZ的，所以我自己更新linux-image的版本是没有用的。。。</p>
 <h4 id="结">结</h4>
@@ -896,36 +1049,36 @@ nameserver 8.8.8.8 nameserver 208.67.222.222 将服务重启即可
 /etc/init.d/dnsmasq restart 将DNSmasq加入启动项
 sudo vi /etc/rc.local 将以下命令添加进去即可
 /etc/init.d/dnsmasq start DNS污染解决方案 OpenWrt-dist上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，地址
- 结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</description>
+结 这次终于应该没有问题了，www.symantec.com这些网站也不会出现DNS解析超时的问题，终于可以彻底好好科学上网学习啦~</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~</p>
 <!-- raw HTML omitted -->
 <h4 id="dnsmasq安装">DNSmasq安装</h4>
 <p>我的系统是Debian，直接运行以下命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo apt-get update
-sudo apt-get install dnsmasq
-</code></pre></div><h4 id="dnsmasq配置">DNSmasq配置</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install dnsmasq
+</span></span></code></pre></div><h4 id="dnsmasq配置">DNSmasq配置</h4>
 <p>编辑/etc/dnsmasq.conf文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/dnsmasq.conf
-</code></pre></div><p>修改以下参数</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">resolv-file<span class="o">=</span>/etc/resolv.conf
-strict-order
-
-listen-address<span class="o">=</span>xxx.xxx.xxx.xxx,127.0.0.1
-<span class="nv">port</span><span class="o">=</span><span class="m">443</span>
-
-cache-size<span class="o">=</span><span class="m">1024</span>
-log-queries
-</code></pre></div><p>编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">nameserver 8.8.8.8
-nameserver 208.67.222.222
-</code></pre></div><p>将服务重启即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq restart
-</code></pre></div><p>将DNSmasq加入启动项</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">sudo vi /etc/rc.local
-</code></pre></div><p>将以下命令添加进去即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/dnsmasq start
-</code></pre></div><h4 id="dns污染解决方案">DNS污染解决方案</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/dnsmasq.conf
+</span></span></code></pre></div><p>修改以下参数</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">resolv-file<span class="o">=</span>/etc/resolv.conf
+</span></span><span class="line"><span class="cl">strict-order
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">listen-address<span class="o">=</span>xxx.xxx.xxx.xxx,127.0.0.1
+</span></span><span class="line"><span class="cl"><span class="nv">port</span><span class="o">=</span><span class="m">443</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">cache-size<span class="o">=</span><span class="m">1024</span>
+</span></span><span class="line"><span class="cl">log-queries
+</span></span></code></pre></div><p>编辑/etc/resolv.conf文件，添加DNSmasq的上游服务器</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nameserver 8.8.8.8
+</span></span><span class="line"><span class="cl">nameserver 208.67.222.222
+</span></span></code></pre></div><p>将服务重启即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/init.d/dnsmasq restart
+</span></span></code></pre></div><p>将DNSmasq加入启动项</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo vi /etc/rc.local
+</span></span></code></pre></div><p>将以下命令添加进去即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/init.d/dnsmasq start
+</span></span></code></pre></div><h4 id="dns污染解决方案">DNS污染解决方案</h4>
 <p><a href="http://sourceforge.net/projects/openwrt-dist/">OpenWrt-dist</a>上面单门架设了一个页面，针对OpenWrt的fanqiang软件做了很多预编译工作。
 其中针对防DNS劫持的解决方案单门有个Wiki页面，共计六种方案，具体可以参考一下，<strong><a href="http://sourceforge.net/p/openwrt-dist/wiki/DNS/">地址</a></strong></p>
 <hr>
@@ -941,7 +1094,7 @@ nameserver 208.67.222.222
 			
 			<guid>http://nivrrex.github.io/posts/fanqiang-with-chinadns/</guid>
 			<description>来由 用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。
- Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
+Old解决方案 - FreeRouterV2 以前的解决方案是借用FreeRouterV2的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，如下
 安装 首先需要在OpenWRT上安装如下包：
 opkg update opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32 配置 然后配置iptables的防火墙策略
 vi /etc/firewall.user 添加如下命令
@@ -954,107 +1107,107 @@ iptables -t mangle -I PREROUTING -p udp --sport 53 -m u32 --u32 &amp;#34;0&amp;a
 <p>以前的解决方案是借用<a href="https://github.com/lifetyper/FreeRouter_V2">FreeRouterV2</a>的部分iptables策略，针对被GFW污染的数据包进行丢弃，然后获得正常的数据包，具体原理作者详细的写了PDF文件进行说明，<a href="https://github.com/lifetyper/FreeRouter_V2/blob/master/FreeRouterV2_HandBook.pdf">如下</a></p>
 <h6 id="安装">安装</h6>
 <p>首先需要在OpenWRT上安装如下包：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">opkg update
-opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32
-</code></pre></div><h6 id="配置">配置</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opkg update
+</span></span><span class="line"><span class="cl">opkg install iptables-mod-filter iptables-mod-u32 kmod-ipt-filter kmod-ipt-u32
+</span></span></code></pre></div><h6 id="配置">配置</h6>
 <p>然后配置iptables的防火墙策略</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/firewall.user
-</code></pre></div><p>添加如下命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m u32 --u32 <span class="s2">&#34;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&#34;</span> -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|042442B2|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|0807C62D|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|1759053C|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|253D369E|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|2E52AE44|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|31027B38|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|364C8701|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|3B1803AD|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|402158A1|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4021632F|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4042A3FB|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4168CAFC|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|41A0DB71|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|422DFCED|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|480ECD63|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|480ECD68|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D2766|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D2771|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D7F66|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D9B66|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4D04075C|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4E10310F|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|5D2E0859|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|76053106|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|80797E8B|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|9F6A794B|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|A9840D67|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|BC050460|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|BDA31105|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|C043C606|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|C504040C|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CA6A0102|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CAB50755|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CB620741|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CBA1E6AB|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CF0C5862|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D0381F2B|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D1244921|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D155E58A|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D1913632|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D1DC1EAE|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D35E4293|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D5A9FB23|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D8DDBCB6|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D8EAB30D|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|F3B9BB27|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|F9812E30|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|FD9D0EA5|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
-</code></pre></div><p>重启防火墙即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/firewall restart
-</code></pre></div><h4 id="chinadns解决方案">ChinaDNS解决方案</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/firewall.user
+</span></span></code></pre></div><p>添加如下命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m u32 --u32 <span class="s2">&#34;0&amp;0x0F000000=0x05000000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@8&amp;0x810F=0x8000 &amp;&amp; 0&gt;&gt;22&amp;0x3C@12&amp;0xFFFF=0x0000&#34;</span> -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|042442B2|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|0807C62D|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|1759053C|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|253D369E|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|2E52AE44|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|31027B38|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|364C8701|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|3B1803AD|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|402158A1|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4021632F|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4042A3FB|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4168CAFC|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|41A0DB71|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|422DFCED|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|480ECD63|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|480ECD68|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D2766|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D2771|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D7F66|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4A7D9B66|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4D04075C|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|4E10310F|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|5D2E0859|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|76053106|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|80797E8B|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|9F6A794B|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|A9840D67|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|BC050460|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|BDA31105|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|C043C606|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|C504040C|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CA6A0102|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CAB50755|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CB620741|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CBA1E6AB|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|CF0C5862|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D0381F2B|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D1244921|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D155E58A|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D1913632|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D1DC1EAE|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D35E4293|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D5A9FB23|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D8DDBCB6|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|D8EAB30D|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|F3B9BB27|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|F9812E30|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span><span class="line"><span class="cl">iptables -t mangle -I PREROUTING -p udp --sport <span class="m">53</span> -m string --algo bm --hex-string <span class="s2">&#34;|FD9D0EA5|&#34;</span> --from <span class="m">60</span> --to <span class="m">180</span>  -j DROP
+</span></span></code></pre></div><p>重启防火墙即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/init.d/firewall restart
+</span></span></code></pre></div><h4 id="chinadns解决方案">ChinaDNS解决方案</h4>
 <p>以上的方案挺好，但是GFW的污染IP似乎有增多现象，所以想省心一点，正好shadowsocks作者<a href="https://github.com/clowwindy">clowwindy</a>有一个针对DNS污染的作品<a href="https://github.com/clowwindy/ChinaDNS">ChinaDNS</a>，就直接拿过来用了。
 针对OpenWRT/Gargoyle，作者有直接编译完毕的ipk包，下载后安装到OpenWRT即可，地址<a href="https://github.com/clowwindy/ChinaDNS/releases">如下</a></p>
 <h6 id="安装-1">安装</h6>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">opkg install ChinaDNS_1.x.x_ar71xx.ipk
-/etc/init.d/chinadns start
-/etc/init.d/chinadns <span class="nb">enable</span>
-</code></pre></div><h6 id="配置-1">配置</h6>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/dnsmasq.conf
-</code></pre></div><p>添加如下内容并保存退出</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">no-resolv
-<span class="nv">server</span><span class="o">=</span>127.0.0.1#5353
-</code></pre></div><p>重新启动</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/etc/init.d/chinadns restart
-/etc/init.d/dnsmasq restart
-</code></pre></div><p>此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/init.d/chinadns
-</code></pre></div><p>具体参数如下</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">usage: chinadns <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-l IPLIST_FILE<span class="o">]</span> <span class="o">[</span>-b BIND_ADDR<span class="o">]</span> <span class="o">[</span>-p BIND_PORT<span class="o">]</span>
-       <span class="o">[</span>-c CHNROUTE_FILE<span class="o">]</span> <span class="o">[</span>-s DNS<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span>
-Forward DNS requests.
-
--h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
--l IPLIST_FILE        path to ip blacklist file
--c CHNROUTE_FILE      path to china route file
-                      <span class="k">if</span> not specified, CHNRoute will be turned off
--d                    <span class="nb">enable</span> bi-directional CHNRoute filter
--y                    delay <span class="nb">time</span> <span class="k">for</span> suspects, default: 0.3
--b BIND_ADDR          address that listens, default: 127.0.0.1
--p BIND_PORT          port that listens, default: <span class="m">53</span>
--s DNS                DNS servers to use, default:
-                      114.114.114.114,208.67.222.222:443,8.8.8.8
--m                    Using DNS compression pointer mutation
-                      <span class="o">(</span>backlist and delaying would be disabled<span class="o">)</span>
--v                    verbose logging
-</code></pre></div><h4 id="sftp登录">SFTP登录</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opkg install ChinaDNS_1.x.x_ar71xx.ipk
+</span></span><span class="line"><span class="cl">/etc/init.d/chinadns start
+</span></span><span class="line"><span class="cl">/etc/init.d/chinadns <span class="nb">enable</span>
+</span></span></code></pre></div><h6 id="配置-1">配置</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/dnsmasq.conf
+</span></span></code></pre></div><p>添加如下内容并保存退出</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">no-resolv
+</span></span><span class="line"><span class="cl"><span class="nv">server</span><span class="o">=</span>127.0.0.1#5353
+</span></span></code></pre></div><p>重新启动</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/etc/init.d/chinadns restart
+</span></span><span class="line"><span class="cl">/etc/init.d/dnsmasq restart
+</span></span></code></pre></div><p>此时直接使用路由器IP做DNS服务器即可，也可以对chinadns做更进一步的配置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/init.d/chinadns
+</span></span></code></pre></div><p>具体参数如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">usage: chinadns <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>-l IPLIST_FILE<span class="o">]</span> <span class="o">[</span>-b BIND_ADDR<span class="o">]</span> <span class="o">[</span>-p BIND_PORT<span class="o">]</span>
+</span></span><span class="line"><span class="cl">       <span class="o">[</span>-c CHNROUTE_FILE<span class="o">]</span> <span class="o">[</span>-s DNS<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span>
+</span></span><span class="line"><span class="cl">Forward DNS requests.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl">-l IPLIST_FILE        path to ip blacklist file
+</span></span><span class="line"><span class="cl">-c CHNROUTE_FILE      path to china route file
+</span></span><span class="line"><span class="cl">                      <span class="k">if</span> not specified, CHNRoute will be turned off
+</span></span><span class="line"><span class="cl">-d                    <span class="nb">enable</span> bi-directional CHNRoute filter
+</span></span><span class="line"><span class="cl">-y                    delay <span class="nb">time</span> <span class="k">for</span> suspects, default: 0.3
+</span></span><span class="line"><span class="cl">-b BIND_ADDR          address that listens, default: 127.0.0.1
+</span></span><span class="line"><span class="cl">-p BIND_PORT          port that listens, default: <span class="m">53</span>
+</span></span><span class="line"><span class="cl">-s DNS                DNS servers to use, default:
+</span></span><span class="line"><span class="cl">                      114.114.114.114,208.67.222.222:443,8.8.8.8
+</span></span><span class="line"><span class="cl">-m                    Using DNS compression pointer mutation
+</span></span><span class="line"><span class="cl">                      <span class="o">(</span>backlist and delaying would be disabled<span class="o">)</span>
+</span></span><span class="line"><span class="cl">-v                    verbose logging
+</span></span></code></pre></div><h4 id="sftp登录">SFTP登录</h4>
 <p>在将ipx文件上传到OpenWRT路由器上时，刚开始没有使用WinSCP，而且OpenWRT上也没有SFTP服务，所以是用Everything的HTTP服务器功能，然后在OpenWRT上用wget下载的。后来知道可以直接通过SFTP上传、下载文件后，就开始在OpenWRT上折腾了。</p>
 <h6 id="openwrt安装sftp">OpenWRT安装SFTP</h6>
 <p>安装及配置命令如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">opkg update
-opkg install vsftpd openssh-sftp-server
-/etc/init.d/vsftpd <span class="nb">enable</span>
-/etc/init.d/vsftpd start
-</code></pre></div><h6 id="md5sum-mismatch-错误">md5sum mismatch 错误</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">opkg update
+</span></span><span class="line"><span class="cl">opkg install vsftpd openssh-sftp-server
+</span></span><span class="line"><span class="cl">/etc/init.d/vsftpd <span class="nb">enable</span>
+</span></span><span class="line"><span class="cl">/etc/init.d/vsftpd start
+</span></span></code></pre></div><h6 id="md5sum-mismatch-错误">md5sum mismatch 错误</h6>
 <p>其中opkg在线安装openssh-sftp-server时出现了md5sum mismatch，无法安装，网上Google了一下，表示可能是linux内核不匹配导致的，解决方法是下载到本地，直接安装即可
 好吧，打开Everything的HTTP服务器，先下载到OpenWRT路由器上，然后手动安装成功。</p>
 <hr>
@@ -1071,11 +1224,11 @@ opkg install vsftpd openssh-sftp-server
 			<guid>http://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</guid>
 			<description>来由 已经一年多没有更新这个blog了，现在来写点什么吧。 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。
 最近突然想折腾了下，发现用Shadowsocks进行fanqiang比较快，下边就把经过写写吧：
- VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
+VPS架设Shadowsocks 选择Shadowsocks版本 Showsocks有好几种版本，Python, Golang, Nodejs, libev等，具体可以去官网看一下 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了shadowsocks-libev
 编译Shadowsocks 我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：
 git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-libev sudo apt-get install build-essential autoconf libtool libssl-dev ./configure &amp;amp;&amp;amp; make make install 配置Shadowsocks服务器端 vi /etc/shadowsocks-libev/config.json 具体格式如下：
-{ &amp;#34;server&amp;#34;:&amp;#34;my_server_ip&amp;#34;, &amp;#34;server_port&amp;#34;:8388, &amp;#34;local_port&amp;#34;:1080, &amp;#34;password&amp;#34;:&amp;#34;barfoo!&amp;#34;, &amp;#34;timeout&amp;#34;:600, &amp;#34;method&amp;#34;:&amp;#34;table&amp;#34; }  server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;quot;aes-256-cfb&amp;quot;  vi /etc/rc.local 添加以下自启动命令
-/usr/bin/ss-server -c /etc/shadowsocks-libev/config.</description>
+{ &amp;#34;server&amp;#34;:&amp;#34;my_server_ip&amp;#34;, &amp;#34;server_port&amp;#34;:8388, &amp;#34;local_port&amp;#34;:1080, &amp;#34;password&amp;#34;:&amp;#34;barfoo!&amp;#34;, &amp;#34;timeout&amp;#34;:600, &amp;#34;method&amp;#34;:&amp;#34;table&amp;#34; } server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6). server_port: 你的Shadowsocks服务器端口. local_port: 本地端口. password: 你的Shadowsocks服务器的账号密码. method: 你的Shadowsocks服务器采用的加密方式, &amp;ldquo;bf-cfb&amp;rdquo; , &amp;ldquo;aes-256-cfb&amp;rdquo; , &amp;ldquo;des-cfb&amp;rdquo; ,&amp;ldquo;rc4&amp;rdquo; , &amp;ldquo;table&amp;rdquo; 等等，建议使用&amp;quot;aes-256-cfb&amp;quot; vi /etc/rc.local 添加以下自启动命令
+/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json 保存退出即可</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>已经一年多没有更新这个blog了，现在来写点什么吧。
 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。</p>
@@ -1088,43 +1241,43 @@ git clone https://github.com/shadowsocks/shadowsocks-libev.git cd shadowsocks-li
 因为说libev版本的占用内存较小，方便在我的VPS上部署，所以我选择了<a href="https://github.com/shadowsocks/shadowsocks-libev">shadowsocks-libev</a></p>
 <h6 id="编译shadowsocks">编译Shadowsocks</h6>
 <p>我是直接通过git在官网上下载最新的包在Debian的VPS上进行编译的，具体如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">git clone https://github.com/shadowsocks/shadowsocks-libev.git
-<span class="nb">cd</span> shadowsocks-libev
-sudo apt-get install build-essential autoconf libtool libssl-dev
-./configure <span class="o">&amp;&amp;</span> make
-make install
-</code></pre></div><h6 id="配置shadowsocks服务器端">配置Shadowsocks服务器端</h6>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/shadowsocks-libev/config.json
-</code></pre></div><p>具体格式如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="o">{</span>
-    <span class="s2">&#34;server&#34;</span>:<span class="s2">&#34;my_server_ip&#34;</span>,
-    <span class="s2">&#34;server_port&#34;</span>:8388,
-    <span class="s2">&#34;local_port&#34;</span>:1080,
-    <span class="s2">&#34;password&#34;</span>:<span class="s2">&#34;barfoo!&#34;</span>,
-    <span class="s2">&#34;timeout&#34;</span>:600,
-    <span class="s2">&#34;method&#34;</span>:<span class="s2">&#34;table&#34;</span>
-<span class="o">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/shadowsocks/shadowsocks-libev.git
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> shadowsocks-libev
+</span></span><span class="line"><span class="cl">sudo apt-get install build-essential autoconf libtool libssl-dev
+</span></span><span class="line"><span class="cl">./configure <span class="o">&amp;&amp;</span> make
+</span></span><span class="line"><span class="cl">make install
+</span></span></code></pre></div><h6 id="配置shadowsocks服务器端">配置Shadowsocks服务器端</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/shadowsocks-libev/config.json
+</span></span></code></pre></div><p>具体格式如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;server&#34;</span>:<span class="s2">&#34;my_server_ip&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;server_port&#34;</span>:8388,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;local_port&#34;</span>:1080,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;password&#34;</span>:<span class="s2">&#34;barfoo!&#34;</span>,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;timeout&#34;</span>:600,
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;method&#34;</span>:<span class="s2">&#34;table&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><ul>
 <li>server: 你的Shadowsocks服务器的IP地址 (IPv4/IPv6).</li>
 <li>server_port: 你的Shadowsocks服务器端口.</li>
 <li>local_port: 本地端口.</li>
 <li>password: 你的Shadowsocks服务器的账号密码.</li>
 <li>method: 你的Shadowsocks服务器采用的加密方式, &ldquo;bf-cfb&rdquo; , &ldquo;aes-256-cfb&rdquo; , &ldquo;des-cfb&rdquo; ,&ldquo;rc4&rdquo; , &ldquo;table&rdquo; 等等，建议使用&quot;aes-256-cfb&quot;</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">vi /etc/rc.local
-</code></pre></div><p>添加以下自启动命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json
-</code></pre></div><p>保存退出即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">vi /etc/rc.local
+</span></span></code></pre></div><p>添加以下自启动命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json
+</span></span></code></pre></div><p>保存退出即可</p>
 <p>如果希望加入udp转发功能(enable udprelay mode)，用以搭建DNS转发线路，启动时需要加上-u参数，似乎目前只有shadowsocks-libev有该功能
 即添加以下自启动命令</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u
-</code></pre></div><p>保存退出即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">/usr/bin/ss-server -c /etc/shadowsocks-libev/config.json -u
+</span></span></code></pre></div><p>保存退出即可</p>
 <p>由于shadowsocks-libev不支持多端口，多用户，如果多人使用的话，需开多个实例，每一个config.json使用不同端口、密码即可
 官方示例如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">ss-server -c config1.json -f pid1
-ss-server -c config2.json -f pid2
-ss-server -c config3.json -f pid3
-</code></pre></div><h6 id="配置shadowsocks客户端">配置Shadowsocks客户端</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ss-server -c config1.json -f pid1
+</span></span><span class="line"><span class="cl">ss-server -c config2.json -f pid2
+</span></span><span class="line"><span class="cl">ss-server -c config3.json -f pid3
+</span></span></code></pre></div><h6 id="配置shadowsocks客户端">配置Shadowsocks客户端</h6>
 <p>可以直接从官网上推荐的各平台<a href="http://shadowsocks.org/en/download/clients.html">clients</a>选择自己需要的客户端
 我选择的是<a href="https://github.com/shadowsocks/shadowsocks-csharp">shadowsocks-csharp</a>
 最新的release可以在<a href="https://github.com/shadowsocks/shadowsocks-csharp/releases">这里</a>下载
@@ -1162,25 +1315,26 @@ ss-server -c config3.json -f pid3
 src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages dest root / dest ram /tmp lists_dir ext /var/opkg-lists option overlay_root /overlay arch all 100 arch ralink 200 arch ramips 300 arch ramips_24kec 400 这样就解决了软件兼容性的问题，但是前文fanqiang with openwrt+vps里面提到的&amp;quot;input/output error&amp;quot;问题仍然没有解决。遂升起了自己编译的念头。
 源代码编译 要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。 于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&amp;hellip; 于是到达官网选择i386架构、xfce界面的debian-7.6.0-i386-xfce-CD-1.iso。 通过UltraISO写入到U盘，然后安装到硬盘上，OK。
 编译源代码 这个痛苦的过程不想说了 主要是下载Debian上的编译支撑工具，然后通过以下说明进行编译
- OpenWrt Buildroot - 安装 OpenWrt Buildroot - 使用说明 最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。  Image Builder编译 从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：
-*Image Generator (Image Builder) 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。 命令如下：</description>
+OpenWrt Buildroot - 安装 OpenWrt Buildroot - 使用说明 最终结果是，我从下午编译到晚上，还没有编译完成，于是让其继续。第二天起来后，发现网络断了，编译失败。 Image Builder编译 从头开始的自行编译实在hold不住，于是就考虑其它方式，由于OpenWrt的编译选项中，可以将结果进行打包给其它人使用，官网上也有相应的打包的tar.gz2文件可以下载，也就是Image Builder的形式。考虑用它实现，说明如下：
+*Image Generator (Image Builder) 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。 命令如下：
+make image PROFILE=HG255D PACKAGES=&amp;#34;6in4 6rd 6to4 aria2 arptables badblocks base-files bind-dig bind-libs blkid block-mount busybox cfdisk chat comgt coreutils curl ddns-scripts dnsmasq dnsmasq-full dropbear e2fsprogs ebtables ebtables-utils etherwake fdisk firewall hd-idle ip iptables iptables-mod-account iptables-mod-chaos iptables-mod-condition iptables-mod-conntrack-extra iptables-mod-extra iptables-mod-filter iptables-mod-geoip iptables-mod-hashlimit iptables-mod-ipmark iptables-mod-ipopt iptables-mod-ipp2p iptables-mod-iprange iptables-mod-led iptables-mod-length2 iptables-mod-logmark iptables-mod-nat-extra iptables-mod-sysrq iptables-mod-tee iptables-mod-u32 iptables-mod-ulog iwinfo jshn kernel kmod-arptables kmod-button-hotplug kmod-crypto-arc4 kmod-crypto-ecb kmod-crypto-hash kmod-crypto-sha1 kmod-ebtables kmod-fs-exportfs kmod-fs-ext4 kmod-fs-nfs kmod-fs-nfs-common kmod-fs-ntfs kmod-fs-vfat kmod-fs-xfs kmod-fuse kmod-gpio-dev kmod-gre kmod-ifb kmod-input-core kmod-input-gpio-keys-polled kmod-input-polldev kmod-ipt-account kmod-ipt-chaos kmod-ipt-compat-xtables kmod-ipt-condition kmod-ipt-conntrack kmod-ipt-conntrack-extra kmod-ipt-core kmod-ipt-delude kmod-ipt-filter kmod-ipt-geoip kmod-ipt-hashlimit kmod-ipt-ipmark kmod-ipt-ipopt kmod-ipt-ipp2p kmod-ipt-iprange kmod-ipt-led kmod-ipt-length2 kmod-ipt-logmark kmod-ipt-nat kmod-ipt-nat-extra kmod-ipt-nathelper kmod-ipt-nathelper-extra kmod-ipt-sysrq kmod-ipt-tarpit kmod-ipt-tee kmod-ipt-u32 kmod-ipt-ulog kmod-iptunnel4 kmod-iptunnel6 kmod-ipv6 kmod-l2tp kmod-leds-gpio kmod-ledtrig-default-on kmod-ledtrig-gpio kmod-ledtrig-heartbeat kmod-ledtrig-morse kmod-ledtrig-netdev kmod-ledtrig-netfilter kmod-ledtrig-timer kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-lib-crc16 kmod-lib-textsearch kmod-macvlan kmod-mppe kmod-nls-base kmod-nls-cp437 kmod-nls-iso8859-1 kmod-nls-utf8 kmod-ppp kmod-pppoe kmod-pppol2tp kmod-pppox kmod-pptp kmod-sched kmod-sched-core kmod-scsi-core kmod-scsi-generic kmod-sit kmod-tun kmod-usb-acm kmod-usb-core kmod-usb-ohci kmod-usb-printer kmod-usb-rt305x-dwc_otg kmod-usb-serial kmod-usb-serial-ftdi kmod-usb-serial-option kmod-usb-serial-pl2303 kmod-usb-serial-qualcomm kmod-usb-serial-wwan kmod-usb-storage kmod-usb-storage-extras kmod-usb-uhci libblkid libblobmsg-json libc libcurl libdaemon libext2fs libffi libgcc libgd libip4tc libip6tc libiwinfo libiwinfo-lua libjpeg libjson-c liblua libncurses libnfnetlink libnl-tiny libopenssl libpcap libpng libpthread librt libstdcpp libubox libubus libubus-lua libuci libuci-lua libuuid libxml2 libxtables lua luci luci-app-commands luci-app-ddns luci-app-firewall luci-app-hd-idle luci-app-ntpc luci-app-p910nd luci-app-qos luci-app-radvd luci-app-samba luci-app-upnp luci-app-vnstat luci-app-wol luci-i18n-chinese luci-i18n-english luci-lib-nixio luci-proto-3g luci-proto-ppp mjpg-streamer ntpclient pdnsd ppp ppp-mod-pppoe ppp-mod-pptp python python-mini resolveip restorefactory ser2net transmission-daemon transmission-remote transmission-web uci uhttpd unbound vsftpd wget wireless-tools zlib&amp;#34; 结果提示出错，原因是，官网的打包是64bit的，而我安装的是i386架构的Debian。 OK，重新下载后安装，结果老版本的UltraISO无法读入AMD64的ISO包，仅有一个目录，400多KB大小，更新UltraISO到较新的9.</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>这几天在折腾OpenWrt，前文<a href="http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/">fanqiang with openwrt+vps</a>里说过，	我用的是PandoraBox最新编译的版本，但是其内置的<a href="http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages/">packages</a>里面很多软件没有编译，如Python等。而直接换用官方的<a href="http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages/">packages</a>，会提示兼容性问题，无法直接使用。
 从网络Google了一下，可以两个同时使用。</p>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages
-src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages
-
-dest root /
-dest ram /tmp
-lists_dir ext /var/opkg-lists
-option overlay_root /overlay
-
-arch all <span class="m">100</span>
-arch ralink <span class="m">200</span>
-arch ramips <span class="m">300</span>
-arch ramips_24kec <span class="m">400</span>
-</code></pre></div><p>这样就解决了软件兼容性的问题，但是前文<a href="http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/">fanqiang with openwrt+vps</a>里面提到的&quot;input/output error&quot;问题仍然没有解决。遂升起了自己编译的念头。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">src/gz attitude_adjustment http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages
+</span></span><span class="line"><span class="cl">src/gz pandorabox http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">dest root /
+</span></span><span class="line"><span class="cl">dest ram /tmp
+</span></span><span class="line"><span class="cl">lists_dir ext /var/opkg-lists
+</span></span><span class="line"><span class="cl">option overlay_root /overlay
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">arch all <span class="m">100</span>
+</span></span><span class="line"><span class="cl">arch ralink <span class="m">200</span>
+</span></span><span class="line"><span class="cl">arch ramips <span class="m">300</span>
+</span></span><span class="line"><span class="cl">arch ramips_24kec <span class="m">400</span>
+</span></span></code></pre></div><p>这样就解决了软件兼容性的问题，但是前文<a href="http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/">fanqiang with openwrt+vps</a>里面提到的&quot;input/output error&quot;问题仍然没有解决。遂升起了自己编译的念头。</p>
 <h4 id="源代码编译">源代码编译</h4>
 <p>要从源代码编译OpenWrt，需要有Linux环境，主要好像是因为Windows下大小写不区分，可能导致异常问题。
 于是选了Debian系统，主要是玩OpenWrt时，又淘了一个树莓派（Raspberry Pi）玩，而它的默认系统就是基于Debian，同时最早玩的Ubuntu也是基于Debian的，买的VPS也是基于Debian系统的，so&hellip;
@@ -1199,15 +1353,15 @@ arch ramips_24kec <span class="m">400</span>
 <p>*<a href="http://wiki.openwrt.org/zh-cn/doc/howto/obtain.firmware.generate">Image Generator (Image Builder)</a>
 下载、解压缩，然后看需要的包，我是将PandoraBox里面所有的包都包含了，然后加上了Python、DNS工具包等。
 命令如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">make image <span class="nv">PROFILE</span><span class="o">=</span>HG255D <span class="nv">PACKAGES</span><span class="o">=</span><span class="s2">&#34;6in4 6rd 6to4 aria2 arptables badblocks base-files bind-dig bind-libs blkid block-mount busybox cfdisk chat comgt coreutils curl ddns-scripts dnsmasq dnsmasq-full dropbear e2fsprogs ebtables ebtables-utils etherwake fdisk firewall hd-idle ip iptables iptables-mod-account iptables-mod-chaos iptables-mod-condition iptables-mod-conntrack-extra iptables-mod-extra iptables-mod-filter iptables-mod-geoip iptables-mod-hashlimit iptables-mod-ipmark iptables-mod-ipopt iptables-mod-ipp2p iptables-mod-iprange iptables-mod-led iptables-mod-length2 iptables-mod-logmark iptables-mod-nat-extra iptables-mod-sysrq iptables-mod-tee iptables-mod-u32 iptables-mod-ulog iwinfo jshn kernel kmod-arptables kmod-button-hotplug kmod-crypto-arc4 kmod-crypto-ecb kmod-crypto-hash kmod-crypto-sha1 kmod-ebtables kmod-fs-exportfs kmod-fs-ext4 kmod-fs-nfs kmod-fs-nfs-common kmod-fs-ntfs kmod-fs-vfat kmod-fs-xfs kmod-fuse kmod-gpio-dev kmod-gre kmod-ifb kmod-input-core kmod-input-gpio-keys-polled kmod-input-polldev kmod-ipt-account kmod-ipt-chaos kmod-ipt-compat-xtables kmod-ipt-condition kmod-ipt-conntrack kmod-ipt-conntrack-extra kmod-ipt-core kmod-ipt-delude kmod-ipt-filter kmod-ipt-geoip kmod-ipt-hashlimit kmod-ipt-ipmark kmod-ipt-ipopt kmod-ipt-ipp2p kmod-ipt-iprange kmod-ipt-led kmod-ipt-length2 kmod-ipt-logmark kmod-ipt-nat kmod-ipt-nat-extra kmod-ipt-nathelper kmod-ipt-nathelper-extra kmod-ipt-sysrq kmod-ipt-tarpit kmod-ipt-tee kmod-ipt-u32 kmod-ipt-ulog kmod-iptunnel4 kmod-iptunnel6 kmod-ipv6 kmod-l2tp kmod-leds-gpio kmod-ledtrig-default-on kmod-ledtrig-gpio kmod-ledtrig-heartbeat kmod-ledtrig-morse kmod-ledtrig-netdev kmod-ledtrig-netfilter kmod-ledtrig-timer kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-lib-crc16 kmod-lib-textsearch kmod-macvlan kmod-mppe kmod-nls-base kmod-nls-cp437 kmod-nls-iso8859-1 kmod-nls-utf8 kmod-ppp kmod-pppoe kmod-pppol2tp kmod-pppox kmod-pptp kmod-sched kmod-sched-core kmod-scsi-core kmod-scsi-generic kmod-sit kmod-tun kmod-usb-acm kmod-usb-core kmod-usb-ohci kmod-usb-printer kmod-usb-rt305x-dwc_otg kmod-usb-serial kmod-usb-serial-ftdi kmod-usb-serial-option kmod-usb-serial-pl2303 kmod-usb-serial-qualcomm kmod-usb-serial-wwan kmod-usb-storage kmod-usb-storage-extras kmod-usb-uhci libblkid libblobmsg-json libc libcurl libdaemon libext2fs libffi libgcc libgd libip4tc libip6tc libiwinfo libiwinfo-lua libjpeg libjson-c liblua libncurses libnfnetlink libnl-tiny libopenssl libpcap libpng libpthread librt libstdcpp libubox libubus libubus-lua libuci libuci-lua libuuid libxml2 libxtables lua luci luci-app-commands luci-app-ddns luci-app-firewall luci-app-hd-idle luci-app-ntpc luci-app-p910nd luci-app-qos luci-app-radvd luci-app-samba luci-app-upnp luci-app-vnstat luci-app-wol luci-i18n-chinese luci-i18n-english luci-lib-nixio luci-proto-3g luci-proto-ppp mjpg-streamer ntpclient pdnsd ppp ppp-mod-pppoe ppp-mod-pptp python python-mini resolveip restorefactory ser2net transmission-daemon transmission-remote transmission-web uci uhttpd unbound vsftpd wget wireless-tools zlib&#34;</span>
-</code></pre></div><p>结果提示出错，原因是，官网的打包是64bit的，而我安装的是i386架构的Debian。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">make image <span class="nv">PROFILE</span><span class="o">=</span>HG255D <span class="nv">PACKAGES</span><span class="o">=</span><span class="s2">&#34;6in4 6rd 6to4 aria2 arptables badblocks base-files bind-dig bind-libs blkid block-mount busybox cfdisk chat comgt coreutils curl ddns-scripts dnsmasq dnsmasq-full dropbear e2fsprogs ebtables ebtables-utils etherwake fdisk firewall hd-idle ip iptables iptables-mod-account iptables-mod-chaos iptables-mod-condition iptables-mod-conntrack-extra iptables-mod-extra iptables-mod-filter iptables-mod-geoip iptables-mod-hashlimit iptables-mod-ipmark iptables-mod-ipopt iptables-mod-ipp2p iptables-mod-iprange iptables-mod-led iptables-mod-length2 iptables-mod-logmark iptables-mod-nat-extra iptables-mod-sysrq iptables-mod-tee iptables-mod-u32 iptables-mod-ulog iwinfo jshn kernel kmod-arptables kmod-button-hotplug kmod-crypto-arc4 kmod-crypto-ecb kmod-crypto-hash kmod-crypto-sha1 kmod-ebtables kmod-fs-exportfs kmod-fs-ext4 kmod-fs-nfs kmod-fs-nfs-common kmod-fs-ntfs kmod-fs-vfat kmod-fs-xfs kmod-fuse kmod-gpio-dev kmod-gre kmod-ifb kmod-input-core kmod-input-gpio-keys-polled kmod-input-polldev kmod-ipt-account kmod-ipt-chaos kmod-ipt-compat-xtables kmod-ipt-condition kmod-ipt-conntrack kmod-ipt-conntrack-extra kmod-ipt-core kmod-ipt-delude kmod-ipt-filter kmod-ipt-geoip kmod-ipt-hashlimit kmod-ipt-ipmark kmod-ipt-ipopt kmod-ipt-ipp2p kmod-ipt-iprange kmod-ipt-led kmod-ipt-length2 kmod-ipt-logmark kmod-ipt-nat kmod-ipt-nat-extra kmod-ipt-nathelper kmod-ipt-nathelper-extra kmod-ipt-sysrq kmod-ipt-tarpit kmod-ipt-tee kmod-ipt-u32 kmod-ipt-ulog kmod-iptunnel4 kmod-iptunnel6 kmod-ipv6 kmod-l2tp kmod-leds-gpio kmod-ledtrig-default-on kmod-ledtrig-gpio kmod-ledtrig-heartbeat kmod-ledtrig-morse kmod-ledtrig-netdev kmod-ledtrig-netfilter kmod-ledtrig-timer kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-lib-crc16 kmod-lib-textsearch kmod-macvlan kmod-mppe kmod-nls-base kmod-nls-cp437 kmod-nls-iso8859-1 kmod-nls-utf8 kmod-ppp kmod-pppoe kmod-pppol2tp kmod-pppox kmod-pptp kmod-sched kmod-sched-core kmod-scsi-core kmod-scsi-generic kmod-sit kmod-tun kmod-usb-acm kmod-usb-core kmod-usb-ohci kmod-usb-printer kmod-usb-rt305x-dwc_otg kmod-usb-serial kmod-usb-serial-ftdi kmod-usb-serial-option kmod-usb-serial-pl2303 kmod-usb-serial-qualcomm kmod-usb-serial-wwan kmod-usb-storage kmod-usb-storage-extras kmod-usb-uhci libblkid libblobmsg-json libc libcurl libdaemon libext2fs libffi libgcc libgd libip4tc libip6tc libiwinfo libiwinfo-lua libjpeg libjson-c liblua libncurses libnfnetlink libnl-tiny libopenssl libpcap libpng libpthread librt libstdcpp libubox libubus libubus-lua libuci libuci-lua libuuid libxml2 libxtables lua luci luci-app-commands luci-app-ddns luci-app-firewall luci-app-hd-idle luci-app-ntpc luci-app-p910nd luci-app-qos luci-app-radvd luci-app-samba luci-app-upnp luci-app-vnstat luci-app-wol luci-i18n-chinese luci-i18n-english luci-lib-nixio luci-proto-3g luci-proto-ppp mjpg-streamer ntpclient pdnsd ppp ppp-mod-pppoe ppp-mod-pptp python python-mini resolveip restorefactory ser2net transmission-daemon transmission-remote transmission-web uci uhttpd unbound vsftpd wget wireless-tools zlib&#34;</span>
+</span></span></code></pre></div><p>结果提示出错，原因是，官网的打包是64bit的，而我安装的是i386架构的Debian。
 OK，重新下载后安装，结果老版本的UltraISO无法读入AMD64的ISO包，仅有一个目录，400多KB大小，更新UltraISO到较新的9.5版本，问题解决。
 重新安装Debian，配置编译工具，下载Image Builder包，重新编译，结果没有bin文件，Google后晓得，原来需要更改以下Image文件中的内容:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">../OpenWrt-ImageBuilder-ramips_rt305x-for-linux-x86_64/target/linux/ramips/imag/Makefile
-</code></pre></div><p>查找HG255D字符串，把对应的注释#符号删除，重新编译</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#Image/Build/Profile/HG255D=$(call BuildFirmware/Default16M/$(1),$(1),hg255d,HG255D)</span>
-<span class="c1">#	$(call Image/Build/Profile/HG255D,$(1))</span>
-</code></pre></div><p>OK，固件“.bin”文件产生了
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">../OpenWrt-ImageBuilder-ramips_rt305x-for-linux-x86_64/target/linux/ramips/imag/Makefile
+</span></span></code></pre></div><p>查找HG255D字符串，把对应的注释#符号删除，重新编译</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1">#Image/Build/Profile/HG255D=$(call BuildFirmware/Default16M/$(1),$(1),hg255d,HG255D)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#	$(call Image/Build/Profile/HG255D,$(1))</span>
+</span></span></code></pre></div><p>OK，固件“.bin”文件产生了
 写入到路由器中，可以正常的拨号上网了~</p>
 <h6 id="遗留问题">遗留问题</h6>
 <p>trunk版本和RC1版本的OpenWrt预编译包，PPTP VPN无法正常拨通，提示错误，暂时解决不了，于是又退回PandoraBox版本了，而PandoraBox版本无法安装比较大的软件包，还是出现&quot;input/output error&quot;错误，使用jsff2make也没有用。
@@ -1224,18 +1378,18 @@ PS:最终方案是，HG255D解决DNS污染问题，本地电脑进行静态路�
 			
 			<guid>http://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</guid>
 			<description>来由 在上一篇《fanqiang with vpn+chnroutes》中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！
- 找合适的VPS 由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。 开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃 又找到了RamNode，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。 它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。 由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~
+找合适的VPS 由于一个人用，不需要太好的，稳定，延时一般就OK，最好比较实惠。 开始时选择了年付$3.99的搬瓦工bandwagonhost（太便宜了啊），但是ping包时，发现丢包不是一般的多，遂放弃 又找到了RamNode，有个年付$12的套餐，而且，然后用5.8折的优惠码，一年不到100￥，还是可以接受的，遂成交。 它最大的好处就是，丢包低于1%，而且有西雅图这种西海岸的机房，对于大陆来说，延时200ms左右，感觉还不错。 由于RamNode只支持PayPal，所以最终也了解了PayPal支持信用卡或者62开头的银联卡（开通网上银行），即可以支付了~
 使用VPS架设VPN 这个就不赘述了，网上一搜一大堆，我选择的操作系统是Debian：
-  乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》
-  郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》
-  howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》
-  波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》 在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：
-  永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》
-  路由器+VPN 淘OpenWrt路由器 可以独享VPN上网后，还是不满足啊，因为家里2台电脑，手机还想无线上网，一台一台指定好费事啊 上一篇《fanqiang with vpn+chnroutes》，最后提到，可以用开源的路由器固件，搞定路由器上VPN的问题。 Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好的Huawei HG255d，基本在￥40-￥60之间。CPU为Ralink RT3052，FLASH容量为16MB，内存容量为32MB DDR。我淘的是硬改内存64MB+散热片，刷了不死uboot的，毕竟没那么多精力折腾。
+乔大海的《BuyVM OpenVZ VPS Debian安装PPTP VPN》
+郭高兴的《VPS上安装PPTP（Xen+OpenVZ）完整教程》
+howtogeek的《How to Setup a VPN (PPTP) Server on Debian Linux》
+波斯马的《Linux（VPS+Debian）搭建配置VPN（PPTP）服务》 在设置完VPN后，要注意MTU值的问题，否则部分网页打开的很慢或有问题：
+永远的UNIX的《Fedora core 2下建立Poptop服务器以及常见问题》
+路由器+VPN 淘OpenWrt路由器 可以独享VPN上网后，还是不满足啊，因为家里2台电脑，手机还想无线上网，一台一台指定好费事啊 上一篇《fanqiang with vpn+chnroutes》，最后提到，可以用开源的路由器固件，搞定路由器上VPN的问题。 Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好的Huawei HG255d，基本在￥40-￥60之间。CPU为Ralink RT3052，FLASH容量为16MB，内存容量为32MB DDR。我淘的是硬改内存64MB+散热片，刷了不死uboot的，毕竟没那么多精力折腾。
 刷新最新OpenWrt固件 买回来后，淘宝店主刷新的是比较老的OpenWrt-DreamBox 20120828版本，对应的OpenWrt-DreamBox的源软件包地址已经改变，没法下载新软件，就开始折腾，找了半天，由于DreamBox版本比较老，所以换成了比较新的PandoraBox版本，可以到http://downloads.openwrt.org.cn/PandoraBox/HuaWei_HG255D/ 下载编译的最新固件，我选择的是最新的20140505版。 不得不说，有了uboot，可以一键刷机，还是比较放心的进行折腾的。在找到目前的固件前，刷新了不少版本，但都没啥问题。
 设置路由器+VPN+chnroutes静态路由 这个根据各人情况都不相同，总而言之，最终搞定。
 存在问题 一个是VPN拨号后，需要手动添加一下静态路由，不过是自己的VPS架设的VPN，想待多久就待多久，除了掉线，一般也不会下线滴。 另一个是，可能淘的Huawei HG255d有问题，路由器在对文件进行操作时，折腾一段时间后，会出现&amp;quot;input/output error&amp;quot;问题，怀疑是硬改导致的？ 解决方案就是路由器关电重启解决，不过除了装软件，折腾东东，一般不影响使用，所以也不准备找淘宝店主问这个问题了。
- 总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~</description>
+总之，可以开始开心快乐的自由、随意的访问Internet了，so happy~</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>在上一篇<a href="http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes">《fanqiang with vpn+chnroutes》</a>中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！</p>
 <!-- raw HTML omitted -->
@@ -1292,14 +1446,14 @@ Google了很长时间，锁定了OpenWrt，路由器选择淘宝上别人刷好�
 			
 			<guid>http://nivrrex.github.io/posts/fanqiang-with-vpn&#43;chnroutes/</guid>
 			<description>来由 用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。 翻来覆去的太麻烦。只好换招了。
- VPN 这两天主要做的就是先找到一些免费的VPN，然后通过VPN直接翻墙。不用再去设置goagent的代理了。缺点是所有流量通过VPN走，国内网站访问慢，但是可以通过路由表调整，下面会介绍。 随便搜索了下，免费的VPN还是很多的，但是免费的午餐，延时、流量等需要能忍受啊。幸好需要访问的国外网站不是很多~
+VPN 这两天主要做的就是先找到一些免费的VPN，然后通过VPN直接翻墙。不用再去设置goagent的代理了。缺点是所有流量通过VPN走，国内网站访问慢，但是可以通过路由表调整，下面会介绍。 随便搜索了下，免费的VPN还是很多的，但是免费的午餐，延时、流量等需要能忍受啊。幸好需要访问的国外网站不是很多~
 VPN推荐网站:
- 免费VPN推荐网 免费VPN资源网  网友推荐:
- rsouls《国内最给力五大免费VPN商家》 oovpn的《十大免费翻墙VPN代理软件推荐》 zq530885040的《八个提供免费VPN账号的网站》   chnroutes 但是VPN的最大缺点是，所有流量全部从VPN走了，这样访问国内网站也从国外绕一圈，自找不自在啊。 幸好，网上的大拿们，开发了一个针对国内IP地址段的路由更新表，通过批处理配置路由表等方式，将国内IP指向本机网关，避免VPN绕行，具体项目在：
- chnroutes 每日更新路由下载  网上其他人的使用  MacTalk的《VPN – 长城内外，惟余莽莽》 markzhang的《Chnroutes的使用（Mac OS X Mavericks）》 ratazzi的《优化 VPN 和 chnroutes》   路由器自动配置 为了避免家里每台电脑都要设置，又有人考虑，直接设置路由器，然后自动fq。 只能说，人的懒惰是天生的啊。 主要思想是将路由器固件更新为开源固件
- DD-WRT OpenWrt Tomato  然后通过
- autoddvpn 进行自动的VPN的FQ方案实施。  具体参考的有：
- 北落师门的《在wr841n上刷openwrt并使用openvpn自动VPN》 错乱の年轮的《DD-WRT+Autoddvpn+OpenVPN=智能翻墙路由》 hauy的《配置DD-WRT通过autoddvpn的graceMode自动翻墙(PPTP)》 ntcn的《DD-WRT搭配autoddvpn全自动FQ配置精简教程》 因为我的路由器不匹配，所以没有实验。   通过VPN+chnroutes，目前已经可以轻松的上Goolge、Twitter、Facebook等网站了，挺好的~</description>
+免费VPN推荐网 免费VPN资源网 网友推荐:
+rsouls《国内最给力五大免费VPN商家》 oovpn的《十大免费翻墙VPN代理软件推荐》 zq530885040的《八个提供免费VPN账号的网站》 chnroutes 但是VPN的最大缺点是，所有流量全部从VPN走了，这样访问国内网站也从国外绕一圈，自找不自在啊。 幸好，网上的大拿们，开发了一个针对国内IP地址段的路由更新表，通过批处理配置路由表等方式，将国内IP指向本机网关，避免VPN绕行，具体项目在：
+chnroutes 每日更新路由下载 网上其他人的使用 MacTalk的《VPN – 长城内外，惟余莽莽》 markzhang的《Chnroutes的使用（Mac OS X Mavericks）》 ratazzi的《优化 VPN 和 chnroutes》 路由器自动配置 为了避免家里每台电脑都要设置，又有人考虑，直接设置路由器，然后自动fq。 只能说，人的懒惰是天生的啊。 主要思想是将路由器固件更新为开源固件
+DD-WRT OpenWrt Tomato 然后通过
+autoddvpn 进行自动的VPN的FQ方案实施。 具体参考的有：
+北落师门的《在wr841n上刷openwrt并使用openvpn自动VPN》 错乱の年轮的《DD-WRT+Autoddvpn+OpenVPN=智能翻墙路由》 hauy的《配置DD-WRT通过autoddvpn的graceMode自动翻墙(PPTP)》 ntcn的《DD-WRT搭配autoddvpn全自动FQ配置精简教程》 因为我的路由器不匹配，所以没有实验。 通过VPN+chnroutes，目前已经可以轻松的上Goolge、Twitter、Facebook等网站了，挺好的~</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。
 翻来覆去的太麻烦。<strong>只好换招了</strong>。</p>
@@ -1369,9 +1523,9 @@ VPN推荐网站:
 			<guid>http://nivrrex.github.io/posts/fanqiang-with-goagent/</guid>
 			<description>来由 最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。 刚开始以为一段时间就OK了，就用了临时性的解决方案。
 比如：
- 使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐   goagent设置 这个网上教程很多，随便搜索都有好几个，如：
- 猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程   软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是：
- 1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&amp;gt; Preferences -&amp;gt; Advanced -&amp;gt; Network -&amp;gt; Proxy Servers -&amp;gt; &amp;ldquo;Use automatic proxy configuration&amp;rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。   结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。</description>
+使用Bing代替。 搜索效果相比Google还有差距 使用StartPage代替。 相比原版，存在部分结果搜索不到的问题 直接用Google IP进行搜索。 可以使用的IP被飞快的封锁 使用网上的免翻墙镜像网站greatfire。 是个不错的解决方案，但是怕被封锁后还要重新设置 使用网上的免费VPN免费VPN资源。 免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢 使用google的GAE平台的goagent。 强烈推荐 goagent设置 这个网上教程很多，随便搜索都有好几个，如：
+猫理会的goagent教程详细版 软矿的GoAgent图文设置教程 海盗船博客的2014最新翻墙方法之goagent翻墙教程 软件设置 在搭建好goagent后，就是如何使用它配合浏览器上网了 我常用的浏览器有IE、猎豹、Opera 为统一解决，我的方法是：
+1、猎豹浏览器中安装插件SwitchySharp。然后建立规则，默认直接连接，然后设置需要翻墙的网站清单。设置成功后，导出PAC文件。 2、IE中设置代理服务器，勾选代理服务器，“127.0.0.1 8087”。将“使用自动配置脚本”勾选，然后按格式填入“file://C:\GoAgent\SwitchyPac.pac”。如果有代理后出问题的网站，选“高级”，将对应网站填入“例外”区域内。 3、Opera浏览器：Tools -&amp;gt; Preferences -&amp;gt; Advanced -&amp;gt; Network -&amp;gt; Proxy Servers -&amp;gt; &amp;ldquo;Use automatic proxy configuration&amp;rdquo;，填写“file://C:\GoAgent\SwitchyPac.pac”。 4、IE和Opera都需要安装goagent的证书，否则访问时会出错。 5、可以在这里订阅部分数据。 结 堵不如疏，闭关锁国只能让自己更落伍。 人民总有办法得到自己想知道的东西的，而且通过这种方式得到的信息，反而会倾向于相信。 大多数人使用Google只是想查找自己想要的知识。</description>
 			<content type="html"><![CDATA[<h4 id="来由">来由</h4>
 <p>最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。
 刚开始以为一段时间就OK了，就用了临时性的解决方案。</p>
@@ -1420,11 +1574,11 @@ VPN推荐网站:
 			
 			<guid>http://nivrrex.github.io/posts/some-problems-for-golang-excel-update/</guid>
 			<description>趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见这里 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。
- 首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
- GOPATH设置 golang有几个关键环境变量，需要进行设置
- GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）  我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
-mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import  Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
- 小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。</description>
+首字母大小写导致无法外部调用 Golang的package中的函数或者，首字母大写是Public，外部可见的。首字母小写是Private，仅限内部访问。写的package里的struct的内部属性就是因为这个原因，无法被外部调用。这是Golang为了简化关键字，做的一项规定。
+GOPATH设置 golang有几个关键环境变量，需要进行设置
+GOROOT : Golang的安装目录，默认为C:\Go GOPATH : 用来指定在$GOROOT之外的各种外部package，包含src和pkg文件的源目录 GOBIN : Golang安装目录下的bin目录，默认为C:\Go\bin GOOS : 目标平台（编译后的目标平台）的操作系统（darwin、freebsd、linux、windows） GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm） 我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^
+mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\go\import Go build无法生成文件 这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^
+小结 归根结底，还都是自己对Golang相关语法及工具链不熟悉的问题。 Golang是个好东西，就是太年轻，好多东西需要自己重新造轮子，而且它有着自己的适用范围。 日常的自动化工作等问题的解决，还是用Ruby等成熟的脚本语言比较效率。</description>
 			<content type="html"><![CDATA[<p>趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见<a href="https://github.com/nivrrex/excel">这里</a>
 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。</p>
 <!-- raw HTML omitted -->
@@ -1442,11 +1596,11 @@ mkdir C:\Go\import mkdir C:\Go\import\src mkdir C:\Go\import\pkg set GOPATH=C:\g
 <li>GOARCH : 目标平台（编译后的目标平台）的处理器架构（386、amd64、arm）</li>
 </ul>
 <p>我就是没有好好设置GOPATH环境变量，结果默认为GOROOT，下载的package，在go build和go install后，无法被找到，还需要手动复制到GOROOT对应的目录下，结果我认为是Golang工具链的BUG －_－^</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Batch" data-lang="Batch"><span class="k">mkdir</span> C:\Go\import
-<span class="k">mkdir</span> C:\Go\import\src
-<span class="k">mkdir</span> C:\Go\import\pkg
-<span class="k">set</span> <span class="nv">GOPATH</span><span class="p">=</span>C:\go\import
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Batch" data-lang="Batch"><span class="line"><span class="cl"><span class="k">mkdir</span> C:\Go\import
+</span></span><span class="line"><span class="cl"><span class="k">mkdir</span> C:\Go\import\src
+</span></span><span class="line"><span class="cl"><span class="k">mkdir</span> C:\Go\import\pkg
+</span></span><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">GOPATH</span><span class="p">=</span>C:\go\import
+</span></span></code></pre></div><hr>
 <h4 id="go-build无法生成文件">Go build无法生成文件</h4>
 <p>这个属于我对Go工具链的不了解，Go build就是无法生成.a文件的，生成.a文件的是Go install－_－^</p>
 <hr>
@@ -1463,7 +1617,7 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 			<pubDate>Thu, 12 Jun 2014 22:32:51 +0800</pubDate>
 			
 			<guid>http://nivrrex.github.io/posts/commonly-used-software/</guid>
-			<description>开发工具 Python  Python Lang Python官方网站 Python PyPI Python packages的官方下载站点 Awesome Python Python框架，库，软件和资源的精选清单  Golang  Golang Downloads Golang官方网站 Golang Dev Golang开发者网站 Go Language Resources 非官方的Golang资源收集 Awesome Go Go框架，库和软件的精选清单  Nim  Nim Language Nim语言官方网站 Nim 中文社区 Nim语言中文社区 Nim Package Directory 官方的nimble资源收集 Awesome Nim 中文社区的Nim框架，库和软件的精选清单  Ruby  Ruby Lang Ruby官方网站 RubyInstaller for Windows Ruby的Windows安装打包  GCC MinGW  MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64  Tcc  Tiny C Compiler 极简的c语言编译器  经典软件 系统强化  Total Commander Windows下的资源管理工具 Listary Windows下的文件搜索和程序启动工具 Everthing 基于NTFS格式的快速搜索工具 ImDisk 虚拟磁盘工具 SoftPerfect RAM Disk 虚拟磁盘工具  系统美化  MacType Windows下的字体美化工具 Fences Windows下的图标分区优化工具  输入法  rimeime - 中州韻輸入法引擎 很好用的输入法工具，可配置功能较多  编辑器  SciTE 轻量级的程序编辑器 Sublime Text 跨平台、可扩展的程序编辑器 Notepad2 Mod Notepad的替代编辑器 Notepad3 Notepad2不更新后的替代编辑器  网络  shadowsocks-libev shadowsocks的c语言实现的服务器端,可布置在vps上使用 shadowsocks-windows shadowsocks的windows客户端，可自动更新GFWlist的PAC文件  </description>
+			<description>开发工具 Python Python Lang Python官方网站 Python PyPI Python packages的官方下载站点 Awesome Python Python框架，库，软件和资源的精选清单 Golang Golang Downloads Golang官方网站 Golang Dev Golang开发者网站 Go Language Resources 非官方的Golang资源收集 Awesome Go Go框架，库和软件的精选清单 Nim Nim Language Nim语言官方网站 Nim 中文社区 Nim语言中文社区 Nim Package Directory 官方的nimble资源收集 Awesome Nim 中文社区的Nim框架，库和软件的精选清单 Ruby Ruby Lang Ruby官方网站 RubyInstaller for Windows Ruby的Windows安装打包 GCC MinGW MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64 Tcc Tiny C Compiler 极简的c语言编译器 经典软件 系统强化 Total Commander Windows下的资源管理工具 Listary Windows下的文件搜索和程序启动工具 Everthing 基于NTFS格式的快速搜索工具 ImDisk 虚拟磁盘工具 SoftPerfect RAM Disk 虚拟磁盘工具 系统美化 MacType Windows下的字体美化工具 Fences Windows下的图标分区优化工具 输入法 rimeime - 中州韻輸入法引擎 很好用的输入法工具，可配置功能较多 编辑器 SciTE 轻量级的程序编辑器 Sublime Text 跨平台、可扩展的程序编辑器 Notepad2 Mod Notepad的替代编辑器 Notepad3 Notepad2不更新后的替代编辑器 网络 shadowsocks-libev shadowsocks的c语言实现的服务器端,可布置在vps上使用 shadowsocks-windows shadowsocks的windows客户端，可自动更新GFWlist的PAC文件 </description>
 			<content type="html"><![CDATA[<h2 id="开发工具">开发工具</h2>
 <h4 id="python">Python</h4>
 <ul>
@@ -1544,42 +1698,42 @@ Golang是个好东西，就是太年轻，好多东西需要自己重新造轮�
 			<guid>http://nivrrex.github.io/posts/hello-github/</guid>
 			<description>欢迎来到我的GitHub blog！
 这是我用Hexo编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。
- Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34; ssh -T git@github.com -i ./.ssh/id_rsa 更多命令可以到git - 简明指南去查看
- Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;#34;My New Post&amp;#34; hexo server hexo generate hexo deploy 更多文档可以到Hexo docs上查看</description>
+Git的一些基本命令 git config --global user.name &amp;#34;nivrrex&amp;#34; git config --global user.email nivrrex@gmail.com ssh-keygen -t rsa -C &amp;#34;nivrrex@gmail.com&amp;#34; ssh -T git@github.com -i ./.ssh/id_rsa 更多命令可以到git - 简明指南去查看
+Hexo的一些基本命令 npm install hexo-cli -g npm install hexo --save npm install hexo-generator-index --save npm install hexo-generator-archive --save npm install hexo-generator-category --save npm install hexo-generator-tag --save npm install hexo-generator-sitemap --save npm install hexo-generator-feed --save npm install hexo-renderer-ejs --save npm install hexo-renderer-stylus --save npm install hexo-renderer-marked --save npm install hexo-server --save npm install hexo-deployer-git --save hexo init hexo new [post] &amp;#34;My New Post&amp;#34; hexo server hexo generate hexo deploy 更多文档可以到Hexo docs上查看</description>
 			<content type="html"><![CDATA[<p>欢迎来到我的<a href="http://nivrrex.github.io/">GitHub blog</a>！</p>
 <p>这是我用<a href="http://hexo.io/">Hexo</a>编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。</p>
 <hr>
 <h4 id="git的一些基本命令">Git的一些基本命令</h4>
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nx">global</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="s2">&#34;nivrrex&#34;</span>
-<span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nx">global</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span> <span class="nx">nivrrex</span><span class="err">@</span><span class="nx">gmail</span><span class="p">.</span><span class="nx">com</span>
-
-<span class="nx">ssh</span><span class="o">-</span><span class="nx">keygen</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">rsa</span> <span class="o">-</span><span class="nx">C</span> <span class="s2">&#34;nivrrex@gmail.com&#34;</span>
-<span class="nx">ssh</span> <span class="o">-</span><span class="nx">T</span> <span class="nx">git</span><span class="err">@</span><span class="nx">github</span><span class="p">.</span><span class="nx">com</span> <span class="o">-</span><span class="nx">i</span> <span class="p">.</span><span class="o">/</span><span class="p">.</span><span class="nx">ssh</span><span class="o">/</span><span class="nx">id_rsa</span>
-</code></pre></div><p>更多命令可以到<a href="http://rogerdudler.github.io/git-guide/index.zh.html">git - 简明指南</a>去查看</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nx">global</span> <span class="nx">user</span><span class="p">.</span><span class="nx">name</span> <span class="s2">&#34;nivrrex&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">git</span> <span class="nx">config</span> <span class="o">--</span><span class="nx">global</span> <span class="nx">user</span><span class="p">.</span><span class="nx">email</span> <span class="nx">nivrrex</span><span class="err">@</span><span class="nx">gmail</span><span class="p">.</span><span class="nx">com</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">ssh</span><span class="o">-</span><span class="nx">keygen</span> <span class="o">-</span><span class="nx">t</span> <span class="nx">rsa</span> <span class="o">-</span><span class="nx">C</span> <span class="s2">&#34;nivrrex@gmail.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">ssh</span> <span class="o">-</span><span class="nx">T</span> <span class="nx">git</span><span class="err">@</span><span class="nx">github</span><span class="p">.</span><span class="nx">com</span> <span class="o">-</span><span class="nx">i</span> <span class="p">.</span><span class="o">/</span><span class="p">.</span><span class="nx">ssh</span><span class="o">/</span><span class="nx">id_rsa</span>
+</span></span></code></pre></div><p>更多命令可以到<a href="http://rogerdudler.github.io/git-guide/index.zh.html">git - 简明指南</a>去查看</p>
 <hr>
 <h4 id="hexo的一些基本命令">Hexo的一些基本命令</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">cli</span> <span class="o">-</span><span class="nx">g</span>
-
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">index</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">archive</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">category</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">tag</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">sitemap</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">feed</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">renderer</span><span class="o">-</span><span class="nx">ejs</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">renderer</span><span class="o">-</span><span class="nx">stylus</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">renderer</span><span class="o">-</span><span class="nx">marked</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">server</span> <span class="o">--</span><span class="nx">save</span>
-<span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">deployer</span><span class="o">-</span><span class="nx">git</span> <span class="o">--</span><span class="nx">save</span>
-
-<span class="nx">hexo</span> <span class="nx">init</span>
-<span class="nx">hexo</span> <span class="k">new</span> <span class="p">[</span><span class="nx">post</span><span class="p">]</span> <span class="s2">&#34;My New Post&#34;</span>
-<span class="nx">hexo</span> <span class="nx">server</span>
-<span class="nx">hexo</span> <span class="nx">generate</span>
-<span class="nx">hexo</span> <span class="nx">deploy</span>
-</code></pre></div><p>更多文档可以到<a href="http://hexo.io/docs/">Hexo docs</a>上查看</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">cli</span> <span class="o">-</span><span class="nx">g</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">index</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">archive</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">category</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">tag</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">sitemap</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">generator</span><span class="o">-</span><span class="nx">feed</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">renderer</span><span class="o">-</span><span class="nx">ejs</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">renderer</span><span class="o">-</span><span class="nx">stylus</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">renderer</span><span class="o">-</span><span class="nx">marked</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">server</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">hexo</span><span class="o">-</span><span class="nx">deployer</span><span class="o">-</span><span class="nx">git</span> <span class="o">--</span><span class="nx">save</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">hexo</span> <span class="nx">init</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hexo</span> <span class="k">new</span> <span class="p">[</span><span class="nx">post</span><span class="p">]</span> <span class="s2">&#34;My New Post&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hexo</span> <span class="nx">server</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hexo</span> <span class="nx">generate</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hexo</span> <span class="nx">deploy</span>
+</span></span></code></pre></div><p>更多文档可以到<a href="http://hexo.io/docs/">Hexo docs</a>上查看</p>
 <hr>
 <h4 id="markdown语法">Markdown语法</h4>
 <p>可以去<a href="http://ibruce.info/">不如</a>的<a href="http://ibruce.info/2013/11/26/markdown/">Markdown简明语法</a>去学习下</p>

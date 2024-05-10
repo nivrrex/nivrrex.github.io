@@ -19,7 +19,8 @@
 注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
 通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
 因为原先的源代码是C++写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 #include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;lt;wininet.h&amp;gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;quot;SetProxy Usage:\n\n&amp;quot;);printf(&amp;quot;Examples:\n&amp;quot;);printf(&amp;quot;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;quot; );printf(&amp;quot;SetProxy.exe \&amp;quot;\&amp;quot; -- disable proxy, set proxy to null.\n&amp;quot; );printf(&amp;quot;\n&amp;quot;);printf(&amp;quot;Version 1.0.0\n&amp;quot;);printf(&amp;quot;Author: Eric Ma &amp;lt;mazq.</description>
+源代码 SetProxy.c
+#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;lt;wininet.h&amp;gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;#34;SetProxy Usage:\n\n&amp;#34;);printf(&amp;#34;Examples:\n&amp;#34;);printf(&amp;#34;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;#34; );printf(&amp;#34;SetProxy.exe \&amp;#34;\&amp;#34; -- disable proxy, set proxy to null.\n&amp;#34; );printf(&amp;#34;\n&amp;#34;);printf(&amp;#34;Version 1.</description>
     </item>
     
     <item>
@@ -29,17 +30,17 @@
       
       <guid>http://nivrrex.github.io/posts/use-cmder/</guid>
       <description>缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。
- 介绍 cmder由3部分组成：
+介绍 cmder由3部分组成：
 ConEmu ConEmu 是一套 Windows 控制台模拟器 (console emulator)
 Clink Clink将GNU Readline 函数库整合进原生的Windows 命令行控制台，提供命令行模式下强大的编辑和输入能力
 msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的命令行工具，如 less, ls, tar, unzip, md5sum, grep, sed &amp;hellip; 等
 安装 安裝 cmder
 先到 cmder 官网 http://cmder.net/ 下载此工具，有两个版本，分別是 mini 和 full 版，区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。
 外部链接 具体使用就不想介绍了，网上有详细的使用介绍和说明，这里推荐3篇文章，大家可以看一下：
-  介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 ) https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx
-  Win下必备神器之Cmder https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/
-  cmder 一个比cmd强n倍的神器 https://www.jianshu.com/p/7a706c0a3411
-  配置 注册Cmder，文档的右键菜单添加Cmder here Cmder.</description>
+介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 ) https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx
+Win下必备神器之Cmder https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/
+cmder 一个比cmd强n倍的神器 https://www.jianshu.com/p/7a706c0a3411
+配置 注册Cmder，文档的右键菜单添加Cmder here Cmder.exe /REGISTER ALL Cmder使用ls中文显示乱码解决方案 方案1 默认配置不支持使用ls显示中文命名的文件列表。</description>
     </item>
     
     <item>
@@ -50,7 +51,7 @@ msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的
       <guid>http://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
       <description>来由 本来一直使用的编译器是SciTE，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。 最近看了Golang中国的教学视频，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇Sublime Text 全程指南，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。
 Sublime Text安装 首先到Sublime Text的官网下载最新的版本，我下载的是3.3083的portable version版 然后是最重要的事情了，安装Package Control,它的地位相当于Ruby的Gem管理器了，基本上所有的Sublime Text都可以用它来安装管理。 打开 Sublime Text 后，同时按Ctrl+`键，调出控制台，输入以下命令：
-import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39; &amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %sinstead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
+import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&amp;#39; + &amp;#39;ebe013ee18cced0ef93d5f746d80ef60&amp;#39;; pf = &amp;#39;Package Control.sublime-package&amp;#39;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &amp;#39;http://packagecontrol.io/&amp;#39; + pf.replace(&amp;#39; &amp;#39;, &amp;#39;%20&amp;#39;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&amp;#39;Error validating download (got %s instead of %s), please try manual install&amp;#39; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &amp;#39;wb&amp;#39; ).</description>
     </item>
     
     <item>
@@ -59,7 +60,7 @@ import urllib.request,os,hashlib; h = &amp;#39;6f4c264a24d933ce70df5dedcf1dcaee&
       <pubDate>Thu, 12 Jun 2014 22:32:51 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/posts/commonly-used-software/</guid>
-      <description>开发工具 Python  Python Lang Python官方网站 Python PyPI Python packages的官方下载站点 Awesome Python Python框架，库，软件和资源的精选清单  Golang  Golang Downloads Golang官方网站 Golang Dev Golang开发者网站 Go Language Resources 非官方的Golang资源收集 Awesome Go Go框架，库和软件的精选清单  Nim  Nim Language Nim语言官方网站 Nim 中文社区 Nim语言中文社区 Nim Package Directory 官方的nimble资源收集 Awesome Nim 中文社区的Nim框架，库和软件的精选清单  Ruby  Ruby Lang Ruby官方网站 RubyInstaller for Windows Ruby的Windows安装打包  GCC MinGW  MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64  Tcc  Tiny C Compiler 极简的c语言编译器  经典软件 系统强化  Total Commander Windows下的资源管理工具 Listary Windows下的文件搜索和程序启动工具 Everthing 基于NTFS格式的快速搜索工具 ImDisk 虚拟磁盘工具 SoftPerfect RAM Disk 虚拟磁盘工具  系统美化  MacType Windows下的字体美化工具 Fences Windows下的图标分区优化工具  输入法  rimeime - 中州韻輸入法引擎 很好用的输入法工具，可配置功能较多  编辑器  SciTE 轻量级的程序编辑器 Sublime Text 跨平台、可扩展的程序编辑器 Notepad2 Mod Notepad的替代编辑器 Notepad3 Notepad2不更新后的替代编辑器  网络  shadowsocks-libev shadowsocks的c语言实现的服务器端,可布置在vps上使用 shadowsocks-windows shadowsocks的windows客户端，可自动更新GFWlist的PAC文件  </description>
+      <description>开发工具 Python Python Lang Python官方网站 Python PyPI Python packages的官方下载站点 Awesome Python Python框架，库，软件和资源的精选清单 Golang Golang Downloads Golang官方网站 Golang Dev Golang开发者网站 Go Language Resources 非官方的Golang资源收集 Awesome Go Go框架，库和软件的精选清单 Nim Nim Language Nim语言官方网站 Nim 中文社区 Nim语言中文社区 Nim Package Directory 官方的nimble资源收集 Awesome Nim 中文社区的Nim框架，库和软件的精选清单 Ruby Ruby Lang Ruby官方网站 RubyInstaller for Windows Ruby的Windows安装打包 GCC MinGW MinGW Distro TDM-GCC Equation Solution MinGW-builds mingw-w64 Tcc Tiny C Compiler 极简的c语言编译器 经典软件 系统强化 Total Commander Windows下的资源管理工具 Listary Windows下的文件搜索和程序启动工具 Everthing 基于NTFS格式的快速搜索工具 ImDisk 虚拟磁盘工具 SoftPerfect RAM Disk 虚拟磁盘工具 系统美化 MacType Windows下的字体美化工具 Fences Windows下的图标分区优化工具 输入法 rimeime - 中州韻輸入法引擎 很好用的输入法工具，可配置功能较多 编辑器 SciTE 轻量级的程序编辑器 Sublime Text 跨平台、可扩展的程序编辑器 Notepad2 Mod Notepad的替代编辑器 Notepad3 Notepad2不更新后的替代编辑器 网络 shadowsocks-libev shadowsocks的c语言实现的服务器端,可布置在vps上使用 shadowsocks-windows shadowsocks的windows客户端，可自动更新GFWlist的PAC文件 </description>
     </item>
     
   </channel>

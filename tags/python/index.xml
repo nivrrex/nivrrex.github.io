@@ -15,7 +15,7 @@
       
       <guid>http://nivrrex.github.io/posts/start-to-use-python/</guid>
       <description>缘来 最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。
- 开始 整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。
+开始 整体切换还是很顺利的，花了段时间看了下基本的语法，然后就是将Ruby写的脚本，先直接翻译成Python语言实现，然后再用Python特有的第三方库进行优化。
 整个切换过程还是比较顺利的，毕竟两个语言有很大的相近的地方。当然也遇到了不少坑，比如Python3和Python2的选择，print输出的坑。
 Python3 vs Python2 这里没有纠结那么多，直接选择了Python3，毕竟是以后的发展方向。
 但是也遇到了部分类库不支持，print函数需要括号，中文字符无法输出，没有ruby的#{}字符串变量，这些东东，但还是都过来了。

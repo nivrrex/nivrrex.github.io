@@ -9,21 +9,20 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="crosscompiling for openwrt with golang">
 <meta itemprop="description" content="缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
- Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports."><meta itemprop="datePublished" content="2019-11-15T23:29:00+08:00" />
+Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports."><meta itemprop="datePublished" content="2019-11-15T23:29:00+08:00" />
 <meta itemprop="dateModified" content="2019-11-15T23:29:00+08:00" />
 <meta itemprop="wordCount" content="174">
 <meta itemprop="keywords" content="golang,openwrt," /><meta property="og:title" content="crosscompiling for openwrt with golang" />
 <meta property="og:description" content="缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
- Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports." />
+Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-11-15T23:29:00+08:00" />
 <meta property="article:modified_time" content="2019-11-15T23:29:00+08:00" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="crosscompiling for openwrt with golang"/>
 <meta name="twitter:description" content="缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
- Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports."/>
+Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -33,7 +32,7 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 
 	<title>crosscompiling for openwrt with golang</title>
-	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://nivrrex.github.io/css/style.min.835f01e49ba3fb1af85a367c1d24ded4e808c992894adc90feecaba6562f7cd9.css" integrity="sha256-g18B5Juj+xr4WjZ8HSTe1OgIyZKJStyQ/uyrplYvfNk=" crossorigin="anonymous">
 	
 </head>
 
@@ -77,38 +76,38 @@
 <!-- raw HTML omitted -->
 <hr>
 <h3 id="golang支持的交叉编译平台">Golang支持的交叉编译平台<a href="#golang支持的交叉编译平台" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash">amd64 <span class="o">(</span>also known as x86-64<span class="o">)</span>
-A mature implementation.
-
-<span class="m">386</span> <span class="o">(</span>x86 or x86-32<span class="o">)</span>
-Comparable to the amd64 port.
-
-arm <span class="o">(</span>ARM<span class="o">)</span>
-Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.
-
-arm64 <span class="o">(</span>AArch64<span class="o">)</span>
-Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.
-
-ppc64, ppc64le <span class="o">(</span>64-bit PowerPC big- and little-endian<span class="o">)</span>
-Supports Linux binaries. New in 1.5 and not as well exercised as other ports.
-
-mips, mipsle <span class="o">(</span>32-bit MIPS big- and little-endian<span class="o">)</span>
-Supports Linux binaries. New in 1.8 and not as well exercised as other ports.
-
-mips64, mips64le <span class="o">(</span>64-bit MIPS big- and little-endian<span class="o">)</span>
-Supports Linux binaries. New in 1.6 and not as well exercised as other ports.
-
-s390x <span class="o">(</span>IBM System z<span class="o">)</span>
-Supports Linux binaries. New in 1.7 and not as well exercised as other ports.
-
-wasm <span class="o">(</span>WebAssembly<span class="o">)</span>
-Targets the WebAssembly platform. New in 1.11 and not as well exercised as other ports.
-</code></pre></div><h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译<a href="#golang针对mips系统的交叉编译" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
-</code></pre></div><p>直接指定目标系统和CPU架构，就直接可以编译生成对应平台下的可执行文件</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">amd64 <span class="o">(</span>also known as x86-64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">A mature implementation.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">386</span> <span class="o">(</span>x86 or x86-32<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Comparable to the amd64 port.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">arm <span class="o">(</span>ARM<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">arm64 <span class="o">(</span>AArch64<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ppc64, ppc64le <span class="o">(</span>64-bit PowerPC big- and little-endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.5 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mips, mipsle <span class="o">(</span>32-bit MIPS big- and little-endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.8 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">mips64, mips64le <span class="o">(</span>64-bit MIPS big- and little-endian<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.6 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">s390x <span class="o">(</span>IBM System z<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Supports Linux binaries. New in 1.7 and not as well exercised as other ports.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wasm <span class="o">(</span>WebAssembly<span class="o">)</span>
+</span></span><span class="line"><span class="cl">Targets the WebAssembly platform. New in 1.11 and not as well exercised as other ports.
+</span></span></code></pre></div><h3 id="golang针对mips系统的交叉编译">Golang针对mips系统的交叉编译<a href="#golang针对mips系统的交叉编译" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
+</span></span></code></pre></div><p>直接指定目标系统和CPU架构，就直接可以编译生成对应平台下的可执行文件</p>
 <p>在mips架构下，如OpenWRT系统，文件执行时出现&quot;Illegal instruction&quot;错误，注意加上GOMIPS=softfloat变量</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
-</code></pre></div><h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>mips <span class="nv">GOMIPS</span><span class="o">=</span>softfloat go build -ldflags<span class="o">=</span><span class="s2">&#34;-s -w&#34;</span> test.go
+</span></span></code></pre></div><h3 id="结">结<a href="#结" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 <p>就这样，golang可以更简单的直接生成对应系统和CPU架构下的可执行文件~</p>
 
 			</div>
@@ -134,7 +133,7 @@ Targets the WebAssembly platform. New in 1.11 and not as well exercised as other
 	</main>
 
 	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
-		<p>&copy; 2023 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>&copy; 2024 <a href="http://nivrrex.github.io/">nivrrex</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
 		<p>
 			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="http://nivrrex.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</p>
@@ -142,7 +141,7 @@ Targets the WebAssembly platform. New in 1.11 and not as well exercised as other
 
 
 
-	<script src="http://nivrrex.github.io/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
+	<script src="http://nivrrex.github.io/js/bundle.min.580988ed2982bcbb74a1773c7abea97b43e4c43b9324e10cda0813ec6ec4bb67.js" integrity="sha256-WAmI7SmCvLt0oXc8er6pe0PkxDuTJOEM2ggT7G7Eu2c=" crossorigin="anonymous"></script>
 	
 
 </body>
