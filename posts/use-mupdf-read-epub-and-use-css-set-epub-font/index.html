@@ -18,7 +18,7 @@ linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows �
 最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
 mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 &#43; 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&gt;、j 向后翻页 b、PageUp、↑、&lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?"><meta itemprop="datePublished" content="2024-05-10T10:00:00+08:00" />
 <meta itemprop="dateModified" content="2024-05-10T10:00:00+08:00" />
-<meta itemprop="wordCount" content="246">
+<meta itemprop="wordCount" content="234">
 <meta itemprop="keywords" content="epub,css,soft," /><meta property="og:title" content="use mupdf to read epub and use css set epub font" />
 <meta property="og:description" content="缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
 获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
@@ -197,28 +197,18 @@ mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - 
 <p>基本上以上的快捷键，足够日常使用了。</p>
 <h5 id="css-设置-epub-字体">css 设置 EPUB 字体<a href="#css-设置-epub-字体" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h5>
 <p>mupdf 设置字体稍微麻烦点，也是要通过命令行参数解决。通过 &ldquo;-U&rdquo; 参数指定外部 css 文件进行设置。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">title</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;HYQiHei 55S&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;HYQiHei 55S&#39;</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">src</span><span class="p">:</span><span class="nd">url</span><span class="o">(/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">mupdf</span><span class="o">/</span><span class="nt">HYQiHei</span><span class="p">.</span><span class="nc">ttf</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;turetype&#39;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #414c41 rgb(65,76,65)背景色：箬竹色 #b5eecd rgb(181,238,205) */</span>
-</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #494c49 rgb(73,76,73)背景色：赭石色 #d5c6ac rgb(213,198,172) */</span>
 </span></span><span class="line"><span class="cl"><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;HYQiHei 55S&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 文字:墨绿色 #414c41 rgb(65,76,65) 背景色:箬竹色 #b5eecd rgb(181,238,205) */</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 文字:墨绿色 #494c49 rgb(73,76,73) 背景色:赭石色 #d5c6ac rgb(213,198,172) */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">65</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">181</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">205</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>

@@ -129,28 +129,18 @@ mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - 
 <p>基本上以上的快捷键，足够日常使用了。</p>
 <h5 id="css-设置-epub-字体">css 设置 EPUB 字体</h5>
 <p>mupdf 设置字体稍微麻烦点，也是要通过命令行参数解决。通过 &ldquo;-U&rdquo; 参数指定外部 css 文件进行设置。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">.</span><span class="nc">title</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">content</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin-bottom</span><span class="p">:</span> <span class="mi">1</span><span class="kt">em</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">margin-top</span><span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;HYQiHei 55S&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="p">@</span><span class="k">font-face</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">font-family</span><span class="o">:</span> <span class="s1">&#39;HYQiHei 55S&#39;</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">font-weight</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">font-style</span><span class="o">:</span> <span class="nt">normal</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">src</span><span class="p">:</span><span class="nd">url</span><span class="o">(/</span><span class="nt">etc</span><span class="o">/</span><span class="nt">mupdf</span><span class="o">/</span><span class="nt">HYQiHei</span><span class="p">.</span><span class="nc">ttf</span><span class="o">)</span> <span class="nt">format</span><span class="o">(</span><span class="s1">&#39;turetype&#39;</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #414c41 rgb(65,76,65)背景色：箬竹色 #b5eecd rgb(181,238,205) */</span>
-</span></span><span class="line"><span class="cl"><span class="c">/* 文字：墨绿色 #494c49 rgb(73,76,73)背景色：赭石色 #d5c6ac rgb(213,198,172) */</span>
 </span></span><span class="line"><span class="cl"><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-family</span><span class="p">:</span> <span class="s2">&#34;HYQiHei 55S&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">pt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 文字:墨绿色 #414c41 rgb(65,76,65) 背景色:箬竹色 #b5eecd rgb(181,238,205) */</span>
+</span></span><span class="line"><span class="cl">    <span class="c">/* 文字:墨绿色 #494c49 rgb(73,76,73) 背景色:赭石色 #d5c6ac rgb(213,198,172) */</span>
 </span></span><span class="line"><span class="cl">    <span class="k">color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">65</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="k">background-color</span><span class="p">:</span> <span class="nb">rgb</span><span class="p">(</span><span class="mi">181</span><span class="p">,</span><span class="mi">238</span><span class="p">,</span><span class="mi">205</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
