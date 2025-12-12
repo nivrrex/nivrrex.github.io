@@ -7,13 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>css</title>
-      <link>http://nivrrex.github.io/tags/css/</link>
-      <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
+      <title>fanqiang</title>
+      <link>http://nivrrex.github.io/tags/fanqiang/</link>
+      <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
       
-      <guid>http://nivrrex.github.io/tags/css/</guid>
+      <guid>http://nivrrex.github.io/tags/fanqiang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>live</title>
+      <link>http://nivrrex.github.io/tags/live/</link>
+      <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/live/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vps</title>
+      <link>http://nivrrex.github.io/tags/vps/</link>
+      <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/vps/</guid>
       <description></description>
     </item>
     
@@ -45,33 +63,6 @@
     </item>
     
     <item>
-      <title>fanqiang</title>
-      <link>http://nivrrex.github.io/tags/fanqiang/</link>
-      <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/fanqiang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>live</title>
-      <link>http://nivrrex.github.io/tags/live/</link>
-      <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/live/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vps</title>
-      <link>http://nivrrex.github.io/tags/vps/</link>
-      <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/tags/vps/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>nim</title>
       <link>http://nivrrex.github.io/tags/nim/</link>
       <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
@@ -95,6 +86,15 @@
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
       
       <guid>http://nivrrex.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>openwrt</title>
+      <link>http://nivrrex.github.io/tags/openwrt/</link>
+      <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/tags/openwrt/</guid>
       <description></description>
     </item>
     

@@ -7,7 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI programming</title>
+      <link>http://nivrrex.github.io/posts/ai-programming/</link>
+      <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
+      
+      <guid>http://nivrrex.github.io/posts/ai-programming/</guid>
+      <description>AI 编程 现在的 AI 确实挺厉害的，感觉已经很实用了。
+最近我有几个需求，比如：
+自动处理 PPT 中图片的压缩问题
+投影 PPT 时，拍照得到的图片不规则，想自动处理成标准的四边形
+要是我自己研究，可能得花上一两个月时间，效果还不一定理想。但用开源的 DeepSeek（虽然还不是最新的 3.2 版本），只要把需求讲清楚，再把一些异常情况详细说明，它就能给出可用的代码，真的很方便。
+问题 当然，现在 AI 还有不少问题。
+比如，上下文没描述清楚，它可能会越搞越错。核心需求如果不反复强调，它也容易自作主张。
+不过，一旦习惯了，了解它的优缺点，就能在日常工作中省不少事。但要注意，关键部分还是得自己把控，不能完全依赖它。
+结 现在的技术发展真的挺快的，年初火爆的DeepSeek，然后一年内爆发了各种大模型和应用，真不知道后续会发展成什么样。
+2025年快结束了，今年没做什么很深的研究和探索，算是很平淡的一年吧，那也挺好~</description>
+    </item>
+    
     <item>
       <title>use mupdf to read epub and use css set epub font</title>
       <link>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
@@ -131,26 +149,6 @@ Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.
 Request timed out 而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
 恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
 ##这一部分不是帖子的内容，是前期准备工作#在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tartar -xf ER-e50.</description>
-    </item>
-    
-    <item>
-      <title>use cmder</title>
-      <link>http://nivrrex.github.io/posts/use-cmder/</link>
-      <pubDate>Mon, 04 Jun 2018 14:24:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/use-cmder/</guid>
-      <description>缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。
-介绍 cmder由3部分组成：
-ConEmu ConEmu 是一套 Windows 控制台模拟器 (console emulator)
-Clink Clink将GNU Readline 函数库整合进原生的Windows 命令行控制台，提供命令行模式下强大的编辑和输入能力
-msysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的命令行工具，如 less, ls, tar, unzip, md5sum, grep, sed &amp;hellip; 等
-安装 安裝 cmder
-先到 cmder 官网 http://cmder.net/ 下载此工具，有两个版本，分別是 mini 和 full 版，区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。
-外部链接 具体使用就不想介绍了，网上有详细的使用介绍和说明，这里推荐3篇文章，大家可以看一下：
-介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 ) https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx
-Win下必备神器之Cmder https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/
-cmder 一个比cmd强n倍的神器 https://www.jianshu.com/p/7a706c0a3411
-配置 注册Cmder，文档的右键菜单添加Cmder here Cmder.exe /REGISTER ALL Cmder使用ls中文显示乱码解决方案 方案1 默认配置不支持使用ls显示中文命名的文件列表。</description>
     </item>
     
   </channel>
