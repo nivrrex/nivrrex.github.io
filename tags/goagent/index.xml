@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Goagent on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/goagent/</link>
+    <description>Recent content in Goagent on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 25 Jun 2014 21:45:26 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/goagent/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fanqiang with goagent</title>
+      <link>http://localhost:39531/posts/fanqiang-with-goagent/</link>
+      <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-goagent/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。
+刚开始以为一段时间就OK了，就用了临时性的解决方案。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;http://www.bing.com/?mkt=zh-CN&#34;&gt;Bing&lt;/a&gt;代替。 &lt;em&gt;搜索效果相比Google还有差距&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.startpage.com/&#34;&gt;StartPage&lt;/a&gt;代替。 &lt;em&gt;相比原版，存在部分结果搜索不到的问题&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;直接用&lt;a href=&#34;https://github.com/justjavac/Google-IPs/blob/master/README.md&#34;&gt;Google IP&lt;/a&gt;进行搜索。 &lt;em&gt;可以使用的IP被飞快的封锁&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用网上的免翻墙镜像网站&lt;a href=&#34;https://github.com/greatfire/wiki&#34;&gt;greatfire&lt;/a&gt;。 &lt;em&gt;是个不错的解决方案，但是怕被封锁后还要重新设置&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用网上的免费VPN&lt;a href=&#34;http://ilvpn.com/free-vpn/&#34;&gt;免费VPN资源&lt;/a&gt;。 &lt;em&gt;免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用google的GAE平台的&lt;a href=&#34;https://code.google.com/p/goagent/&#34;&gt;goagent&lt;/a&gt;。 &lt;em&gt;强烈推荐&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;goagent设置&#34;&gt;goagent设置&lt;/h4&gt;
+&lt;p&gt;这个网上教程很多，随便搜索都有好几个，如：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

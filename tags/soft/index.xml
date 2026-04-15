@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Soft on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/soft/</link>
+    <description>Recent content in Soft on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI programming</title>
+      <link>http://localhost:39531/posts/ai-programming/</link>
+      <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/ai-programming/</guid>
+      <description>&lt;h3 id=&#34;ai-编程&#34;&gt;AI 编程&lt;/h3&gt;
+&lt;p&gt;现在的 AI 确实挺厉害的，感觉已经很实用了。&lt;/p&gt;
+&lt;p&gt;最近我有几个需求，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;自动处理 PPT 中图片的压缩问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;投影 PPT 时，拍照得到的图片不规则，想自动处理成标准的四边形&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>use mupdf to read epub and use css set epub font</title>
+      <link>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
+      <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
+      <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
+&lt;p&gt;最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;获取电子书&#34;&gt;获取电子书&lt;/h3&gt;
+&lt;p&gt;目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>use Windows API to set IE proxy</title>
+      <link>http://localhost:39531/posts/use-api-to-set-ie-proxy/</link>
+      <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/use-api-to-set-ie-proxy/</guid>
+      <description>&lt;p&gt;使用 Windows API 设置 IE 代理服务器&lt;/p&gt;
+&lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
+&lt;p&gt;最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。&lt;/p&gt;
+&lt;p&gt;注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>use cmder</title>
+      <link>http://localhost:39531/posts/use-cmder/</link>
+      <pubDate>Mon, 04 Jun 2018 14:24:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/use-cmder/</guid>
+      <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
+&lt;p&gt;Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了&lt;a href=&#34;http://cmder.net/&#34;&gt;cmder&lt;/a&gt;这个很方便的替代windows自带命令行的好工具，记录一下。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>change editer with sublime text</title>
+      <link>http://localhost:39531/posts/change-editer-with-sublime-text/</link>
+      <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
+      <guid>http://localhost:39531/posts/change-editer-with-sublime-text/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;本来一直使用的编译器是&lt;a href=&#34;http://www.scintilla.org/SciTE.html&#34;&gt;SciTE&lt;/a&gt;，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。
+最近看了&lt;a href=&#34;http://www.tudou.com/home/golang/item/&#34;&gt;Golang中国的教学视频&lt;/a&gt;，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇&lt;a href=&#34;http://www.linuxeden.com/html/news/20150730/162107.html&#34;&gt;Sublime Text 全程指南&lt;/a&gt;，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>commonly used software</title>
+      <link>http://localhost:39531/posts/commonly-used-software/</link>
+      <pubDate>Thu, 12 Jun 2014 22:32:51 +0800</pubDate>
+      <guid>http://localhost:39531/posts/commonly-used-software/</guid>
+      <description>&lt;h2 id=&#34;开发工具&#34;&gt;开发工具&lt;/h2&gt;
+&lt;h4 id=&#34;python&#34;&gt;Python&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.python.org/&#34;&gt;Python Lang&lt;/a&gt; Python官方网站&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://pypi.org/&#34;&gt;Python PyPI&lt;/a&gt; Python packages的官方下载站点&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://awesome-python.com/&#34;&gt;Awesome Python&lt;/a&gt; Python框架，库，软件和资源的精选清单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;golang&#34;&gt;Golang&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://golang.org/dl/&#34;&gt;Golang Downloads&lt;/a&gt; Golang官方网站&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://go.dev/&#34;&gt;Golang Dev&lt;/a&gt; Golang开发者网站&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://go-lang.cat-v.org/&#34;&gt;Go Language Resources&lt;/a&gt; 非官方的Golang资源收集&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://awesome-go.com/&#34;&gt;Awesome Go&lt;/a&gt; Go框架，库和软件的精选清单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;nim&#34;&gt;Nim&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://nim-lang.org/&#34;&gt;Nim Language&lt;/a&gt; Nim语言官方网站&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nim-cn.com/&#34;&gt;Nim 中文社区&lt;/a&gt; Nim语言中文社区&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://nimble.directory/&#34;&gt;Nim Package Directory&lt;/a&gt; 官方的nimble资源收集&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/nim-lang-cn/awesome-nim&#34;&gt;Awesome Nim&lt;/a&gt; 中文社区的Nim框架，库和软件的精选清单&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ruby&#34;&gt;Ruby&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.ruby-lang.org/en/&#34;&gt;Ruby Lang&lt;/a&gt; Ruby官方网站&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://rubyinstaller.org/&#34;&gt;RubyInstaller for Windows&lt;/a&gt; Ruby的Windows安装打包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;gcc-mingw&#34;&gt;GCC MinGW&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://nuwen.net/mingw.html&#34;&gt;MinGW Distro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tdm-gcc.tdragon.net/&#34;&gt;TDM-GCC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.equation.com/servlet/equation.cmd?fa=fortran&#34;&gt;Equation Solution&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://sourceforge.net/projects/mingwbuilds/&#34;&gt;MinGW-builds&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mingw-w64.org/doku.php&#34;&gt;mingw-w64&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;tcc&#34;&gt;Tcc&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://bellard.org/tcc/&#34;&gt;Tiny C Compiler&lt;/a&gt; 极简的c语言编译器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;经典软件&#34;&gt;经典软件&lt;/h2&gt;
+&lt;h4 id=&#34;系统强化&#34;&gt;系统强化&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ghisler.com/&#34;&gt;Total Commander&lt;/a&gt; Windows下的资源管理工具&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.listary.com/&#34;&gt;Listary&lt;/a&gt; Windows下的文件搜索和程序启动工具&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.voidtools.com/&#34;&gt;Everthing&lt;/a&gt; 基于NTFS格式的快速搜索工具&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ltr-data.se/opencode.html/#ImDisk&#34;&gt;ImDisk&lt;/a&gt; 虚拟磁盘工具&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.softperfect.com/&#34;&gt;SoftPerfect RAM Disk&lt;/a&gt; 虚拟磁盘工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;系统美化&#34;&gt;系统美化&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/snowie2000/mactype/&#34;&gt;MacType&lt;/a&gt; Windows下的字体美化工具&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.stardock.com/products/fences/&#34;&gt;Fences&lt;/a&gt; Windows下的图标分区优化工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;输入法&#34;&gt;输入法&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://code.google.com/p/rimeime/&#34;&gt;rimeime - 中州韻輸入法引擎&lt;/a&gt; 很好用的输入法工具，可配置功能较多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;编辑器&#34;&gt;编辑器&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.scintilla.org/SciTE.html&#34;&gt;SciTE&lt;/a&gt; 轻量级的程序编辑器&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.sublimetext.com/&#34;&gt;Sublime Text&lt;/a&gt; 跨平台、可扩展的程序编辑器&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://xhmikosr.github.io/notepad2-mod/&#34;&gt;Notepad2 Mod&lt;/a&gt; Notepad的替代编辑器&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rizonesoft/Notepad3&#34;&gt;Notepad3&lt;/a&gt; Notepad2不更新后的替代编辑器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;网络&#34;&gt;网络&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-libev&#34;&gt;shadowsocks-libev&lt;/a&gt; shadowsocks的c语言实现的服务器端,可布置在vps上使用&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-windows&#34;&gt;shadowsocks-windows&lt;/a&gt; shadowsocks的windows客户端，可自动更新GFWlist的PAC文件&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>
