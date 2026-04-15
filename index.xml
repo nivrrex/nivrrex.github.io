@@ -1,155 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Nivrrex&#39;s blog</title>
-    <link>http://nivrrex.github.io/</link>
-    <description>Recent content on Nivrrex&#39;s blog</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate><atom:link href="http://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>AI programming</title>
-      <link>http://nivrrex.github.io/posts/ai-programming/</link>
-      <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/ai-programming/</guid>
-      <description>AI 编程 现在的 AI 确实挺厉害的，感觉已经很实用了。
-最近我有几个需求，比如：
-自动处理 PPT 中图片的压缩问题
-投影 PPT 时，拍照得到的图片不规则，想自动处理成标准的四边形
-要是我自己研究，可能得花上一两个月时间，效果还不一定理想。但用开源的 DeepSeek（虽然还不是最新的 3.2 版本），只要把需求讲清楚，再把一些异常情况详细说明，它就能给出可用的代码，真的很方便。
-问题 当然，现在 AI 还有不少问题。
-比如，上下文没描述清楚，它可能会越搞越错。核心需求如果不反复强调，它也容易自作主张。
-不过，一旦习惯了，了解它的优缺点，就能在日常工作中省不少事。但要注意，关键部分还是得自己把控，不能完全依赖它。
-结 现在的技术发展真的挺快的，年初火爆的DeepSeek，然后一年内爆发了各种大模型和应用，真不知道后续会发展成什么样。
-2025年快结束了，今年没做什么很深的研究和探索，算是很平淡的一年吧，那也挺好~</description>
-    </item>
-    
-    <item>
-      <title>use mupdf to read epub and use css set epub font</title>
-      <link>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
-      <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
-      <description>缘来 最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。
-获取电子书 目前电子书主要是 txt 、mobi 、epub 等格式的。txt没有格式，看起来不是那么舒服，所以下载后会转成其它格式使用。mobi 是私有格式，而亚马逊已经在2023年6月30日停止Kindle电子书店的运营了，在试用部分软件过程中，发现个别打开 mobi 的会出现卡顿，所以尽量不考虑，只有 mobi 格式的也尽量转换成其它格式使用。
-最终考虑的是使用开源的 epub 格式书籍。
-格式转换 目前功能最强的软件是 calibre ，可以组织、管理、阅读各类电子书籍，大而全，其它软件解决不了问题时考虑使用。
-kaf-cli 从网上找到了一个软件 kaf-cli，可以把 txt 文本转成 epub 和 mobi 电子书的命令行工具。GitHub - ystyle/kaf-cli ，自动识别章节、生成目录，还有很多细节的设置，比较方便。
-如果只是在墨水屏阅读器上使用，则转换生成的电子书直接导入阅读器即可。
-linux 下 EPUB 阅读软件 - mupdf 近期都是使用 linux 系统，windows 已经沦为备用，所以还是要找到合适的 linux 下 epub 阅读软件。但是找了很多，都没有符合我心意的，要么大而全，要么使用不方便，而且很多都是 js 或者 python 写的，性能和占用不太爽。
-最终找到了 mupdf ，是一个用 C 语言写的开源阅读器，可以支持 PDF 、XPS、EPUB 格式阅读，速度很快，占用也低，缺点就是设置需要命令行或者快捷键，使用入门门槛高。
-mupdf 命令行参数 usage: mupdf [options] file.pdf [page] -p - password -r - resolution -A - set anti-aliasing quality in bits (0=off, 8=best) -C - RRGGBB (tint color in hexadecimal syntax) -W - page width for EPUB layout -H - page height for EPUB layout -I - invert colors -S - font size for EPUB layout -U - user style sheet for EPUB layout -X disable document styles for EPUB layout mupdf 快捷键 快捷键 功能 f 切换全屏 w 调整窗口来适配阅读页面 W 调整页面宽度适配窗口 A 开启或关闭抗锯齿 [number]z 按照DPI设置缩放比例 + 放大 - 缩小 [ 逆时针旋转 ] 顺时针旋转 空格、PageDown、↓、&amp;gt;、j 向后翻页 b、PageUp、↑、&amp;lt;、k 向前翻页 [number]g 跳转至[number]页 / 向前搜索 ?</description>
-    </item>
-    
-    <item>
-      <title>use Windows API to set IE proxy</title>
-      <link>http://nivrrex.github.io/posts/use-api-to-set-ie-proxy/</link>
-      <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/use-api-to-set-ie-proxy/</guid>
-      <description>使用 Windows API 设置 IE 代理服务器
-缘 最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。
-注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。
-通过Google，查到了在 SysTutorials 上，ERIC MA 的一篇文章有相关实现。
-因为原先的源代码是C++写的，编译后程序有点大，在原作者基础上用C语言稍微修改了下，控制下二进制大小。代码如下：
-源代码 SetProxy.c
-#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;windows.h&amp;gt;#include &amp;lt;wininet.h&amp;gt;BOOL SetConnectionOptions(LPCTSTR conn_name,LPCTSTR proxy_full_addr);BOOL DisableConnectionProxy(LPCTSTR conn_name);int main(int argc, char* argv[]){int nRetCode = 0;//set proxyif (argc&amp;lt;2) { printf(&amp;#34;SetProxy Usage:\n\n&amp;#34;);printf(&amp;#34;Examples:\n&amp;#34;);printf(&amp;#34;SetProxy.exe 10.1.1.1:8080 -- set proxy to 10.1.1.1:8080.\n&amp;#34; );printf(&amp;#34;SetProxy.exe \&amp;#34;\&amp;#34; -- disable proxy, set proxy to null.\n&amp;#34; );printf(&amp;#34;\n&amp;#34;);printf(&amp;#34;Version 1.</description>
-    </item>
-    
-    <item>
-      <title>2022 summary</title>
-      <link>http://nivrrex.github.io/posts/2022-summary/</link>
-      <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/2022-summary/</guid>
-      <description>平淡的一年
-GFW 这一年里， 买了几家新的 VPS ，试用了后，或多或少有点问题，决定明年就续约那两家固定的。科学上网技术也实验了几个新的 hysteria / tuic / gost / glider / mieru / pingtunnel ，目前稳定的在使用 naiveproxy。速度不重要，稳定才重要。
-路由器 这一年里，基本上没怎么在折腾路由器了，家里买了几个 WiFi6 路由器，Ruijie / H3C / TP-Link / GL-iNet 各种品牌，放在不同的地方使用，都挺稳定的。有特殊需求的，加个 Pi 盒子作为旁路由，就解决了。
-编程 这一年里，程序基本上没有怎么折腾。
-结 一年很快，工作很忙，平淡的过去，未必不是一种幸福~</description>
-    </item>
-    
-    <item>
-      <title>2021 summary</title>
-      <link>http://nivrrex.github.io/posts/2021-summary/</link>
-      <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/2021-summary/</guid>
-      <description>折腾的一年，回归平淡
-GFW 这一年里， VPS 换了好几家，科学上网技术也换了好几种：ss / ss+kcptun+udp2raw / trojan / xray(vless) / naiveproxy / hysteria ， bbr 核心也反复调整。
-后来，是因为运营商的网络调整，国外 ip 连接不再丢包了，便随意选择了一种，用了下去。线路质量远比技术方案选择重要的多。
-路由器 这一年里，路由器也折腾了不少，常见的固件基本上都用了下，openwrt / padavan / tomato / merlin / dd-wrt / libremesh / aruba / ruckus 。也试着编译几种常见的固件，增补或删减了部分功能。
-后来发现还是官方固件更稳定，而科学上网就交给 OrangePi(OpenWrt) 旁路由来解决。大部门之前折腾的路由器也都挂海鲜市场了，目前是使用 tplink-xdr5430 ，不折腾。
-编程 这一年里，程序折腾的不太多，主要是用 lua 写了几个 openwrt 的 wifi 方面的小程序， c 完善了几个常用程序的功能。
-关注的 nim / zig / dlang / golang 都没有太折腾。
-结 发现这几年来折腾来折腾去，实际意义却不大。
-有的时候，花点小钱，去解决你需要花大量时间去解决的问题，却是很值得的。
-不过所有能折腾的都有了了解，后边也没太大折腾的想法了。
-回归平淡，不再为了折腾而折腾~</description>
-    </item>
-    
-    <item>
-      <title>dlang with ldc in mipsel</title>
-      <link>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</link>
-      <pubDate>Sun, 30 Aug 2020 09:19:10 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</guid>
-      <description>简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
-mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下
-cd /root/ wget https://downloads.openwrt.org/releases/19.07.3/targets/ramips/mt7621/openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64.tar.xz mkdir mipsel mv openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64/* mipsel/ rm -r openwrt-sdk-19.07.3-ramips-mt7621_gcc-7.5.0_musl.Linux-x86_64 设置环境变量
-cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrc export PATH=/root/mipsel/staging_dir/toolchain-mipsel_24kc_gcc-7.5.0_musl/bin/:$PATH export STAGING_DIR=/root/mipsel/staging_dir/:STAGING_DIR alias strip-mipsel=&amp;#39;mipsel-openwrt-linux-strip -s&amp;#39; EOF source /etc/bash.bashrc 如上，mipsel的gcc交叉编译环境就配置好了
-ldc 下载 到ldc官网下载最新版本的ldc，将其下载设置到 /root/ldc2/ 目录下，并设置path环境变量
-wget https://github.com/ldc-developers/ldc/releases/download/v1.23.0/ldc2-1.23.0-linux-x86_64.tar.xz tar xvf ldc2-1.23.0-linux-x86_64.tar.xz rm ldc2-1.23.0-linux-x86_64.tar.xz mv ldc2-1.23.0-linux-x86_64 ldc2 cat &amp;lt;&amp;lt; \EOF &amp;gt;&amp;gt; /etc/bash.bashrc export PATH=$PATH:/root/ldc2/bin EOF source /etc/bash.bashrc 编译mipsel的runtime 需要下载 cmake ninja-build 等工具支持编译，并将编译好的 .</description>
-    </item>
-    
-    <item>
-      <title>compile nim with tcc</title>
-      <link>http://nivrrex.github.io/posts/compile-nim-with-tcc/</link>
-      <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
-      <description>缘来 Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。
-配置 其实配置很简单，打开nim\config\nim.cfg文件
-cc = gcc 修改为 cc = tcc 结 就这样，保存文件配置完成后，就可以用Tcc编译Nim语言啦~</description>
-    </item>
-    
-    <item>
-      <title>crosscompiling for openwrt with golang</title>
-      <link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
-      <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
-      <description>缘来 实验了下nim语言(nimlang)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。
-Golang支持的交叉编译平台 amd64 (also known as x86-64) A mature implementation. 386 (x86 or x86-32) Comparable to the amd64 port. arm (ARM) Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports. arm64 (AArch64) Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports. ppc64, ppc64le (64-bit PowerPC big- and little-endian) Supports Linux binaries. New in 1.5 and not as well exercised as other ports.</description>
-    </item>
-    
-    <item>
-      <title>crosscompiling for openwrt with nim</title>
-      <link>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</link>
-      <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
-      <description>缘来 nim语言(nimlang)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。
-Debian系统下下载nim语言 sh -c &amp;#39;printf &amp;#34;deb http://ftp.cn.debian.org/debian/ sid main&amp;#34; &amp;gt; /etc/apt/sources.list.d/sid.list&amp;#39; apt update apt -t sid install nim -y Debian系统下安装gcc等编译环境 apt-get install build-essential 下载对应架构的OpenWRT编译工具链toolchain wget https://archive.openwrt.org/releases/18.06.4/targets/ramips/mt7621/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz tar xvf openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz rm openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64.tar.xz 设置环境并进行编译 export PATH=/root/openwrt-sdk-18.06.4-ramips-mt7621_gcc-7.3.0_musl.Linux-x86_64/staging_dir/toolchain-mipsel_24kc_gcc-7.3.0_musl/bin/:$PATH nim -d:release --opt=size -d:ssl --cpu:mipsel --os:linux --gcc.exe:mipsel-openwrt-linux-gcc --gcc.linkerexe:mipsel-openwrt-linux-gcc c test.nim 结 就这样，就可以生成对应路由器下的可执行文件啦~</description>
-    </item>
-    
-    <item>
-      <title>ubnt er-x use openwrt</title>
-      <link>http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</link>
-      <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
-      
-      <guid>http://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</guid>
-      <description>给UBNT的ER-X刷OpenWrt固件
-缘 UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。
-于是购置了一台 ER-X ，因为我目前的翻墙方式是 Shadowsocks + ChinaDNS + DNS Forwarder 方式，配置到 OpenWrt 路由器上实现的，具体步骤详见 https://cokebar.info/archives/664 。而UBNT的路由器系统 edgeRouter 还需要对以上的软件进行交叉编译，就不想费功夫了，直接刷成OpenWrt，用之前的方式翻墙就行了。而且 OpenWrt 的 18.06 版本，最新的 4.14 内核的 FLOW OFFLOAD ，也算支持 MT7621 的硬转发了，性能应该问题不大。
-安装 前期问题 刚开始安装时，因为 edgeRouter 系统不支持 OpenWrt 官方的 ubnt-erx-initramfs-kernel.bin，校验不通过，必须是类似 factory-initramfs.tar 的固件包才行。
-于是到 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=15243 帖子中和国外的一个帖子中提到的 http://s000.tinyupload.com/index.php?file_id=07741512272586742124 ，分别下载了他们的 factory-initramfs.tar 类的固件，确实可以安装了，但是在用sysupgrade命令更新最新的OpenWrt系统时，出现了下面的问题：
-Request timed out 而且这两个系统，都无法保存设置，安装新软件。差点以为要买个TTL线救回原先的系统了。
-恢复官方固件 后来在 http://bbs.ubnt.com.cn/forum.php?mod=viewthread&amp;amp;tid=19800 帖子里面，发现“4.刷回官方固件”以后的步骤，直接可以用。就用下边的方式，又还原成1.7系统了。下边记录一下：
-##这一部分不是帖子的内容，是前期准备工作#在PC上下载ER-X的官方固件包，解压上传至路由器 /root 目录下wget https://dl.ubnt.com/firmwares/edgemax/v1.7.0/ER-e50.v1.7.0.4783374.tartar -xf ER-e50.</description>
-    </item>
-    
-  </channel>
-</rss>

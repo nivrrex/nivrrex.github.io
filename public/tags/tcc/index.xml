@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tcc on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/tcc/</link>
+    <description>Recent content in Tcc on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/tcc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>compile nim with tcc</title>
+      <link>http://localhost:39531/posts/compile-nim-with-tcc/</link>
+      <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/compile-nim-with-tcc/</guid>
+      <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
+&lt;p&gt;Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

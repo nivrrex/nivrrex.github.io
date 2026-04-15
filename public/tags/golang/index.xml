@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Golang on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/golang/</link>
+    <description>Recent content in Golang on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>crosscompiling for openwrt with golang</title>
+      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</link>
+      <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</guid>
+      <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
+&lt;p&gt;实验了下nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;golang支持的交叉编译平台&#34;&gt;Golang支持的交叉编译平台&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;amd64 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;also known as x86-64&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;A mature implementation.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;386&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x86 or x86-32&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Comparable to the amd64 port.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;arm &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;ARM&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Supports Linux, FreeBSD, NetBSD, OpenBSD and Darwin binaries. Less widely used than the other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;arm64 &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;AArch64&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Supports Linux and Darwin binaries. New in 1.5 and not as well exercised as other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ppc64, ppc64le &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;64-bit PowerPC big- and little-endian&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Supports Linux binaries. New in 1.5 and not as well exercised as other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mips, mipsle &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;32-bit MIPS big- and little-endian&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Supports Linux binaries. New in 1.8 and not as well exercised as other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mips64, mips64le &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;64-bit MIPS big- and little-endian&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Supports Linux binaries. New in 1.6 and not as well exercised as other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;s390x &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;IBM System z&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Supports Linux binaries. New in 1.7 and not as well exercised as other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wasm &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;WebAssembly&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Targets the WebAssembly platform. New in 1.11 and not as well exercised as other ports.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;golang针对mips系统的交叉编译&#34;&gt;Golang针对mips系统的交叉编译&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;GOOS&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;linux GOARCH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;mips go build -ldflags&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;-s -w&amp;#34;&lt;/span&gt; test.go
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;直接指定目标系统和CPU架构，就直接可以编译生成对应平台下的可执行文件&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>some problems for golang excel update</title>
+      <link>http://localhost:39531/posts/some-problems-for-golang-excel-update/</link>
+      <pubDate>Sun, 15 Jun 2014 17:24:30 +0800</pubDate>
+      <guid>http://localhost:39531/posts/some-problems-for-golang-excel-update/</guid>
+      <description>&lt;p&gt;趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见&lt;a href=&#34;https://github.com/nivrrex/excel&#34;&gt;这里&lt;/a&gt;
+由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

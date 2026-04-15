@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ubnt on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/ubnt/</link>
+    <description>Recent content in Ubnt on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 09 Jul 2018 20:12:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/ubnt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ubnt er-x use openwrt</title>
+      <link>http://localhost:39531/posts/ubnt-erx-use-openwrt/</link>
+      <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/ubnt-erx-use-openwrt/</guid>
+      <description>&lt;p&gt;给UBNT的ER-X刷OpenWrt固件&lt;/p&gt;
+&lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
+&lt;p&gt;UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

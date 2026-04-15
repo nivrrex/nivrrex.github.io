@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=39531&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>use cmder | Nivrrex&#39;s blog</title>
+<meta name="keywords" content="soft">
+<meta name="description" content="缘来
+Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。">
+<meta name="author" content="nivrrex">
+<link rel="canonical" href="http://localhost:39531/posts/use-cmder/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.47e51c7d8489b002361bac156ce9a0a8776d08c5462c2cee95801efafdd90d35.css" integrity="sha256-R&#43;UcfYSJsAI2G6wVbOmgqHdtCMVGLCzulYAe&#43;v3ZDTU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:39531/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:39531/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:39531/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:39531/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:39531/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:39531/posts/use-cmder/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    }
+
+</script><meta property="og:url" content="http://localhost:39531/posts/use-cmder/">
+  <meta property="og:site_name" content="Nivrrex&#39;s blog">
+  <meta property="og:title" content="use cmder">
+  <meta property="og:description" content="缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。">
+  <meta property="og:locale" content="zh_cn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2018-06-04T14:24:00+08:00">
+    <meta property="article:modified_time" content="2018-06-04T14:24:00+08:00">
+    <meta property="article:tag" content="Soft">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="use cmder">
+  <meta name="twitter:description" content="缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:39531/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "use cmder",
+      "item": "http://localhost:39531/posts/use-cmder/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "use cmder",
+  "name": "use cmder",
+  "description": "缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。\n",
+  "keywords": [
+    "soft"
+  ],
+  "articleBody": "缘来 Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了cmder这个很方便的替代windows自带命令行的好工具，记录一下。\n介绍 cmder由3部分组成：\nConEmu ConEmu 是一套 Windows 控制台模拟器 (console emulator)\nClink Clink将GNU Readline 函数库整合进原生的Windows 命令行控制台，提供命令行模式下强大的编辑和输入能力\nmsysgit 提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的命令行工具，如 less, ls, tar, unzip, md5sum, grep, sed … 等\n安装 安裝 cmder\n先到 cmder 官网 http://cmder.net/ 下载此工具，有两个版本，分別是 mini 和 full 版，区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。\n外部链接 具体使用就不想介绍了，网上有详细的使用介绍和说明，这里推荐3篇文章，大家可以看一下：\n介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 ) https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx\nWin下必备神器之Cmder https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/\ncmder 一个比cmd强n倍的神器 https://www.jianshu.com/p/7a706c0a3411\n配置 注册Cmder，文档的右键菜单添加Cmder here Cmder.exe /REGISTER ALL Cmder使用ls中文显示乱码解决方案 方案1 默认配置不支持使用ls显示中文命名的文件列表。\n解决方法： 按下Win+Alt+P打开设置。 在StartUp - Environment里添加\nset LANG=zh_CN.UTF-8 set LANG=zh_CN.GBK set LC_ALL=zh_CN.utf8 保存配置\n重启Cmder，发现使用ls，中文正确显示了。\n备注 因ConEmu的bug，该设置无法保存，可以去 https://github.com/Maximus5/ConEmu/releases 下载最新或历史版本的ConEmu，替换Cmder自带的版本，则可以解决这个问题\n方案2 修改cmder\\vendor\\conemu-maximus5\\ConEmu.xml文件\n",
+  "wordCount" : "805",
+  "inLanguage": "en",
+  "datePublished": "2018-06-04T14:24:00+08:00",
+  "dateModified": "2018-06-04T14:24:00+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "nivrrex"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:39531/posts/use-cmder/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nivrrex's blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:39531/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:39531/" accesskey="h" title="Nivrrex&#39;s blog (Alt + H)">Nivrrex&#39;s blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:39531/archives" title="归档">
+                    <span>归档</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:39531/tags" title="标签">
+                    <span>标签</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    <a href='http://localhost:39531/'>Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="http://localhost:39531/posts/">Posts</a></nav>
+    <h1 class="post-title entry-hint-parent">
+      use cmder
+    </h1>
+    <div class="post-meta"><span title='2018-06-04 14:24:00 +0800 CST'>June 4, 2018</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>nivrrex</span>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h3 id="缘来">缘来<a hidden class="anchor" aria-hidden="true" href="#缘来">#</a></h3>
+<p>Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了<a href="http://cmder.net/">cmder</a>这个很方便的替代windows自带命令行的好工具，记录一下。</p>
+<hr>
+<h3 id="介绍">介绍<a hidden class="anchor" aria-hidden="true" href="#介绍">#</a></h3>
+<p>cmder由3部分组成：</p>
+<h5 id="conemu"><a href="https://conemu.github.io/en/">ConEmu</a><a hidden class="anchor" aria-hidden="true" href="#conemu">#</a></h5>
+<p>ConEmu 是一套 Windows 控制台模拟器 (console emulator)</p>
+<h5 id="clink"><a href="https://github.com/mridgers/clink">Clink</a><a hidden class="anchor" aria-hidden="true" href="#clink">#</a></h5>
+<p>Clink将GNU Readline 函数库整合进原生的Windows 命令行控制台，提供命令行模式下强大的编辑和输入能力</p>
+<h5 id="msysgit"><a href="https://github.com/msysgit/msysgit">msysgit</a><a hidden class="anchor" aria-hidden="true" href="#msysgit">#</a></h5>
+<p>提供了Git for Windows 相关工具，和Unix/Linux 环境下常用的命令行工具，如 less, ls, tar, unzip, md5sum, grep, sed &hellip; 等</p>
+<h3 id="安装">安装<a hidden class="anchor" aria-hidden="true" href="#安装">#</a></h3>
+<p>安裝 cmder</p>
+<p>先到 cmder 官网 <a href="http://cmder.net/">http://cmder.net/</a> 下载此工具，有两个版本，分別是 mini 和 full 版，区别在于是否内建msysgit工具集。在电脑未安装Git for Windows等工具集的时候，建议可以下载full版使用。</p>
+<h3 id="外部链接">外部链接<a hidden class="anchor" aria-hidden="true" href="#外部链接">#</a></h3>
+<p>具体使用就不想介绍了，网上有详细的使用介绍和说明，这里推荐3篇文章，大家可以看一下：</p>
+<ul>
+<li>
+<p>介紹好用工具：Cmder ( 具有 Linux 溫度的 Windows 命令提示字元工具 )
+<a href="https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx">https://blog.miniasp.com/post/2015/09/27/Useful-tool-Cmder.aspx</a></p>
+</li>
+<li>
+<p>Win下必备神器之Cmder
+<a href="https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/">https://jeffjade.com/2016/01/13/2016-01-13-windows-software-cmder/</a></p>
+</li>
+<li>
+<p>cmder 一个比cmd强n倍的神器
+<a href="https://www.jianshu.com/p/7a706c0a3411">https://www.jianshu.com/p/7a706c0a3411</a></p>
+</li>
+</ul>
+<h3 id="配置">配置<a hidden class="anchor" aria-hidden="true" href="#配置">#</a></h3>
+<h4 id="注册cmder文档的右键菜单添加cmder-here">注册Cmder，文档的右键菜单添加Cmder here<a hidden class="anchor" aria-hidden="true" href="#注册cmder文档的右键菜单添加cmder-here">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Cmder.exe /REGISTER ALL
+</span></span></code></pre></div><h4 id="cmder使用ls中文显示乱码解决方案">Cmder使用ls中文显示乱码解决方案<a hidden class="anchor" aria-hidden="true" href="#cmder使用ls中文显示乱码解决方案">#</a></h4>
+<h5 id="方案1">方案1<a hidden class="anchor" aria-hidden="true" href="#方案1">#</a></h5>
+<p>默认配置不支持使用ls显示中文命名的文件列表。</p>
+<p>解决方法：
+按下Win+Alt+P打开设置。
+在StartUp - Environment里添加</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>set LANG<span style="color:#f92672">=</span>zh_CN.UTF-8
+</span></span><span style="display:flex;"><span>set LANG<span style="color:#f92672">=</span>zh_CN.GBK
+</span></span><span style="display:flex;"><span>set LC_ALL<span style="color:#f92672">=</span>zh_CN.utf8
+</span></span></code></pre></div><p>保存配置</p>
+<p>重启Cmder，发现使用ls，中文正确显示了。</p>
+<h5 id="备注">备注<a hidden class="anchor" aria-hidden="true" href="#备注">#</a></h5>
+<p>因ConEmu的bug，该设置无法保存，可以去
+<a href="https://github.com/Maximus5/ConEmu/releases">https://github.com/Maximus5/ConEmu/releases</a>
+下载最新或历史版本的ConEmu，替换Cmder自带的版本，则可以解决这个问题</p>
+<h5 id="方案2">方案2<a hidden class="anchor" aria-hidden="true" href="#方案2">#</a></h5>
+<p>修改cmder\vendor\conemu-maximus5\ConEmu.xml文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;value name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EnvironmentSet&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multi&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;line data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;/value&gt;
+</span></span></code></pre></div><p>修改添加为：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;value name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;EnvironmentSet&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;multi&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	&lt;line data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;set PATH=%ConEmuBaseDir%\Scripts;%PATH%&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>	&lt;line data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;set LANG=zh_CN.UTF-8&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>	&lt;line data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;set LANG=zh_CN.gbk&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>	&lt;line data<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;set LC_ALL=zh_CN.utf8&#34;</span>/&gt;
+</span></span><span style="display:flex;"><span>&lt;/value&gt;
+</span></span></code></pre></div><h3 id="结">结<a hidden class="anchor" aria-hidden="true" href="#结">#</a></h3>
+<p>就这样，配置完成后，就可以用啦~</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:39531/tags/soft/">Soft</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:39531/posts/ubnt-erx-use-openwrt/">
+    <span class="title">« Prev</span>
+    <span>ubnt er-x use openwrt</span>
+  </a>
+  <a class="next" href="http://localhost:39531/posts/change-hexo-to-hugo/">
+    <span class="title">Next »</span>
+    <span>change hexo to hugo</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:39531/">Nivrrex&#39;s blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

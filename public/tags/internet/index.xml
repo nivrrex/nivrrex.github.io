@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Internet on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/internet/</link>
+    <description>Recent content in Internet on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 29 Jan 2023 09:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>use Windows API to set IE proxy</title>
+      <link>http://localhost:39531/posts/use-api-to-set-ie-proxy/</link>
+      <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/use-api-to-set-ie-proxy/</guid>
+      <description>&lt;p&gt;使用 Windows API 设置 IE 代理服务器&lt;/p&gt;
+&lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
+&lt;p&gt;最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。&lt;/p&gt;
+&lt;p&gt;注册表方式使用时，偶尔会出现设置异常，无法成功的情况，所以想实验一下API的方式。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fanqiang with dnsmasq</title>
+      <link>http://localhost:39531/posts/fanqiang-with-dnsmasq/</link>
+      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-dnsmasq/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fanqiang with chinadns</title>
+      <link>http://localhost:39531/posts/fanqiang-with-chinadns/</link>
+      <pubDate>Sun, 26 Jul 2015 12:54:59 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-chinadns/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fanqiang with shadowsocks</title>
+      <link>http://localhost:39531/posts/fanqiang-with-shadowsocks/</link>
+      <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-shadowsocks/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;已经一年多没有更新这个blog了，现在来写点什么吧。
+这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fanqiang with openwrt&#43;vps</title>
+      <link>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</link>
+      <pubDate>Tue, 08 Jul 2014 21:27:40 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;在上一篇&lt;a href=&#34;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&#34;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fanqiang with vpn&#43;chnroutes</title>
+      <link>http://localhost:39531/posts/fanqiang-with-vpn&#43;chnroutes/</link>
+      <pubDate>Sat, 28 Jun 2014 10:48:47 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-vpn&#43;chnroutes/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。
+翻来覆去的太麻烦。&lt;strong&gt;只好换招了&lt;/strong&gt;。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>fanqiang with goagent</title>
+      <link>http://localhost:39531/posts/fanqiang-with-goagent/</link>
+      <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-goagent/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。
+刚开始以为一段时间就OK了，就用了临时性的解决方案。&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用&lt;a href=&#34;http://www.bing.com/?mkt=zh-CN&#34;&gt;Bing&lt;/a&gt;代替。 &lt;em&gt;搜索效果相比Google还有差距&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用&lt;a href=&#34;https://www.startpage.com/&#34;&gt;StartPage&lt;/a&gt;代替。 &lt;em&gt;相比原版，存在部分结果搜索不到的问题&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;直接用&lt;a href=&#34;https://github.com/justjavac/Google-IPs/blob/master/README.md&#34;&gt;Google IP&lt;/a&gt;进行搜索。 &lt;em&gt;可以使用的IP被飞快的封锁&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用网上的免翻墙镜像网站&lt;a href=&#34;https://github.com/greatfire/wiki&#34;&gt;greatfire&lt;/a&gt;。 &lt;em&gt;是个不错的解决方案，但是怕被封锁后还要重新设置&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用网上的免费VPN&lt;a href=&#34;http://ilvpn.com/free-vpn/&#34;&gt;免费VPN资源&lt;/a&gt;。 &lt;em&gt;免费的要么限制流量，要么限制时间，而且免费的基本上速度比较慢&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;使用google的GAE平台的&lt;a href=&#34;https://code.google.com/p/goagent/&#34;&gt;goagent&lt;/a&gt;。 &lt;em&gt;强烈推荐&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;goagent设置&#34;&gt;goagent设置&lt;/h4&gt;
+&lt;p&gt;这个网上教程很多，随便搜索都有好几个，如：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

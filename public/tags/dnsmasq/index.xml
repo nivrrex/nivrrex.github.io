@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dnsmasq on Nivrrex&#39;s blog</title>
+    <link>http://localhost:39531/tags/dnsmasq/</link>
+    <description>Recent content in Dnsmasq on Nivrrex&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 26 Jul 2015 17:51:59 +0800</lastBuildDate>
+    <atom:link href="http://localhost:39531/tags/dnsmasq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fanqiang with dnsmasq</title>
+      <link>http://localhost:39531/posts/fanqiang-with-dnsmasq/</link>
+      <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
+      <guid>http://localhost:39531/posts/fanqiang-with-dnsmasq/</guid>
+      <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
+&lt;p&gt;本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
