@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Shadowsocks on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/shadowsocks/</link>
+    <link>https://nivrrex.github.io/tags/shadowsocks/</link>
     <description>Recent content in Shadowsocks on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 24 Jul 2015 12:57:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/shadowsocks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fanqiang with shadowsocks</title>
-      <link>http://localhost:39531/posts/fanqiang-with-shadowsocks/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</link>
       <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-shadowsocks/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;已经一年多没有更新这个blog了，现在来写点什么吧。
 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。&lt;/p&gt;</description>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Goagent on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/goagent/</link>
+    <link>https://nivrrex.github.io/tags/goagent/</link>
     <description>Recent content in Goagent on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 25 Jun 2014 21:45:26 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/goagent/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/goagent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>fanqiang with goagent</title>
-      <link>http://localhost:39531/posts/fanqiang-with-goagent/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-goagent/</link>
       <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-goagent/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-goagent/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。
 刚开始以为一段时间就OK了，就用了临时性的解决方案。&lt;/p&gt;

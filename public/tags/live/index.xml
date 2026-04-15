@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Live on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/live/</link>
+    <link>https://nivrrex.github.io/tags/live/</link>
     <description>Recent content in Live on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/live/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/live/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI programming</title>
-      <link>http://localhost:39531/posts/ai-programming/</link>
+      <link>https://nivrrex.github.io/posts/ai-programming/</link>
       <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/ai-programming/</guid>
+      <guid>https://nivrrex.github.io/posts/ai-programming/</guid>
       <description>&lt;h3 id=&#34;ai-编程&#34;&gt;AI 编程&lt;/h3&gt;
 &lt;p&gt;现在的 AI 确实挺厉害的，感觉已经很实用了。&lt;/p&gt;
 &lt;p&gt;最近我有几个需求，比如：&lt;/p&gt;
@@ -25,18 +25,18 @@
     </item>
     <item>
       <title>2022 summary</title>
-      <link>http://localhost:39531/posts/2022-summary/</link>
+      <link>https://nivrrex.github.io/posts/2022-summary/</link>
       <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/2022-summary/</guid>
+      <guid>https://nivrrex.github.io/posts/2022-summary/</guid>
       <description>&lt;p&gt;平淡的一年&lt;/p&gt;
 &lt;h3 id=&#34;gfw&#34;&gt;GFW&lt;/h3&gt;
 &lt;p&gt;这一年里， 买了几家新的 VPS ，试用了后，或多或少有点问题，决定明年就续约那两家固定的。科学上网技术也实验了几个新的 hysteria / tuic / gost / glider / mieru / pingtunnel ，目前稳定的在使用 naiveproxy。速度不重要，稳定才重要。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 summary</title>
-      <link>http://localhost:39531/posts/2021-summary/</link>
+      <link>https://nivrrex.github.io/posts/2021-summary/</link>
       <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/2021-summary/</guid>
+      <guid>https://nivrrex.github.io/posts/2021-summary/</guid>
       <description>&lt;p&gt;折腾的一年，回归平淡&lt;/p&gt;
 &lt;h3 id=&#34;gfw&#34;&gt;GFW&lt;/h3&gt;
 &lt;p&gt;这一年里， VPS 换了好几家，科学上网技术也换了好几种：ss / ss+kcptun+udp2raw / trojan / xray(vless) / naiveproxy / hysteria ， bbr 核心也反复调整。&lt;/p&gt;
@@ -44,18 +44,18 @@
     </item>
     <item>
       <title>change hexo to hugo</title>
-      <link>http://localhost:39531/posts/change-hexo-to-hugo/</link>
+      <link>https://nivrrex.github.io/posts/change-hexo-to-hugo/</link>
       <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      <guid>http://localhost:39531/posts/change-hexo-to-hugo/</guid>
+      <guid>https://nivrrex.github.io/posts/change-hexo-to-hugo/</guid>
       <description>&lt;h4 id=&#34;缘由&#34;&gt;缘由&lt;/h4&gt;
 &lt;p&gt;好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。
 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Hello GitHub</title>
-      <link>http://localhost:39531/posts/hello-github/</link>
+      <link>https://nivrrex.github.io/posts/hello-github/</link>
       <pubDate>Thu, 12 Jun 2014 19:37:32 +0800</pubDate>
-      <guid>http://localhost:39531/posts/hello-github/</guid>
+      <guid>https://nivrrex.github.io/posts/hello-github/</guid>
       <description>&lt;p&gt;欢迎来到我的&lt;a href=&#34;http://nivrrex.github.io/&#34;&gt;GitHub blog&lt;/a&gt;！&lt;/p&gt;
 &lt;p&gt;这是我用&lt;a href=&#34;http://hexo.io/&#34;&gt;Hexo&lt;/a&gt;编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。&lt;/p&gt;
 &lt;hr&gt;

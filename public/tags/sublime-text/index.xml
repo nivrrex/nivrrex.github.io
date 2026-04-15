@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Sublime-Text on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/sublime-text/</link>
+    <link>https://nivrrex.github.io/tags/sublime-text/</link>
     <description>Recent content in Sublime-Text on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 01 Aug 2015 15:41:45 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/sublime-text/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>change editer with sublime text</title>
-      <link>http://localhost:39531/posts/change-editer-with-sublime-text/</link>
+      <link>https://nivrrex.github.io/posts/change-editer-with-sublime-text/</link>
       <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
-      <guid>http://localhost:39531/posts/change-editer-with-sublime-text/</guid>
+      <guid>https://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;本来一直使用的编译器是&lt;a href=&#34;http://www.scintilla.org/SciTE.html&#34;&gt;SciTE&lt;/a&gt;，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。
 最近看了&lt;a href=&#34;http://www.tudou.com/home/golang/item/&#34;&gt;Golang中国的教学视频&lt;/a&gt;，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇&lt;a href=&#34;http://www.linuxeden.com/html/news/20150730/162107.html&#34;&gt;Sublime Text 全程指南&lt;/a&gt;，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。&lt;/p&gt;</description>

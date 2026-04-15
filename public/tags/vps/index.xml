@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Vps on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/vps/</link>
+    <link>https://nivrrex.github.io/tags/vps/</link>
     <description>Recent content in Vps on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 30 Dec 2022 09:55:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/vps/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/vps/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>2022 summary</title>
-      <link>http://localhost:39531/posts/2022-summary/</link>
+      <link>https://nivrrex.github.io/posts/2022-summary/</link>
       <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/2022-summary/</guid>
+      <guid>https://nivrrex.github.io/posts/2022-summary/</guid>
       <description>&lt;p&gt;平淡的一年&lt;/p&gt;
 &lt;h3 id=&#34;gfw&#34;&gt;GFW&lt;/h3&gt;
 &lt;p&gt;这一年里， 买了几家新的 VPS ，试用了后，或多或少有点问题，决定明年就续约那两家固定的。科学上网技术也实验了几个新的 hysteria / tuic / gost / glider / mieru / pingtunnel ，目前稳定的在使用 naiveproxy。速度不重要，稳定才重要。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 summary</title>
-      <link>http://localhost:39531/posts/2021-summary/</link>
+      <link>https://nivrrex.github.io/posts/2021-summary/</link>
       <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/2021-summary/</guid>
+      <guid>https://nivrrex.github.io/posts/2021-summary/</guid>
       <description>&lt;p&gt;折腾的一年，回归平淡&lt;/p&gt;
 &lt;h3 id=&#34;gfw&#34;&gt;GFW&lt;/h3&gt;
 &lt;p&gt;这一年里， VPS 换了好几家，科学上网技术也换了好几种：ss / ss+kcptun+udp2raw / trojan / xray(vless) / naiveproxy / hysteria ， bbr 核心也反复调整。&lt;/p&gt;
@@ -29,9 +29,9 @@
     </item>
     <item>
       <title>update debian linux image with backports</title>
-      <link>http://localhost:39531/posts/update-debian-linux-image-with-backports/</link>
+      <link>https://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</link>
       <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
-      <guid>http://localhost:39531/posts/update-debian-linux-image-with-backports/</guid>
+      <guid>https://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。&lt;/p&gt;
 &lt;hr&gt;
@@ -40,26 +40,26 @@
     </item>
     <item>
       <title>fanqiang with dnsmasq</title>
-      <link>http://localhost:39531/posts/fanqiang-with-dnsmasq/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</link>
       <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-dnsmasq/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with shadowsocks</title>
-      <link>http://localhost:39531/posts/fanqiang-with-shadowsocks/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</link>
       <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-shadowsocks/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;已经一年多没有更新这个blog了，现在来写点什么吧。
 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with openwrt&#43;vps</title>
-      <link>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</link>
       <pubDate>Tue, 08 Jul 2014 21:27:40 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;在上一篇&lt;a href=&#34;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&#34;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！&lt;/p&gt;</description>
     </item>

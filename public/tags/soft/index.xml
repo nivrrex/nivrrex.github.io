@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Soft on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/soft/</link>
+    <link>https://nivrrex.github.io/tags/soft/</link>
     <description>Recent content in Soft on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/soft/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/soft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI programming</title>
-      <link>http://localhost:39531/posts/ai-programming/</link>
+      <link>https://nivrrex.github.io/posts/ai-programming/</link>
       <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/ai-programming/</guid>
+      <guid>https://nivrrex.github.io/posts/ai-programming/</guid>
       <description>&lt;h3 id=&#34;ai-编程&#34;&gt;AI 编程&lt;/h3&gt;
 &lt;p&gt;现在的 AI 确实挺厉害的，感觉已经很实用了。&lt;/p&gt;
 &lt;p&gt;最近我有几个需求，比如：&lt;/p&gt;
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>use mupdf to read epub and use css set epub font</title>
-      <link>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
+      <link>https://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
       <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
+      <guid>https://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。&lt;/p&gt;
 &lt;hr&gt;
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>use Windows API to set IE proxy</title>
-      <link>http://localhost:39531/posts/use-api-to-set-ie-proxy/</link>
+      <link>https://nivrrex.github.io/posts/use-api-to-set-ie-proxy/</link>
       <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-api-to-set-ie-proxy/</guid>
+      <guid>https://nivrrex.github.io/posts/use-api-to-set-ie-proxy/</guid>
       <description>&lt;p&gt;使用 Windows API 设置 IE 代理服务器&lt;/p&gt;
 &lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
 &lt;p&gt;最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。&lt;/p&gt;
@@ -46,26 +46,26 @@
     </item>
     <item>
       <title>use cmder</title>
-      <link>http://localhost:39531/posts/use-cmder/</link>
+      <link>https://nivrrex.github.io/posts/use-cmder/</link>
       <pubDate>Mon, 04 Jun 2018 14:24:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-cmder/</guid>
+      <guid>https://nivrrex.github.io/posts/use-cmder/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了&lt;a href=&#34;http://cmder.net/&#34;&gt;cmder&lt;/a&gt;这个很方便的替代windows自带命令行的好工具，记录一下。&lt;/p&gt;</description>
     </item>
     <item>
       <title>change editer with sublime text</title>
-      <link>http://localhost:39531/posts/change-editer-with-sublime-text/</link>
+      <link>https://nivrrex.github.io/posts/change-editer-with-sublime-text/</link>
       <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
-      <guid>http://localhost:39531/posts/change-editer-with-sublime-text/</guid>
+      <guid>https://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;本来一直使用的编译器是&lt;a href=&#34;http://www.scintilla.org/SciTE.html&#34;&gt;SciTE&lt;/a&gt;，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。
 最近看了&lt;a href=&#34;http://www.tudou.com/home/golang/item/&#34;&gt;Golang中国的教学视频&lt;/a&gt;，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇&lt;a href=&#34;http://www.linuxeden.com/html/news/20150730/162107.html&#34;&gt;Sublime Text 全程指南&lt;/a&gt;，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>commonly used software</title>
-      <link>http://localhost:39531/posts/commonly-used-software/</link>
+      <link>https://nivrrex.github.io/posts/commonly-used-software/</link>
       <pubDate>Thu, 12 Jun 2014 22:32:51 +0800</pubDate>
-      <guid>http://localhost:39531/posts/commonly-used-software/</guid>
+      <guid>https://nivrrex.github.io/posts/commonly-used-software/</guid>
       <description>&lt;h2 id=&#34;开发工具&#34;&gt;开发工具&lt;/h2&gt;
 &lt;h4 id=&#34;python&#34;&gt;Python&lt;/h4&gt;
 &lt;ul&gt;
