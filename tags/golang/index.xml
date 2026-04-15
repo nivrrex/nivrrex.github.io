@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Golang on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/golang/</link>
+    <link>https://nivrrex.github.io/tags/golang/</link>
     <description>Recent content in Golang on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>crosscompiling for openwrt with golang</title>
-      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</link>
+      <link>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</guid>
+      <guid>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;实验了下nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。&lt;/p&gt;
 &lt;hr&gt;
@@ -49,9 +49,9 @@
     </item>
     <item>
       <title>some problems for golang excel update</title>
-      <link>http://localhost:39531/posts/some-problems-for-golang-excel-update/</link>
+      <link>https://nivrrex.github.io/posts/some-problems-for-golang-excel-update/</link>
       <pubDate>Sun, 15 Jun 2014 17:24:30 +0800</pubDate>
-      <guid>http://localhost:39531/posts/some-problems-for-golang-excel-update/</guid>
+      <guid>https://nivrrex.github.io/posts/some-problems-for-golang-excel-update/</guid>
       <description>&lt;p&gt;趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见&lt;a href=&#34;https://github.com/nivrrex/excel&#34;&gt;这里&lt;/a&gt;
 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。&lt;/p&gt;</description>
     </item>

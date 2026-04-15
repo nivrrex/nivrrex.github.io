@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Openwrt on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/openwrt/</link>
+    <link>https://nivrrex.github.io/tags/openwrt/</link>
     <description>Recent content in Openwrt on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 15 Nov 2019 23:29:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>crosscompiling for openwrt with golang</title>
-      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</link>
+      <link>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</guid>
+      <guid>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;实验了下nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。&lt;/p&gt;
 &lt;hr&gt;
@@ -49,9 +49,9 @@
     </item>
     <item>
       <title>crosscompiling for openwrt with nim</title>
-      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-nim/</link>
+      <link>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</link>
       <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-nim/</guid>
+      <guid>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。&lt;/p&gt;
 &lt;hr&gt;
@@ -73,35 +73,35 @@
     </item>
     <item>
       <title>ubnt er-x use openwrt</title>
-      <link>http://localhost:39531/posts/ubnt-erx-use-openwrt/</link>
+      <link>https://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</link>
       <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/ubnt-erx-use-openwrt/</guid>
+      <guid>https://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</guid>
       <description>&lt;p&gt;给UBNT的ER-X刷OpenWrt固件&lt;/p&gt;
 &lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
 &lt;p&gt;UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with chinadns</title>
-      <link>http://localhost:39531/posts/fanqiang-with-chinadns/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-chinadns/</link>
       <pubDate>Sun, 26 Jul 2015 12:54:59 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-chinadns/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-chinadns/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>build openwrt with image builder</title>
-      <link>http://localhost:39531/posts/build-openwrt-with-image-builder/</link>
+      <link>https://nivrrex.github.io/posts/build-openwrt-with-image-builder/</link>
       <pubDate>Thu, 17 Jul 2014 22:17:11 +0800</pubDate>
-      <guid>http://localhost:39531/posts/build-openwrt-with-image-builder/</guid>
+      <guid>https://nivrrex.github.io/posts/build-openwrt-with-image-builder/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;这几天在折腾OpenWrt，前文&lt;a href=&#34;http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/&#34;&gt;fanqiang with openwrt+vps&lt;/a&gt;里说过，	我用的是PandoraBox最新编译的版本，但是其内置的&lt;a href=&#34;http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages/&#34;&gt;packages&lt;/a&gt;里面很多软件没有编译，如Python等。而直接换用官方的&lt;a href=&#34;http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages/&#34;&gt;packages&lt;/a&gt;，会提示兼容性问题，无法直接使用。
 从网络Google了一下，可以两个同时使用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with openwrt&#43;vps</title>
-      <link>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</link>
       <pubDate>Tue, 08 Jul 2014 21:27:40 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;在上一篇&lt;a href=&#34;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&#34;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！&lt;/p&gt;</description>
     </item>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/</link>
+    <link>https://nivrrex.github.io/</link>
     <description>Recent content on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI programming</title>
-      <link>http://localhost:39531/posts/ai-programming/</link>
+      <link>https://nivrrex.github.io/posts/ai-programming/</link>
       <pubDate>Fri, 12 Dec 2025 17:00:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/ai-programming/</guid>
+      <guid>https://nivrrex.github.io/posts/ai-programming/</guid>
       <description>&lt;h3 id=&#34;ai-编程&#34;&gt;AI 编程&lt;/h3&gt;
 &lt;p&gt;现在的 AI 确实挺厉害的，感觉已经很实用了。&lt;/p&gt;
 &lt;p&gt;最近我有几个需求，比如：&lt;/p&gt;
@@ -25,9 +25,9 @@
     </item>
     <item>
       <title>use mupdf to read epub and use css set epub font</title>
-      <link>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
+      <link>https://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
       <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
+      <guid>https://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。&lt;/p&gt;
 &lt;hr&gt;
@@ -36,9 +36,9 @@
     </item>
     <item>
       <title>use Windows API to set IE proxy</title>
-      <link>http://localhost:39531/posts/use-api-to-set-ie-proxy/</link>
+      <link>https://nivrrex.github.io/posts/use-api-to-set-ie-proxy/</link>
       <pubDate>Sun, 29 Jan 2023 09:10:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-api-to-set-ie-proxy/</guid>
+      <guid>https://nivrrex.github.io/posts/use-api-to-set-ie-proxy/</guid>
       <description>&lt;p&gt;使用 Windows API 设置 IE 代理服务器&lt;/p&gt;
 &lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
 &lt;p&gt;最近折腾各种代理框架，需要设置 IE 代理服务器。了解有两种方式，注册表和API方式。&lt;/p&gt;
@@ -46,18 +46,18 @@
     </item>
     <item>
       <title>2022 summary</title>
-      <link>http://localhost:39531/posts/2022-summary/</link>
+      <link>https://nivrrex.github.io/posts/2022-summary/</link>
       <pubDate>Fri, 30 Dec 2022 09:55:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/2022-summary/</guid>
+      <guid>https://nivrrex.github.io/posts/2022-summary/</guid>
       <description>&lt;p&gt;平淡的一年&lt;/p&gt;
 &lt;h3 id=&#34;gfw&#34;&gt;GFW&lt;/h3&gt;
 &lt;p&gt;这一年里， 买了几家新的 VPS ，试用了后，或多或少有点问题，决定明年就续约那两家固定的。科学上网技术也实验了几个新的 hysteria / tuic / gost / glider / mieru / pingtunnel ，目前稳定的在使用 naiveproxy。速度不重要，稳定才重要。&lt;/p&gt;</description>
     </item>
     <item>
       <title>2021 summary</title>
-      <link>http://localhost:39531/posts/2021-summary/</link>
+      <link>https://nivrrex.github.io/posts/2021-summary/</link>
       <pubDate>Fri, 10 Dec 2021 10:15:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/2021-summary/</guid>
+      <guid>https://nivrrex.github.io/posts/2021-summary/</guid>
       <description>&lt;p&gt;折腾的一年，回归平淡&lt;/p&gt;
 &lt;h3 id=&#34;gfw&#34;&gt;GFW&lt;/h3&gt;
 &lt;p&gt;这一年里， VPS 换了好几家，科学上网技术也换了好几种：ss / ss+kcptun+udp2raw / trojan / xray(vless) / naiveproxy / hysteria ， bbr 核心也反复调整。&lt;/p&gt;
@@ -65,9 +65,9 @@
     </item>
     <item>
       <title>dlang with ldc in mipsel</title>
-      <link>http://localhost:39531/posts/dlang-with-ldc-in-mipsel/</link>
+      <link>https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</link>
       <pubDate>Sun, 30 Aug 2020 09:19:10 +0800</pubDate>
-      <guid>http://localhost:39531/posts/dlang-with-ldc-in-mipsel/</guid>
+      <guid>https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/</guid>
       <description>&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
 &lt;p&gt;突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下&lt;a href=&#34;https://wiki.dlang.org/Cross-compiling_with_LDC&#34;&gt;Cross-compiling with LDC&lt;/a&gt;，现在将具体过程记录一下。&lt;/p&gt;
 &lt;h1 id=&#34;mipsel-gcc&#34;&gt;mipsel gcc&lt;/h1&gt;
@@ -75,17 +75,17 @@
     </item>
     <item>
       <title>compile nim with tcc</title>
-      <link>http://localhost:39531/posts/compile-nim-with-tcc/</link>
+      <link>https://nivrrex.github.io/posts/compile-nim-with-tcc/</link>
       <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/compile-nim-with-tcc/</guid>
+      <guid>https://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>crosscompiling for openwrt with golang</title>
-      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</link>
+      <link>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</link>
       <pubDate>Fri, 15 Nov 2019 23:29:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-golang/</guid>
+      <guid>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-golang/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;实验了下nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)在OpenWRT系统下可执行程序的交叉编译，也想实验一下Golang的交叉编译，发现更方便。&lt;/p&gt;
 &lt;hr&gt;
@@ -122,9 +122,9 @@
     </item>
     <item>
       <title>crosscompiling for openwrt with nim</title>
-      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-nim/</link>
+      <link>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</link>
       <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-nim/</guid>
+      <guid>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。&lt;/p&gt;
 &lt;hr&gt;
@@ -146,52 +146,52 @@
     </item>
     <item>
       <title>ubnt er-x use openwrt</title>
-      <link>http://localhost:39531/posts/ubnt-erx-use-openwrt/</link>
+      <link>https://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</link>
       <pubDate>Mon, 09 Jul 2018 20:12:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/ubnt-erx-use-openwrt/</guid>
+      <guid>https://nivrrex.github.io/posts/ubnt-erx-use-openwrt/</guid>
       <description>&lt;p&gt;给UBNT的ER-X刷OpenWrt固件&lt;/p&gt;
 &lt;h3 id=&#34;缘&#34;&gt;缘&lt;/h3&gt;
 &lt;p&gt;UBNT 的 ER-X 是个弱电箱的神器，设备很小，用的是 MT7621AT 。虽然没有无线，但是弱电箱里面无线信号本来就屏蔽的厉害，后期加装个 AP 就行了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>use cmder</title>
-      <link>http://localhost:39531/posts/use-cmder/</link>
+      <link>https://nivrrex.github.io/posts/use-cmder/</link>
       <pubDate>Mon, 04 Jun 2018 14:24:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-cmder/</guid>
+      <guid>https://nivrrex.github.io/posts/use-cmder/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;Windows下的命令行一直没有什么进化，命令不多，处理也很不方便，比较其Linux的shell，差距比较大。所以网上一直也有cygwin和msys这种，将Linux的命令移植到Windows下使用的工具集。但虽然命令有了，但命令行自身的一些劣势，还是没有解决。最近，从网上看到了&lt;a href=&#34;http://cmder.net/&#34;&gt;cmder&lt;/a&gt;这个很方便的替代windows自带命令行的好工具，记录一下。&lt;/p&gt;</description>
     </item>
     <item>
       <title>change hexo to hugo</title>
-      <link>http://localhost:39531/posts/change-hexo-to-hugo/</link>
+      <link>https://nivrrex.github.io/posts/change-hexo-to-hugo/</link>
       <pubDate>Sun, 23 Apr 2017 11:22:28 +0800</pubDate>
-      <guid>http://localhost:39531/posts/change-hexo-to-hugo/</guid>
+      <guid>https://nivrrex.github.io/posts/change-hexo-to-hugo/</guid>
       <description>&lt;h4 id=&#34;缘由&#34;&gt;缘由&lt;/h4&gt;
 &lt;p&gt;好久没有更新blog了，最近在重装系统并转移硬盘数据时，需要移动并删除hexo文件夹下的数据，结果提示“该文件夹包含名称过长且无法放入回收站的项目”，感觉好不爽。
 而且重新布置hexo比较麻烦，要装一大堆插件，原先版本插件已经失效了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>start to use python</title>
-      <link>http://localhost:39531/posts/start-to-use-python/</link>
+      <link>https://nivrrex.github.io/posts/start-to-use-python/</link>
       <pubDate>Mon, 04 Apr 2016 09:05:37 +0800</pubDate>
-      <guid>http://localhost:39531/posts/start-to-use-python/</guid>
+      <guid>https://nivrrex.github.io/posts/start-to-use-python/</guid>
       <description>&lt;h4 id=&#34;缘来&#34;&gt;缘来&lt;/h4&gt;
 &lt;p&gt;最近因为使用Ruby做某个Excel内的数据分析时，写的脚本执行时间过长，考虑进行优化。从网上看到Python的数据分析能力很强，所以试着Ruby换成了Python。&lt;/p&gt;</description>
     </item>
     <item>
       <title>change editer with sublime text</title>
-      <link>http://localhost:39531/posts/change-editer-with-sublime-text/</link>
+      <link>https://nivrrex.github.io/posts/change-editer-with-sublime-text/</link>
       <pubDate>Sat, 01 Aug 2015 15:41:45 +0800</pubDate>
-      <guid>http://localhost:39531/posts/change-editer-with-sublime-text/</guid>
+      <guid>https://nivrrex.github.io/posts/change-editer-with-sublime-text/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;本来一直使用的编译器是&lt;a href=&#34;http://www.scintilla.org/SciTE.html&#34;&gt;SciTE&lt;/a&gt;，很轻量级，自己设置了配置文件后，除了没有自动完成的提示，用起来也还可以。
 最近看了&lt;a href=&#34;http://www.tudou.com/home/golang/item/&#34;&gt;Golang中国的教学视频&lt;/a&gt;，国内Golang语言框架作者Unknwon使用Sublime Text进行开发Macaron时，感觉自动提示用起来挺舒服的。而且又看到了一篇&lt;a href=&#34;http://www.linuxeden.com/html/news/20150730/162107.html&#34;&gt;Sublime Text 全程指南&lt;/a&gt;，改变了我对很久以前试用Sublime Text的看法。网络上有对它的评价非常非常高，兴起了试试Sublime Text的想法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>update debian linux image with backports</title>
-      <link>http://localhost:39531/posts/update-debian-linux-image-with-backports/</link>
+      <link>https://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</link>
       <pubDate>Mon, 27 Jul 2015 22:36:17 +0800</pubDate>
-      <guid>http://localhost:39531/posts/update-debian-linux-image-with-backports/</guid>
+      <guid>https://nivrrex.github.io/posts/update-debian-linux-image-with-backports/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;因为Shadowsocks-libev的部分功能需要linux高版本的内核才能支持。兴致所起，准备更新一下VPS上的Debian内核版本。&lt;/p&gt;
 &lt;hr&gt;
@@ -200,60 +200,60 @@
     </item>
     <item>
       <title>fanqiang with dnsmasq</title>
-      <link>http://localhost:39531/posts/fanqiang-with-dnsmasq/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</link>
       <pubDate>Sun, 26 Jul 2015 17:51:59 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-dnsmasq/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-dnsmasq/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;本来已经翻墙解决的差不多了，但是在下午下载东西时，发现频繁出现域名无法解析现象，最让人愤怒的是，竟然连www.symantec.com都解析不出来了，应该是GFW对DNS污染的封堵升级导致的吧，一直是DNS解析超时。so，兴起了在自己的VPS上架设一个DNS服务器，作为ChinaDNS的备用上游服务器用的念头，说干就干啊~&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with chinadns</title>
-      <link>http://localhost:39531/posts/fanqiang-with-chinadns/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-chinadns/</link>
       <pubDate>Sun, 26 Jul 2015 12:54:59 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-chinadns/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-chinadns/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;用Opera等浏览器时，由于DNS被GFW污染了，所以fanqiang的有些不爽快，像Twitter.com和Facebook.com无法上，虽然IE等借助Shadowsocks可以直接上？所以想在OpenWRT上，把DNS污染问题彻底解决了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with shadowsocks</title>
-      <link>http://localhost:39531/posts/fanqiang-with-shadowsocks/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</link>
       <pubDate>Fri, 24 Jul 2015 12:57:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-shadowsocks/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-shadowsocks/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;已经一年多没有更新这个blog了，现在来写点什么吧。
 这一年来，没怎么做这方面的东西，fanqiang也主要是用VPS架设的PPTP VPN，速度一般，但是可以上很多网站啦。前一阵子，把RamNode上的VPS重新续费，然后购入了NETGEAR的WNDR4300路由器，刷了最新版本的14.07的OpenWRT在用。中间没有怎么折腾，基本够用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>build openwrt with image builder</title>
-      <link>http://localhost:39531/posts/build-openwrt-with-image-builder/</link>
+      <link>https://nivrrex.github.io/posts/build-openwrt-with-image-builder/</link>
       <pubDate>Thu, 17 Jul 2014 22:17:11 +0800</pubDate>
-      <guid>http://localhost:39531/posts/build-openwrt-with-image-builder/</guid>
+      <guid>https://nivrrex.github.io/posts/build-openwrt-with-image-builder/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;这几天在折腾OpenWrt，前文&lt;a href=&#34;http://nivrrex.github.io/2014/07/08/fanqiang-with-openwrt+vps/&#34;&gt;fanqiang with openwrt+vps&lt;/a&gt;里说过，	我用的是PandoraBox最新编译的版本，但是其内置的&lt;a href=&#34;http://downloads.openwrt.org.cn/PandoraBox/ralink/rt305x/packages/&#34;&gt;packages&lt;/a&gt;里面很多软件没有编译，如Python等。而直接换用官方的&lt;a href=&#34;http://downloads.openwrt.org/attitude_adjustment/12.09/ramips/rt305x/packages/&#34;&gt;packages&lt;/a&gt;，会提示兼容性问题，无法直接使用。
 从网络Google了一下，可以两个同时使用。&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with openwrt&#43;vps</title>
-      <link>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</link>
       <pubDate>Tue, 08 Jul 2014 21:27:40 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-openwrt&#43;vps/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-openwrt&#43;vps/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;在上一篇&lt;a href=&#34;http://nivrrex.github.io/2014/06/28/fanqiang-with-vpn+chnroutes&#34;&gt;《fanqiang with vpn+chnroutes》&lt;/a&gt;中，通过免费的vpn和chnroutes，已经可以成功的翻墙了，后来觉得免费VPN不稳定，又买了一个月的付费vpn；再后来，觉得付费vpn不是共享，服务器上的多了，就又要换服务器，不爽；于是就决定，找个国外的vps主机，自己独享fq带宽！&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with vpn&#43;chnroutes</title>
-      <link>http://localhost:39531/posts/fanqiang-with-vpn&#43;chnroutes/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-vpn&#43;chnroutes/</link>
       <pubDate>Sat, 28 Jun 2014 10:48:47 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-vpn&#43;chnroutes/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-vpn&#43;chnroutes/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;用goagent这个FQ方案，终于可以上google了，但是因为gfw这个家伙封锁的太厉害的缘故，会出现可用IP为0的现象，结果又断网了。
 翻来覆去的太麻烦。&lt;strong&gt;只好换招了&lt;/strong&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>fanqiang with goagent</title>
-      <link>http://localhost:39531/posts/fanqiang-with-goagent/</link>
+      <link>https://nivrrex.github.io/posts/fanqiang-with-goagent/</link>
       <pubDate>Wed, 25 Jun 2014 21:45:26 +0800</pubDate>
-      <guid>http://localhost:39531/posts/fanqiang-with-goagent/</guid>
+      <guid>https://nivrrex.github.io/posts/fanqiang-with-goagent/</guid>
       <description>&lt;h4 id=&#34;来由&#34;&gt;来由&lt;/h4&gt;
 &lt;p&gt;最近Google被屏蔽的很厉害，想查个东西都要翻来覆去的，灰常麻烦。
 刚开始以为一段时间就OK了，就用了临时性的解决方案。&lt;/p&gt;
@@ -272,17 +272,17 @@
     </item>
     <item>
       <title>some problems for golang excel update</title>
-      <link>http://localhost:39531/posts/some-problems-for-golang-excel-update/</link>
+      <link>https://nivrrex.github.io/posts/some-problems-for-golang-excel-update/</link>
       <pubDate>Sun, 15 Jun 2014 17:24:30 +0800</pubDate>
-      <guid>http://localhost:39531/posts/some-problems-for-golang-excel-update/</guid>
+      <guid>https://nivrrex.github.io/posts/some-problems-for-golang-excel-update/</guid>
       <description>&lt;p&gt;趁着周末，用golang把以前写的excel操作的简单包装库又修改了一下，具体详见&lt;a href=&#34;https://github.com/nivrrex/excel&#34;&gt;这里&lt;/a&gt;
 由于对golang的语法和工具链不怎么熟悉，反复了好几次，下边简单记录下。&lt;/p&gt;</description>
     </item>
     <item>
       <title>commonly used software</title>
-      <link>http://localhost:39531/posts/commonly-used-software/</link>
+      <link>https://nivrrex.github.io/posts/commonly-used-software/</link>
       <pubDate>Thu, 12 Jun 2014 22:32:51 +0800</pubDate>
-      <guid>http://localhost:39531/posts/commonly-used-software/</guid>
+      <guid>https://nivrrex.github.io/posts/commonly-used-software/</guid>
       <description>&lt;h2 id=&#34;开发工具&#34;&gt;开发工具&lt;/h2&gt;
 &lt;h4 id=&#34;python&#34;&gt;Python&lt;/h4&gt;
 &lt;ul&gt;
@@ -354,9 +354,9 @@
     </item>
     <item>
       <title>Hello GitHub</title>
-      <link>http://localhost:39531/posts/hello-github/</link>
+      <link>https://nivrrex.github.io/posts/hello-github/</link>
       <pubDate>Thu, 12 Jun 2014 19:37:32 +0800</pubDate>
-      <guid>http://localhost:39531/posts/hello-github/</guid>
+      <guid>https://nivrrex.github.io/posts/hello-github/</guid>
       <description>&lt;p&gt;欢迎来到我的&lt;a href=&#34;http://nivrrex.github.io/&#34;&gt;GitHub blog&lt;/a&gt;！&lt;/p&gt;
 &lt;p&gt;这是我用&lt;a href=&#34;http://hexo.io/&#34;&gt;Hexo&lt;/a&gt;编写的一个简易blog，将记录我在GitHub和生活中的点点滴滴，主要关注Ruby和Golang。&lt;/p&gt;
 &lt;hr&gt;
@@ -396,9 +396,9 @@
     </item>
     <item>
       <title>About this blog</title>
-      <link>http://localhost:39531/posts/about-me/</link>
+      <link>https://nivrrex.github.io/posts/about-me/</link>
       <pubDate>Tue, 10 Jun 2014 13:55:26 +0800</pubDate>
-      <guid>http://localhost:39531/posts/about-me/</guid>
+      <guid>https://nivrrex.github.io/posts/about-me/</guid>
       <description>&lt;p&gt;欢迎来到Nivrrex的&lt;a href=&#34;http://nivrrex.github.io/&#34;&gt;GitHub blog&lt;/a&gt;！&lt;/p&gt;
 &lt;p&gt;本blog将记录我在GitHub和生活中的点点滴滴，主要关注&lt;del&gt;Ruby&lt;/del&gt; Python、Golang和Nim。&lt;/p&gt;</description>
     </item>

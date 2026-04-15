@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Nim on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/nim/</link>
+    <link>https://nivrrex.github.io/tags/nim/</link>
     <description>Recent content in Nim on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 17 Nov 2019 09:09:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/nim/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/nim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>compile nim with tcc</title>
-      <link>http://localhost:39531/posts/compile-nim-with-tcc/</link>
+      <link>https://nivrrex.github.io/posts/compile-nim-with-tcc/</link>
       <pubDate>Sun, 17 Nov 2019 09:09:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/compile-nim-with-tcc/</guid>
+      <guid>https://nivrrex.github.io/posts/compile-nim-with-tcc/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;Nim语言可以转换成C、C++、Objective-C、JavaScript等语言，其中C语言默认是转换成GCC进行编译的，相较于Go语言来说，编译速度还是有点慢的。于是兴起了用Tcc编译器编译Nim语言的想法。&lt;/p&gt;</description>
     </item>
     <item>
       <title>crosscompiling for openwrt with nim</title>
-      <link>http://localhost:39531/posts/crosscompiling-for-openwrt-with-nim/</link>
+      <link>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</link>
       <pubDate>Fri, 15 Nov 2019 23:21:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/crosscompiling-for-openwrt-with-nim/</guid>
+      <guid>https://nivrrex.github.io/posts/crosscompiling-for-openwrt-with-nim/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;nim语言(&lt;a href=&#34;https://nim-lang.org/&#34;&gt;nimlang&lt;/a&gt;)最近更新到1.02版本了，感觉还不错，正好最近在玩OpenWRT，记录一下在Linux下交叉编译mips架构的OpenWRT系统下的可执行程序步骤。&lt;/p&gt;
 &lt;hr&gt;

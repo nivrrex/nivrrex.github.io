@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Epub on Nivrrex&#39;s blog</title>
-    <link>http://localhost:39531/tags/epub/</link>
+    <link>https://nivrrex.github.io/tags/epub/</link>
     <description>Recent content in Epub on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 10 May 2024 10:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:39531/tags/epub/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://nivrrex.github.io/tags/epub/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>use mupdf to read epub and use css set epub font</title>
-      <link>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
+      <link>https://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</link>
       <pubDate>Fri, 10 May 2024 10:00:00 +0800</pubDate>
-      <guid>http://localhost:39531/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
+      <guid>https://nivrrex.github.io/posts/use-mupdf-read-epub-and-use-css-set-epub-font/</guid>
       <description>&lt;h3 id=&#34;缘来&#34;&gt;缘来&lt;/h3&gt;
 &lt;p&gt;最近用手机太多，眼睛不舒服，于是拿起前期买的墨水屏阅读器，准备用起来，先是来看下小说，看看习惯后再过度到其它书籍，期间使用情况记录一下。&lt;/p&gt;
 &lt;hr&gt;

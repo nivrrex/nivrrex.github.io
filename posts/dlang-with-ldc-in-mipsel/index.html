@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto" data-theme="light">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=39531&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -12,16 +12,16 @@
 mipsel gcc
 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，我用的是mt7621的路由器，并将其下载到了 /root/mipsel/ 目录下">
 <meta name="author" content="nivrrex">
-<link rel="canonical" href="http://localhost:39531/posts/dlang-with-ldc-in-mipsel/">
+<link rel="canonical" href="https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.47e51c7d8489b002361bac156ce9a0a8776d08c5462c2cee95801efafdd90d35.css" integrity="sha256-R&#43;UcfYSJsAI2G6wVbOmgqHdtCMVGLCzulYAe&#43;v3ZDTU=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:39531/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:39531/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:39531/favicon-32x32.png">
-<link rel="apple-touch-icon" href="http://localhost:39531/apple-touch-icon.png">
-<link rel="mask-icon" href="http://localhost:39531/safari-pinned-tab.svg">
+<link rel="icon" href="https://nivrrex.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://nivrrex.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://nivrrex.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://nivrrex.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://nivrrex.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:39531/posts/dlang-with-ldc-in-mipsel/">
+<link rel="alternate" hreflang="en" href="https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/">
 <noscript>
     <style>
         #theme-toggle,
@@ -36,7 +36,7 @@ mipsel gcc
         document.querySelector("html").dataset.theme = 'dark';
     }
 
-</script><meta property="og:url" content="http://localhost:39531/posts/dlang-with-ldc-in-mipsel/">
+</script><meta property="og:url" content="https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/">
   <meta property="og:site_name" content="Nivrrex&#39;s blog">
   <meta property="og:title" content="dlang with ldc in mipsel">
   <meta property="og:description" content="简介 突然想用dlang语言玩玩，然后又希望能在路由器上使用(openwrt mipsel)，就实验了一下Cross-compiling with LDC，现在将具体过程记录一下。
@@ -62,13 +62,13 @@ mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "http://localhost:39531/posts/"
+      "item": "https://nivrrex.github.io/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "dlang with ldc in mipsel",
-      "item": "http://localhost:39531/posts/dlang-with-ldc-in-mipsel/"
+      "item": "https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/"
     }
   ]
 }
@@ -94,14 +94,14 @@ mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:39531/posts/dlang-with-ldc-in-mipsel/"
+    "@id": "https://nivrrex.github.io/posts/dlang-with-ldc-in-mipsel/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Nivrrex's blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:39531/favicon.ico"
+      "url": "https://nivrrex.github.io/favicon.ico"
     }
   }
 }
@@ -111,7 +111,7 @@ mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:39531/" accesskey="h" title="Nivrrex&#39;s blog (Alt + H)">Nivrrex&#39;s blog</a>
+            <a href="https://nivrrex.github.io/" accesskey="h" title="Nivrrex&#39;s blog (Alt + H)">Nivrrex&#39;s blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
@@ -137,12 +137,12 @@ mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，
         </div>
         <ul id="menu" class="menu">
             <li>
-                <a href="http://localhost:39531/archives" title="归档">
+                <a href="https://nivrrex.github.io/archives" title="归档">
                     <span>归档</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:39531/tags" title="标签">
+                <a href="https://nivrrex.github.io/tags" title="标签">
                     <span>标签</span>
                 </a>
             </li>
@@ -154,12 +154,12 @@ mipsel gcc 首先需要到openwrt下载路由器对应的gcc的Cross-Compiler，
 <article class="post-single">
   <header class="post-header">
     <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-    <a href='http://localhost:39531/'>Home</a>
+    <a href='https://nivrrex.github.io/'>Home</a>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
-            <a href="http://localhost:39531/posts/">Posts</a></nav>
+            <a href="https://nivrrex.github.io/posts/">Posts</a></nav>
     <h1 class="post-title entry-hint-parent">
       dlang with ldc in mipsel
     </h1>
@@ -245,11 +245,11 @@ rm ldc-build-runtime.tmp/ -r
     <ul class="post-tags">
     </ul>
 <nav class="paginav">
-  <a class="prev" href="http://localhost:39531/posts/2021-summary/">
+  <a class="prev" href="https://nivrrex.github.io/posts/2021-summary/">
     <span class="title">« Prev</span>
     <span>2021 summary</span>
   </a>
-  <a class="next" href="http://localhost:39531/posts/compile-nim-with-tcc/">
+  <a class="next" href="https://nivrrex.github.io/posts/compile-nim-with-tcc/">
     <span class="title">Next »</span>
     <span>compile nim with tcc</span>
   </a>
@@ -260,7 +260,7 @@ rm ldc-build-runtime.tmp/ -r
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:39531/">Nivrrex&#39;s blog</a></span> · 
+        <span>&copy; 2026 <a href="https://nivrrex.github.io/">Nivrrex&#39;s blog</a></span> · 
 
     <span>
         Powered by
