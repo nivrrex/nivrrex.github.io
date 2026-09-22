@@ -6,8 +6,15 @@
     <description>Recent content on Nivrrex&#39;s blog</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 12 Dec 2025 17:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 09:00:00 +0800</lastBuildDate>
     <atom:link href="https://nivrrex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这十个月，AI是怎么被我用起来的</title>
+      <link>https://nivrrex.github.io/posts/how-i-use-ai-this-year/</link>
+      <pubDate>Tue, 22 Sep 2026 09:00:00 +0800</pubDate>
+      <guid>https://nivrrex.github.io/posts/how-i-use-ai-this-year/</guid>
+      <description>&lt;p&gt;去年12月，我写过一篇很短的日志，说自己有个需求——投影PPT时拍出来的照片是歪的，想自动矫正成标准四边形。当时找DeepSeek写了第一版，几行需求描述换来一个能跑的程序，觉得挺神奇。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>AI programming</title>
       <link>https://nivrrex.github.io/posts/ai-programming/</link>
